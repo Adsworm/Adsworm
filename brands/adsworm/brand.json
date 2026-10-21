@@ -1,0 +1,34 @@
+{
+  "client": "adsworm",
+  "brandName": "ADSWORM",
+  "handle": "@adsworm",
+  "colors": {
+    "ink": "#0B0B0C",
+    "paper": "#F4F2EE",
+    "accent": "#C8FF2E",
+    "muted": "#8A8A8F",
+    "primary": "#0B0B0C"
+  },
+  "colorNotes": "Logo is monochrome. Electric lime is the single accent: offers, numbers that matter, CTA. Never more than 10% of the frame.",
+  "fonts": {
+    "display": {"family": "Inter Tight", "file": "fonts/InterTight-Variable.woff2", "license": "OFL"},
+    "accent": {"family": "Instrument Serif", "file": "fonts/InstrumentSerif-Italic.woff2", "license": "OFL", "style": "italic"}
+  },
+  "logo": {
+    "primary": "logo.svg",
+    "onDark": "logo-white.svg",
+    "source": "Traced from the @adsworm Instagram profile picture (1080px) with potrace — replace with the master vector if one exists.",
+    "minWidthPx": 160,
+    "never": ["recolor to lime", "outline", "rotate", "stretch"]
+  },
+  "positioning": "Growth partner for clinics (dermatology, dental, hair, aesthetic, multi-branch) — performance ads + scroll-stopping creative, built per city and per treatment.",
+  "audience": "Clinic owners and doctors running or considering Meta ads in Indian metros and tier-2 cities; secondary: premium salons and local service brands.",
+  "voice": {
+    "is": ["direct", "confident", "specific", "owner-to-owner"],
+    "isNot": ["hype", "discount-led", "emoji-heavy", "guru"]
+  },
+  "motion": {"personality": "performance", "notes": "Snappy springs, hard cuts on the beat, one idea per beat, kinetic type over black."},
+  "banned": ["particles", "lens flares", "neon glow", "stock whoosh on every move", "rotating 3D text"],
+  "cta": {"primary": "Comment AUDIT", "fallback": "DM AUDIT"},
+  "claimsFile": "claims.md"
+}

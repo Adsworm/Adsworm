@@ -10,7 +10,7 @@ This is a production template, not a demo. It was verified rendering a 12.6 s 10
 ## Scaffold
 
 ```bash
-rsync -a --exclude node_modules --exclude out "${CLAUDE_SKILL_DIR}/template/" ./<project>/
+mkdir -p <project> && tar -C "${CLAUDE_SKILL_DIR}/template" --exclude node_modules --exclude out -cf - . | tar -C <project> -xf -
 cd <project> && npm install
 npm run studio        # live preview at localhost:3000 (props are editable in the right panel)
 ```
