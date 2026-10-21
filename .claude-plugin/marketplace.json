@@ -1,0 +1,14 @@
+{
+  "name": "adsworm",
+  "description": "Adsworm studio skills: coded motion graphics, video editing and Meta ad creative production.",
+  "owner": {"name": "Adsworm"},
+  "plugins": [
+    {
+      "name": "motion-studio",
+      "source": "./plugins/motion-studio",
+      "description": "Brief-to-delivery motion graphics for Meta ads: Remotion ad kit, HyperFrames routing, motion taste, delivery QA, variant matrix, editing pipeline and performance loop.",
+      "category": "design",
+      "tags": ["remotion", "hyperframes", "motion-graphics", "video-editing", "meta-ads"]
+    }
+  ]
+}

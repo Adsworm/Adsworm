@@ -1,0 +1,16 @@
+{
+  "campaign": "ATL9-VITC-LAUNCH",
+  "base": "props/example.json",
+  "formats": ["Ad-9x16", "Ad-4x5"],
+  "axes": {
+    "hook": [
+      {"id": "H1", "value": "Your skin *isn’t* tired. It’s *underfed.*"},
+      {"id": "H2", "value": "Dull by 3pm? *Fix the cause.*"}
+    ],
+    "offer": [
+      {"id": "O1", "value": "Launch week — *20% off*"},
+      {"id": "O2", "value": "Free travel size — *this week only*"}
+    ],
+    "cta": [{"id": "C1", "value": "Shop the Serum"}]
+  }
+}
