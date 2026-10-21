@@ -4,7 +4,7 @@ import {execFileSync} from 'node:child_process';
 import fs from 'node:fs';
 import {browserExecutable, bundleProject, ID} from './_shared.mjs';
 
-const FRAMES = [0, 45, 100, 150, 200, 255, 330, 400, 470, 520, 580, 645, 735, 820, 900, 1000];
+const FRAMES = [0, 70, 130, 200, 255, 296, 330, 352, 365, 400, 440, 490, 560, 660, 760, 860, 930, 1000];
 const only = process.argv.slice(2).map(Number).filter((n) => !Number.isNaN(n));
 const frames = only.length ? only : FRAMES;
 const inputProps = {showSafeZones: true, withAudio: false};

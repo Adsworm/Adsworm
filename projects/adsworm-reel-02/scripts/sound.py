@@ -81,9 +81,9 @@ def pad(freqs, dur):
 
 # ---------- sfx ----------
 
-def tick():
+def tick(pitch=1.0):
     t = secs(0.03)
-    return (np.sin(2 * np.pi * 2400 * t) * np.exp(-t * 260) + hp(noise(0.03), 4000) * np.exp(-t * 400) * 0.3) * 0.45
+    return (np.sin(2 * np.pi * 2400 * pitch * t) * np.exp(-t * 260) + hp(noise(0.03), 4000) * np.exp(-t * 400) * 0.3) * 0.45
 
 
 def pop():
@@ -226,6 +226,8 @@ def build(tl):
         elif cue["type"] == "riser":
             d = cue.get("duration", 2.0)
             place(fx, riser(d), at - d, cue.get("gain", 1.0))
+        elif cue["type"] == "tick":
+            place(fx, tick(cue.get("pitch", 1.0)), at, cue.get("gain", 1.0))
         else:
             place(fx, SFX[cue["type"]](), at, cue.get("gain", 1.0))
 

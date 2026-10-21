@@ -1,5 +1,5 @@
 // Full pipeline: synthesize audio → render video → two-pass loudness master (−14 LUFS, −1.5 dBTP)
-//   → out/FULL-CHAIRS-01_9x16.mp4, plus the frame-0 cover as out/cover.png.
+//   → out/THE-BEST-NEVER-WINS_9x16.mp4, plus the frame-0 cover as out/cover.png.
 import {renderMedia, renderStill, selectComposition} from '@remotion/renderer';
 import {execFileSync, spawnSync} from 'node:child_process';
 import fs from 'node:fs';
@@ -37,7 +37,7 @@ const m = JSON.parse(stderr.slice(stderr.lastIndexOf('{'))); // loudnorm prints 
 execFileSync('ffmpeg', [
   '-y', '-loglevel', 'error', '-i', 'out/raw.mp4', '-c:v', 'copy',
   '-af', `loudnorm=${target}:measured_I=${m.input_i}:measured_TP=${m.input_tp}:measured_LRA=${m.input_lra}:measured_thresh=${m.input_thresh}:offset=${m.target_offset}:linear=true`,
-  '-ar', '48000', '-c:a', 'aac', '-b:a', '192k', '-movflags', '+faststart', 'out/FULL-CHAIRS-01_9x16.mp4',
+  '-ar', '48000', '-c:a', 'aac', '-b:a', '192k', '-movflags', '+faststart', 'out/THE-BEST-NEVER-WINS_9x16.mp4',
 ]);
 await renderStill({serveUrl, composition, inputProps: {...inputProps, withAudio: false}, frame: 0, output: 'out/cover.png', browserExecutable});
-console.log('→ out/FULL-CHAIRS-01_9x16.mp4 · out/cover.png');
+console.log('→ out/THE-BEST-NEVER-WINS_9x16.mp4 · out/cover.png');
