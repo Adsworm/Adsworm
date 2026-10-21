@@ -2,33 +2,43 @@
   "client": "adsworm",
   "brandName": "ADSWORM",
   "handle": "@adsworm",
+  "source": "adsworm.com (primary) + adsworm.in, read 2026-10-21",
   "colors": {
-    "ink": "#0B0B0C",
-    "paper": "#F4F2EE",
-    "accent": "#C8FF2E",
-    "muted": "#8A8A8F",
-    "primary": "#0B0B0C"
+    "bg": "#080C14",
+    "bg2": "#0D1320",
+    "paper": "#F0EEE8",
+    "blue": "#1B5EF7",
+    "blueBright": "#2B7BFF",
+    "gold": "#C8A96E",
+    "muted": "#8E8F93"
   },
-  "colorNotes": "Logo is monochrome. Electric lime is the single accent: offers, numbers that matter, CTA. Never more than 10% of the frame.",
+  "colorNotes": "Navy-black ground, cream type. Electric blue is the brand energy (highlights, bars, glows of light, UI). Gold is reserved for proof and premium moments (numbers, founder, guarantee). Never both at full strength in one word.",
   "fonts": {
-    "display": {"family": "Inter Tight", "file": "fonts/InterTight-Variable.woff2", "license": "OFL"},
-    "accent": {"family": "Instrument Serif", "file": "fonts/InstrumentSerif-Italic.woff2", "license": "OFL", "style": "italic"}
+    "display": {"family": "Bebas Neue", "file": "fonts/BebasNeue-Regular.woff2", "license": "OFL", "use": "ALL-CAPS headlines, numbers"},
+    "body": {"family": "DM Sans", "file": "fonts/DMSans-Variable.woff2", "license": "OFL", "use": "supporting lines, labels, captions"}
   },
   "logo": {
     "primary": "logo.svg",
     "onDark": "logo-white.svg",
-    "source": "Traced from the @adsworm Instagram profile picture (1080px) with potrace — replace with the master vector if one exists.",
-    "minWidthPx": 160,
-    "never": ["recolor to lime", "outline", "rotate", "stretch"]
+    "source": "Traced from the @adsworm profile picture with potrace — replace with the master vector if one exists.",
+    "never": ["outline", "recolor", "rotate", "stretch"]
   },
-  "positioning": "Growth partner for clinics (dermatology, dental, hair, aesthetic, multi-branch) — performance ads + scroll-stopping creative, built per city and per treatment.",
-  "audience": "Clinic owners and doctors running or considering Meta ads in Indian metros and tier-2 cities; secondary: premium salons and local service brands.",
+  "positioning": "AI-first performance marketing agency, Delhi NCR — growth systems, not ads. India · UK · UAE.",
+  "taglines": [
+    "WE DON'T RUN ADS. WE BUILD EMPIRES.",
+    "Numbers That Don't Lie.",
+    "Growth Systems. Not Ads.",
+    "We Don't Promise Results. We engineer the conditions that make them inevitable.",
+    "Let's Make Your Brand UNSTOPPABLE."
+  ],
+  "founder": {"name": "Aman Rai", "line": "I don't want clients. I want partners who are ready to dominate their category."},
+  "audience": "Founders and owners spending (or ready to spend) ₹40,000+/month on ads — aesthetic & derma clinics, D2C fashion, real estate, luxury salons, B2B premium.",
   "voice": {
-    "is": ["direct", "confident", "specific", "owner-to-owner"],
-    "isNot": ["hype", "discount-led", "emoji-heavy", "guru"]
+    "is": ["declarative", "contrarian", "short punchy lines ending in a full stop", "proof-led", "premium"],
+    "isNot": ["discount-led", "emoji-heavy", "begging CTAs", "guru hype"]
   },
-  "motion": {"personality": "performance", "notes": "Snappy springs, hard cuts on the beat, one idea per beat, kinetic type over black."},
-  "banned": ["particles", "lens flares", "neon glow", "stock whoosh on every move", "rotating 3D text"],
-  "cta": {"primary": "Comment AUDIT", "fallback": "DM AUDIT"},
+  "motion": {"personality": "premium-performance", "notes": "Big condensed caps that slam on the beat, blue light sweeps, gold for proof. Hard cuts, depth, no bounce."},
+  "banned": ["lime/neon green", "particles", "lens flares", "crossfade everything", "bouncy everything"],
+  "cta": {"primary": "Comment EMPIRE", "website": "Free Growth Audit at adsworm.com"},
   "claimsFile": "claims.md"
 }
