@@ -16,7 +16,7 @@ export const CTA: React.FC = () => {
     );
   }
   const pop = spring({frame: frame - 840, fps, config: springs.pop}); // one pop, no pulse (house rule)
-  const sub = progress(frame, 885, 18);
+  const sub = progress(frame, 870, 18);
   return (
     <AbsoluteFill>
       {/* Column layout: the headline can never overlap the subline, whatever the copy length. */}

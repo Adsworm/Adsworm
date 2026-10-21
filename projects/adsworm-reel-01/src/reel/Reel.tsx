@@ -18,8 +18,8 @@ const SCENES: [number, number, React.FC][] = [
   [300, 420, Shift],
   [420, 660, Fix],
   [660, 780, Proof],
-  [780, 960, CTA],
-  [960, 1020, End],
+  [780, 945, CTA],
+  [945, 1020, End],
 ];
 
 export type ReelProps = {showSafeZones: boolean; withAudio: boolean};

@@ -56,7 +56,7 @@ export const Carousel: React.FC<{slide: number}> = ({slide}) => {
         <Num n="2" />
         <Words text="Name the city. Name the problem." size={76} at={0} set />
         <Card scale={0.7}>
-          <AdCard treatment="Hair PRP" altSubline="Hair fall after 25?" swap={1} strike={1} city={1} />
+          <AdCard treatment="Hair PRP" altSubline="PRP for early thinning" swap={1} badge={0} city={1} />
         </Card>
         <div style={{color: C.muted, fontSize: 36, textAlign: 'center', maxWidth: 740}}>Patients book the clinic that sounds like it's talking to them.</div>
       </Shell>
@@ -68,13 +68,13 @@ export const Carousel: React.FC<{slide: number}> = ({slide}) => {
         <Words text="New creative every week." size={80} at={0} set />
         <div style={{position: 'relative', width: 900, height: 470}}>
           {[
-            {w: 'W1', t: 'Hair fall after 25?', x: 40, r: -8, z: 1},
+            {w: 'W1', t: 'PRP for early thinning', x: 40, r: -8, z: 1},
             {w: 'W3', t: 'PRP or transplant?', x: 500, r: 8, z: 1},
-            {w: 'W2', t: 'Thinning crown?', x: 270, r: 0, z: 2},
+            {w: 'W2', t: 'Crown thinning, explained', x: 270, r: 0, z: 2},
           ].map((c) => (
             <div key={c.w} style={{position: 'absolute', left: c.x, top: 20, zIndex: c.z, transform: `rotate(${c.r}deg)`}}>
               <Card scale={0.62}>
-                <AdCard treatment="Hair PRP" altSubline={c.t} swap={1} strike={1} city={1} week={c.w} />
+                <AdCard treatment="Hair PRP" altSubline={c.t} swap={1} badge={0} city={1} week={c.w} />
               </Card>
             </div>
           ))}

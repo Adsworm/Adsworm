@@ -13,7 +13,7 @@
 5. **Set up the AUDIT auto-reply** (ManyChat or a manual SLA under 2 h). Qualify with three questions first: city, main treatment, monthly ad spend.
 
 ## Caption
-> Ads chal rahe hain. Chairs khaali kyun? 🤔
+> Ads chal rahe hain. Chairs khaali kyun?
 >
 > 1 clinic → 15 branches. Same city. What changed: ads built for one treatment, one city and one real patient problem, refreshed every week.
 >

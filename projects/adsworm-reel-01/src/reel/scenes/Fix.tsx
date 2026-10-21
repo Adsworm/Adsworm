@@ -48,6 +48,7 @@ export const Fix: React.FC = () => {
   const enter = spring({frame: frame - 435, fps, config: springs.snappy});
   const save = spring({frame: frame - 450, fps, config: springs.pop});
   const strike = progress(frame, 495, 12, ease.inOutQuart);
+  const badge = 1 - progress(frame, 508, 12); // gone by f520
   const city = frame >= 555 ? spring({frame: frame - 555, fps, config: springs.pop}) : 0;
   const swap = progress(frame, 570, 10);
   const fan = (at: number) => spring({frame: frame - at, fps, config: springs.snappy});
@@ -75,20 +76,21 @@ export const Fix: React.FC = () => {
     </div>
   );
   const fanning = frame >= 615;
+  const recede = progress(frame, 480, 18, ease.outExpo);
   return (
     <AbsoluteFill>
-      <div style={{position: 'absolute', top: 285, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 18}}>
+      <div style={{position: 'absolute', top: 285, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 18, opacity: 1 - recede * 0.55, transform: `scale(${1 - recede * 0.12})`, transformOrigin: 'center top'}}>
         <SaveTag s={save} />
         <Words text="3 checks before your next ad" size={62} at={420} />
       </div>
       {fanning ? (
         <>
-          {card({treatment: 'Hair PRP', altSubline: 'Thinning crown?', swap: 1, strike: 1, city: 1, week: 'W2'}, 0, 0, SCALE * interpolate(w2, [0, 1], [0.9, 0.86]), 3)}
-          {card({treatment: 'Hair PRP', altSubline: 'Hair fall after 25?', swap: 1, strike: 1, city: 1, week: 'W1'}, -225 * w1, -8 * w1, SCALE * 0.8, 2)}
-          {card({treatment: 'Hair PRP', altSubline: 'PRP or transplant?', swap: 1, strike: 1, city: 1, week: 'W3'}, 225 * w3, 8 * w3, SCALE * 0.8 * Math.min(1, w3 * 1.2), 1)}
+          {card({treatment: 'Hair PRP', altSubline: 'Crown thinning, explained', swap: 1, badge: 0, city: 1, week: 'W2'}, 0, 0, SCALE * interpolate(w2, [0, 1], [0.9, 0.86]), 3)}
+          {card({treatment: 'Hair PRP', altSubline: 'PRP for early thinning', swap: 1, badge: 0, city: 1, week: 'W1'}, -225 * w1, -8 * w1, SCALE * 0.8, 2)}
+          {card({treatment: 'Hair PRP', altSubline: 'PRP or transplant?', swap: 1, badge: 0, city: 1, week: 'W3'}, 225 * w3, 8 * w3, SCALE * 0.8 * Math.min(1, w3 * 1.2), 1)}
         </>
       ) : (
-        card({treatment: 'Hair PRP', altSubline: 'Hair fall after 25?', swap, strike, city}, 0, 0, SCALE, 1)
+        card({treatment: 'Hair PRP', altSubline: 'PRP for early thinning', swap, strike, badge, city}, 0, 0, SCALE, 1)
       )}
       <div style={{position: 'absolute', top: 1120, left: 80, right: 80, display: 'flex', justifyContent: 'center'}}>{check}</div>
     </AbsoluteFill>

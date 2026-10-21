@@ -11,13 +11,13 @@ export const End: React.FC = () => {
   return (
     <AbsoluteFill>
       <div style={{position: 'absolute', top: 440, width: '100%', display: 'flex', justifyContent: 'center'}}>
-        <LogoDraw at={960} width={540} />
+        <LogoDraw at={945} width={540} />
       </div>
       <div style={{position: 'absolute', top: 900, width: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 22}}>
-        <Words text="@adsworm" size={66} at={975} />
-        <Words text="The clinic growth agency" size={46} at={985} color={C.muted} weight={600} />
+        <Words text="@adsworm" size={66} at={951} />
+        <Words text="The clinic growth agency" size={46} at={957} color={C.muted} weight={600} />
         <div style={{opacity: 0.7}}>
-          <Words text="Made 100% in code." size={32} at={995} color={C.muted} weight={500} />
+          <Words text="Made 100% in code." size={32} at={963} color={C.muted} weight={500} />
         </div>
       </div>
       {loop > 0 ? (

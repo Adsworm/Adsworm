@@ -8,10 +8,11 @@ export const AdCard: React.FC<{
   altSubline?: string;
   swap?: number; // 0→1 crossfade subline → altSubline
   strike?: number; // 0→1 lime strike across the discount badge
+  badge?: number; // discount badge opacity — fade to 0 once the strike has made its point
   city?: number; // 0→1 city tag pop
   week?: string; // W1/W2/W3 chip
   photoTint?: string;
-}> = ({treatment, subline = 'Clinic Name', altSubline, swap = 0, strike = 0, city = 0, week, photoTint = '#9C9C9C'}) => (
+}> = ({treatment, subline = 'Clinic Name', altSubline, swap = 0, strike = 0, badge = 1, city = 0, week, photoTint = '#9C9C9C'}) => (
   <div
     style={{
       position: 'relative',
@@ -41,7 +42,7 @@ export const AdCard: React.FC<{
           fontSize: 34,
           letterSpacing: '-0.02em',
           transform: 'rotate(-3deg)',
-          opacity: 1 - strike * 0.6,
+          opacity: badge,
         }}
       >
         FLAT 20% OFF

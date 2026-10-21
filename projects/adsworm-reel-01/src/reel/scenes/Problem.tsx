@@ -3,7 +3,7 @@ import {progress, springs} from '../../lib/motion';
 import {AdCard} from '../AdCard';
 import {Words} from '../Words';
 
-const TREATMENTS = ['Hair PRP', 'Laser', 'Teeth Whitening', 'HydraFacial', 'Hair PRP', 'Botox', 'Laser', 'Whitening', 'HydraFacial'];
+const TREATMENTS = ['Hair PRP', 'Laser', 'Teeth Whitening', 'HydraFacial', 'Hair PRP', 'Skin Peel', 'Laser', 'Whitening', 'HydraFacial'];
 const TINTS = ['#9C9C9C', '#8F9499', '#A39A92', '#959A92', '#9C9C9C', '#9A9298', '#8F9499', '#A39A92', '#959A92'];
 const CARD_W = 520;
 const CARD_H = 680;
