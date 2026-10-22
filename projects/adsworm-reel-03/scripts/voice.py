@@ -7,11 +7,14 @@ right) and `show` (the Latin-script Hinglish caption). [brackets] in `show` beco
 pills. A line's optional `beat` names the card element that builds the moment the line starts,
 so picture, caption and voice can't drift: they all come from the same word timings.
 
-    python3 scripts/voice.py            # synthesize everything
-    python3 scripts/voice.py --no-tts   # rebuild timeline/mix from cached line audio
+    python3 scripts/voice.py            # synthesize what changed (line audio is cached by text+voice+rate)
+    REEL_DAYS=16 python3 scripts/voice.py   # force the countdown number (default: days from today to vars.countdown.to)
+    python3 scripts/voice.py --variant paid   # boosted-post variant: lines' "paid" overrides (DM keyword CTA)
 """
 import asyncio
+import hashlib
 import json
+from datetime import date
 import os
 import re
 import subprocess
@@ -25,19 +28,34 @@ from scipy.signal import butter, sosfilt
 
 ROOT = Path(__file__).resolve().parent.parent
 SCRIPT = ROOT / "script/script.json"
-CACHE = ROOT / "public/voice"
+VARIANT = sys.argv[sys.argv.index("--variant") + 1] if "--variant" in sys.argv else "organic"
+CACHE = ROOT / ("public/voice" if VARIANT == "organic" else f"public/voice-{VARIANT}")
 SR = 48000
 FPS = 30
 PROXY = os.environ.get("HTTPS_PROXY")
 rng = np.random.default_rng(3)
+HI_NUM = "शून्य एक दो तीन चार पाँच छह सात आठ नौ दस ग्यारह बारह तेरह चौदह पंद्रह सोलह सत्रह अठारह उन्नीस बीस इक्कीस बाईस तेईस चौबीस पच्चीस छब्बीस सत्ताईस अट्ठाईस उनतीस तीस इकतीस".split()
+
+
+def countdown(s):
+    """{days}/{days_hi} for `say`/`show`: days from today to vars.countdown.to (override: REEL_DAYS)."""
+    cd = s.get("vars", {}).get("countdown")
+    if not cd:
+        return {}
+    days = int(os.environ["REEL_DAYS"]) if os.environ.get("REEL_DAYS") else (date.fromisoformat(cd["to"]) - date.today()).days
+    if days <= 0:
+        print(f"WARNING: countdown to {cd['to']} is {days} days — the hook no longer holds", file=sys.stderr)
+    return {"days": days, "days_hi": HI_NUM[days] if 0 <= days < len(HI_NUM) else str(days)}
 
 
 def pills(show: str):
     """'[6 saal] se Meta ads' → text without brackets + list of highlighted spans (by word index)."""
     words, spans, i = [], [], 0
-    for tok in re.findall(r"\[[^\]]+\]|\S+", show):
+    for tok in re.findall(r"\[[^\]]+\]\S*|\S+", show):
         if tok.startswith("["):
-            inner = tok[1:-1].split()
+            close = tok.index("]")
+            inner = tok[1:close].split()
+            inner[-1] += tok[close + 1:]  # trailing punctuation rides on the last word, outside the pill
             spans.append([i, i + len(inner)])
             words += inner
             i += len(inner)
@@ -114,9 +132,12 @@ def place(track, clip, at_s, gain=1.0):
         track[i:j] += clip[: j - i] * gain
 
 
-def main(no_tts=False):
+def main():
     s = json.loads(SCRIPT.read_text())
     CACHE.mkdir(parents=True, exist_ok=True)
+    vars_ = countdown(s)
+    fill = lambda t: t.format(**vars_) if vars_ else t
+    wavs = {}
     gap, sgap = s.get("gapMs", 220) / 1000, s.get("sectionGapMs", 450) / 1000
     lead = s.get("leadInMs", 150) / 1000
     cursor = lead
@@ -125,12 +146,18 @@ def main(no_tts=False):
     for sec in s["sections"]:
         sec_start = cursor
         for ln in sec["lines"]:
+            if VARIANT != "organic":
+                ln = {**ln, **ln.get(VARIANT, {})}
             n += 1
-            wav = CACHE / f"{n:02d}.wav"
-            meta = CACHE / f"{n:02d}.json"
-            if not no_tts or not wav.exists():
-                rate = s.get("rates", {}).get(ln["who"], s.get("rate", "+30%"))  # ~3 words/s matches the reference pace
-                words = asyncio.run(tts(ln["say"], s["voices"][ln["who"]], rate, wav))
+            ln = {**ln, "say": fill(ln["say"]), "show": fill(ln["show"])}
+            rate = s.get("rates", {}).get(ln["who"], s.get("rate", "+30%"))  # ~3 words/s matches the reference pace
+            voice_id = s["voices"][ln["who"]]
+            key = hashlib.sha1(f"{ln['say']}|{voice_id}|{rate}".encode()).hexdigest()[:8]
+            wav = CACHE / f"{n:02d}-{key}.wav"
+            meta = wav.with_suffix(".json")
+            wavs[n] = wav
+            if not wav.exists() or not meta.exists():
+                words = asyncio.run(tts(ln["say"], voice_id, rate, wav))
                 meta.write_text(json.dumps(words, ensure_ascii=False))
             words = json.loads(meta.read_text())
             audio, lead = trim(read_wav(wav))
@@ -151,7 +178,7 @@ def main(no_tts=False):
     # mix: voice (mono→center) + bed + a pop on every beat, a whoosh on every section start
     voice = np.zeros(int(total * SR))
     for ln in lines:
-        place(voice, trim(read_wav(CACHE / f"{ln['n']:02d}.wav"))[0], ln["start"])
+        place(voice, trim(read_wav(wavs[ln["n"]]))[0], ln["start"])
     fx = np.zeros_like(voice)
     beats = {}
     for ln in lines:
@@ -172,7 +199,7 @@ def main(no_tts=False):
         w.setframerate(SR)
         w.writeframes((mix * 32767).astype("<i2").tobytes())
 
-    tl = {"fps": FPS, "durationInFrames": frames, "voices": s["voices"], "brand": s.get("brand", {}), "lines": lines, "sections": sections, "beats": beats}
+    tl = {"fps": FPS, "variant": VARIANT, "vars": vars_, "durationInFrames": frames, "voices": s["voices"], "brand": s.get("brand", {}), "lines": lines, "sections": sections, "beats": beats}
     (ROOT / "src/reel/timeline.json").write_text(json.dumps(tl, ensure_ascii=False, indent=1))
     print(f"{len(lines)} lines · {len(sections)} sections · {total:.1f}s · {frames} frames · {len(beats)} beats → public/voice.wav, src/reel/timeline.json")
     for ln in lines:
@@ -180,4 +207,4 @@ def main(no_tts=False):
 
 
 if __name__ == "__main__":
-    main(no_tts="--no-tts" in sys.argv)
+    main()  # --no-tts is accepted for compatibility; caching is automatic now

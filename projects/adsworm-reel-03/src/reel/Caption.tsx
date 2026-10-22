@@ -26,42 +26,50 @@ export const Caption: React.FC<{line: Line; names: Record<string, string>; sideO
           background: C.card,
           borderRadius: 34,
           boxShadow: '0 18px 50px rgba(13,19,32,0.10)',
-          padding: '40px 44px 36px',
+          padding: '38px 44px 34px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
           textAlign: 'center',
           fontFamily: body,
           fontWeight: 700,
-          fontSize: 54,
+          fontSize: 50,
           lineHeight: 1.3,
           color: C.ink,
           letterSpacing: '-0.015em',
         }}
       >
         <div>
-          {words.map((w, i) => {
+          {words.map((raw, i) => {
             const pill = inPill(i);
+            // Trailing punctuation on a pill's last word is drawn outside the pill.
+            const m = pill && pillEnd(i) ? /^(.*?)([.,!?;:…]*)$/.exec(raw) : null;
+            const w = m ? m[1] : raw;
+            const tail = m ? m[2] : '';
+            const last = i === words.length - 1;
             return (
-              <span
-                key={i}
-                style={
-                  pill
-                    ? {
-                        background: C.blue,
-                        color: '#fff',
-                        padding: '2px 0',
-                        paddingLeft: pillStart(i) ? 14 : 0,
-                        paddingRight: pillEnd(i) ? 14 : 0,
-                        borderRadius: pillStart(i) && pillEnd(i) ? 14 : pillStart(i) ? '14px 0 0 14px' : pillEnd(i) ? '0 14px 14px 0' : 0,
-                        boxDecorationBreak: 'clone',
-                        WebkitBoxDecorationBreak: 'clone',
-                      }
-                    : {}
-                }
-              >
-                {w}
-                {i < words.length - 1 ? (pill && !pillEnd(i) ? ' ' : ' ') : ''}
+              <span key={i}>
+                <span
+                  style={
+                    pill
+                      ? {
+                          background: C.blue,
+                          color: '#fff',
+                          padding: '2px 0',
+                          paddingLeft: pillStart(i) ? 14 : 0,
+                          paddingRight: pillEnd(i) ? 14 : 0,
+                          borderRadius: pillStart(i) && pillEnd(i) ? 14 : pillStart(i) ? '14px 0 0 14px' : pillEnd(i) ? '0 14px 14px 0' : 0,
+                          boxDecorationBreak: 'clone',
+                          WebkitBoxDecorationBreak: 'clone',
+                        }
+                      : {}
+                  }
+                >
+                  {w}
+                  {pill && !pillEnd(i) ? ' ' : ''}
+                </span>
+                {tail}
+                {!last && !(pill && !pillEnd(i)) ? ' ' : ''}
               </span>
             );
           })}

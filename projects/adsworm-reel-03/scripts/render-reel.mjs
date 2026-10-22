@@ -4,8 +4,9 @@ import {execFileSync, spawnSync} from 'node:child_process';
 import fs from 'node:fs';
 import {browserExecutable, bundleProject, ID, licenseKey} from './_shared.mjs';
 
-const NAME = process.env.REEL_NAME ?? 'REEL-03_9x16';
-if (!process.argv.includes('--no-voice')) execFileSync('python3', ['scripts/voice.py', ...(process.argv.includes('--no-tts') ? ['--no-tts'] : [])], {stdio: 'inherit'});
+const PAID = process.argv.includes('--paid'); // boosted-post variant: DM keyword instead of the comment UI
+const NAME = process.env.REEL_NAME ?? (PAID ? 'REEL-03_PAID_9x16' : 'REEL-03_9x16');
+if (!process.argv.includes('--no-voice')) execFileSync('python3', ['scripts/voice.py', ...(PAID ? ['--variant', 'paid'] : [])], {stdio: 'inherit'});
 fs.mkdirSync('out', {recursive: true});
 const serveUrl = await bundleProject();
 const inputProps = {showSafeZones: false, withAudio: true};

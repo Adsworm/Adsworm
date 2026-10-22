@@ -1,7 +1,7 @@
 import {AbsoluteFill, Html5Audio, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {SafeZoneOverlay} from '../components/SafeZoneOverlay';
 import {Avatar, type Pose} from './Avatars';
-import {BEATS} from './beats';
+import {BEATS, type Variant} from './beats';
 import {Caption, captionAlpha, type Line} from './Caption';
 import {Card} from './Card';
 import {Stage} from './Stage';
@@ -15,6 +15,8 @@ type Timeline = {
   lines: Line[];
   sections: Section[];
   beats: Record<string, number>;
+  variant?: Variant;
+  vars?: Record<string, number | string>;
 };
 const TL = timeline as unknown as Timeline;
 const NAMES = TL.brand.names ?? {AMAN: 'AMAN', FOUNDER: 'FOUNDER'};
@@ -35,7 +37,7 @@ export const Reel: React.FC<ReelProps> = ({showSafeZones, withAudio}) => {
   const Beats = BEATS[section.id];
   const alpha = captionAlpha(frame, fps, line, next);
   const speaker = line?.who;
-  const sinceF = line ? Math.round(line.start * fps) : 0;
+  const sinceF = line ? (idx === 0 ? -6 : Math.round(line.start * fps)) : 0; // line 1's pose is settled on frame 0 (the cover)
   const poseFor = (who: string): Pose => {
     if (!line) return 'idle';
     if (who === speaker) return (line.pose as Pose) ?? SPEAK_POSES[idx % SPEAK_POSES.length];
@@ -46,7 +48,7 @@ export const Reel: React.FC<ReelProps> = ({showSafeZones, withAudio}) => {
     <AbsoluteFill>
       <Stage footer={TL.brand.footer ?? ''} />
       <Card label={section.label} tag={section.tag} source={section.source} sectionStartF={Math.round(section.start * fps)}>
-        {Beats ? <Beats beats={TL.beats} frame={frame} /> : null}
+        {Beats ? <Beats beats={TL.beats} frame={frame} variant={TL.variant ?? 'organic'} vars={TL.vars ?? {}} /> : null}
       </Card>
       {line ? (
         <div style={{opacity: alpha}}>

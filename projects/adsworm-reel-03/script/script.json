@@ -1,210 +1,44 @@
 {
-  "voices": {
-    "AMAN": "hi-IN-MadhurNeural",
-    "FOUNDER": "hi-IN-SwaraNeural"
-  },
-  "rates": {
-    "AMAN": "+40%",
-    "FOUNDER": "+46%"
-  },
+  "voices": {"AMAN": "hi-IN-MadhurNeural", "FOUNDER": "hi-IN-SwaraNeural"},
+  "rates": {"AMAN": "+40%", "FOUNDER": "+46%"},
   "gapMs": 160,
   "sectionGapMs": 320,
   "leadInMs": 120,
   "tailMs": 1200,
-  "brand": {
-    "footer": "Aman Rai  |  Founder, ADSWORM",
-    "names": {
-      "AMAN": "AMAN",
-      "FOUNDER": "FOUNDER"
-    },
-    "side": {
-      "AMAN": "right",
-      "FOUNDER": "left"
-    }
-  },
+  "vars": {"countdown": {"to": "2026-11-08", "note": "Diwali (Lakshmi Puja). {days}/{days_hi} in say/show and vars.days on the card are computed from today at voice time; REEL_DAYS=n overrides."}},
+  "brand": {"footer": "Aman Rai  |  Founder, ADSWORM", "names": {"AMAN": "AMAN", "FOUNDER": "FOUNDER"}, "side": {"AMAN": "right", "FOUNDER": "left"}},
   "sections": [
-    {
-      "id": "hook",
-      "label": "",
-      "tag": "",
-      "source": "Diwali (Lakshmi Puja) Sun 8 Nov 2026 · drikpanchang.com",
-      "lines": [
-        {
-          "who": "AMAN",
-          "say": "Founder जी, Diwali में सत्रह दिन, और Meta ने तीन चीज़ें बदल दीं",
-          "show": "Founder ji, Diwali mein [17 din], aur Meta ne [3 cheezein] badal di.",
-          "beat": "hook-big",
-          "pose": "point"
-        },
-        {
-          "who": "FOUNDER",
-          "say": "अभी? मेरा festive budget तो set है",
-          "show": "Abhi? Mera [festive budget] toh set hai.",
-          "pose": "idle"
-        },
-        {
-          "who": "AMAN",
-          "say": "इसीलिए, तीनों आपका पैसा बचाते हैं",
-          "show": "Isiliye. Teeno aapka [paisa bachaate] hain.",
-          "beat": "hook-chip",
-          "pose": "thumbs"
-        }
-      ]
-    },
-    {
-      "id": "one",
-      "label": "① IMAGE → VIDEO",
-      "tag": "official · GA",
-      "source": "Source: Meta for Business · Advertising Week New York, 6 Oct 2026",
-      "lines": [
-        {
-          "who": "AMAN",
-          "say": "पहला, Advantage Plus अब एक static image से video खुद बनाता है",
-          "show": "Pehla: Advantage+ ab [ek static image] se video khud banata hai.",
-          "beat": "one-receipt",
-          "pose": "point"
-        },
-        {
-          "who": "AMAN",
-          "say": "Generally available, Ads Manager के अंदर",
-          "show": "[Generally available], Ads Manager ke andar.",
-          "beat": "one-morph",
-          "pose": "idle"
-        },
-        {
-          "who": "FOUNDER",
-          "say": "Diwali का video, बिना shoot के?",
-          "show": "Diwali ka video, [bina shoot] ke?",
-          "pose": "think"
-        },
-        {
-          "who": "AMAN",
-          "say": "हाँ, Meta कहता है, साठ प्रतिशत time video पर जाता है",
-          "show": "Haan. Meta kehta hai, [60% time] video par jaata hai.",
-          "beat": "one-stat",
-          "pose": "point"
-        }
-      ]
-    },
-    {
-      "id": "two",
-      "label": "② GEM · META KA NAYA AD MODEL",
-      "tag": "official · 13 Oct 2026",
-      "source": "Source: engineering.fb.com (13 Oct) · Meta for Business (19 Oct 2026)",
-      "lines": [
-        {
-          "who": "AMAN",
-          "say": "दूसरा, Meta का नया ad model, GEM",
-          "show": "Doosra: Meta ka [naya ad model], GEM.",
-          "beat": "two-receipt",
-          "pose": "point"
-        },
-        {
-          "who": "AMAN",
-          "say": "Meta के numbers, अठारह दशमलव नौ प्रतिशत ज़्यादा conversions",
-          "show": "Meta ke numbers: [18.9% zyada conversions].",
-          "beat": "two-bars",
-          "pose": "thumbs"
-        },
-        {
-          "who": "AMAN",
-          "say": "Catch ये है, same creative के दस variations reward नहीं होते",
-          "show": "Catch ye hai: same creative ke 10 variations [reward nahi] hote.",
-          "beat": "two-catch",
-          "pose": "idle"
-        },
-        {
-          "who": "FOUNDER",
-          "say": "तो एक hero creative पर पूरा budget?",
-          "show": "Toh ek [hero creative] par poora budget?",
-          "pose": "think"
-        },
-        {
-          "who": "AMAN",
-          "say": "ग़लत, static, Reel, carousel, Hinglish, सब mix करो",
-          "show": "Galat. Static, Reel, carousel, Hinglish — [sab mix] karo.",
-          "beat": "two-mix",
-          "pose": "point"
-        }
-      ]
-    },
-    {
-      "id": "three",
-      "label": "③ WHATSAPP · FREE WINDOW",
-      "tag": "official · pricing page",
-      "source": "Source: developers.facebook.com/docs/whatsapp/pricing (accessed 22 Oct 2026)",
-      "lines": [
-        {
-          "who": "AMAN",
-          "say": "तीसरा, Click to WhatsApp reply के बाद free window अब सात दिन तक",
-          "show": "Teesra: Click-to-WhatsApp reply ke baad free window ab [7 din tak].",
-          "beat": "three-chat",
-          "pose": "point"
-        },
-        {
-          "who": "FOUNDER",
-          "say": "सात दिन free follow-up? Perfect",
-          "show": "7 din free follow-up? [Perfect].",
-          "pose": "wow"
-        },
-        {
-          "who": "AMAN",
-          "say": "पर एक October से service messages charge होते हैं, हज़ार free के बाद",
-          "show": "Par [1 Oct se] service messages charge hote hain, 1000 free ke baad.",
-          "beat": "three-bill",
-          "pose": "idle"
-        }
-      ]
-    },
-    {
-      "id": "bonus",
-      "label": "BONUS · DIWALI CPM",
-      "tag": "Criteo India · festive 2025",
-      "source": "Source: Criteo India festive 2025 report, via Social Samosa (18 Nov 2025)",
-      "lines": [
-        {
-          "who": "AMAN",
-          "say": "Bonus, पिछली Diwali CPM छब्बीस और CPC पैंतालीस प्रतिशत ऊपर गया",
-          "show": "Bonus: pichhli Diwali [CPM +26%] aur [CPC +45%] upar gaya.",
-          "beat": "bonus-chart",
-          "pose": "point"
-        },
-        {
-          "who": "AMAN",
-          "say": "तो creative अभी बनाओ, छह November Dhanteras से पहले",
-          "show": "Toh creative abhi banao — [6 Nov Dhanteras] se pehle.",
-          "beat": "bonus-date",
-          "pose": "thumbs"
-        },
-        {
-          "who": "FOUNDER",
-          "say": "ये सब detail में कहाँ मिलेगा?",
-          "show": "Ye sab detail mein [kahan milega]?",
-          "pose": "idle"
-        }
-      ]
-    },
-    {
-      "id": "cta",
-      "label": "COMMENT TO GET IT",
-      "tag": "free checklist",
-      "source": "",
-      "lines": [
-        {
-          "who": "AMAN",
-          "say": "Comment करो DIWALI, checklist और official links DM में",
-          "show": "Comment karo [\"DIWALI\"] — checklist aur official links [DM mein].",
-          "beat": "cta-comment",
-          "pose": "point"
-        },
-        {
-          "who": "AMAN",
-          "say": "Save करो, partner को भेजो",
-          "show": "[Save karo], partner ko bhejo.",
-          "beat": "cta-save",
-          "pose": "thumbs"
-        }
-      ]
-    }
+    {"id": "hook", "label": "", "tag": "", "source": "Diwali (Lakshmi Puja) Sun 8 Nov 2026 · drikpanchang.com", "lines": [
+      {"who": "AMAN", "say": "Founder जी, {days_hi} दिन में Diwali, और Meta ने चुपचाप तीन चीज़ें बदल दीं", "show": "Founder ji, [{days} din] mein Diwali — Meta ne [3 cheezein] badal di.", "beat": "hook-big", "pose": "point"},
+      {"who": "FOUNDER", "say": "अभी? मेरा festive budget तो set है", "show": "Abhi? Mera [festive budget] toh set hai.", "pose": "idle"},
+      {"who": "AMAN", "say": "तभी तो बता रहा हूँ, तीनों आपका पैसा बचाते हैं", "show": "Tabhi toh bata raha hoon — teeno aapka [paisa bachaate] hain.", "beat": "hook-chip", "pose": "thumbs"}
+    ]},
+    {"id": "one", "label": "① IMAGE → VIDEO", "tag": "official · GA", "source": "Source: Meta for Business · Advertising Week New York, 6 Oct 2026", "lines": [
+      {"who": "AMAN", "say": "पहला, Advantage Plus अब एक static image से video खुद बनाता है", "show": "Pehla: Advantage+ [ek static image] se video khud banata hai.", "beat": "one-receipt", "pose": "point"},
+      {"who": "FOUNDER", "say": "Diwali का video, बिना shoot के?", "show": "Diwali ka video, [bina shoot] ke?", "pose": "think"},
+      {"who": "AMAN", "say": "हाँ, और सबके Ads Manager में live है, अभी", "show": "Haan — aur sabke [Ads Manager] mein live hai, abhi.", "beat": "one-morph", "pose": "thumbs"}
+    ]},
+    {"id": "two", "label": "② GEM · META KA NAYA AD MODEL", "tag": "official · 13 Oct 2026", "source": "Source: engineering.fb.com (13 Oct) · Meta for Business (19 Oct 2026)", "lines": [
+      {"who": "AMAN", "say": "दूसरा, Meta का नया ad model, Gem", "show": "Doosra: Meta ka [naya ad model], GEM.", "beat": "two-receipt", "pose": "point"},
+      {"who": "AMAN", "say": "Meta के अपने numbers, eighteen point nine percent ज़्यादा conversions", "show": "Meta ke apne numbers: [18.9% zyada conversions].", "beat": "two-bars", "pose": "thumbs"},
+      {"who": "AMAN", "say": "Catch ये है, एक ही creative के दस variations कम reward होते हैं", "show": "Catch: ek hi creative ke 10 variations [kam reward] hote hain.", "beat": "two-catch", "pose": "idle"},
+      {"who": "FOUNDER", "say": "तो एक hero creative पर पूरा budget?", "show": "Toh ek [hero creative] par poora budget?", "pose": "think"},
+      {"who": "AMAN", "say": "ग़लत, static, Reel, carousel, Hinglish, सब mix करो", "show": "Galat. Static, Reel, carousel, Hinglish — [sab mix] karo.", "beat": "two-mix", "pose": "point"}
+    ]},
+    {"id": "three", "label": "③ WHATSAPP · PRICING", "tag": "official · pricing page", "source": "Source: developers.facebook.com/docs/whatsapp/pricing (accessed 22 Oct 2026)", "lines": [
+      {"who": "AMAN", "say": "तीसरा, एक October से service messages paid हैं, हज़ार free के बाद", "show": "Teesra: [1 Oct se] service messages paid — 1000 free ke baad.", "beat": "three-bill", "pose": "point"},
+      {"who": "FOUNDER", "say": "तो Diwali follow-ups का bill बढ़ेगा?", "show": "Toh Diwali follow-ups ka [bill badhega]?", "pose": "wow"},
+      {"who": "AMAN", "say": "नहीं, ad से आया customer, reply के बाद सात दिन तक free", "show": "Nahi. Ad se aaya customer — reply ke baad [7 din tak free].", "beat": "three-chat", "pose": "idle"}
+    ]},
+    {"id": "bonus", "label": "BONUS · DIWALI AD COSTS", "tag": "Criteo India · festive 2025", "source": "Source: Criteo India festive 2025 report, via Social Samosa (18 Nov 2025)", "lines": [
+      {"who": "AMAN", "say": "Bonus, पिछली Diwali India में ad costs ऊपर गए थे", "show": "Bonus: pichhli Diwali, India mein [ad costs upar] gaye the.", "beat": "bonus-receipt", "pose": "point"},
+      {"who": "AMAN", "say": "CPM twenty-six percent, और CPC forty-five percent ऊपर", "show": "[CPM +26%], aur [CPC +45%] upar.", "beat": "bonus-bars", "pose": "idle"},
+      {"who": "AMAN", "say": "तो creative अभी बनाओ, छह November Dhanteras से पहले", "show": "Toh creative abhi banao — [6 Nov Dhanteras] se pehle.", "beat": "bonus-date", "pose": "thumbs"},
+      {"who": "FOUNDER", "say": "ये सब detail में कहाँ मिलेगा?", "show": "Ye sab detail mein [kahan milega]?", "pose": "idle"}
+    ]},
+    {"id": "cta", "label": "COMMENT TO GET IT", "tag": "free checklist", "source": "", "lines": [
+      {"who": "AMAN", "say": "Comment करो DIWALI, checklist और official links DM में", "show": "Comment karo [\"DIWALI\"] — checklist + official links [DM mein].", "paid": {"say": "DM करो DIWALI, checklist और official links भेज दूँगा", "show": "DM karo [\"DIWALI\"] — checklist + official links [bhej dunga]."}, "beat": "cta-comment", "pose": "point"},
+      {"who": "AMAN", "say": "Save करो, partner को भेजो", "show": "[Save karo], partner ko bhejo.", "beat": "cta-save", "pose": "thumbs"}
+    ]}
   ]
 }

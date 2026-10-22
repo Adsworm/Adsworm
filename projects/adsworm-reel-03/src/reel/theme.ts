@@ -16,7 +16,7 @@ export const C = {
 };
 
 // Stage geometry (1080×1920). Captions sit inside the Reels-safe band (y 269–1248).
-export const CARD = {x: 60, y: 190, w: 960, h: 810, r: 44, pad: 44};
+export const CARD = {x: 60, y: 280, w: 960, h: 720, r: 44, pad: 44};
 export const BUBBLE = {x: 70, y: 1035, w: 940, minH: 150};
 export const PLATFORM = {y: 1690};
 export const FEET = 1712; // avatar feet line

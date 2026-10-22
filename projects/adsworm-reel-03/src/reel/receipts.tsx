@@ -5,13 +5,13 @@ import {C} from './theme';
 
 // Receipt primitives. Each takes `t` = frames since its beat (−1 = not yet) and reveals itself.
 
-export const Big: React.FC<{t: number; value: string; sub?: string; color?: string}> = ({t, value, sub, color = C.blue}) => {
+export const Big: React.FC<{t: number; value: string; sub?: string; color?: string; size?: number}> = ({t, value, sub, color = C.blue, size = 210}) => {
   if (t < 0) return null;
   const p = progress(t, 0, 14, ease.outExpo);
   return (
     <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', opacity: p, transform: `scale(${0.8 + p * 0.2})`}}>
-      <div style={{fontFamily: display, fontSize: 210, lineHeight: 0.9, color}}>{value}</div>
-      {sub ? <div style={{fontFamily: body, fontWeight: 600, fontSize: 36, color: C.muted, marginTop: 10}}>{sub}</div> : null}
+      <div style={{fontFamily: display, fontSize: size, lineHeight: 0.9, color}}>{value}</div>
+      {sub ? <div style={{fontFamily: body, fontWeight: 600, fontSize: 32, color: C.muted, marginTop: 8}}>{sub}</div> : null}
     </div>
   );
 };
@@ -31,8 +31,8 @@ export const Browser: React.FC<{t: number; url: string; title: string; date?: st
           {url}
         </div>
       </div>
-      <div style={{padding: '28px 30px 26px'}}>
-        <div style={{fontFamily: body, fontWeight: 800, fontSize: 40, lineHeight: 1.15, color: C.ink, letterSpacing: '-0.02em'}}>{title}</div>
+      <div style={{padding: '24px 30px 22px'}}>
+        <div style={{fontFamily: body, fontWeight: 800, fontSize: 36, lineHeight: 1.15, color: C.ink, letterSpacing: '-0.02em'}}>{title}</div>
         {date ? (
           <div style={{display: 'inline-flex', alignItems: 'center', gap: 10, marginTop: 18, padding: '8px 16px', borderRadius: 999, background: C.blueSoft, color: C.blue, fontSize: 24, fontWeight: 700, opacity: p2, transform: `translateY(${(1 - p2) * 10}px)`}}>
             <span style={{width: 10, height: 10, borderRadius: '50%', background: C.blue, display: 'inline-block'}} />
@@ -77,7 +77,7 @@ export const Chip: React.FC<{t: number; delay?: number; kind?: 'blue' | 'green' 
   const p = progress(t, delay, 12, ease.outExpo);
   const bg = {blue: C.blue, green: C.green, gold: C.gold, ink: C.ink}[kind];
   return (
-    <div style={{display: 'inline-flex', alignItems: 'center', gap: 10, padding: '12px 20px', borderRadius: 999, background: bg, color: '#fff', fontFamily: body, fontWeight: 700, fontSize: 26, whiteSpace: 'nowrap', opacity: p, transform: `scale(${0.8 + p * 0.2}) translateX(${(1 - p) * -14}px)`, transformOrigin: 'left center'}}>
+    <div style={{display: 'inline-flex', alignItems: 'center', gap: 10, padding: '12px 20px', borderRadius: 999, background: bg, color: '#fff', fontFamily: body, fontWeight: 700, fontSize: 28, whiteSpace: 'nowrap', opacity: p, transform: `scale(${0.8 + p * 0.2}) translateX(${(1 - p) * -14}px)`, transformOrigin: 'left center'}}>
       {children}
     </div>
   );
@@ -133,12 +133,12 @@ export const Bars: React.FC<{t: number; items: {label: string; value: number; co
         const p = progress(t, i * 8, 24, ease.outExpo);
         return (
           <div key={it.label} style={{opacity: Math.min(1, p * 2)}}>
-            <div style={{display: 'flex', justifyContent: 'space-between', fontSize: 26, fontWeight: 700, color: C.ink, marginBottom: 6}}>
+            <div style={{display: 'flex', justifyContent: 'space-between', fontSize: 30, fontWeight: 700, color: C.ink, marginBottom: 8}}>
               <span>{it.label}</span>
               <span style={{color: it.color ?? C.blue}}>+{(it.value * p).toFixed(it.value % 1 ? 1 : 0)}%</span>
             </div>
-            <div style={{height: 22, borderRadius: 11, background: '#EFEFEC'}}>
-              <div style={{height: '100%', width: `${(it.value / m) * 100 * p}%`, borderRadius: 11, background: it.color ?? C.blue}} />
+            <div style={{height: 26, borderRadius: 13, background: '#EFEFEC'}}>
+              <div style={{height: '100%', width: `${(it.value / m) * 100 * p}%`, borderRadius: 13, background: it.color ?? C.blue}} />
             </div>
           </div>
         );
@@ -164,7 +164,7 @@ export const CommentUI: React.FC<{t: number; name: string; handle: string; keywo
         </div>
         <div style={{padding: '10px 20px', borderRadius: 12, background: C.green, color: '#fff', fontWeight: 700, fontSize: 22}}>Following ✓</div>
       </div>
-      <div style={{marginTop: 26, display: 'flex', alignItems: 'center', gap: 18, height: 92, borderRadius: 999, border: `2px solid ${C.line}`, padding: '0 22px', background: '#fff'}}>
+      <div style={{marginTop: 22, display: 'flex', alignItems: 'center', gap: 18, height: 88, borderRadius: 999, border: `2px solid ${C.line}`, padding: '0 22px', background: '#fff'}}>
         <div style={{width: 48, height: 48, borderRadius: '50%', background: '#E6E6E2'}} />
         <div style={{flex: 1, fontSize: 34, fontWeight: 700, color: typed ? C.ink : C.muted}}>
           {typed || 'Add a comment…'}
@@ -184,7 +184,7 @@ export const Col: React.FC<{gap?: number; children: React.ReactNode; style?: Rea
   <div style={{display: 'flex', flexDirection: 'column', gap, ...style}}>{children}</div>
 );
 
-export const Note: React.FC<{t: number; delay?: number; children: React.ReactNode; size?: number}> = ({t, delay = 0, children, size = 30}) => {
+export const Note: React.FC<{t: number; delay?: number; children: React.ReactNode; size?: number}> = ({t, delay = 0, children, size = 34}) => {
   if (t < delay) return null;
   const p = progress(t, delay, 12, ease.outExpo);
   return <div style={{fontFamily: body, fontWeight: 800, fontSize: size, lineHeight: 1.2, color: C.ink, opacity: p, transform: `translateY(${(1 - p) * 12}px)`}}>{children}</div>;
@@ -202,13 +202,13 @@ export const Chat: React.FC<{t: number; brand: string; adLine: string; reply: st
     <div style={{width: w, borderRadius: 28, background: '#E7E0D4', padding: 22, fontFamily: body, display: 'flex', flexDirection: 'column', gap: 14}}>
       <div style={{alignSelf: 'flex-start', maxWidth: '82%', background: '#fff', borderRadius: '4px 18px 18px 18px', padding: '14px 18px', opacity: p1, transform: `translateY(${(1 - p1) * 14}px)`}}>
         <div style={{height: 110, borderRadius: 12, background: 'linear-gradient(160deg, #FF9A5A, #D63AC1 55%, #4F46E5)', marginBottom: 10}} />
-        <div style={{fontWeight: 800, fontSize: 24, color: C.ink}}>{brand}</div>
-        <div style={{fontSize: 22, color: C.muted}}>{adLine}</div>
+        <div style={{fontWeight: 800, fontSize: 27, color: C.ink}}>{brand}</div>
+        <div style={{fontSize: 24, color: C.muted}}>{adLine}</div>
       </div>
-      <div style={{alignSelf: 'flex-end', maxWidth: '82%', background: '#D9FDD3', borderRadius: '18px 4px 18px 18px', padding: '14px 18px', fontSize: 26, color: C.ink, fontWeight: 600, opacity: p2, transform: `translateY(${(1 - p2) * 14}px)`}}>
+      <div style={{alignSelf: 'flex-end', maxWidth: '82%', background: '#D9FDD3', borderRadius: '18px 4px 18px 18px', padding: '14px 18px', fontSize: 29, color: C.ink, fontWeight: 600, opacity: p2, transform: `translateY(${(1 - p2) * 14}px)`}}>
         {reply}
       </div>
-      <div style={{alignSelf: 'center', padding: '10px 20px', borderRadius: 999, background: C.green, color: '#fff', fontWeight: 800, fontSize: 24, opacity: p3, transform: `scale(${0.85 + p3 * 0.15})`}}>{pill}</div>
+      <div style={{alignSelf: 'center', padding: '10px 20px', borderRadius: 999, background: C.green, color: '#fff', fontWeight: 800, fontSize: 26, opacity: p3, transform: `scale(${0.85 + p3 * 0.15})`}}>{pill}</div>
     </div>
   );
 };
@@ -248,7 +248,7 @@ export const PdfCard: React.FC<{t: number; title: string; sub: string; lines?: n
   const p = progress(t, 0, 16, ease.outExpo);
   return (
     <div style={{display: 'flex', alignItems: 'center', gap: 28, opacity: p, transform: `translateY(${(1 - p) * 20}px)`, fontFamily: body}}>
-      <div style={{width: 190, height: 250, borderRadius: 16, background: '#fff', border: `2px solid ${C.line}`, boxShadow: '0 16px 36px rgba(13,19,32,0.12)', overflow: 'hidden', position: 'relative', transform: 'rotate(-4deg)'}}>
+      <div style={{width: 160, height: 200, borderRadius: 16, background: '#fff', border: `2px solid ${C.line}`, boxShadow: '0 16px 36px rgba(13,19,32,0.12)', overflow: 'hidden', position: 'relative', transform: 'rotate(-4deg)'}}>
         <div style={{height: 54, background: C.blue, color: '#fff', fontWeight: 800, fontSize: 15, letterSpacing: '0.1em', display: 'flex', alignItems: 'center', padding: '0 14px'}}>META × DIWALI</div>
         <div style={{padding: 14, display: 'flex', flexDirection: 'column', gap: 10}}>
           {Array.from({length: lines}, (_, i) => (

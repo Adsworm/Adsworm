@@ -3,3 +3,4 @@ out
 .remotion
 public/voice.wav
 public/voice/
+public/voice-*/
