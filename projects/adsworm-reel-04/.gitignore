@@ -1,0 +1,7 @@
+node_modules
+out
+.remotion
+public/voice.wav
+public/voice/
+public/voice-*/
+public/sfx.wav

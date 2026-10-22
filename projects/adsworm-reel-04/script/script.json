@@ -1,0 +1,23 @@
+{
+  "title": "Meta quietly changed 3 things before Q4",
+  "voices": {
+    "AMAN": {"name": "Holden", "voice_type": "preset", "voice_id": "3c9d6053-6334-592c-8997-4e325286af3f"},
+    "ALGO": {"name": "Anika (Indian English)", "voice_type": "preset", "voice_id": "4b2dc8f3-5e8b-59a9-9a5c-85620e44c033"}
+  },
+  "vars": {"countdown": {"to": "2026-11-27", "label": "BLACK FRIDAY"}},
+  "lines": [
+    {"who": "ALGO", "room": "hook",  "say": "I changed three things. Nobody told you.", "hi": ["three things"]},
+    {"who": "AMAN", "room": "hook",  "say": "And your CPA will feel it by Black Friday. Here's the fix.", "hi": ["CPA", "Black Friday"]},
+    {"who": "AMAN", "room": "one",   "say": "One. Advantage Plus now turns one static image into a video ad.", "hi": ["static image", "video ad"]},
+    {"who": "ALGO", "room": "one",   "say": "No shoot needed.", "hi": ["No shoot"], "snap": "says"},
+    {"who": "AMAN", "room": "one",   "say": "So your best static is now your cheapest video.", "hi": ["cheapest video"], "snap": "translates"},
+    {"who": "AMAN", "room": "two",   "say": "Two. Meta's new ad model, GEM: eighteen point nine percent more conversions.", "hi": ["GEM", "eighteen point nine percent"]},
+    {"who": "ALGO", "room": "two",   "say": "But I reward variety.", "hi": ["variety"], "snap": "says"},
+    {"who": "AMAN", "room": "two",   "say": "So ship twenty different creatives, not three versions of one.", "hi": ["twenty different creatives"], "snap": "translates"},
+    {"who": "AMAN", "room": "three", "say": "Three. WhatsApp service replies now cost money after a thousand free a month.", "hi": ["cost money"]},
+    {"who": "ALGO", "room": "three", "say": "Unless the chat starts from my ad.", "hi": ["my ad"], "snap": "says"},
+    {"who": "AMAN", "room": "three", "say": "Then it can stay free for up to seven days.", "hi": ["seven days"], "snap": "translates"},
+    {"who": "AMAN", "room": "cta",   "say": "Comment Q4. I'll send the checklist with every source.", "hi": ["Q4"]},
+    {"who": "ALGO", "room": "cta",   "say": "Before I change again.", "hi": ["change again"]}
+  ]
+}
