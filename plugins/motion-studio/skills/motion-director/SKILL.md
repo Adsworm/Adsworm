@@ -28,6 +28,7 @@ Fill `brief.md` from `references/brief-template.md`. Ask once, in one message, o
 
 | Job | Engine | Why |
 |---|---|---|
+| Educational / news reel for a business audience (organic Instagram, watch time + comments) | **`explainer-module`** (this plugin) | Voice-led dialogue + receipts holds retention; kinetic type alone gets skipped |
 | Kinetic type, product/offer ads, stats, end cards, statics, variant batches | **`remotion-ad-kit`** (this plugin) | Proven template, all placements from one prop set, QA + variants built in |
 | Launch film from a URL, HTML/GSAP-heavy, or the team is 4+ people without a Remotion license | **HyperFrames** (`/hyperframes`, `/product-launch-video`, `/motion-graphics`) | Apache-2.0, no per-render fee |
 | Bespoke Remotion scene beyond the kit (maps, 3D, audio-reactive, charts) | Remotion skills (`/remotion-create`, `remotion-best-practices`) | Deepest component ecosystem |

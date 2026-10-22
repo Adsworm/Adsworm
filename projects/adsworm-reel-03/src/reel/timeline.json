@@ -1,0 +1,1330 @@
+{
+ "fps": 30,
+ "durationInFrames": 2244,
+ "voices": {
+  "AMAN": "hi-IN-MadhurNeural",
+  "FOUNDER": "hi-IN-SwaraNeural"
+ },
+ "brand": {
+  "footer": "Aman Rai  |  Founder, ADSWORM",
+  "names": {
+   "AMAN": "AMAN",
+   "FOUNDER": "FOUNDER"
+  },
+  "side": {
+   "AMAN": "right",
+   "FOUNDER": "left"
+  }
+ },
+ "lines": [
+  {
+   "n": 1,
+   "section": "hook",
+   "who": "AMAN",
+   "show": "Founder ji, Diwali mein 17 din , aur Meta ne 3 cheezein badal di.",
+   "pills": [
+    [
+     4,
+     6
+    ],
+    [
+     10,
+     12
+    ]
+   ],
+   "beat": "hook-big",
+   "pose": "point",
+   "start": 0.12,
+   "end": 4.296,
+   "words": [
+    {
+     "t": 0.206,
+     "d": 0.357,
+     "w": "Founder"
+    },
+    {
+     "t": 0.563,
+     "d": 0.214,
+     "w": "जी"
+    },
+    {
+     "t": 0.831,
+     "d": 0.348,
+     "w": "Diwali"
+    },
+    {
+     "t": 1.197,
+     "d": 0.098,
+     "w": "में"
+    },
+    {
+     "t": 1.295,
+     "d": 0.33,
+     "w": "सत्रह"
+    },
+    {
+     "t": 1.625,
+     "d": 0.205,
+     "w": "दिन"
+    },
+    {
+     "t": 2.027,
+     "d": 0.134,
+     "w": "और"
+    },
+    {
+     "t": 2.161,
+     "d": 0.259,
+     "w": "Meta"
+    },
+    {
+     "t": 2.42,
+     "d": 0.125,
+     "w": "ने"
+    },
+    {
+     "t": 2.572,
+     "d": 0.205,
+     "w": "तीन"
+    },
+    {
+     "t": 2.795,
+     "d": 0.286,
+     "w": "चीज़ें"
+    },
+    {
+     "t": 3.081,
+     "d": 0.259,
+     "w": "बदल"
+    },
+    {
+     "t": 3.34,
+     "d": 0.25,
+     "w": "दीं"
+    }
+   ]
+  },
+  {
+   "n": 2,
+   "section": "hook",
+   "who": "FOUNDER",
+   "show": "Abhi? Mera festive budget toh set hai.",
+   "pills": [
+    [
+     2,
+     4
+    ]
+   ],
+   "beat": null,
+   "pose": "idle",
+   "start": 4.456,
+   "end": 7.6,
+   "words": [
+    {
+     "t": 4.556,
+     "d": 0.411,
+     "w": "अभी"
+    },
+    {
+     "t": 5.551,
+     "d": 0.283,
+     "w": "मेरा"
+    },
+    {
+     "t": 5.842,
+     "d": 0.342,
+     "w": "festive"
+    },
+    {
+     "t": 6.193,
+     "d": 0.257,
+     "w": "budget"
+    },
+    {
+     "t": 6.458,
+     "d": 0.086,
+     "w": "तो"
+    },
+    {
+     "t": 6.552,
+     "d": 0.231,
+     "w": "set"
+    },
+    {
+     "t": 6.792,
+     "d": 0.205,
+     "w": "है"
+    }
+   ]
+  },
+  {
+   "n": 3,
+   "section": "hook",
+   "who": "AMAN",
+   "show": "Isiliye. Teeno aapka paisa bachaate hain.",
+   "pills": [
+    [
+     3,
+     5
+    ]
+   ],
+   "beat": "hook-chip",
+   "pose": "thumbs",
+   "start": 7.76,
+   "end": 10.856,
+   "words": [
+    {
+     "t": 7.846,
+     "d": 0.402,
+     "w": "इसीलिए"
+    },
+    {
+     "t": 8.301,
+     "d": 0.304,
+     "w": "तीनों"
+    },
+    {
+     "t": 8.658,
+     "d": 0.295,
+     "w": "आपका"
+    },
+    {
+     "t": 8.98,
+     "d": 0.277,
+     "w": "पैसा"
+    },
+    {
+     "t": 9.256,
+     "d": 0.375,
+     "w": "बचाते"
+    },
+    {
+     "t": 9.649,
+     "d": 0.554,
+     "w": "हैं"
+    }
+   ]
+  },
+  {
+   "n": 4,
+   "section": "one",
+   "who": "AMAN",
+   "show": "Pehla: Advantage+ ab ek static image se video khud banata hai.",
+   "pills": [
+    [
+     3,
+     6
+    ]
+   ],
+   "beat": "one-receipt",
+   "pose": "point",
+   "start": 11.176,
+   "end": 15.784,
+   "words": [
+    {
+     "t": 11.262,
+     "d": 0.295,
+     "w": "पहला"
+    },
+    {
+     "t": 11.69,
+     "d": 0.491,
+     "w": "Advantage"
+    },
+    {
+     "t": 12.19,
+     "d": 0.277,
+     "w": "Plus"
+    },
+    {
+     "t": 12.512,
+     "d": 0.134,
+     "w": "अब"
+    },
+    {
+     "t": 12.708,
+     "d": 0.161,
+     "w": "एक"
+    },
+    {
+     "t": 12.869,
+     "d": 0.348,
+     "w": "static"
+    },
+    {
+     "t": 13.244,
+     "d": 0.259,
+     "w": "image"
+    },
+    {
+     "t": 13.512,
+     "d": 0.152,
+     "w": "से"
+    },
+    {
+     "t": 13.663,
+     "d": 0.348,
+     "w": "video"
+    },
+    {
+     "t": 14.012,
+     "d": 0.205,
+     "w": "खुद"
+    },
+    {
+     "t": 14.217,
+     "d": 0.357,
+     "w": "बनाता"
+    },
+    {
+     "t": 14.574,
+     "d": 0.232,
+     "w": "है"
+    }
+   ]
+  },
+  {
+   "n": 5,
+   "section": "one",
+   "who": "AMAN",
+   "show": "Generally available , Ads Manager ke andar.",
+   "pills": [
+    [
+     0,
+     2
+    ]
+   ],
+   "beat": "one-morph",
+   "pose": "idle",
+   "start": 15.944,
+   "end": 18.944,
+   "words": [
+    {
+     "t": 16.03,
+     "d": 0.446,
+     "w": "Generally"
+    },
+    {
+     "t": 16.494,
+     "d": 0.509,
+     "w": "available"
+    },
+    {
+     "t": 17.146,
+     "d": 0.223,
+     "w": "Ads"
+    },
+    {
+     "t": 17.369,
+     "d": 0.393,
+     "w": "Manager"
+    },
+    {
+     "t": 17.762,
+     "d": 0.134,
+     "w": "के"
+    },
+    {
+     "t": 17.923,
+     "d": 0.286,
+     "w": "अंदर"
+    }
+   ]
+  },
+  {
+   "n": 6,
+   "section": "one",
+   "who": "FOUNDER",
+   "show": "Diwali ka video, bina shoot ke?",
+   "pills": [
+    [
+     3,
+     5
+    ]
+   ],
+   "beat": null,
+   "pose": "think",
+   "start": 19.104,
+   "end": 21.504,
+   "words": [
+    {
+     "t": 19.204,
+     "d": 0.411,
+     "w": "Diwali"
+    },
+    {
+     "t": 19.623,
+     "d": 0.12,
+     "w": "का"
+    },
+    {
+     "t": 19.752,
+     "d": 0.351,
+     "w": "video"
+    },
+    {
+     "t": 20.189,
+     "d": 0.291,
+     "w": "बिना"
+    },
+    {
+     "t": 20.488,
+     "d": 0.231,
+     "w": "shoot"
+    },
+    {
+     "t": 20.728,
+     "d": 0.188,
+     "w": "के"
+    }
+   ]
+  },
+  {
+   "n": 7,
+   "section": "one",
+   "who": "AMAN",
+   "show": "Haan. Meta kehta hai, 60% time video par jaata hai.",
+   "pills": [
+    [
+     4,
+     6
+    ]
+   ],
+   "beat": "one-stat",
+   "pose": "point",
+   "start": 21.664,
+   "end": 25.744,
+   "words": [
+    {
+     "t": 21.75,
+     "d": 0.179,
+     "w": "हाँ"
+    },
+    {
+     "t": 22.009,
+     "d": 0.268,
+     "w": "Meta"
+    },
+    {
+     "t": 22.277,
+     "d": 0.312,
+     "w": "कहता"
+    },
+    {
+     "t": 22.589,
+     "d": 0.179,
+     "w": "है"
+    },
+    {
+     "t": 22.937,
+     "d": 0.259,
+     "w": "साठ"
+    },
+    {
+     "t": 23.214,
+     "d": 0.42,
+     "w": "प्रतिशत"
+    },
+    {
+     "t": 23.634,
+     "d": 0.214,
+     "w": "time"
+    },
+    {
+     "t": 23.848,
+     "d": 0.268,
+     "w": "video"
+    },
+    {
+     "t": 24.116,
+     "d": 0.161,
+     "w": "पर"
+    },
+    {
+     "t": 24.276,
+     "d": 0.277,
+     "w": "जाता"
+    },
+    {
+     "t": 24.553,
+     "d": 0.241,
+     "w": "है"
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "section": "two",
+   "who": "AMAN",
+   "show": "Doosra: Meta ka naya ad model , GEM.",
+   "pills": [
+    [
+     3,
+     6
+    ]
+   ],
+   "beat": "two-receipt",
+   "pose": "point",
+   "start": 26.064,
+   "end": 28.848,
+   "words": [
+    {
+     "t": 26.15,
+     "d": 0.375,
+     "w": "दूसरा"
+    },
+    {
+     "t": 26.56,
+     "d": 0.277,
+     "w": "Meta"
+    },
+    {
+     "t": 26.846,
+     "d": 0.134,
+     "w": "का"
+    },
+    {
+     "t": 26.98,
+     "d": 0.259,
+     "w": "नया"
+    },
+    {
+     "t": 27.302,
+     "d": 0.161,
+     "w": "ad"
+    },
+    {
+     "t": 27.462,
+     "d": 0.366,
+     "w": "model"
+    },
+    {
+     "t": 27.882,
+     "d": 0.312,
+     "w": "GEM"
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "section": "two",
+   "who": "AMAN",
+   "show": "Meta ke numbers: 18.9% zyada conversions .",
+   "pills": [
+    [
+     3,
+     6
+    ]
+   ],
+   "beat": "two-bars",
+   "pose": "thumbs",
+   "start": 29.008,
+   "end": 32.992,
+   "words": [
+    {
+     "t": 29.094,
+     "d": 0.241,
+     "w": "Meta"
+    },
+    {
+     "t": 29.344,
+     "d": 0.134,
+     "w": "के"
+    },
+    {
+     "t": 29.478,
+     "d": 0.429,
+     "w": "numbers"
+    },
+    {
+     "t": 30.049,
+     "d": 0.357,
+     "w": "अठारह"
+    },
+    {
+     "t": 30.406,
+     "d": 0.446,
+     "w": "दशमलव"
+    },
+    {
+     "t": 30.853,
+     "d": 0.179,
+     "w": "नौ"
+    },
+    {
+     "t": 31.031,
+     "d": 0.42,
+     "w": "प्रतिशत"
+    },
+    {
+     "t": 31.451,
+     "d": 0.286,
+     "w": "ज़्यादा"
+    },
+    {
+     "t": 31.737,
+     "d": 0.643,
+     "w": "conversions"
+    }
+   ]
+  },
+  {
+   "n": 10,
+   "section": "two",
+   "who": "AMAN",
+   "show": "Catch ye hai: same creative ke 10 variations reward nahi hote.",
+   "pills": [
+    [
+     8,
+     10
+    ]
+   ],
+   "beat": "two-catch",
+   "pose": "idle",
+   "start": 33.152,
+   "end": 37.256,
+   "words": [
+    {
+     "t": 33.238,
+     "d": 0.232,
+     "w": "Catch"
+    },
+    {
+     "t": 33.47,
+     "d": 0.152,
+     "w": "ये"
+    },
+    {
+     "t": 33.622,
+     "d": 0.205,
+     "w": "है"
+    },
+    {
+     "t": 33.961,
+     "d": 0.295,
+     "w": "same"
+    },
+    {
+     "t": 34.265,
+     "d": 0.393,
+     "w": "creative"
+    },
+    {
+     "t": 34.657,
+     "d": 0.116,
+     "w": "के"
+    },
+    {
+     "t": 34.773,
+     "d": 0.25,
+     "w": "दस"
+    },
+    {
+     "t": 35.023,
+     "d": 0.562,
+     "w": "variations"
+    },
+    {
+     "t": 35.631,
+     "d": 0.366,
+     "w": "reward"
+    },
+    {
+     "t": 35.997,
+     "d": 0.223,
+     "w": "नहीं"
+    },
+    {
+     "t": 36.22,
+     "d": 0.304,
+     "w": "होते"
+    }
+   ]
+  },
+  {
+   "n": 11,
+   "section": "two",
+   "who": "FOUNDER",
+   "show": "Toh ek hero creative par poora budget?",
+   "pills": [
+    [
+     2,
+     4
+    ]
+   ],
+   "beat": null,
+   "pose": "think",
+   "start": 37.416,
+   "end": 39.912,
+   "words": [
+    {
+     "t": 37.516,
+     "d": 0.188,
+     "w": "तो"
+    },
+    {
+     "t": 37.713,
+     "d": 0.188,
+     "w": "एक"
+    },
+    {
+     "t": 37.91,
+     "d": 0.24,
+     "w": "hero"
+    },
+    {
+     "t": 38.158,
+     "d": 0.351,
+     "w": "creative"
+    },
+    {
+     "t": 38.518,
+     "d": 0.128,
+     "w": "पर"
+    },
+    {
+     "t": 38.655,
+     "d": 0.265,
+     "w": "पूरा"
+    },
+    {
+     "t": 38.929,
+     "d": 0.402,
+     "w": "budget"
+    }
+   ]
+  },
+  {
+   "n": 12,
+   "section": "two",
+   "who": "AMAN",
+   "show": "Galat. Static, Reel, carousel, Hinglish — sab mix karo.",
+   "pills": [
+    [
+     6,
+     8
+    ]
+   ],
+   "beat": "two-mix",
+   "pose": "point",
+   "start": 40.072,
+   "end": 43.768,
+   "words": [
+    {
+     "t": 40.158,
+     "d": 0.232,
+     "w": "ग़लत"
+    },
+    {
+     "t": 40.426,
+     "d": 0.357,
+     "w": "static"
+    },
+    {
+     "t": 40.845,
+     "d": 0.25,
+     "w": "Reel"
+    },
+    {
+     "t": 41.193,
+     "d": 0.473,
+     "w": "carousel"
+    },
+    {
+     "t": 41.81,
+     "d": 0.446,
+     "w": "Hinglish"
+    },
+    {
+     "t": 42.363,
+     "d": 0.214,
+     "w": "सब"
+    },
+    {
+     "t": 42.577,
+     "d": 0.232,
+     "w": "mix"
+    },
+    {
+     "t": 42.809,
+     "d": 0.25,
+     "w": "करो"
+    }
+   ]
+  },
+  {
+   "n": 13,
+   "section": "three",
+   "who": "AMAN",
+   "show": "Teesra: Click-to-WhatsApp reply ke baad free window ab 7 din tak .",
+   "pills": [
+    [
+     8,
+     11
+    ]
+   ],
+   "beat": "three-chat",
+   "pose": "point",
+   "start": 44.088,
+   "end": 48.096,
+   "words": [
+    {
+     "t": 44.174,
+     "d": 0.339,
+     "w": "तीसरा"
+    },
+    {
+     "t": 44.593,
+     "d": 0.152,
+     "w": "Click"
+    },
+    {
+     "t": 44.745,
+     "d": 0.089,
+     "w": "to"
+    },
+    {
+     "t": 44.843,
+     "d": 0.429,
+     "w": "WhatsApp"
+    },
+    {
+     "t": 45.281,
+     "d": 0.339,
+     "w": "reply"
+    },
+    {
+     "t": 45.629,
+     "d": 0.116,
+     "w": "के"
+    },
+    {
+     "t": 45.745,
+     "d": 0.25,
+     "w": "बाद"
+    },
+    {
+     "t": 46.022,
+     "d": 0.223,
+     "w": "free"
+    },
+    {
+     "t": 46.245,
+     "d": 0.339,
+     "w": "window"
+    },
+    {
+     "t": 46.629,
+     "d": 0.134,
+     "w": "अब"
+    },
+    {
+     "t": 46.772,
+     "d": 0.241,
+     "w": "सात"
+    },
+    {
+     "t": 47.022,
+     "d": 0.152,
+     "w": "दिन"
+    },
+    {
+     "t": 47.209,
+     "d": 0.205,
+     "w": "तक"
+    }
+   ]
+  },
+  {
+   "n": 14,
+   "section": "three",
+   "who": "FOUNDER",
+   "show": "7 din free follow-up? Perfect .",
+   "pills": [
+    [
+     4,
+     5
+    ]
+   ],
+   "beat": null,
+   "pose": "wow",
+   "start": 48.256,
+   "end": 51.256,
+   "words": [
+    {
+     "t": 48.356,
+     "d": 0.411,
+     "w": "सात"
+    },
+    {
+     "t": 48.775,
+     "d": 0.137,
+     "w": "दिन"
+    },
+    {
+     "t": 48.921,
+     "d": 0.154,
+     "w": "free"
+    },
+    {
+     "t": 49.084,
+     "d": 0.411,
+     "w": "follow-up"
+    },
+    {
+     "t": 50.07,
+     "d": 0.574,
+     "w": "Perfect"
+    }
+   ]
+  },
+  {
+   "n": 15,
+   "section": "three",
+   "who": "AMAN",
+   "show": "Par 1 Oct se service messages charge hote hain, 1000 free ke baad.",
+   "pills": [
+    [
+     1,
+     4
+    ]
+   ],
+   "beat": "three-bill",
+   "pose": "idle",
+   "start": 51.416,
+   "end": 55.664,
+   "words": [
+    {
+     "t": 51.502,
+     "d": 0.125,
+     "w": "पर"
+    },
+    {
+     "t": 51.707,
+     "d": 0.161,
+     "w": "एक"
+    },
+    {
+     "t": 51.868,
+     "d": 0.455,
+     "w": "October"
+    },
+    {
+     "t": 52.323,
+     "d": 0.152,
+     "w": "से"
+    },
+    {
+     "t": 52.475,
+     "d": 0.384,
+     "w": "service"
+    },
+    {
+     "t": 52.859,
+     "d": 0.42,
+     "w": "messages"
+    },
+    {
+     "t": 53.279,
+     "d": 0.339,
+     "w": "charge"
+    },
+    {
+     "t": 53.618,
+     "d": 0.232,
+     "w": "होते"
+    },
+    {
+     "t": 53.859,
+     "d": 0.179,
+     "w": "हैं"
+    },
+    {
+     "t": 54.153,
+     "d": 0.268,
+     "w": "हज़ार"
+    },
+    {
+     "t": 54.421,
+     "d": 0.179,
+     "w": "free"
+    },
+    {
+     "t": 54.6,
+     "d": 0.134,
+     "w": "के"
+    },
+    {
+     "t": 54.734,
+     "d": 0.241,
+     "w": "बाद"
+    }
+   ]
+  },
+  {
+   "n": 16,
+   "section": "bonus",
+   "who": "AMAN",
+   "show": "Bonus: pichhli Diwali CPM +26% aur CPC +45% upar gaya.",
+   "pills": [
+    [
+     3,
+     5
+    ],
+    [
+     6,
+     8
+    ]
+   ],
+   "beat": "bonus-chart",
+   "pose": "point",
+   "start": 55.984,
+   "end": 61.024,
+   "words": [
+    {
+     "t": 56.07,
+     "d": 0.393,
+     "w": "Bonus"
+    },
+    {
+     "t": 56.57,
+     "d": 0.295,
+     "w": "पिछली"
+    },
+    {
+     "t": 56.864,
+     "d": 0.33,
+     "w": "Diwali"
+    },
+    {
+     "t": 57.195,
+     "d": 0.562,
+     "w": "CPM"
+    },
+    {
+     "t": 57.757,
+     "d": 0.446,
+     "w": "छब्बीस"
+    },
+    {
+     "t": 58.248,
+     "d": 0.152,
+     "w": "और"
+    },
+    {
+     "t": 58.4,
+     "d": 0.446,
+     "w": "CPC"
+    },
+    {
+     "t": 58.855,
+     "d": 0.518,
+     "w": "पैंतालीस"
+    },
+    {
+     "t": 59.373,
+     "d": 0.393,
+     "w": "प्रतिशत"
+    },
+    {
+     "t": 59.811,
+     "d": 0.223,
+     "w": "ऊपर"
+    },
+    {
+     "t": 60.034,
+     "d": 0.268,
+     "w": "गया"
+    }
+   ]
+  },
+  {
+   "n": 17,
+   "section": "bonus",
+   "who": "AMAN",
+   "show": "Toh creative abhi banao — 6 Nov Dhanteras se pehle.",
+   "pills": [
+    [
+     5,
+     8
+    ]
+   ],
+   "beat": "bonus-date",
+   "pose": "thumbs",
+   "start": 61.184,
+   "end": 64.736,
+   "words": [
+    {
+     "t": 61.27,
+     "d": 0.098,
+     "w": "तो"
+    },
+    {
+     "t": 61.368,
+     "d": 0.393,
+     "w": "creative"
+    },
+    {
+     "t": 61.77,
+     "d": 0.223,
+     "w": "अभी"
+    },
+    {
+     "t": 62.002,
+     "d": 0.348,
+     "w": "बनाओ"
+    },
+    {
+     "t": 62.529,
+     "d": 0.161,
+     "w": "छह"
+    },
+    {
+     "t": 62.689,
+     "d": 0.446,
+     "w": "November"
+    },
+    {
+     "t": 63.136,
+     "d": 0.438,
+     "w": "Dhanteras"
+    },
+    {
+     "t": 63.573,
+     "d": 0.107,
+     "w": "से"
+    },
+    {
+     "t": 63.68,
+     "d": 0.321,
+     "w": "पहले"
+    }
+   ]
+  },
+  {
+   "n": 18,
+   "section": "bonus",
+   "who": "FOUNDER",
+   "show": "Ye sab detail mein kahan milega ?",
+   "pills": [
+    [
+     4,
+     6
+    ]
+   ],
+   "beat": null,
+   "pose": "idle",
+   "start": 64.896,
+   "end": 66.96,
+   "words": [
+    {
+     "t": 64.996,
+     "d": 0.205,
+     "w": "ये"
+    },
+    {
+     "t": 65.21,
+     "d": 0.188,
+     "w": "सब"
+    },
+    {
+     "t": 65.407,
+     "d": 0.291,
+     "w": "detail"
+    },
+    {
+     "t": 65.707,
+     "d": 0.086,
+     "w": "में"
+    },
+    {
+     "t": 65.801,
+     "d": 0.188,
+     "w": "कहाँ"
+    },
+    {
+     "t": 65.998,
+     "d": 0.377,
+     "w": "मिलेगा"
+    }
+   ]
+  },
+  {
+   "n": 19,
+   "section": "cta",
+   "who": "AMAN",
+   "show": "Comment karo \"DIWALI\" — checklist aur official links DM mein .",
+   "pills": [
+    [
+     2,
+     3
+    ],
+    [
+     8,
+     10
+    ]
+   ],
+   "beat": "cta-comment",
+   "pose": "point",
+   "start": 67.28,
+   "end": 70.832,
+   "words": [
+    {
+     "t": 67.366,
+     "d": 0.286,
+     "w": "Comment"
+    },
+    {
+     "t": 67.669,
+     "d": 0.232,
+     "w": "करो"
+    },
+    {
+     "t": 67.901,
+     "d": 0.393,
+     "w": "DIWALI"
+    },
+    {
+     "t": 68.446,
+     "d": 0.339,
+     "w": "checklist"
+    },
+    {
+     "t": 68.83,
+     "d": 0.125,
+     "w": "और"
+    },
+    {
+     "t": 69.026,
+     "d": 0.348,
+     "w": "official"
+    },
+    {
+     "t": 69.375,
+     "d": 0.259,
+     "w": "links"
+    },
+    {
+     "t": 69.642,
+     "d": 0.277,
+     "w": "DM"
+    },
+    {
+     "t": 69.919,
+     "d": 0.241,
+     "w": "में"
+    }
+   ]
+  },
+  {
+   "n": 20,
+   "section": "cta",
+   "who": "AMAN",
+   "show": "Save karo , partner ko bhejo.",
+   "pills": [
+    [
+     0,
+     2
+    ]
+   ],
+   "beat": "cta-save",
+   "pose": "thumbs",
+   "start": 70.992,
+   "end": 73.272,
+   "words": [
+    {
+     "t": 71.078,
+     "d": 0.268,
+     "w": "Save"
+    },
+    {
+     "t": 71.346,
+     "d": 0.268,
+     "w": "करो"
+    },
+    {
+     "t": 71.667,
+     "d": 0.393,
+     "w": "partner"
+    },
+    {
+     "t": 72.06,
+     "d": 0.134,
+     "w": "को"
+    },
+    {
+     "t": 72.194,
+     "d": 0.339,
+     "w": "भेजो"
+    }
+   ]
+  }
+ ],
+ "sections": [
+  {
+   "id": "hook",
+   "label": "",
+   "tag": "",
+   "source": "Diwali (Lakshmi Puja) Sun 8 Nov 2026 · drikpanchang.com",
+   "start": 0.12,
+   "end": 10.856
+  },
+  {
+   "id": "one",
+   "label": "① IMAGE → VIDEO",
+   "tag": "official · GA",
+   "source": "Source: Meta for Business · Advertising Week New York, 6 Oct 2026",
+   "start": 11.176,
+   "end": 25.744
+  },
+  {
+   "id": "two",
+   "label": "② GEM · META KA NAYA AD MODEL",
+   "tag": "official · 13 Oct 2026",
+   "source": "Source: engineering.fb.com (13 Oct) · Meta for Business (19 Oct 2026)",
+   "start": 26.064,
+   "end": 43.768
+  },
+  {
+   "id": "three",
+   "label": "③ WHATSAPP · FREE WINDOW",
+   "tag": "official · pricing page",
+   "source": "Source: developers.facebook.com/docs/whatsapp/pricing (accessed 22 Oct 2026)",
+   "start": 44.088,
+   "end": 55.664
+  },
+  {
+   "id": "bonus",
+   "label": "BONUS · DIWALI CPM",
+   "tag": "Criteo India · festive 2025",
+   "source": "Source: Criteo India festive 2025 report, via Social Samosa (18 Nov 2025)",
+   "start": 55.984,
+   "end": 66.96
+  },
+  {
+   "id": "cta",
+   "label": "COMMENT TO GET IT",
+   "tag": "free checklist",
+   "source": "",
+   "start": 67.28,
+   "end": 73.272
+  }
+ ],
+ "beats": {
+  "hook-big": -24,
+  "hook-chip": 233,
+  "one-receipt": 335,
+  "one-morph": 478,
+  "one-stat": 650,
+  "two-receipt": 782,
+  "two-bars": 870,
+  "two-catch": 995,
+  "two-mix": 1202,
+  "three-chat": 1323,
+  "three-bill": 1542,
+  "bonus-chart": 1680,
+  "bonus-date": 1836,
+  "cta-comment": 2018,
+  "cta-save": 2130
+ }
+}
