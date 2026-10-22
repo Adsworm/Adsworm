@@ -35,3 +35,8 @@ Updated 22 Oct 2026. Branch: `claude/funny-goldberg-b6mbmv`.
 ## Rules
 - Facts only with receipts in `script/sources.md`. Ad spend / campaign activation only on owner's explicit go (create paused).
 - Commit trailers: `Co-Authored-By: Claude Opus 5.5 <noreply@anthropic.com>` + `Claude-Session: https://claude.ai/code/session_01NzyjL8BD95hveymJMb1FZJ`.
+
+## Content pipeline (22 Oct 2026, owner-requested)
+Research agent → concept/script agent → approval agent (facts+strategy) → production director (retention, delivery, sound) → build. Files per day in `docs/pipeline/<date>/` (01-research, 02-concepts, 03-approval, 04-director, reel-*.final.json, POSTING.md).
+Engine = `projects/adsworm-reel-06` (data-driven: sections[].views in script.json, item types in `src/reel/views.tsx`; copy the project per reel, drop final JSON in `script/script.json`, generate the dialogue in ONE ElevenLabs v4 call → `script/dialogue.mp3`, `python3 scripts/voice.py`, `node scripts/render-reel.mjs --no-voice`).
+22 Oct output (agency @adsworm): reel-06 "Ads feel expensive this October" (OCTOBER), reel-07 "Meta product browsing from 28 Oct" (BROWSE).

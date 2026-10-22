@@ -2,9 +2,9 @@
  "fps": 30,
  "variant": "organic",
  "vars": {
-  "days": 36
+  "days": 6
  },
- "durationInFrames": 1511,
+ "durationInFrames": 1357,
  "voices": {
   "AMAN": {
    "name": "Holden",
@@ -18,9 +18,9 @@
   }
  },
  "brand": {
-  "footer": "Aman Rai  |  Founder, ADSWORM",
+  "footer": "ADSWORM  |  Performance Marketing Agency",
   "names": {
-   "AMAN": "AMAN",
+   "AMAN": "AMAN · ADSWORM",
    "RIYA": "RIYA · BRAND OWNER"
   },
   "side": {
@@ -33,157 +33,209 @@
    "n": 1,
    "section": "hook",
    "who": "AMAN",
-   "show": "Meta just changed 3 things that decide what you pay for ads.",
+   "show": "Meta has told advertisers it'll change live ads from 28 Oct.",
    "pills": [
     [
-     3,
-     5
+     2,
+     4
+    ],
+    [
+     6,
+     8
     ],
     [
      9,
-     12
+     11
     ]
    ],
    "beat": "hook-big",
    "pose": "point",
    "start": 0.0,
-   "end": 4.16,
+   "end": 5.9,
    "words": [
     {
      "t": 0.0,
-     "d": 0.52,
+     "d": 0.44,
+     "w": "Running"
+    },
+    {
+     "t": 0.44,
+     "d": 0.34,
      "w": "Meta"
     },
     {
-     "t": 0.52,
+     "t": 0.78,
+     "d": 0.38,
+     "w": "ads?"
+    },
+    {
+     "t": 1.5,
+     "d": 0.22,
+     "w": "Meta"
+    },
+    {
+     "t": 1.72,
+     "d": 0.16,
+     "w": "has"
+    },
+    {
+     "t": 1.88,
+     "d": 0.22,
+     "w": "told"
+    },
+    {
+     "t": 2.1,
+     "d": 0.76,
+     "w": "advertisers"
+    },
+    {
+     "t": 2.86,
+     "d": 0.46,
+     "w": "it'll"
+    },
+    {
+     "t": 3.32,
+     "d": 0.32,
+     "w": "change"
+    },
+    {
+     "t": 3.64,
+     "d": 0.38,
+     "w": "live"
+    },
+    {
+     "t": 4.02,
+     "d": 0.38,
+     "w": "ads"
+    },
+    {
+     "t": 4.4,
      "d": 0.2,
-     "w": "just"
+     "w": "from"
     },
     {
-     "t": 0.72,
-     "d": 0.44,
-     "w": "changed"
-    },
-    {
-     "t": 1.16,
-     "d": 0.5,
-     "w": "three"
-    },
-    {
-     "t": 1.66,
-     "d": 0.48,
-     "w": "things"
-    },
-    {
-     "t": 2.14,
+     "t": 4.6,
      "d": 0.24,
-     "w": "that"
+     "w": "October"
     },
     {
-     "t": 2.38,
-     "d": 0.4,
-     "w": "decide"
-    },
-    {
-     "t": 2.78,
-     "d": 0.28,
-     "w": "what"
-    },
-    {
-     "t": 3.06,
-     "d": 0.24,
-     "w": "you"
-    },
-    {
-     "t": 3.3,
-     "d": 0.28,
-     "w": "pay"
-    },
-    {
-     "t": 3.58,
-     "d": 0.24,
-     "w": "for"
-    },
-    {
-     "t": 3.82,
-     "d": 0.34,
-     "w": "ads."
+     "t": 4.84,
+     "d": 1.06,
+     "w": "twenty-eighth."
     }
    ]
   },
   {
    "n": 2,
    "section": "hook",
-   "who": "RIYA",
-   "show": "Okay. Explain it simply.",
+   "who": "AMAN",
+   "show": "It came as a notice, not a public announcement.",
    "pills": [
     [
-     3,
-     4
+     4,
+     5
+    ],
+    [
+     7,
+     9
     ]
    ],
-   "beat": null,
-   "pose": "ask",
-   "start": 4.5,
-   "end": 6.1,
+   "beat": "hook-chip",
+   "pose": "palms",
+   "start": 5.96,
+   "end": 8.16,
    "words": [
     {
-     "t": 4.5,
-     "d": 0.32,
-     "w": "Okay."
+     "t": 5.96,
+     "d": 0.1,
+     "w": "It"
     },
     {
-     "t": 4.96,
-     "d": 0.58,
-     "w": "Explain"
-    },
-    {
-     "t": 5.54,
+     "t": 6.06,
      "d": 0.2,
-     "w": "it"
+     "w": "came"
     },
     {
-     "t": 5.74,
-     "d": 0.36,
-     "w": "simply."
+     "t": 6.26,
+     "d": 0.18,
+     "w": "as"
+    },
+    {
+     "t": 6.44,
+     "d": 0.12,
+     "w": "a"
+    },
+    {
+     "t": 6.56,
+     "d": 0.26,
+     "w": "notice,"
+    },
+    {
+     "t": 7.04,
+     "d": 0.26,
+     "w": "not"
+    },
+    {
+     "t": 7.3,
+     "d": 0.14,
+     "w": "a"
+    },
+    {
+     "t": 7.44,
+     "d": 0.2,
+     "w": "public"
+    },
+    {
+     "t": 7.64,
+     "d": 0.52,
+     "w": "announcement."
     }
    ]
   },
   {
    "n": 3,
    "section": "hook",
-   "who": "AMAN",
-   "show": "3 changes. Let's go.",
+   "who": "RIYA",
+   "show": "Wait, change my ads how?",
    "pills": [
     [
-     0,
-     2
+     2,
+     4
+    ],
+    [
+     4,
+     5
     ]
    ],
-   "beat": "hook-chip",
-   "pose": "palms",
-   "start": 6.44,
-   "end": 7.74,
+   "beat": null,
+   "pose": "ask",
+   "start": 8.38,
+   "end": 10.0,
    "words": [
     {
-     "t": 6.44,
-     "d": 0.2,
-     "w": "Three"
-    },
-    {
-     "t": 6.64,
-     "d": 0.4,
-     "w": "changes."
-    },
-    {
-     "t": 7.32,
-     "d": 0.24,
-     "w": "Let's"
-    },
-    {
-     "t": 7.56,
+     "t": 8.38,
      "d": 0.18,
-     "w": "go."
+     "w": "Wait,"
+    },
+    {
+     "t": 8.84,
+     "d": 0.26,
+     "w": "change"
+    },
+    {
+     "t": 9.1,
+     "d": 0.2,
+     "w": "my"
+    },
+    {
+     "t": 9.3,
+     "d": 0.3,
+     "w": "ads"
+    },
+    {
+     "t": 9.6,
+     "d": 0.4,
+     "w": "how?"
     }
    ]
   },
@@ -191,197 +243,191 @@
    "n": 4,
    "section": "one",
    "who": "AMAN",
-   "show": "One: Meta can turn 1 product photo into a video ad.",
+   "show": "The notice: Meta will add product browsing to existing ads.",
    "pills": [
     [
-     4,
+     5,
      7
     ],
     [
-     9,
-     11
+     8,
+     10
     ]
    ],
-   "beat": "one-receipt",
+   "beat": "one-notice",
    "pose": "point",
-   "start": 8.14,
-   "end": 12.04,
+   "start": 10.26,
+   "end": 13.64,
    "words": [
     {
-     "t": 8.14,
-     "d": 0.0,
-     "w": "One."
+     "t": 10.26,
+     "d": 0.12,
+     "w": "It"
     },
     {
-     "t": 8.44,
-     "d": 0.38,
+     "t": 10.38,
+     "d": 0.22,
+     "w": "says"
+    },
+    {
+     "t": 10.6,
+     "d": 0.4,
      "w": "Meta"
     },
     {
-     "t": 8.82,
-     "d": 0.2,
-     "w": "can"
-    },
-    {
-     "t": 9.02,
+     "t": 11.0,
      "d": 0.28,
-     "w": "now"
+     "w": "will"
     },
     {
-     "t": 9.3,
+     "t": 11.28,
      "d": 0.26,
-     "w": "turn"
+     "w": "add"
     },
     {
-     "t": 9.56,
-     "d": 0.34,
-     "w": "one"
-    },
-    {
-     "t": 9.9,
+     "t": 11.54,
      "d": 0.42,
      "w": "product"
     },
     {
-     "t": 10.32,
-     "d": 0.4,
-     "w": "photo"
+     "t": 11.96,
+     "d": 0.52,
+     "w": "browsing"
     },
     {
-     "t": 10.72,
-     "d": 0.46,
-     "w": "into"
+     "t": 12.48,
+     "d": 0.2,
+     "w": "to"
     },
     {
-     "t": 11.18,
-     "d": 0.24,
-     "w": "a"
+     "t": 12.68,
+     "d": 0.44,
+     "w": "existing"
     },
     {
-     "t": 11.42,
-     "d": 0.28,
-     "w": "video"
-    },
-    {
-     "t": 11.7,
-     "d": 0.34,
-     "w": "ad."
+     "t": 13.12,
+     "d": 0.52,
+     "w": "ads."
     }
    ]
   },
   {
    "n": 5,
    "section": "one",
-   "who": "RIYA",
-   "show": "So I don't need a video shoot?",
+   "who": "AMAN",
+   "show": "A tap may open product info inside the app first.",
    "pills": [
     [
-     2,
-     4
+     4,
+     9
     ]
    ],
-   "beat": null,
-   "pose": "ask",
-   "start": 12.36,
-   "end": 14.26,
+   "beat": "one-phone",
+   "pose": "palms",
+   "start": 13.84,
+   "end": 16.96,
    "words": [
     {
-     "t": 12.36,
+     "t": 13.84,
+     "d": 0.12,
+     "w": "A"
+    },
+    {
+     "t": 13.96,
+     "d": 0.28,
+     "w": "tap"
+    },
+    {
+     "t": 14.24,
+     "d": 0.36,
+     "w": "may"
+    },
+    {
+     "t": 14.6,
+     "d": 0.32,
+     "w": "open"
+    },
+    {
+     "t": 14.92,
+     "d": 0.4,
+     "w": "product"
+    },
+    {
+     "t": 15.32,
+     "d": 0.42,
+     "w": "info"
+    },
+    {
+     "t": 15.74,
+     "d": 0.4,
+     "w": "inside"
+    },
+    {
+     "t": 16.14,
      "d": 0.24,
-     "w": "So"
+     "w": "the"
     },
     {
-     "t": 12.9,
-     "d": 0.18,
-     "w": "I"
+     "t": 16.38,
+     "d": 0.28,
+     "w": "app"
     },
     {
-     "t": 13.08,
-     "d": 0.16,
-     "w": "don't"
-    },
-    {
-     "t": 13.24,
-     "d": 0.24,
-     "w": "need"
-    },
-    {
-     "t": 13.48,
-     "d": 0.14,
-     "w": "a"
-    },
-    {
-     "t": 13.62,
+     "t": 16.66,
      "d": 0.3,
-     "w": "video"
-    },
-    {
-     "t": 13.92,
-     "d": 0.34,
-     "w": "shoot?"
+     "w": "first."
     }
    ]
   },
   {
    "n": 6,
    "section": "one",
-   "who": "AMAN",
-   "show": "Not to start testing. It's built into Ads Manager.",
+   "who": "RIYA",
+   "show": "Before my website? Good or bad?",
    "pills": [
     [
-     5,
-     9
+     1,
+     3
+    ],
+    [
+     3,
+     6
     ]
    ],
-   "beat": "one-morph",
-   "pose": "palms",
-   "start": 14.56,
-   "end": 17.32,
+   "beat": "one-ask",
+   "pose": "ask",
+   "start": 17.2,
+   "end": 19.26,
    "words": [
     {
-     "t": 14.56,
-     "d": 0.22,
-     "w": "Not"
+     "t": 17.2,
+     "d": 0.28,
+     "w": "Before"
     },
     {
-     "t": 14.78,
-     "d": 0.2,
-     "w": "to"
+     "t": 17.48,
+     "d": 0.24,
+     "w": "my"
     },
     {
-     "t": 14.98,
+     "t": 17.72,
+     "d": 0.36,
+     "w": "website?"
+    },
+    {
+     "t": 18.46,
      "d": 0.18,
-     "w": "start"
+     "w": "Good"
     },
     {
-     "t": 15.16,
-     "d": 0.5,
-     "w": "testing."
+     "t": 18.64,
+     "d": 0.36,
+     "w": "or"
     },
     {
-     "t": 15.98,
-     "d": 0.18,
-     "w": "It's"
-    },
-    {
-     "t": 16.16,
-     "d": 0.22,
-     "w": "built"
-    },
-    {
-     "t": 16.38,
-     "d": 0.32,
-     "w": "into"
-    },
-    {
-     "t": 16.7,
-     "d": 0.32,
-     "w": "Ads"
-    },
-    {
-     "t": 17.02,
-     "d": 0.3,
-     "w": "Manager."
+     "t": 19.0,
+     "d": 0.26,
+     "w": "bad?"
     }
    ]
   },
@@ -389,271 +435,205 @@
    "n": 7,
    "section": "two",
    "who": "AMAN",
-   "show": "Two: a new Meta AI decides who sees your ads.",
-   "pills": [
-    [
-     2,
-     5
-    ]
-   ],
-   "beat": "two-receipt",
-   "pose": "point",
-   "start": 17.56,
-   "end": 21.46,
-   "words": [
-    {
-     "t": 17.56,
-     "d": 0.26,
-     "w": "Two."
-    },
-    {
-     "t": 18.18,
-     "d": 0.24,
-     "w": "Meta"
-    },
-    {
-     "t": 18.42,
-     "d": 0.2,
-     "w": "has"
-    },
-    {
-     "t": 18.62,
-     "d": 0.14,
-     "w": "a"
-    },
-    {
-     "t": 18.76,
-     "d": 0.2,
-     "w": "new"
-    },
-    {
-     "t": 18.96,
-     "d": 0.36,
-     "w": "AI"
-    },
-    {
-     "t": 19.32,
-     "d": 0.42,
-     "w": "that"
-    },
-    {
-     "t": 19.74,
-     "d": 0.46,
-     "w": "decides"
-    },
-    {
-     "t": 20.2,
-     "d": 0.38,
-     "w": "who"
-    },
-    {
-     "t": 20.58,
-     "d": 0.3,
-     "w": "sees"
-    },
-    {
-     "t": 20.88,
-     "d": 0.22,
-     "w": "your"
-    },
-    {
-     "t": 21.1,
-     "d": 0.36,
-     "w": "ads."
-    }
-   ]
-  },
-  {
-   "n": 8,
-   "section": "two",
-   "who": "AMAN",
-   "show": "Meta says: about 19% more conversions.",
-   "pills": [
-    [
-     3,
-     6
-    ]
-   ],
-   "beat": "two-bars",
-   "pose": "palms",
-   "start": 21.74,
-   "end": 25.06,
-   "words": [
-    {
-     "t": 21.74,
-     "d": 0.36,
-     "w": "Meta"
-    },
-    {
-     "t": 22.1,
-     "d": 0.22,
-     "w": "says"
-    },
-    {
-     "t": 22.32,
-     "d": 0.24,
-     "w": "it"
-    },
-    {
-     "t": 22.56,
-     "d": 0.16,
-     "w": "gets"
-    },
-    {
-     "t": 22.72,
-     "d": 0.34,
-     "w": "about"
-    },
-    {
-     "t": 23.06,
-     "d": 0.53,
-     "w": "nineteen"
-    },
-    {
-     "t": 23.59,
-     "d": 0.53,
-     "w": "percent"
-    },
-    {
-     "t": 24.12,
-     "d": 0.38,
-     "w": "more"
-    },
-    {
-     "t": 24.5,
-     "d": 0.56,
-     "w": "conversions."
-    }
-   ]
-  },
-  {
-   "n": 9,
-   "section": "two",
-   "who": "RIYA",
-   "show": "So I just run my one best ad, right?",
+   "show": "Meta says its test showed 3% more conversions, on average.",
    "pills": [
     [
      5,
      8
     ]
    ],
-   "beat": null,
-   "pose": "ask",
-   "start": 25.54,
-   "end": 28.26,
+   "beat": "two-big",
+   "pose": "point",
+   "start": 19.5,
+   "end": 23.64,
    "words": [
     {
-     "t": 25.54,
-     "d": 0.38,
-     "w": "So"
+     "t": 19.5,
+     "d": 0.3,
+     "w": "Meta"
     },
     {
-     "t": 26.1,
-     "d": 0.16,
-     "w": "I"
+     "t": 19.8,
+     "d": 0.3,
+     "w": "says"
     },
     {
-     "t": 26.26,
-     "d": 0.2,
-     "w": "just"
+     "t": 20.1,
+     "d": 0.28,
+     "w": "its"
     },
     {
-     "t": 26.46,
+     "t": 20.38,
+     "d": 0.34,
+     "w": "test"
+    },
+    {
+     "t": 20.72,
+     "d": 0.34,
+     "w": "showed"
+    },
+    {
+     "t": 21.06,
+     "d": 0.43,
+     "w": "three"
+    },
+    {
+     "t": 21.49,
+     "d": 0.43,
+     "w": "percent"
+    },
+    {
+     "t": 21.92,
+     "d": 0.4,
+     "w": "more"
+    },
+    {
+     "t": 22.32,
+     "d": 0.6,
+     "w": "conversions,"
+    },
+    {
+     "t": 22.92,
+     "d": 0.4,
+     "w": "on"
+    },
+    {
+     "t": 23.32,
+     "d": 0.32,
+     "w": "average."
+    }
+   ]
+  },
+  {
+   "n": 8,
+   "section": "two",
+   "who": "RIYA",
+   "show": "Conversions meaning sales?",
+   "pills": [
+    [
+     2,
+     3
+    ]
+   ],
+   "beat": "two-ask",
+   "pose": "ask",
+   "start": 23.88,
+   "end": 25.62,
+   "words": [
+    {
+     "t": 23.88,
+     "d": 0.56,
+     "w": "Conversions"
+    },
+    {
+     "t": 24.7,
+     "d": 0.32,
+     "w": "meaning"
+    },
+    {
+     "t": 25.02,
+     "d": 0.6,
+     "w": "sales?"
+    }
+   ]
+  },
+  {
+   "n": 9,
+   "section": "two",
+   "who": "AMAN",
+   "show": "It didn't say. That's Meta's own number.",
+   "pills": [
+    [
+     0,
+     3
+    ],
+    [
+     4,
+     7
+    ]
+   ],
+   "beat": "two-note",
+   "pose": "palms",
+   "start": 25.82,
+   "end": 28.08,
+   "words": [
+    {
+     "t": 25.82,
+     "d": 0.12,
+     "w": "It"
+    },
+    {
+     "t": 25.94,
+     "d": 0.26,
+     "w": "didn't"
+    },
+    {
+     "t": 26.2,
      "d": 0.22,
-     "w": "run"
+     "w": "say."
     },
     {
      "t": 26.68,
-     "d": 0.2,
-     "w": "my"
+     "d": 0.3,
+     "w": "That's"
     },
     {
-     "t": 26.88,
-     "d": 0.28,
-     "w": "one"
+     "t": 26.98,
+     "d": 0.46,
+     "w": "Meta's"
     },
     {
-     "t": 27.16,
-     "d": 0.22,
-     "w": "best"
-    },
-    {
-     "t": 27.38,
-     "d": 0.42,
-     "w": "ad,"
-    },
-    {
-     "t": 28.02,
+     "t": 27.44,
      "d": 0.24,
-     "w": "right?"
+     "w": "own"
+    },
+    {
+     "t": 27.68,
+     "d": 0.4,
+     "w": "number."
     }
    ]
   },
   {
    "n": 10,
-   "section": "two",
-   "who": "AMAN",
-   "show": "No. It rewards variety. Photo, video, carousel.",
+   "section": "three",
+   "who": "RIYA",
+   "show": "So what should I do?",
    "pills": [
     [
      2,
-     4
+     5
     ]
    ],
-   "beat": "two-mix",
-   "pose": "point",
-   "start": 28.26,
-   "end": 33.54,
+   "beat": "three-ask",
+   "pose": "ask",
+   "start": 28.24,
+   "end": 29.6,
    "words": [
     {
-     "t": 28.26,
-     "d": 0.5,
-     "w": "No."
+     "t": 28.24,
+     "d": 0.36,
+     "w": "So"
+    },
+    {
+     "t": 28.6,
+     "d": 0.46,
+     "w": "what"
     },
     {
      "t": 29.06,
-     "d": 0.08,
-     "w": "It"
+     "d": 0.18,
+     "w": "should"
     },
     {
-     "t": 29.14,
-     "d": 0.44,
-     "w": "rewards"
+     "t": 29.24,
+     "d": 0.16,
+     "w": "I"
     },
     {
-     "t": 29.58,
-     "d": 0.64,
-     "w": "variety."
-    },
-    {
-     "t": 30.62,
-     "d": 0.12,
-     "w": "Run"
-    },
-    {
-     "t": 30.74,
-     "d": 0.32,
-     "w": "different"
-    },
-    {
-     "t": 31.06,
-     "d": 0.34,
-     "w": "ads:"
-    },
-    {
-     "t": 31.76,
-     "d": 0.26,
-     "w": "photo,"
-    },
-    {
-     "t": 32.26,
-     "d": 0.26,
-     "w": "video,"
-    },
-    {
-     "t": 32.78,
-     "d": 0.76,
-     "w": "carousel."
+     "t": 29.4,
+     "d": 0.2,
+     "w": "do?"
     }
    ]
   },
@@ -661,134 +641,143 @@
    "n": 11,
    "section": "three",
    "who": "AMAN",
-   "show": "Three: WhatsApp replies cost money after 1,000 free a month.",
+   "show": "Opt out in one go with the notice's button, before the 28th.",
    "pills": [
     [
-     3,
-     5
+     6,
+     9
     ],
     [
-     6,
-     8
+     10,
+     12
     ]
    ],
-   "beat": "three-bill",
+   "beat": "three-all",
    "pose": "point",
-   "start": 33.6,
-   "end": 37.72,
+   "start": 29.6,
+   "end": 33.92,
    "words": [
     {
-     "t": 33.6,
-     "d": 0.22,
-     "w": "Three."
+     "t": 29.6,
+     "d": 0.38,
+     "w": "Opt"
     },
     {
-     "t": 34.02,
-     "d": 0.12,
-     "w": "WhatsApp"
+     "t": 29.98,
+     "d": 0.26,
+     "w": "out"
     },
     {
-     "t": 34.14,
-     "d": 0.52,
-     "w": "replies"
-    },
-    {
-     "t": 34.66,
-     "d": 0.36,
-     "w": "now"
-    },
-    {
-     "t": 35.02,
-     "d": 0.4,
-     "w": "cost"
-    },
-    {
-     "t": 35.42,
-     "d": 0.44,
-     "w": "money"
-    },
-    {
-     "t": 35.86,
-     "d": 0.36,
-     "w": "after"
-    },
-    {
-     "t": 36.22,
+     "t": 30.24,
      "d": 0.2,
-     "w": "a"
+     "w": "in"
     },
     {
-     "t": 36.42,
-     "d": 0.42,
-     "w": "thousand"
+     "t": 30.44,
+     "d": 0.32,
+     "w": "one"
     },
     {
-     "t": 36.84,
-     "d": 0.4,
-     "w": "free"
+     "t": 30.76,
+     "d": 0.32,
+     "w": "go"
     },
     {
-     "t": 37.24,
-     "d": 0.18,
-     "w": "a"
+     "t": 31.08,
+     "d": 0.36,
+     "w": "with"
     },
     {
-     "t": 37.42,
-     "d": 0.3,
-     "w": "month."
+     "t": 31.44,
+     "d": 0.14,
+     "w": "the"
+    },
+    {
+     "t": 31.58,
+     "d": 0.34,
+     "w": "notice's"
+    },
+    {
+     "t": 31.92,
+     "d": 0.36,
+     "w": "button,"
+    },
+    {
+     "t": 32.28,
+     "d": 0.6,
+     "w": "before"
+    },
+    {
+     "t": 32.88,
+     "d": 0.2,
+     "w": "the"
+    },
+    {
+     "t": 33.08,
+     "d": 0.84,
+     "w": "twenty-eighth."
     }
    ]
   },
   {
    "n": 12,
    "section": "three",
-   "who": "RIYA",
-   "show": "Even when the customer messages me first?",
+   "who": "AMAN",
+   "show": "Or switch it off ad by ad, anytime.",
    "pills": [
     [
      4,
      7
+    ],
+    [
+     7,
+     8
     ]
    ],
-   "beat": null,
-   "pose": "ask",
-   "start": 37.96,
-   "end": 40.02,
+   "beat": "three-perad",
+   "pose": "palms",
+   "start": 33.98,
+   "end": 36.34,
    "words": [
     {
-     "t": 37.96,
-     "d": 0.3,
-     "w": "Even"
+     "t": 33.98,
+     "d": 0.14,
+     "w": "Or"
     },
     {
-     "t": 38.26,
-     "d": 0.22,
-     "w": "when"
+     "t": 34.12,
+     "d": 0.42,
+     "w": "switch"
     },
     {
-     "t": 38.48,
-     "d": 0.12,
-     "w": "the"
+     "t": 34.54,
+     "d": 0.18,
+     "w": "it"
     },
     {
-     "t": 38.6,
-     "d": 0.34,
-     "w": "customer"
+     "t": 34.72,
+     "d": 0.18,
+     "w": "off"
     },
     {
-     "t": 38.94,
+     "t": 34.9,
+     "d": 0.36,
+     "w": "ad"
+    },
+    {
+     "t": 35.26,
+     "d": 0.18,
+     "w": "by"
+    },
+    {
+     "t": 35.44,
+     "d": 0.4,
+     "w": "ad,"
+    },
+    {
+     "t": 35.84,
      "d": 0.5,
-     "w": "messages"
-    },
-    {
-     "t": 39.44,
-     "d": 0.24,
-     "w": "me"
-    },
-    {
-     "t": 39.68,
-     "d": 0.34,
-     "w": "first?"
+     "w": "anytime."
     }
    ]
   },
@@ -796,96 +785,71 @@
    "n": 13,
    "section": "three",
    "who": "AMAN",
-   "show": "If they came from your ad, it's free for up to 7 days.",
+   "show": "Or keep it on a few ads and compare sales.",
    "pills": [
     [
-     4,
-     6
+     1,
+     7
     ],
     [
-     9,
-     13
+     8,
+     10
     ]
    ],
-   "beat": "three-chat",
+   "beat": "three-test",
    "pose": "palms",
-   "start": 40.32,
-   "end": 43.94,
+   "start": 36.66,
+   "end": 39.12,
    "words": [
     {
-     "t": 40.32,
-     "d": 0.14,
-     "w": "If"
-    },
-    {
-     "t": 40.46,
-     "d": 0.14,
-     "w": "they"
-    },
-    {
-     "t": 40.6,
-     "d": 0.22,
-     "w": "came"
-    },
-    {
-     "t": 40.82,
-     "d": 0.2,
-     "w": "from"
-    },
-    {
-     "t": 41.02,
-     "d": 0.28,
-     "w": "your"
-    },
-    {
-     "t": 41.3,
-     "d": 0.38,
-     "w": "ad,"
-    },
-    {
-     "t": 41.92,
+     "t": 36.66,
      "d": 0.1,
+     "w": "Or"
+    },
+    {
+     "t": 36.76,
+     "d": 0.34,
+     "w": "keep"
+    },
+    {
+     "t": 37.1,
+     "d": 0.14,
      "w": "it"
     },
     {
-     "t": 42.02,
+     "t": 37.24,
      "d": 0.14,
-     "w": "can"
+     "w": "on"
     },
     {
-     "t": 42.16,
-     "d": 0.22,
-     "w": "stay"
-    },
-    {
-     "t": 42.38,
-     "d": 0.38,
-     "w": "free"
-    },
-    {
-     "t": 42.76,
-     "d": 0.22,
-     "w": "for"
-    },
-    {
-     "t": 42.98,
+     "t": 37.38,
      "d": 0.12,
-     "w": "up"
+     "w": "a"
     },
     {
-     "t": 43.1,
-     "d": 0.14,
-     "w": "to"
+     "t": 37.5,
+     "d": 0.2,
+     "w": "few"
     },
     {
-     "t": 43.24,
+     "t": 37.7,
      "d": 0.34,
-     "w": "seven"
+     "w": "ads"
     },
     {
-     "t": 43.58,
-     "d": 0.36,
-     "w": "days."
+     "t": 38.04,
+     "d": 0.3,
+     "w": "and"
+    },
+    {
+     "t": 38.34,
+     "d": 0.34,
+     "w": "compare"
+    },
+    {
+     "t": 38.68,
+     "d": 0.44,
+     "w": "sales."
     }
    ]
   },
@@ -893,66 +857,76 @@
    "n": 14,
    "section": "cta",
    "who": "AMAN",
-   "show": "Comment \"META\" and I'll send the full checklist.",
+   "show": "Not sure? Comment \"BROWSE\" and we'll check your account for free.",
    "pills": [
     [
-     1,
-     2
+     3,
+     4
     ],
     [
-     6,
-     8
+     9,
+     11
     ]
    ],
    "beat": "cta-comment",
    "pose": "point",
-   "start": 44.24,
-   "end": 46.74,
+   "start": 39.28,
+   "end": 42.66,
    "words": [
     {
-     "t": 44.24,
+     "t": 39.28,
+     "d": 0.14,
+     "w": "Not"
+    },
+    {
+     "t": 39.42,
+     "d": 0.28,
+     "w": "sure?"
+    },
+    {
+     "t": 39.94,
      "d": 0.28,
      "w": "Comment"
     },
     {
-     "t": 44.78,
-     "d": 0.3,
-     "w": "META"
+     "t": 40.22,
+     "d": 0.46,
+     "w": "BROWSE"
     },
     {
-     "t": 45.34,
-     "d": 0.08,
+     "t": 40.68,
+     "d": 0.6,
      "w": "and"
     },
     {
-     "t": 45.42,
+     "t": 41.28,
+     "d": 0.22,
+     "w": "we'll"
+    },
+    {
+     "t": 41.5,
+     "d": 0.18,
+     "w": "check"
+    },
+    {
+     "t": 41.68,
      "d": 0.2,
-     "w": "I'll"
+     "w": "your"
     },
     {
-     "t": 45.62,
-     "d": 0.16,
-     "w": "send"
-    },
-    {
-     "t": 45.78,
-     "d": 0.12,
-     "w": "you"
-    },
-    {
-     "t": 45.9,
-     "d": 0.14,
-     "w": "the"
-    },
-    {
-     "t": 46.04,
+     "t": 41.88,
      "d": 0.3,
-     "w": "full"
+     "w": "account"
     },
     {
-     "t": 46.34,
-     "d": 0.4,
-     "w": "checklist."
+     "t": 42.18,
+     "d": 0.18,
+     "w": "for"
+    },
+    {
+     "t": 42.36,
+     "d": 0.3,
+     "w": "free."
     }
    ]
   },
@@ -960,7 +934,7 @@
    "n": 15,
    "section": "cta",
    "who": "RIYA",
-   "show": "Saving this before Black Friday!",
+   "show": "Checking mine today!",
    "pills": [
     [
      0,
@@ -969,33 +943,23 @@
    ],
    "beat": "cta-save",
    "pose": "wow",
-   "start": 47.0,
-   "end": 48.92,
+   "start": 42.86,
+   "end": 43.8,
    "words": [
     {
-     "t": 47.0,
+     "t": 42.86,
      "d": 0.42,
-     "w": "Saving"
+     "w": "Checking"
     },
     {
-     "t": 47.42,
+     "t": 43.28,
+     "d": 0.24,
+     "w": "mine"
+    },
+    {
+     "t": 43.52,
      "d": 0.28,
-     "w": "this"
-    },
-    {
-     "t": 47.7,
-     "d": 0.44,
-     "w": "before"
-    },
-    {
-     "t": 48.14,
-     "d": 0.32,
-     "w": "Black"
-    },
-    {
-     "t": 48.46,
-     "d": 0.46,
-     "w": "Friday!"
+     "w": "today!"
     }
    ]
   }
@@ -1003,33 +967,43 @@
  "sections": [
   {
    "id": "hook",
-   "label": "",
-   "tag": "",
-   "source": "Black Friday: Fri 27 Nov 2026",
+   "label": "META'S NOTICE TO ADVERTISERS",
+   "tag": "reported 15 Oct 2026",
+   "source": "Source: Meta notice to advertisers, via ppc.land (15 Oct 2026)",
    "start": 0.0,
-   "end": 7.74,
+   "end": 10.0,
    "views": [
     {
      "at": "hook-big",
      "items": [
       {
        "type": "big",
-       "value": "{days} DAYS",
-       "sub": "to Black Friday"
+       "value": "28 OCT",
+       "sub": "Meta's notice: product browsing on existing ads",
+       "color": "blue"
       },
       {
        "type": "chip",
-       "text": "3 META CHANGES",
-       "kind": "ink"
+       "text": "{days} days until 28 Oct",
+       "kind": "gold"
       },
       {
-       "type": "checklist",
-       "rows": [
-        "Photo → video",
-        "New ad AI",
-        "WhatsApp pricing"
-       ],
-       "unlockAt": "hook-chip"
+       "type": "chip",
+       "text": "Meta's notice to advertisers · via ppc.land",
+       "kind": "ink",
+       "delay": 84
+      }
+     ]
+    },
+    {
+     "at": "hook-chip",
+     "items": [
+      {
+       "type": "browser",
+       "url": "ppc.land",
+       "title": "Meta will turn on product browsing in existing ads on October 28",
+       "date": "15 Oct 2026",
+       "note": "Reporting Meta's notice to advertisers · no official Meta page found"
       }
      ]
     }
@@ -1037,41 +1011,57 @@
   },
   {
    "id": "one",
-   "label": "① PHOTO → VIDEO",
-   "tag": "official · live now",
-   "source": "Source: Meta for Business · Advertising Week New York, 6 Oct 2026",
-   "start": 8.14,
-   "end": 17.32,
+   "label": "① WHAT CHANGES",
+   "tag": "Meta notice to advertisers",
+   "source": "Source: Meta advertiser notice, as reported by ppc.land (15 Oct 2026) & relevantaudience.com",
+   "start": 10.26,
+   "end": 19.26,
    "views": [
     {
-     "at": "one-receipt",
+     "at": "one-notice",
      "items": [
       {
-       "type": "browser",
-       "url": "facebook.com/business",
-       "title": "New AI capabilities",
-       "date": "6 Oct 2026",
-       "note": "Photos become video."
+       "type": "note",
+       "text": "“Starting October 28, 2026, we'll add product browsing to your existing ads.”",
+       "size": 40
+      },
+      {
+       "type": "receipt",
+       "text": "Meta's notice to advertisers · as reported by ppc.land"
       }
      ]
     },
     {
-     "at": "one-morph",
+     "at": "one-phone",
      "items": [
       {
-       "type": "receipt",
-       "text": "Meta · 6 Oct"
-      },
-      {
-       "type": "imageToVideo"
+       "type": "phone",
+       "label": "Your ad",
+       "adTitle": "Product info opens in the app",
+       "cta": "Shop now"
       },
       {
        "type": "chips",
        "items": [
-        "✓ No shoot",
-        "Ads Manager"
+        "Tap ad",
+        "Product info in app"
        ],
-       "kind": "green"
+       "kind": "blue",
+       "delay": 24
+      }
+     ]
+    },
+    {
+     "at": "one-ask",
+     "items": [
+      {
+       "type": "steps",
+       "items": [
+        "Tap your ad",
+        "Product info opens in the app",
+        "Your website: not first"
+       ],
+       "stagger": 8
       }
      ]
     }
@@ -1079,45 +1069,48 @@
   },
   {
    "id": "two",
-   "label": "② META'S NEW AD AI",
-   "tag": "official · 13 Oct 2026",
-   "source": "Source: engineering.fb.com (13 Oct) · Meta for Business (19 Oct 2026)",
-   "start": 17.56,
-   "end": 33.54,
+   "label": "② META'S NUMBER",
+   "tag": "Meta's own test",
+   "source": "Source: Meta's notice · test 6–21 Aug 2026, ~117,700 advertisers (as reported by ppc.land)",
+   "start": 19.5,
+   "end": 28.08,
    "views": [
     {
-     "at": "two-receipt",
+     "at": "two-big",
      "items": [
       {
-       "type": "compare",
-       "bad": {
-        "title": "Most brands",
-        "lines": [
-         "1 ad, 10 copies",
-         "Same hook"
-        ]
-       },
-       "good": {
-        "title": "What works",
-        "lines": [
-         "Different ads",
-         "Photo + video"
-        ]
-       },
-       "goodAt": "two-bars"
+       "type": "big",
+       "value": "+3%",
+       "sub": "conversions, on average · Meta's test",
+       "color": "green"
+      },
+      {
+       "type": "chip",
+       "text": "Test: 6–21 Aug 2026 · ~117,700 advertisers",
+       "kind": "ink",
+       "delay": 54
       }
      ]
     },
     {
-     "at": "two-mix",
+     "at": "two-ask",
      "items": [
       {
-       "type": "steps",
-       "items": [
-        "Make 5 different ads",
-        "Test for 7 days",
-        "Keep the winners"
-       ]
+       "type": "note",
+       "text": "“Conversions” = sales? sign-ups?",
+       "size": 52
+      },
+      {
+       "type": "receipt",
+       "text": "Not defined in the notice · Meta's own number",
+       "at": "two-note"
+      },
+      {
+       "type": "chip",
+       "text": "No Meta Help Center page found · ppc.land, 15 Oct",
+       "kind": "ink",
+       "delay": 36,
+       "at": "two-note"
       }
      ]
     }
@@ -1125,35 +1118,71 @@
   },
   {
    "id": "three",
-   "label": "③ WHATSAPP PRICING",
-   "tag": "official · pricing page",
-   "source": "Source: developers.facebook.com/docs/whatsapp/pricing (accessed 22 Oct 2026)",
-   "start": 33.6,
-   "end": 43.94,
+   "label": "③ YOUR CHOICE",
+   "tag": "notice opt-out · before 28 Oct",
+   "source": "Opt out: the notice's button before 28 Oct, or per ad anytime in Advantage+ Creative & Destination settings (via ppc.land)",
+   "start": 28.24,
+   "end": 39.12,
    "views": [
     {
-     "at": "three-bill",
+     "at": "three-ask",
      "items": [
       {
-       "type": "bars",
-       "items": [
-        {
-         "label": "CPM",
-         "value": 26,
-         "color": "gold"
-        },
-        {
-         "label": "CPC",
-         "value": 45
-        }
-       ],
-       "max": 50
+       "type": "big",
+       "value": "3 OPTIONS",
+       "sub": "all ads · ad by ad · test it",
+       "color": "blue",
+       "size": 170
+      }
+     ]
+    },
+    {
+     "at": "three-all",
+     "items": [
+      {
+       "type": "big",
+       "value": "ALL ADS",
+       "sub": "opt out with the notice's button",
+       "color": "ink",
+       "size": 160
       },
       {
-       "type": "ring",
-       "value": "7",
-       "sub": "days free",
-       "at": "three-chat"
+       "type": "chip",
+       "text": "Before 28 Oct",
+       "kind": "gold",
+       "delay": 60
+      }
+     ]
+    },
+    {
+     "at": "three-perad",
+     "items": [
+      {
+       "type": "big",
+       "value": "AD BY AD",
+       "sub": "switch it off · anytime",
+       "color": "ink",
+       "size": 160
+      },
+      {
+       "type": "chip",
+       "text": "Advantage+ Creative & Destination settings",
+       "kind": "blue",
+       "delay": 20
+      }
+     ]
+    },
+    {
+     "at": "three-test",
+     "items": [
+      {
+       "type": "steps",
+       "items": [
+        "Keep it on a few ads",
+        "Opt out on the rest",
+        "Compare your sales"
+       ],
+       "stagger": 24
       }
      ]
     }
@@ -1162,22 +1191,32 @@
   {
    "id": "cta",
    "label": "COMMENT TO GET IT",
-   "tag": "free checklist",
+   "tag": "free account check",
    "source": "",
-   "start": 44.24,
-   "end": 48.92,
+   "start": 39.28,
+   "end": 43.8,
    "views": [
     {
      "at": "cta-comment",
      "items": [
       {
        "type": "comment",
-       "keyword": "AUDIT"
+       "keyword": "BROWSE"
       },
       {
-       "type": "pdf",
-       "title": "Free audit",
-       "sub": "in your DM",
+       "type": "chips",
+       "items": [
+        "Which ads it touches",
+        "Keep it on or opt out?",
+        "How to switch it off"
+       ],
+       "kind": "blue",
+       "delay": 66
+      },
+      {
+       "type": "chip",
+       "text": "Free account check · sent by DM",
+       "kind": "green",
        "at": "cta-save"
       }
      ]
@@ -1187,15 +1226,18 @@
  ],
  "beats": {
   "hook-big": -24,
-  "hook-chip": 193,
-  "one-receipt": 244,
-  "one-morph": 437,
-  "two-receipt": 527,
-  "two-bars": 652,
-  "two-mix": 848,
-  "three-bill": 1008,
-  "three-chat": 1210,
-  "cta-comment": 1327,
-  "cta-save": 1410
+  "hook-chip": 179,
+  "one-notice": 308,
+  "one-phone": 415,
+  "one-ask": 516,
+  "two-big": 585,
+  "two-ask": 716,
+  "two-note": 775,
+  "three-ask": 847,
+  "three-all": 888,
+  "three-perad": 1019,
+  "three-test": 1100,
+  "cta-comment": 1178,
+  "cta-save": 1286
  }
 }

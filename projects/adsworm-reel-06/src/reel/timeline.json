@@ -2,9 +2,9 @@
  "fps": 30,
  "variant": "organic",
  "vars": {
-  "days": 36
+  "days": 17
  },
- "durationInFrames": 1511,
+ "durationInFrames": 1503,
  "voices": {
   "AMAN": {
    "name": "Holden",
@@ -18,9 +18,9 @@
   }
  },
  "brand": {
-  "footer": "Aman Rai  |  Founder, ADSWORM",
+  "footer": "ADSWORM  |  Performance Marketing Agency",
   "names": {
-   "AMAN": "AMAN",
+   "AMAN": "AMAN · ADSWORM",
    "RIYA": "RIYA · BRAND OWNER"
   },
   "side": {
@@ -33,81 +33,86 @@
    "n": 1,
    "section": "hook",
    "who": "AMAN",
-   "show": "Meta just changed 3 things that decide what you pay for ads.",
+   "show": "Ads feel expensive? Meta's results: average price per ad +12%.",
    "pills": [
     [
-     3,
-     5
+     2,
+     3
     ],
     [
-     9,
-     12
+     6,
+     10
     ]
    ],
    "beat": "hook-big",
    "pose": "point",
    "start": 0.0,
-   "end": 4.16,
+   "end": 5.52,
    "words": [
     {
      "t": 0.0,
-     "d": 0.52,
-     "w": "Meta"
+     "d": 0.44,
+     "w": "Ads"
     },
     {
-     "t": 0.52,
-     "d": 0.2,
-     "w": "just"
+     "t": 0.44,
+     "d": 0.28,
+     "w": "feel"
     },
     {
      "t": 0.72,
-     "d": 0.44,
-     "w": "changed"
+     "d": 0.54,
+     "w": "expensive?"
     },
     {
-     "t": 1.16,
-     "d": 0.5,
-     "w": "three"
-    },
-    {
-     "t": 1.66,
-     "d": 0.48,
-     "w": "things"
-    },
-    {
-     "t": 2.14,
-     "d": 0.24,
-     "w": "that"
-    },
-    {
-     "t": 2.38,
-     "d": 0.4,
-     "w": "decide"
-    },
-    {
-     "t": 2.78,
-     "d": 0.28,
-     "w": "what"
-    },
-    {
-     "t": 3.06,
-     "d": 0.24,
-     "w": "you"
-    },
-    {
-     "t": 3.3,
-     "d": 0.28,
-     "w": "pay"
-    },
-    {
-     "t": 3.58,
-     "d": 0.24,
-     "w": "for"
-    },
-    {
-     "t": 3.82,
+     "t": 1.58,
      "d": 0.34,
-     "w": "ads."
+     "w": "Meta's"
+    },
+    {
+     "t": 1.92,
+     "d": 0.3,
+     "w": "latest"
+    },
+    {
+     "t": 2.22,
+     "d": 0.4,
+     "w": "results:"
+    },
+    {
+     "t": 2.92,
+     "d": 0.28,
+     "w": "average"
+    },
+    {
+     "t": 3.2,
+     "d": 0.32,
+     "w": "price"
+    },
+    {
+     "t": 3.52,
+     "d": 0.22,
+     "w": "per"
+    },
+    {
+     "t": 3.74,
+     "d": 0.34,
+     "w": "ad"
+    },
+    {
+     "t": 4.08,
+     "d": 0.28,
+     "w": "rose"
+    },
+    {
+     "t": 4.36,
+     "d": 0.58,
+     "w": "twelve"
+    },
+    {
+     "t": 4.94,
+     "d": 0.58,
+     "w": "percent."
     }
    ]
   },
@@ -115,37 +120,66 @@
    "n": 2,
    "section": "hook",
    "who": "RIYA",
-   "show": "Okay. Explain it simply.",
+   "show": "That's why October feels slow? Same budget, fewer sales?",
    "pills": [
     [
-     3,
-     4
+     4,
+     5
+    ],
+    [
+     7,
+     9
     ]
    ],
-   "beat": null,
+   "beat": "hook-ask",
    "pose": "ask",
-   "start": 4.5,
-   "end": 6.1,
+   "start": 5.52,
+   "end": 9.2,
    "words": [
     {
-     "t": 4.5,
-     "d": 0.32,
-     "w": "Okay."
+     "t": 5.52,
+     "d": 0.54,
+     "w": "That's"
     },
     {
-     "t": 4.96,
-     "d": 0.58,
-     "w": "Explain"
+     "t": 6.06,
+     "d": 0.16,
+     "w": "why"
     },
     {
-     "t": 5.54,
-     "d": 0.2,
-     "w": "it"
+     "t": 6.22,
+     "d": 0.34,
+     "w": "October"
     },
     {
-     "t": 5.74,
-     "d": 0.36,
-     "w": "simply."
+     "t": 6.56,
+     "d": 0.44,
+     "w": "feels"
+    },
+    {
+     "t": 7.0,
+     "d": 0.46,
+     "w": "slow?"
+    },
+    {
+     "t": 7.76,
+     "d": 0.24,
+     "w": "Same"
+    },
+    {
+     "t": 8.0,
+     "d": 0.3,
+     "w": "budget,"
+    },
+    {
+     "t": 8.58,
+     "d": 0.18,
+     "w": "fewer"
+    },
+    {
+     "t": 8.76,
+     "d": 0.44,
+     "w": "sales?"
     }
    ]
   },
@@ -153,37 +187,47 @@
    "n": 3,
    "section": "hook",
    "who": "AMAN",
-   "show": "3 changes. Let's go.",
+   "show": "Partly. Here's what's happening before Diwali.",
    "pills": [
     [
-     0,
-     2
+     5,
+     6
     ]
    ],
    "beat": "hook-chip",
    "pose": "palms",
-   "start": 6.44,
-   "end": 7.74,
+   "start": 9.42,
+   "end": 11.88,
    "words": [
     {
-     "t": 6.44,
+     "t": 9.42,
+     "d": 0.44,
+     "w": "Partly."
+    },
+    {
+     "t": 10.12,
+     "d": 0.3,
+     "w": "Here's"
+    },
+    {
+     "t": 10.42,
      "d": 0.2,
-     "w": "Three"
+     "w": "what's"
     },
     {
-     "t": 6.64,
+     "t": 10.62,
+     "d": 0.32,
+     "w": "happening"
+    },
+    {
+     "t": 10.94,
+     "d": 0.54,
+     "w": "before"
+    },
+    {
+     "t": 11.48,
      "d": 0.4,
-     "w": "changes."
-    },
-    {
-     "t": 7.32,
-     "d": 0.24,
-     "w": "Let's"
-    },
-    {
-     "t": 7.56,
-     "d": 0.18,
-     "w": "go."
+     "w": "Diwali."
     }
    ]
   },
@@ -191,197 +235,216 @@
    "n": 4,
    "section": "one",
    "who": "AMAN",
-   "show": "One: Meta can turn 1 product photo into a video ad.",
+   "show": "CPM = the price of 1,000 ad views. It climbs into Black Friday.",
    "pills": [
     [
-     4,
-     7
+     0,
+     1
     ],
     [
-     9,
-     11
+     5,
+     8
     ]
    ],
-   "beat": "one-receipt",
+   "beat": "one-cpm",
    "pose": "point",
-   "start": 8.14,
-   "end": 12.04,
+   "start": 12.16,
+   "end": 16.12,
    "words": [
     {
-     "t": 8.14,
-     "d": 0.0,
-     "w": "One."
-    },
-    {
-     "t": 8.44,
-     "d": 0.38,
-     "w": "Meta"
-    },
-    {
-     "t": 8.82,
-     "d": 0.2,
-     "w": "can"
-    },
-    {
-     "t": 9.02,
-     "d": 0.28,
-     "w": "now"
-    },
-    {
-     "t": 9.3,
-     "d": 0.26,
-     "w": "turn"
-    },
-    {
-     "t": 9.56,
-     "d": 0.34,
-     "w": "one"
-    },
-    {
-     "t": 9.9,
+     "t": 12.16,
      "d": 0.42,
-     "w": "product"
+     "w": "CPM,"
     },
     {
-     "t": 10.32,
-     "d": 0.4,
-     "w": "photo"
+     "t": 12.88,
+     "d": 0.14,
+     "w": "the"
     },
     {
-     "t": 10.72,
-     "d": 0.46,
-     "w": "into"
+     "t": 13.02,
+     "d": 0.28,
+     "w": "price"
     },
     {
-     "t": 11.18,
-     "d": 0.24,
+     "t": 13.3,
+     "d": 0.14,
+     "w": "of"
+    },
+    {
+     "t": 13.44,
+     "d": 0.14,
      "w": "a"
     },
     {
-     "t": 11.42,
-     "d": 0.28,
-     "w": "video"
+     "t": 13.58,
+     "d": 0.34,
+     "w": "thousand"
     },
     {
-     "t": 11.7,
-     "d": 0.34,
-     "w": "ad."
+     "t": 13.92,
+     "d": 0.38,
+     "w": "ad"
+    },
+    {
+     "t": 14.3,
+     "d": 0.26,
+     "w": "views,"
+    },
+    {
+     "t": 14.86,
+     "d": 0.3,
+     "w": "climbs"
+    },
+    {
+     "t": 15.16,
+     "d": 0.3,
+     "w": "into"
+    },
+    {
+     "t": 15.46,
+     "d": 0.26,
+     "w": "Black"
+    },
+    {
+     "t": 15.72,
+     "d": 0.4,
+     "w": "Friday."
     }
    ]
   },
   {
    "n": 5,
    "section": "one",
-   "who": "RIYA",
-   "show": "So I don't need a video shoot?",
+   "who": "AMAN",
+   "show": "One dataset: last Black Friday week, CPM ran 59% above September.",
    "pills": [
     [
-     2,
-     4
+     3,
+     6
+    ],
+    [
+     8,
+     11
     ]
    ],
-   "beat": null,
-   "pose": "ask",
-   "start": 12.36,
-   "end": 14.26,
+   "beat": "one-bars",
+   "pose": "palms",
+   "start": 16.4,
+   "end": 21.36,
    "words": [
     {
-     "t": 12.36,
-     "d": 0.24,
-     "w": "So"
-    },
-    {
-     "t": 12.9,
-     "d": 0.18,
-     "w": "I"
-    },
-    {
-     "t": 13.08,
-     "d": 0.16,
-     "w": "don't"
-    },
-    {
-     "t": 13.24,
-     "d": 0.24,
-     "w": "need"
-    },
-    {
-     "t": 13.48,
+     "t": 16.4,
      "d": 0.14,
-     "w": "a"
+     "w": "One"
     },
     {
-     "t": 13.62,
-     "d": 0.3,
-     "w": "video"
+     "t": 16.54,
+     "d": 0.54,
+     "w": "dataset:"
     },
     {
-     "t": 13.92,
+     "t": 17.34,
+     "d": 0.18,
+     "w": "last"
+    },
+    {
+     "t": 17.52,
      "d": 0.34,
-     "w": "shoot?"
+     "w": "Black"
+    },
+    {
+     "t": 17.86,
+     "d": 0.34,
+     "w": "Friday"
+    },
+    {
+     "t": 18.2,
+     "d": 0.3,
+     "w": "week,"
+    },
+    {
+     "t": 18.76,
+     "d": 0.36,
+     "w": "CPM"
+    },
+    {
+     "t": 19.12,
+     "d": 0.34,
+     "w": "ran"
+    },
+    {
+     "t": 19.46,
+     "d": 0.6,
+     "w": "fifty-nine"
+    },
+    {
+     "t": 20.06,
+     "d": 0.6,
+     "w": "percent"
+    },
+    {
+     "t": 20.66,
+     "d": 0.24,
+     "w": "above"
+    },
+    {
+     "t": 20.9,
+     "d": 0.46,
+     "w": "September."
     }
    ]
   },
   {
    "n": 6,
    "section": "one",
-   "who": "AMAN",
-   "show": "Not to start testing. It's built into Ads Manager.",
+   "who": "RIYA",
+   "show": "So I pause my ads till Diwali?",
    "pills": [
     [
-     5,
-     9
+     2,
+     5
     ]
    ],
-   "beat": "one-morph",
-   "pose": "palms",
-   "start": 14.56,
-   "end": 17.32,
+   "beat": "one-ask",
+   "pose": "ask",
+   "start": 21.62,
+   "end": 23.8,
    "words": [
     {
-     "t": 14.56,
+     "t": 21.62,
+     "d": 0.34,
+     "w": "So"
+    },
+    {
+     "t": 22.18,
+     "d": 0.12,
+     "w": "I"
+    },
+    {
+     "t": 22.3,
+     "d": 0.28,
+     "w": "pause"
+    },
+    {
+     "t": 22.58,
      "d": 0.22,
-     "w": "Not"
+     "w": "my"
     },
     {
-     "t": 14.78,
-     "d": 0.2,
-     "w": "to"
-    },
-    {
-     "t": 14.98,
-     "d": 0.18,
-     "w": "start"
-    },
-    {
-     "t": 15.16,
-     "d": 0.5,
-     "w": "testing."
-    },
-    {
-     "t": 15.98,
-     "d": 0.18,
-     "w": "It's"
-    },
-    {
-     "t": 16.16,
-     "d": 0.22,
-     "w": "built"
-    },
-    {
-     "t": 16.38,
+     "t": 22.8,
      "d": 0.32,
-     "w": "into"
+     "w": "ads"
     },
     {
-     "t": 16.7,
-     "d": 0.32,
-     "w": "Ads"
+     "t": 23.12,
+     "d": 0.28,
+     "w": "till"
     },
     {
-     "t": 17.02,
-     "d": 0.3,
-     "w": "Manager."
+     "t": 23.4,
+     "d": 0.4,
+     "w": "Diwali?"
     }
    ]
   },
@@ -389,271 +452,234 @@
    "n": 7,
    "section": "two",
    "who": "AMAN",
-   "show": "Two: a new Meta AI decides who sees your ads.",
+   "show": "No. That same week, cost per sale fell 20%.",
    "pills": [
     [
-     2,
-     5
+     4,
+     9
     ]
    ],
-   "beat": "two-receipt",
+   "beat": "two-cost",
    "pose": "point",
-   "start": 17.56,
-   "end": 21.46,
+   "start": 24.24,
+   "end": 27.92,
    "words": [
     {
-     "t": 17.56,
-     "d": 0.26,
-     "w": "Two."
+     "t": 24.24,
+     "d": 0.32,
+     "w": "No."
     },
     {
-     "t": 18.18,
-     "d": 0.24,
-     "w": "Meta"
-    },
-    {
-     "t": 18.42,
-     "d": 0.2,
-     "w": "has"
-    },
-    {
-     "t": 18.62,
+     "t": 24.86,
      "d": 0.14,
-     "w": "a"
+     "w": "That"
     },
     {
-     "t": 18.76,
-     "d": 0.2,
-     "w": "new"
-    },
-    {
-     "t": 18.96,
-     "d": 0.36,
-     "w": "AI"
-    },
-    {
-     "t": 19.32,
-     "d": 0.42,
-     "w": "that"
-    },
-    {
-     "t": 19.74,
-     "d": 0.46,
-     "w": "decides"
-    },
-    {
-     "t": 20.2,
-     "d": 0.38,
-     "w": "who"
-    },
-    {
-     "t": 20.58,
+     "t": 25.0,
      "d": 0.3,
-     "w": "sees"
+     "w": "same"
     },
     {
-     "t": 20.88,
+     "t": 25.3,
+     "d": 0.34,
+     "w": "week,"
+    },
+    {
+     "t": 25.98,
      "d": 0.22,
-     "w": "your"
+     "w": "cost"
     },
     {
-     "t": 21.1,
-     "d": 0.36,
-     "w": "ads."
+     "t": 26.2,
+     "d": 0.24,
+     "w": "per"
+    },
+    {
+     "t": 26.44,
+     "d": 0.42,
+     "w": "sale"
+    },
+    {
+     "t": 26.86,
+     "d": 0.26,
+     "w": "fell"
+    },
+    {
+     "t": 27.12,
+     "d": 0.4,
+     "w": "twenty"
+    },
+    {
+     "t": 27.52,
+     "d": 0.4,
+     "w": "percent."
     }
    ]
   },
   {
    "n": 8,
    "section": "two",
-   "who": "AMAN",
-   "show": "Meta says: about 19% more conversions.",
+   "who": "RIYA",
+   "show": "Wait, how? Ads cost more!",
    "pills": [
     [
+     1,
+     2
+    ],
+    [
      3,
-     6
+     5
     ]
    ],
-   "beat": "two-bars",
-   "pose": "palms",
-   "start": 21.74,
-   "end": 25.06,
+   "beat": "two-how",
+   "pose": "wow",
+   "start": 27.92,
+   "end": 29.98,
    "words": [
     {
-     "t": 21.74,
-     "d": 0.36,
-     "w": "Meta"
-    },
-    {
-     "t": 22.1,
-     "d": 0.22,
-     "w": "says"
-    },
-    {
-     "t": 22.32,
+     "t": 27.92,
      "d": 0.24,
-     "w": "it"
+     "w": "Wait,"
     },
     {
-     "t": 22.56,
-     "d": 0.16,
-     "w": "gets"
+     "t": 28.52,
+     "d": 0.2,
+     "w": "how?"
     },
     {
-     "t": 22.72,
+     "t": 28.98,
+     "d": 0.24,
+     "w": "Ads"
+    },
+    {
+     "t": 29.22,
      "d": 0.34,
-     "w": "about"
+     "w": "cost"
     },
     {
-     "t": 23.06,
-     "d": 0.53,
-     "w": "nineteen"
-    },
-    {
-     "t": 23.59,
-     "d": 0.53,
-     "w": "percent"
-    },
-    {
-     "t": 24.12,
-     "d": 0.38,
-     "w": "more"
-    },
-    {
-     "t": 24.5,
-     "d": 0.56,
-     "w": "conversions."
+     "t": 29.56,
+     "d": 0.42,
+     "w": "more!"
     }
    ]
   },
   {
    "n": 9,
    "section": "two",
-   "who": "RIYA",
-   "show": "So I just run my one best ad, right?",
+   "who": "AMAN",
+   "show": "Conversion rate (share of visitors who buy) rose 48%.",
    "pills": [
     [
-     5,
-     8
+     0,
+     2
+    ],
+    [
+     8,
+     9
     ]
    ],
-   "beat": null,
-   "pose": "ask",
-   "start": 25.54,
-   "end": 28.26,
+   "beat": "two-bars",
+   "pose": "palms",
+   "start": 30.26,
+   "end": 34.18,
    "words": [
     {
-     "t": 25.54,
-     "d": 0.38,
-     "w": "So"
-    },
-    {
-     "t": 26.1,
-     "d": 0.16,
-     "w": "I"
-    },
-    {
-     "t": 26.26,
-     "d": 0.2,
-     "w": "just"
-    },
-    {
-     "t": 26.46,
-     "d": 0.22,
-     "w": "run"
-    },
-    {
-     "t": 26.68,
-     "d": 0.2,
-     "w": "my"
-    },
-    {
-     "t": 26.88,
-     "d": 0.28,
-     "w": "one"
-    },
-    {
-     "t": 27.16,
-     "d": 0.22,
-     "w": "best"
-    },
-    {
-     "t": 27.38,
+     "t": 30.26,
      "d": 0.42,
-     "w": "ad,"
+     "w": "Conversion"
     },
     {
-     "t": 28.02,
+     "t": 30.68,
+     "d": 0.32,
+     "w": "rate,"
+    },
+    {
+     "t": 31.22,
+     "d": 0.1,
+     "w": "the"
+    },
+    {
+     "t": 31.32,
+     "d": 0.26,
+     "w": "share"
+    },
+    {
+     "t": 31.58,
+     "d": 0.16,
+     "w": "of"
+    },
+    {
+     "t": 31.74,
+     "d": 0.32,
+     "w": "visitors"
+    },
+    {
+     "t": 32.06,
      "d": 0.24,
-     "w": "right?"
+     "w": "who"
+    },
+    {
+     "t": 32.3,
+     "d": 0.38,
+     "w": "buy,"
+    },
+    {
+     "t": 32.68,
+     "d": 0.54,
+     "w": "rose"
+    },
+    {
+     "t": 33.22,
+     "d": 0.48,
+     "w": "forty-eight"
+    },
+    {
+     "t": 33.7,
+     "d": 0.48,
+     "w": "percent."
     }
    ]
   },
   {
    "n": 10,
-   "section": "two",
-   "who": "AMAN",
-   "show": "No. It rewards variety. Photo, video, carousel.",
+   "section": "three",
+   "who": "RIYA",
+   "show": "What do I actually fix?",
    "pills": [
     [
-     2,
-     4
+     3,
+     5
     ]
    ],
-   "beat": "two-mix",
-   "pose": "point",
-   "start": 28.26,
-   "end": 33.54,
+   "beat": "three-ask",
+   "pose": "ask",
+   "start": 34.18,
+   "end": 35.78,
    "words": [
     {
-     "t": 28.26,
-     "d": 0.5,
-     "w": "No."
+     "t": 34.18,
+     "d": 0.4,
+     "w": "What"
     },
     {
-     "t": 29.06,
-     "d": 0.08,
-     "w": "It"
+     "t": 34.58,
+     "d": 0.16,
+     "w": "do"
     },
     {
-     "t": 29.14,
-     "d": 0.44,
-     "w": "rewards"
+     "t": 34.74,
+     "d": 0.16,
+     "w": "I"
     },
     {
-     "t": 29.58,
-     "d": 0.64,
-     "w": "variety."
+     "t": 34.9,
+     "d": 0.46,
+     "w": "actually"
     },
     {
-     "t": 30.62,
-     "d": 0.12,
-     "w": "Run"
-    },
-    {
-     "t": 30.74,
-     "d": 0.32,
-     "w": "different"
-    },
-    {
-     "t": 31.06,
-     "d": 0.34,
-     "w": "ads:"
-    },
-    {
-     "t": 31.76,
-     "d": 0.26,
-     "w": "photo,"
-    },
-    {
-     "t": 32.26,
-     "d": 0.26,
-     "w": "video,"
-    },
-    {
-     "t": 32.78,
-     "d": 0.76,
-     "w": "carousel."
+     "t": 35.36,
+     "d": 0.42,
+     "w": "fix?"
     }
    ]
   },
@@ -661,134 +687,85 @@
    "n": 11,
    "section": "three",
    "who": "AMAN",
-   "show": "Three: WhatsApp replies cost money after 1,000 free a month.",
+   "show": "Don't just cut spend.",
    "pills": [
     [
-     3,
-     5
-    ],
-    [
-     6,
-     8
+     1,
+     4
     ]
    ],
-   "beat": "three-bill",
-   "pose": "point",
-   "start": 33.6,
-   "end": 37.72,
+   "beat": null,
+   "pose": "palms",
+   "start": 36.06,
+   "end": 37.2,
    "words": [
     {
-     "t": 33.6,
-     "d": 0.22,
-     "w": "Three."
+     "t": 36.06,
+     "d": 0.26,
+     "w": "Don't"
     },
     {
-     "t": 34.02,
-     "d": 0.12,
-     "w": "WhatsApp"
+     "t": 36.32,
+     "d": 0.14,
+     "w": "just"
     },
     {
-     "t": 34.14,
-     "d": 0.52,
-     "w": "replies"
-    },
-    {
-     "t": 34.66,
-     "d": 0.36,
-     "w": "now"
-    },
-    {
-     "t": 35.02,
-     "d": 0.4,
-     "w": "cost"
-    },
-    {
-     "t": 35.42,
-     "d": 0.44,
-     "w": "money"
-    },
-    {
-     "t": 35.86,
-     "d": 0.36,
-     "w": "after"
-    },
-    {
-     "t": 36.22,
-     "d": 0.2,
-     "w": "a"
-    },
-    {
-     "t": 36.42,
-     "d": 0.42,
-     "w": "thousand"
+     "t": 36.46,
+     "d": 0.38,
+     "w": "cut"
     },
     {
      "t": 36.84,
-     "d": 0.4,
-     "w": "free"
-    },
-    {
-     "t": 37.24,
-     "d": 0.18,
-     "w": "a"
-    },
-    {
-     "t": 37.42,
-     "d": 0.3,
-     "w": "month."
+     "d": 0.36,
+     "w": "spend."
     }
    ]
   },
   {
    "n": 12,
    "section": "three",
-   "who": "RIYA",
-   "show": "Even when the customer messages me first?",
+   "who": "AMAN",
+   "show": "Fix what happens after the click.",
    "pills": [
     [
-     4,
-     7
+     3,
+     6
     ]
    ],
-   "beat": null,
-   "pose": "ask",
-   "start": 37.96,
-   "end": 40.02,
+   "beat": "three-fix",
+   "pose": "point",
+   "start": 37.5,
+   "end": 39.18,
    "words": [
     {
-     "t": 37.96,
-     "d": 0.3,
-     "w": "Even"
+     "t": 37.5,
+     "d": 0.14,
+     "w": "Fix"
+    },
+    {
+     "t": 37.64,
+     "d": 0.22,
+     "w": "what"
+    },
+    {
+     "t": 37.86,
+     "d": 0.4,
+     "w": "happens"
     },
     {
      "t": 38.26,
-     "d": 0.22,
-     "w": "when"
+     "d": 0.48,
+     "w": "after"
     },
     {
-     "t": 38.48,
-     "d": 0.12,
+     "t": 38.74,
+     "d": 0.18,
      "w": "the"
     },
     {
-     "t": 38.6,
-     "d": 0.34,
-     "w": "customer"
-    },
-    {
-     "t": 38.94,
-     "d": 0.5,
-     "w": "messages"
-    },
-    {
-     "t": 39.44,
-     "d": 0.24,
-     "w": "me"
-    },
-    {
-     "t": 39.68,
-     "d": 0.34,
-     "w": "first?"
+     "t": 38.92,
+     "d": 0.26,
+     "w": "click."
     }
    ]
   },
@@ -796,96 +773,65 @@
    "n": 13,
    "section": "three",
    "who": "AMAN",
-   "show": "If they came from your ad, it's free for up to 7 days.",
+   "show": "Sharper offer, faster page, easier checkout or booking.",
    "pills": [
     [
-     4,
-     6
+     0,
+     2
     ],
     [
-     9,
-     13
+     2,
+     4
+    ],
+    [
+     4,
+     8
     ]
    ],
-   "beat": "three-chat",
+   "beat": "three-steps",
    "pose": "palms",
-   "start": 40.32,
-   "end": 43.94,
+   "start": 39.42,
+   "end": 42.74,
    "words": [
     {
-     "t": 40.32,
-     "d": 0.14,
-     "w": "If"
+     "t": 39.42,
+     "d": 0.4,
+     "w": "Sharper"
     },
     {
-     "t": 40.46,
-     "d": 0.14,
-     "w": "they"
-    },
-    {
-     "t": 40.6,
-     "d": 0.22,
-     "w": "came"
-    },
-    {
-     "t": 40.82,
-     "d": 0.2,
-     "w": "from"
-    },
-    {
-     "t": 41.02,
-     "d": 0.28,
-     "w": "your"
-    },
-    {
-     "t": 41.3,
-     "d": 0.38,
-     "w": "ad,"
-    },
-    {
-     "t": 41.92,
-     "d": 0.1,
-     "w": "it"
-    },
-    {
-     "t": 42.02,
-     "d": 0.14,
-     "w": "can"
-    },
-    {
-     "t": 42.16,
-     "d": 0.22,
-     "w": "stay"
-    },
-    {
-     "t": 42.38,
-     "d": 0.38,
-     "w": "free"
-    },
-    {
-     "t": 42.76,
-     "d": 0.22,
-     "w": "for"
-    },
-    {
-     "t": 42.98,
-     "d": 0.12,
-     "w": "up"
-    },
-    {
-     "t": 43.1,
-     "d": 0.14,
-     "w": "to"
-    },
-    {
-     "t": 43.24,
+     "t": 39.82,
      "d": 0.34,
-     "w": "seven"
+     "w": "offer,"
     },
     {
-     "t": 43.58,
+     "t": 40.42,
+     "d": 0.26,
+     "w": "faster"
+    },
+    {
+     "t": 40.68,
+     "d": 0.44,
+     "w": "page,"
+    },
+    {
+     "t": 41.38,
+     "d": 0.28,
+     "w": "easier"
+    },
+    {
+     "t": 41.66,
+     "d": 0.42,
+     "w": "checkout"
+    },
+    {
+     "t": 42.08,
      "d": 0.36,
-     "w": "days."
+     "w": "or"
+    },
+    {
+     "t": 42.44,
+     "d": 0.3,
+     "w": "booking."
     }
    ]
   },
@@ -893,66 +839,81 @@
    "n": 14,
    "section": "cta",
    "who": "AMAN",
-   "show": "Comment \"META\" and I'll send the full checklist.",
+   "show": "Comment \"OCTOBER\" for a free check of where your ad money leaks.",
    "pills": [
     [
      1,
      2
     ],
     [
-     6,
-     8
+     4,
+     6
     ]
    ],
    "beat": "cta-comment",
    "pose": "point",
-   "start": 44.24,
-   "end": 46.74,
+   "start": 42.98,
+   "end": 46.66,
    "words": [
     {
-     "t": 44.24,
+     "t": 42.98,
      "d": 0.28,
      "w": "Comment"
     },
     {
-     "t": 44.78,
-     "d": 0.3,
-     "w": "META"
+     "t": 43.26,
+     "d": 0.64,
+     "w": "OCTOBER"
     },
     {
-     "t": 45.34,
-     "d": 0.08,
-     "w": "and"
+     "t": 43.9,
+     "d": 0.54,
+     "w": "for"
     },
     {
-     "t": 45.42,
-     "d": 0.2,
-     "w": "I'll"
-    },
-    {
-     "t": 45.62,
-     "d": 0.16,
-     "w": "send"
-    },
-    {
-     "t": 45.78,
-     "d": 0.12,
-     "w": "you"
-    },
-    {
-     "t": 45.9,
+     "t": 44.44,
      "d": 0.14,
-     "w": "the"
+     "w": "a"
     },
     {
-     "t": 46.04,
+     "t": 44.58,
+     "d": 0.24,
+     "w": "free"
+    },
+    {
+     "t": 44.82,
      "d": 0.3,
-     "w": "full"
+     "w": "check"
     },
     {
-     "t": 46.34,
-     "d": 0.4,
-     "w": "checklist."
+     "t": 45.12,
+     "d": 0.18,
+     "w": "of"
+    },
+    {
+     "t": 45.3,
+     "d": 0.22,
+     "w": "where"
+    },
+    {
+     "t": 45.52,
+     "d": 0.18,
+     "w": "your"
+    },
+    {
+     "t": 45.7,
+     "d": 0.26,
+     "w": "ad"
+    },
+    {
+     "t": 45.96,
+     "d": 0.24,
+     "w": "money"
+    },
+    {
+     "t": 46.2,
+     "d": 0.46,
+     "w": "leaks."
     }
    ]
   },
@@ -960,7 +921,7 @@
    "n": 15,
    "section": "cta",
    "who": "RIYA",
-   "show": "Saving this before Black Friday!",
+   "show": "Doing that before Diwali!",
    "pills": [
     [
      0,
@@ -969,33 +930,28 @@
    ],
    "beat": "cta-save",
    "pose": "wow",
-   "start": 47.0,
-   "end": 48.92,
+   "start": 47.04,
+   "end": 48.68,
    "words": [
     {
-     "t": 47.0,
-     "d": 0.42,
-     "w": "Saving"
+     "t": 47.04,
+     "d": 0.32,
+     "w": "Doing"
     },
     {
-     "t": 47.42,
-     "d": 0.28,
-     "w": "this"
+     "t": 47.36,
+     "d": 0.34,
+     "w": "that"
     },
     {
      "t": 47.7,
-     "d": 0.44,
+     "d": 0.36,
      "w": "before"
     },
     {
-     "t": 48.14,
-     "d": 0.32,
-     "w": "Black"
-    },
-    {
-     "t": 48.46,
-     "d": 0.46,
-     "w": "Friday!"
+     "t": 48.06,
+     "d": 0.62,
+     "w": "Diwali!"
     }
    ]
   }
@@ -1003,33 +959,49 @@
  "sections": [
   {
    "id": "hook",
-   "label": "",
-   "tag": "",
-   "source": "Black Friday: Fri 27 Nov 2026",
+   "label": "WHY ADS FEEL EXPENSIVE",
+   "tag": "Meta Q2 2026 results",
+   "source": "Source: Meta Q2 2026 results · investor.atmeta.com (29 Jul 2026)",
    "start": 0.0,
-   "end": 7.74,
+   "end": 11.88,
    "views": [
     {
      "at": "hook-big",
      "items": [
       {
        "type": "big",
-       "value": "{days} DAYS",
-       "sub": "to Black Friday"
+       "value": "+12%",
+       "sub": "average price per ad · Q2 2026 vs Q2 2025",
+       "color": "blue"
       },
       {
        "type": "chip",
-       "text": "3 META CHANGES",
-       "kind": "ink"
+       "text": "Meta Q2 2026 results · Meta's own number",
+       "kind": "ink",
+       "delay": 80
+      }
+     ]
+    },
+    {
+     "at": "hook-ask",
+     "items": [
+      {
+       "type": "big",
+       "value": "{days}",
+       "sub": "days to Diwali",
+       "color": "gold",
+       "size": 190
       },
       {
-       "type": "checklist",
-       "rows": [
-        "Photo → video",
-        "New ad AI",
-        "WhatsApp pricing"
+       "type": "chips",
+       "items": [
+        "Dhanteras · 6 Nov",
+        "Diwali · 8 Nov",
+        "Black Friday · 27 Nov"
        ],
-       "unlockAt": "hook-chip"
+       "kind": "gold",
+       "delay": 4,
+       "at": "hook-chip"
       }
      ]
     }
@@ -1037,41 +1009,66 @@
   },
   {
    "id": "one",
-   "label": "① PHOTO → VIDEO",
-   "tag": "official · live now",
-   "source": "Source: Meta for Business · Advertising Week New York, 6 Oct 2026",
-   "start": 8.14,
-   "end": 17.32,
+   "label": "① PRICES CLIMB NOW",
+   "tag": "vendor data · 16 Oct 2026",
+   "source": "Source: Lebesgue · $22.6M of Meta spend by its client brands, Sep–Nov 2025 · not India data (lebesgue.io, 16 Oct 2026)",
+   "start": 12.16,
+   "end": 23.8,
    "views": [
     {
-     "at": "one-receipt",
+     "at": "one-cpm",
      "items": [
       {
-       "type": "browser",
-       "url": "facebook.com/business",
-       "title": "New AI capabilities",
-       "date": "6 Oct 2026",
-       "note": "Photos become video."
+       "type": "big",
+       "value": "CPM",
+       "sub": "= the price of 1,000 ad views",
+       "color": "ink",
+       "size": 190
+      },
+      {
+       "type": "chip",
+       "text": "In 2024 the climb began mid-October",
+       "kind": "gold",
+       "delay": 60
       }
      ]
     },
     {
-     "at": "one-morph",
+     "at": "one-bars",
      "items": [
       {
-       "type": "receipt",
-       "text": "Meta · 6 Oct"
-      },
-      {
-       "type": "imageToVideo"
-      },
-      {
-       "type": "chips",
+       "type": "bars",
        "items": [
-        "✓ No shoot",
-        "Ads Manager"
+        {
+         "label": "Black Friday week vs September",
+         "value": 59,
+         "color": "gold"
+        },
+        {
+         "label": "Black Friday day vs September",
+         "value": 84,
+         "color": "red"
+        }
        ],
-       "kind": "green"
+       "max": 100
+      },
+      {
+       "type": "chip",
+       "text": "Lebesgue · median brand · 2025 · not India data",
+       "kind": "ink",
+       "delay": 54
+      }
+     ]
+    },
+    {
+     "at": "one-ask",
+     "items": [
+      {
+       "type": "big",
+       "value": "PAUSE ADS?",
+       "sub": "till Diwali?",
+       "color": "red",
+       "size": 170
       }
      ]
     }
@@ -1079,45 +1076,52 @@
   },
   {
    "id": "two",
-   "label": "② META'S NEW AD AI",
-   "tag": "official · 13 Oct 2026",
-   "source": "Source: engineering.fb.com (13 Oct) · Meta for Business (19 Oct 2026)",
-   "start": 17.56,
-   "end": 33.54,
+   "label": "② BUYERS ARE READY",
+   "tag": "same dataset",
+   "source": "Source: Lebesgue · $22.6M of Meta spend by its client brands, Sep–Nov 2025 · not India data (lebesgue.io, 16 Oct 2026)",
+   "start": 24.24,
+   "end": 34.18,
    "views": [
     {
-     "at": "two-receipt",
+     "at": "two-cost",
      "items": [
       {
-       "type": "compare",
-       "bad": {
-        "title": "Most brands",
-        "lines": [
-         "1 ad, 10 copies",
-         "Same hook"
-        ]
-       },
-       "good": {
-        "title": "What works",
-        "lines": [
-         "Different ads",
-         "Photo + video"
-        ]
-       },
-       "goodAt": "two-bars"
+       "type": "big",
+       "value": "−20%",
+       "sub": "cost per sale · Black Friday week vs September",
+       "color": "green"
+      },
+      {
+       "type": "receipt",
+       "text": "Lebesgue · median brand · 2025 · not India data"
+      },
+      {
+       "type": "chip",
+       "text": "Same week: CPM +59%",
+       "kind": "gold",
+       "at": "two-how"
       }
      ]
     },
     {
-     "at": "two-mix",
+     "at": "two-bars",
      "items": [
       {
-       "type": "steps",
+       "type": "bars",
        "items": [
-        "Make 5 different ads",
-        "Test for 7 days",
-        "Keep the winners"
-       ]
+        {
+         "label": "Conversion rate (share of visitors who buy)",
+         "value": 48,
+         "color": "green"
+        }
+       ],
+       "max": 100
+      },
+      {
+       "type": "chip",
+       "text": "Ads cost more. More visitors were ready to buy.",
+       "kind": "green",
+       "delay": 66
       }
      ]
     }
@@ -1125,35 +1129,47 @@
   },
   {
    "id": "three",
-   "label": "③ WHATSAPP PRICING",
-   "tag": "official · pricing page",
-   "source": "Source: developers.facebook.com/docs/whatsapp/pricing (accessed 22 Oct 2026)",
-   "start": 33.6,
-   "end": 43.94,
+   "label": "③ WHAT TO FIX",
+   "tag": "Adsworm playbook",
+   "source": "Adsworm advice · not a guarantee of results",
+   "start": 34.18,
+   "end": 42.74,
    "views": [
     {
-     "at": "three-bill",
+     "at": "three-ask",
      "items": [
       {
-       "type": "bars",
-       "items": [
-        {
-         "label": "CPM",
-         "value": 26,
-         "color": "gold"
-        },
-        {
-         "label": "CPC",
-         "value": 45
-        }
-       ],
-       "max": 50
-      },
+       "type": "compare",
+       "bad": {
+        "title": "Only cut spend",
+        "lines": [
+         "Vanish when",
+         "buyers are ready"
+        ]
+       },
+       "good": {
+        "title": "Fix after the click",
+        "lines": [
+         "Keep showing up",
+         "Turn more clicks",
+         "into sales"
+        ]
+       },
+       "goodAt": "three-fix"
+      }
+     ]
+    },
+    {
+     "at": "three-steps",
+     "items": [
       {
-       "type": "ring",
-       "value": "7",
-       "sub": "days free",
-       "at": "three-chat"
+       "type": "steps",
+       "items": [
+        "Sharper offer",
+        "Faster page",
+        "Easier checkout or booking"
+       ],
+       "stagger": 24
       }
      ]
     }
@@ -1162,22 +1178,33 @@
   {
    "id": "cta",
    "label": "COMMENT TO GET IT",
-   "tag": "free checklist",
+   "tag": "free leak check",
    "source": "",
-   "start": 44.24,
-   "end": 48.92,
+   "start": 42.98,
+   "end": 48.68,
    "views": [
     {
      "at": "cta-comment",
      "items": [
       {
        "type": "comment",
-       "keyword": "AUDIT"
+       "keyword": "OCTOBER"
       },
       {
-       "type": "pdf",
-       "title": "Free audit",
-       "sub": "in your DM",
+       "type": "chips",
+       "items": [
+        "Offer clear?",
+        "Page fast?",
+        "Checkout or booking easy?",
+        "Sales tracked right?"
+       ],
+       "kind": "blue",
+       "delay": 66
+      },
+      {
+       "type": "chip",
+       "text": "Free pre-Diwali leak check · sent by DM",
+       "kind": "green",
        "at": "cta-save"
       }
      ]
@@ -1187,15 +1214,18 @@
  ],
  "beats": {
   "hook-big": -24,
-  "hook-chip": 193,
-  "one-receipt": 244,
-  "one-morph": 437,
-  "two-receipt": 527,
-  "two-bars": 652,
-  "two-mix": 848,
-  "three-bill": 1008,
-  "three-chat": 1210,
-  "cta-comment": 1327,
-  "cta-save": 1410
+  "hook-ask": 166,
+  "hook-chip": 283,
+  "one-cpm": 365,
+  "one-bars": 492,
+  "one-ask": 649,
+  "two-cost": 727,
+  "two-how": 838,
+  "two-bars": 908,
+  "three-ask": 1025,
+  "three-fix": 1125,
+  "three-steps": 1183,
+  "cta-comment": 1289,
+  "cta-save": 1411
  }
 }

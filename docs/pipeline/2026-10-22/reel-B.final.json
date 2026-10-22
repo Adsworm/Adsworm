@@ -1,0 +1,403 @@
+{
+  "title": "Meta changes your live ads on 28 October",
+  "voices": {
+    "AMAN": {
+      "name": "Holden",
+      "voice_type": "preset",
+      "voice_id": "3c9d6053-6334-592c-8997-4e325286af3f"
+    },
+    "RIYA": {
+      "name": "Anika (Indian English)",
+      "voice_type": "preset",
+      "voice_id": "4b2dc8f3-5e8b-59a9-9a5c-85620e44c033"
+    }
+  },
+  "direction": "Calm-urgent news explainer, tight turns. Aman: clear, steady, trustworthy; stress 'October twenty-eighth' and 'Meta's own number', never alarmist. Riya: Indian-English brand owner, quick surprised 'Wait', sharp skeptical questions; upbeat and decisive on her last line.",
+  "gapCap": 0.22,
+  "tempo": 1.05,
+  "bedGain": 0.07,
+  "fxGain": 0.85,
+  "leadInMs": 120,
+  "tailMs": 1200,
+  "vars": {
+    "countdown": {
+      "to": "2026-10-28",
+      "note": "Product browsing switches on Wed 28 Oct 2026 unless the advertiser opts out. vars.days is computed at voice time; REEL_DAYS=n overrides. Not spoken."
+    }
+  },
+  "brand": {
+    "footer": "ADSWORM  |  Performance Marketing Agency",
+    "names": {
+      "AMAN": "AMAN · ADSWORM",
+      "RIYA": "RIYA · BRAND OWNER"
+    },
+    "side": {
+      "AMAN": "right",
+      "RIYA": "left"
+    }
+  },
+  "sections": [
+    {
+      "id": "hook",
+      "label": "META'S NOTICE TO ADVERTISERS",
+      "tag": "reported 15 Oct 2026",
+      "source": "Source: Meta notice to advertisers, via ppc.land (15 Oct 2026)",
+      "lines": [
+        {
+          "who": "AMAN",
+          "say": "Running Meta ads? Meta has told advertisers it'll change live ads from October twenty-eighth.",
+          "show": "Meta has [told advertisers] it'll change [live ads] from [28 Oct].",
+          "beat": "hook-big",
+          "pose": "point"
+        },
+        {
+          "who": "AMAN",
+          "say": "It came as a notice, not a public announcement.",
+          "show": "It came as a [notice], not a [public announcement].",
+          "beat": "hook-chip",
+          "pose": "palms"
+        },
+        {
+          "who": "RIYA",
+          "say": "Wait, change my ads how?",
+          "show": "Wait, change [my ads] [how]?",
+          "pose": "ask"
+        }
+      ],
+      "views": [
+        {
+          "at": "hook-big",
+          "items": [
+            {
+              "type": "big",
+              "value": "28 OCT",
+              "sub": "Meta's notice: product browsing on existing ads",
+              "color": "blue"
+            },
+            {
+              "type": "chip",
+              "text": "{days} days until 28 Oct",
+              "kind": "gold"
+            },
+            {
+              "type": "chip",
+              "text": "Meta's notice to advertisers · via ppc.land",
+              "kind": "ink",
+              "delay": 84
+            }
+          ]
+        },
+        {
+          "at": "hook-chip",
+          "items": [
+            {
+              "type": "browser",
+              "url": "ppc.land",
+              "title": "Meta will turn on product browsing in existing ads on October 28",
+              "date": "15 Oct 2026",
+              "note": "Reporting Meta's notice to advertisers · no official Meta page found"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "one",
+      "label": "① WHAT CHANGES",
+      "tag": "Meta notice to advertisers",
+      "source": "Source: Meta advertiser notice, as reported by ppc.land (15 Oct 2026) & relevantaudience.com",
+      "lines": [
+        {
+          "who": "AMAN",
+          "say": "It says Meta will add product browsing to existing ads.",
+          "show": "The notice: Meta will add [product browsing] to [existing ads].",
+          "beat": "one-notice",
+          "pose": "point"
+        },
+        {
+          "who": "AMAN",
+          "say": "A tap may open product info inside the app first.",
+          "show": "A tap may open [product info inside the app] first.",
+          "beat": "one-phone",
+          "pose": "palms"
+        },
+        {
+          "who": "RIYA",
+          "say": "Before my website? Good or bad?",
+          "show": "Before [my website]? [Good or bad]?",
+          "beat": "one-ask",
+          "pose": "ask"
+        }
+      ],
+      "views": [
+        {
+          "at": "one-notice",
+          "items": [
+            {
+              "type": "note",
+              "text": "“Starting October 28, 2026, we'll add product browsing to your existing ads.”",
+              "size": 40
+            },
+            {
+              "type": "receipt",
+              "text": "Meta's notice to advertisers · as reported by ppc.land"
+            }
+          ]
+        },
+        {
+          "at": "one-phone",
+          "items": [
+            {
+              "type": "phone",
+              "label": "Your ad",
+              "adTitle": "Product info opens in the app",
+              "cta": "Shop now"
+            },
+            {
+              "type": "chips",
+              "items": [
+                "Tap ad",
+                "Product info in app"
+              ],
+              "kind": "blue",
+              "delay": 24
+            }
+          ]
+        },
+        {
+          "at": "one-ask",
+          "items": [
+            {
+              "type": "steps",
+              "items": [
+                "Tap your ad",
+                "Product info opens in the app",
+                "Your website: not first"
+              ],
+              "stagger": 8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "two",
+      "label": "② META'S NUMBER",
+      "tag": "Meta's own test",
+      "source": "Source: Meta's notice · test 6–21 Aug 2026, ~117,700 advertisers (as reported by ppc.land)",
+      "lines": [
+        {
+          "who": "AMAN",
+          "say": "Meta says its test showed three percent more conversions, on average.",
+          "show": "Meta says its test showed [3% more conversions], on average.",
+          "beat": "two-big",
+          "pose": "point"
+        },
+        {
+          "who": "RIYA",
+          "say": "Conversions meaning sales?",
+          "show": "Conversions meaning [sales]?",
+          "beat": "two-ask",
+          "pose": "ask"
+        },
+        {
+          "who": "AMAN",
+          "say": "It didn't say. That's Meta's own number.",
+          "show": "[It didn't say.] That's [Meta's own number].",
+          "beat": "two-note",
+          "pose": "palms"
+        }
+      ],
+      "views": [
+        {
+          "at": "two-big",
+          "items": [
+            {
+              "type": "big",
+              "value": "+3%",
+              "sub": "conversions, on average · Meta's test",
+              "color": "green"
+            },
+            {
+              "type": "chip",
+              "text": "Test: 6–21 Aug 2026 · ~117,700 advertisers",
+              "kind": "ink",
+              "delay": 54
+            }
+          ]
+        },
+        {
+          "at": "two-ask",
+          "items": [
+            {
+              "type": "note",
+              "text": "“Conversions” = sales? sign-ups?",
+              "size": 52
+            },
+            {
+              "type": "receipt",
+              "text": "Not defined in the notice · Meta's own number",
+              "at": "two-note"
+            },
+            {
+              "type": "chip",
+              "text": "No Meta Help Center page found · ppc.land, 15 Oct",
+              "kind": "ink",
+              "delay": 36,
+              "at": "two-note"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "three",
+      "label": "③ YOUR CHOICE",
+      "tag": "notice opt-out · before 28 Oct",
+      "source": "Opt out: the notice's button before 28 Oct, or per ad anytime in Advantage+ Creative & Destination settings (via ppc.land)",
+      "lines": [
+        {
+          "who": "RIYA",
+          "say": "So what should I do?",
+          "show": "So what [should I do]?",
+          "beat": "three-ask",
+          "pose": "ask"
+        },
+        {
+          "who": "AMAN",
+          "say": "Opt out in one go with the notice's button, before the twenty-eighth.",
+          "show": "Opt out in one go with [the notice's button], before [the 28th].",
+          "beat": "three-all",
+          "pose": "point"
+        },
+        {
+          "who": "AMAN",
+          "say": "Or switch it off ad by ad, anytime.",
+          "show": "Or switch it off [ad by ad], [anytime].",
+          "beat": "three-perad",
+          "pose": "palms"
+        },
+        {
+          "who": "AMAN",
+          "say": "Or keep it on a few ads and compare sales.",
+          "show": "Or [keep it on a few ads] and [compare sales].",
+          "beat": "three-test",
+          "pose": "palms"
+        }
+      ],
+      "views": [
+        {
+          "at": "three-ask",
+          "items": [
+            {
+              "type": "big",
+              "value": "3 OPTIONS",
+              "sub": "all ads · ad by ad · test it",
+              "color": "blue",
+              "size": 170
+            }
+          ]
+        },
+        {
+          "at": "three-all",
+          "items": [
+            {
+              "type": "big",
+              "value": "ALL ADS",
+              "sub": "opt out with the notice's button",
+              "color": "ink",
+              "size": 160
+            },
+            {
+              "type": "chip",
+              "text": "Before 28 Oct",
+              "kind": "gold",
+              "delay": 60
+            }
+          ]
+        },
+        {
+          "at": "three-perad",
+          "items": [
+            {
+              "type": "big",
+              "value": "AD BY AD",
+              "sub": "switch it off · anytime",
+              "color": "ink",
+              "size": 160
+            },
+            {
+              "type": "chip",
+              "text": "Advantage+ Creative & Destination settings",
+              "kind": "blue",
+              "delay": 20
+            }
+          ]
+        },
+        {
+          "at": "three-test",
+          "items": [
+            {
+              "type": "steps",
+              "items": [
+                "Keep it on a few ads",
+                "Opt out on the rest",
+                "Compare your sales"
+              ],
+              "stagger": 24
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "label": "COMMENT TO GET IT",
+      "tag": "free account check",
+      "source": "",
+      "lines": [
+        {
+          "who": "AMAN",
+          "say": "Not sure? Comment BROWSE and we'll check your account for free.",
+          "show": "Not sure? Comment [\"BROWSE\"] and we'll check your account [for free].",
+          "beat": "cta-comment",
+          "pose": "point"
+        },
+        {
+          "who": "RIYA",
+          "say": "Checking mine today!",
+          "show": "[Checking mine] today!",
+          "beat": "cta-save",
+          "pose": "wow"
+        }
+      ],
+      "views": [
+        {
+          "at": "cta-comment",
+          "items": [
+            {
+              "type": "comment",
+              "keyword": "BROWSE"
+            },
+            {
+              "type": "chips",
+              "items": [
+                "Which ads it touches",
+                "Keep it on or opt out?",
+                "How to switch it off"
+              ],
+              "kind": "blue",
+              "delay": 66
+            },
+            {
+              "type": "chip",
+              "text": "Free account check · sent by DM",
+              "kind": "green",
+              "at": "cta-save"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

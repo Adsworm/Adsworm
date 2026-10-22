@@ -141,7 +141,7 @@ const ItemView: React.FC<{item: Item; t: number; beats: Record<string, number>; 
     case 'chat':
       return <Chat t={t} brand={item.brand} adLine={item.adLine} reply={item.reply} pill={item.pill} w={640} />;
     case 'phone':
-      return <Phone t={t} label={item.label} adTitle={item.adTitle} cta={item.cta} width={230} />;
+      return <Phone t={t} label={item.label} adTitle={item.adTitle} cta={item.cta} width={196} />;
     case 'imageToVideo':
       return <ImageToVideo t={t} />;
     case 'comment':

@@ -19,7 +19,7 @@ export const Card: React.FC<{label: string; tag: string; source: string; section
         <div style={{fontSize: 22, fontWeight: 600, color: C.muted, letterSpacing: '0.04em'}}>{tag}</div>
       </div>
       <div style={{position: 'absolute', left: CARD.pad, right: CARD.pad, top: 100, bottom: 80}}>{children}</div>
-      <div style={{position: 'absolute', left: CARD.pad, bottom: 28, fontSize: 20, color: C.muted, opacity: s * 0.9}}>{source}</div>
+      <div style={{position: 'absolute', left: CARD.pad, right: CARD.pad, bottom: 22, fontSize: 19, lineHeight: 1.25, color: C.muted, opacity: s * 0.9}}>{source}</div>
     </div>
   );
 };

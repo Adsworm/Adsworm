@@ -33,7 +33,7 @@ export const Caption: React.FC<{line: Line; names: Record<string, string>; sideO
           textAlign: 'center',
           fontFamily: body,
           fontWeight: 700,
-          fontSize: 50,
+          fontSize: line.show.length > 52 ? 44 : 50,
           lineHeight: 1.3,
           color: C.ink,
           letterSpacing: '-0.015em',
