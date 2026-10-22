@@ -1,0 +1,380 @@
+{
+ "voices": {
+  "AMAN": {
+   "name": "Holden",
+   "voice_type": "preset",
+   "voice_id": "3c9d6053-6334-592c-8997-4e325286af3f"
+  },
+  "RIYA": {
+   "name": "Anika (Indian English)",
+   "voice_type": "preset",
+   "voice_id": "4b2dc8f3-5e8b-59a9-9a5c-85620e44c033"
+  }
+ },
+ "direction": "Fun, high-energy Instagram skit between a friendly expert and a panicky shop owner. Fast, natural back-and-forth, real reactions, smiles you can hear. Aman: excited, warm, confident. Riya: Indian English, expressive, quick.",
+ "gapCap": 0.22,
+ "tempo": 1.05,
+ "leadInMs": 80,
+ "tailMs": 1400,
+ "bedGain": 0.06,
+ "fxGain": 1.0,
+ "brand": {
+  "footer": "",
+  "names": {
+   "AMAN": "AMAN · ADSWORM",
+   "RIYA": "RIYA · BRAND OWNER"
+  },
+  "side": {
+   "AMAN": "left",
+   "RIYA": "right"
+  }
+ },
+ "sections": [
+  {
+   "id": "hook",
+   "label": "THE OCTOBER PARADOX",
+   "tag": "",
+   "source": "Meta Q2 2026 results (avg price per ad +12% YoY) · Lebesgue, median brand, Sep–Nov 2025, not India data",
+   "lines": [
+    {
+     "who": "AMAN",
+     "tags": "[excited]",
+     "say": "Ad prices are about to shoot up, and smart brands are happy.",
+     "show": "Ad prices are about to [shoot up]… and smart brands are [HAPPY].",
+     "beat": "l1"
+    },
+    {
+     "who": "RIYA",
+     "tags": "[laughs]",
+     "say": "Happy? Are they okay?",
+     "show": "Happy?! Are they [okay]?",
+     "beat": "l2"
+    }
+   ],
+   "views": [
+    {
+     "at": "l1",
+     "items": [
+      {
+       "type": "hookPrice",
+       "smileWord": "happy"
+      },
+      {
+       "type": "sticker",
+       "text": "smart brands = HAPPY?! 🤔",
+       "color": "gold",
+       "x": 300,
+       "y": 300,
+       "rotate": 6,
+       "word": "happy"
+      },
+      {
+       "type": "sticker",
+       "text": "are they okay? 😂",
+       "color": "pink",
+       "x": 10,
+       "y": 430,
+       "rotate": -6,
+       "at": "l2"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "catch",
+   "label": "WHAT HAPPENED LAST YEAR",
+   "tag": "",
+   "source": "Lebesgue · median brand · Black Friday week 2025 vs Sep 2025 · not India data (lebesgue.io, 16 Oct 2026)",
+   "lines": [
+    {
+     "who": "AMAN",
+     "tags": "[chuckles]",
+     "say": "Last Black Friday week, ad prices ran fifty-nine percent above September.",
+     "show": "Last Black Friday week, ad prices ran [59% above] September.",
+     "beat": "l3"
+    },
+    {
+     "who": "RIYA",
+     "tags": "[panicking]",
+     "say": "That's it. I'm pausing everything till December!",
+     "show": "That's it. I'm [pausing everything] till December!",
+     "beat": "l4"
+    },
+    {
+     "who": "AMAN",
+     "tags": "[jumping in]",
+     "say": "Don't! Same week, each sale cost twenty percent less.",
+     "show": "Don't! Same week, each sale cost [20% LESS].",
+     "beat": "l5"
+    },
+    {
+     "who": "RIYA",
+     "tags": "[confused]",
+     "say": "Wait. Ads cost more, but sales got cheaper? How?",
+     "show": "Wait… ads cost [more], but sales got [cheaper]? How?",
+     "beat": "l6"
+    }
+   ],
+   "views": [
+    {
+     "at": "l3",
+     "items": [
+      {
+       "type": "stat",
+       "value": 59,
+       "prefix": "+",
+       "suffix": "%",
+       "label": "ad prices (CPM) · Black Friday week vs September",
+       "color": "red",
+       "arrow": "up",
+       "word": "fifty"
+      },
+      {
+       "type": "chip",
+       "text": "Lebesgue · median brand · 2025 · not India data",
+       "kind": "ink",
+       "delay": 30
+      }
+     ]
+    },
+    {
+     "at": "l4",
+     "items": [
+      {
+       "type": "pauseButton",
+       "text": "PAUSE ALL ADS",
+       "strikeAt": "l5"
+      },
+      {
+       "type": "sticker",
+       "text": "WAIT! ✋",
+       "color": "red",
+       "x": 600,
+       "y": 40,
+       "rotate": 8,
+       "at": "l5"
+      }
+     ]
+    },
+    {
+     "at": "l5",
+     "items": [
+      {
+       "type": "versus",
+       "left": {
+        "value": 59,
+        "prefix": "+",
+        "suffix": "%",
+        "label": "ad prices",
+        "color": "red",
+        "arrow": "up"
+       },
+       "right": {
+        "value": 20,
+        "prefix": "−",
+        "suffix": "%",
+        "label": "cost per sale",
+        "color": "green",
+        "arrow": "down"
+       },
+       "qAt": "l6"
+      },
+      {
+       "type": "chip",
+       "text": "Same week · same brands",
+       "kind": "ink",
+       "delay": 24
+      }
+     ],
+     "word": "same"
+    }
+   ]
+  },
+  {
+   "id": "why",
+   "label": "THINK OF A SHOP",
+   "tag": "",
+   "source": "Analogy. Conversion rate +48%: Lebesgue · median brand · BF week 2025 vs Sep · not India data",
+   "lines": [
+    {
+     "who": "AMAN",
+     "tags": "[warmly]",
+     "say": "Think of a shop on a festival weekend.",
+     "show": "Think of a [shop] on a [festival weekend].",
+     "beat": "l7"
+    },
+    {
+     "who": "AMAN",
+     "tags": "[warmly]",
+     "say": "Rent's higher, but people walk in ready to buy.",
+     "show": "Rent's [higher]… but people walk in [ready to BUY].",
+     "beat": "l8"
+    },
+    {
+     "who": "RIYA",
+     "tags": "[gasps] [excited]",
+     "say": "Ohh! Expensive crowd, but a buying crowd!",
+     "show": "Ohh! Expensive crowd, but a [BUYING crowd]!",
+     "beat": "l9"
+    }
+   ],
+   "views": [
+    {
+     "at": "l7",
+     "items": [
+      {
+       "type": "shop",
+       "rentWord": "rent",
+       "buyWord": "buy",
+       "chip": "+48% conversion rate · more visitors buy"
+      },
+      {
+       "type": "sticker",
+       "text": "buying crowd 💡",
+       "color": "gold",
+       "x": 560,
+       "y": 30,
+       "rotate": 7,
+       "at": "l9"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "fix",
+   "label": "SO WHAT DO YOU DO?",
+   "tag": "",
+   "source": "Adsworm advice · not a guarantee of results",
+   "lines": [
+    {
+     "who": "AMAN",
+     "tags": "[confident]",
+     "say": "Exactly. So don't vanish. Fix what happens after the click.",
+     "show": "Exactly. So don't [vanish]. Fix what happens [after the click].",
+     "beat": "l10"
+    },
+    {
+     "who": "AMAN",
+     "tags": "[excited]",
+     "say": "Clear offer. Fast page. Easy checkout.",
+     "show": "[Clear offer.] [Fast page.] [Easy checkout.]",
+     "beat": "l11"
+    },
+    {
+     "who": "RIYA",
+     "tags": "[worried]",
+     "say": "Umm, and if my page is slow?",
+     "show": "Umm… and if my page is [slow]?",
+     "beat": "l12"
+    }
+   ],
+   "views": [
+    {
+     "at": "l10",
+     "items": [
+      {
+       "type": "compare",
+       "bad": {
+        "title": "Pause & vanish",
+        "lines": [
+         "Competitors take",
+         "the ready buyers"
+        ]
+       },
+       "good": {
+        "title": "Fix after the click",
+        "lines": [
+         "Same ads",
+         "more sales"
+        ]
+       },
+       "goodAt": "l10",
+       "goodWord": "fix"
+      }
+     ]
+    },
+    {
+     "at": "l11",
+     "items": [
+      {
+       "type": "checks",
+       "items": [
+        {
+         "text": "Clear offer",
+         "word": "offer"
+        },
+        {
+         "text": "Fast page",
+         "word": "page"
+        },
+        {
+         "text": "Easy checkout",
+         "word": "checkout"
+        }
+       ]
+      },
+      {
+       "type": "sticker",
+       "text": "slow page? 🐢",
+       "color": "pink",
+       "x": 560,
+       "y": 400,
+       "rotate": -6,
+       "at": "l12"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cta",
+   "label": "FREE LEAK CHECK",
+   "tag": "",
+   "source": "",
+   "lines": [
+    {
+     "who": "AMAN",
+     "tags": "[excited]",
+     "say": "Comment OCTOBER. We'll find where your money leaks, free.",
+     "show": "Comment [\"OCTOBER\"]. We'll find where your money [leaks], free.",
+     "beat": "l13"
+    },
+    {
+     "who": "RIYA",
+     "tags": "[whispers] [cheeky]",
+     "say": "Doing it before prices shoot up.",
+     "show": "Doing it before prices [shoot up]. 🤫",
+     "beat": "l14"
+    }
+   ],
+   "views": [
+    {
+     "at": "l13",
+     "items": [
+      {
+       "type": "comment",
+       "keyword": "OCTOBER"
+      },
+      {
+       "type": "chip",
+       "text": "Free pre-Diwali leak check · by DM",
+       "kind": "green",
+       "delay": 40
+      }
+     ]
+    },
+    {
+     "at": "l14",
+     "items": [
+      {
+       "type": "follow",
+       "share": "Send this to a founder who's about to pause ads 👀"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
