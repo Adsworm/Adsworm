@@ -39,7 +39,7 @@ export const Bubble: React.FC<{tokens: Token[]; who: string; name: string; side:
           const said = i <= live;
           const now = i === live;
           return (
-            <span key={`${ci}-${i}`} style={{fontWeight: 800, fontSize: 64, lineHeight: 1.08, letterSpacing: '-0.02em', color: tok.pill && said ? '#fff' : said ? C.ink : '#B4B9C4', background: tok.pill && said ? accent : 'transparent', borderRadius: 14, padding: tok.pill && said ? '2px 12px' : '2px 0', transform: `scale(${now ? 1.06 : 1})`, display: 'inline-block'}}>
+            <span key={`${ci}-${i}`} style={{fontWeight: 800, fontSize: c.map((x) => x.w).join(' ').length > 18 ? 56 : 64, lineHeight: 1.08, letterSpacing: '-0.02em', color: tok.pill && said ? '#fff' : said ? C.ink : '#B4B9C4', background: tok.pill && said ? accent : 'transparent', borderRadius: 14, padding: tok.pill && said ? '2px 12px' : '2px 0', transform: `scale(${now ? 1.06 : 1})`, display: 'inline-block'}}>
               {tok.w}
             </span>
           );

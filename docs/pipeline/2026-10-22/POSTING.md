@@ -1,12 +1,12 @@
 # Post today (22 Oct 2026) from @adsworm
 
-Both reels: 1080×1920, H.264, −14 LUFS, spec PASS. Turn on Instagram's **AI label** (AI characters + AI voices). Cover = frame 0 (already a headline), or upload `cover.png`. Suggested slots (IST): Reel A 7:30 pm today, Reel B tomorrow 12:30 pm (gives each its own 24 h push; B's deadline is 28 Oct).
+Both reels: 1080×1920, H.264, −14 LUFS, spec PASS. Turn on Instagram's **AI label** (AI characters + AI voices). Cover: upload `out/cover.png` (frame 100, the hook landed). Frame 0 is the zoom-punch start, by design. Suggested slots (IST): Reel A 7:30 pm today, Reel B tomorrow 12:30 pm (gives each its own 24 h push; B's deadline is 28 Oct).
 
 Before posting, set up the comment → DM automation (ManyChat or Meta Business Suite → Automations) for each keyword below.
 
 ---
 
-## Reel A: `ADSWORM_Oct-ads-expensive_A.mp4` (50 s): keyword **OCTOBER**
+## Reel A: `ADSWORM_Oct-paradox_A-v3.mp4` (52 s, engine v3; replaces ADSWORM_Oct-ads-expensive_A.mp4): keyword **OCTOBER**
 
 **Caption**
 Ads feel expensive this October? You're not imagining it. Meta's own Q2 2026 results: average price per ad +12% year on year.
@@ -35,7 +35,7 @@ Want us to check your account for free? Reply with your website and monthly ad b
 
 ---
 
-## Reel B: `ADSWORM_Meta-28-Oct-product-browsing_B.mp4` (45 s): keyword **BROWSE**
+## Reel B: `ADSWORM_Meta-28-Oct_B-v3.mp4` (53 s, engine v3; replaces ADSWORM_Meta-28-Oct-product-browsing_B.mp4): keyword **BROWSE**
 
 **Caption**
 Running Meta ads? Meta has told advertisers it'll add "product browsing" to existing ads from 28 October. A tap may open product info inside the app before your website.

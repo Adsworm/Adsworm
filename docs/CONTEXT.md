@@ -40,3 +40,8 @@ Updated 22 Oct 2026. Branch: `claude/funny-goldberg-b6mbmv`.
 Research agent → concept/script agent → approval agent (facts+strategy) → production director (retention, delivery, sound) → build. Files per day in `docs/pipeline/<date>/` (01-research, 02-concepts, 03-approval, 04-director, reel-*.final.json, POSTING.md).
 Engine = `projects/adsworm-reel-06` (data-driven: sections[].views in script.json, item types in `src/reel/views.tsx`; copy the project per reel, drop final JSON in `script/script.json`, generate the dialogue in ONE ElevenLabs v4 call → `script/dialogue.mp3`, `python3 scripts/voice.py`, `node scripts/render-reel.mjs --no-voice`).
 22 Oct output (agency @adsworm): reel-06 "Ads feel expensive this October" (OCTOBER), reel-07 "Meta product browsing from 28 Oct" (BROWSE).
+
+## Engine v3 (22 Oct, after owner feedback "no fun / conversation not clear")
+`projects/adsworm-reel-08` (reel A) / `-09` (reel B). Learned from reference reel Det2rTBzoEq (`docs/playbook/REFERENCE-Det2rTBzoEq.md`) + research playbook (`docs/playbook/REEL-PLAYBOOK.md`):
+teacher (Aman) + student who gets it wrong (Riya) as talking-head busts with lip-flap (`public/faces/*`, built by `scripts/faces.py` from AI-edited mouth frames), karaoke bubble captions (2–4 words), proof board that builds on spoken words (`views` with `word`, new items in `src/reel/board.tsx`), stickers, whip transitions, zoom-punch hook + thump, follow/share ending + wink.
+Voice: ElevenLabs v4 dialogue with inline audio tags (`tags` per line; Higgsfield passes them through); `voice.py` keeps non-silent gaps (laughs). `python3 scripts/dialogue.py` prints the generate_audio params.
