@@ -66,6 +66,19 @@ def read_wav(p: Path):
     return x
 
 
+def trim(x, keep=0.06, thresh_db=-45.0):
+    """Strip TTS lead-in/lead-out silence so each line's voice lands with its caption. Returns (audio, lead_s)."""
+    win = int(0.01 * SR)
+    n = len(x) // win
+    db = 20 * np.log10(np.sqrt(np.mean(x[: n * win].reshape(n, win) ** 2, axis=1)) + 1e-9)
+    loud = np.where(db > thresh_db)[0]
+    if len(loud) == 0:
+        return x, 0.0
+    a = max(0, loud[0] * win - int(keep * SR))
+    b = min(len(x), (loud[-1] + 1) * win + int(keep * SR))
+    return x[a:b], a / SR
+
+
 def lp(x, hz):
     return sosfilt(butter(2, hz, "low", fs=SR, output="sos"), x)
 
@@ -120,7 +133,9 @@ def main(no_tts=False):
                 words = asyncio.run(tts(ln["say"], s["voices"][ln["who"]], rate, wav))
                 meta.write_text(json.dumps(words, ensure_ascii=False))
             words = json.loads(meta.read_text())
-            dur = len(read_wav(wav)) / SR
+            audio, lead = trim(read_wav(wav))
+            dur = len(audio) / SR
+            words = [{**w, "t": max(0.0, round(w["t"] - lead, 3))} for w in words]
             show, spans = pills(ln["show"])
             lines.append({
                 "n": n, "section": sec["id"], "who": ln["who"], "show": show, "pills": spans,
@@ -136,7 +151,7 @@ def main(no_tts=False):
     # mix: voice (mono→center) + bed + a pop on every beat, a whoosh on every section start
     voice = np.zeros(int(total * SR))
     for ln in lines:
-        place(voice, read_wav(CACHE / f"{ln['n']:02d}.wav"), ln["start"])
+        place(voice, trim(read_wav(CACHE / f"{ln['n']:02d}.wav"))[0], ln["start"])
     fx = np.zeros_like(voice)
     beats = {}
     for ln in lines:
