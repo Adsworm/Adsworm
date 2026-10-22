@@ -1,0 +1,30 @@
+{
+  "name": "adsworm-reel-06",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Adsworm explainer engine: script.json (lines + card views) → one-pass dialogue voice → Remotion.",
+  "scripts": {
+    "studio": "remotion studio",
+    "voice": "python3 scripts/voice.py",
+    "qa": "node scripts/qa.mjs",
+    "render": "node scripts/render-reel.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@remotion/bundler": "4.0.537",
+    "@remotion/cli": "4.0.537",
+    "@remotion/fonts": "4.0.537",
+    "@remotion/paths": "4.0.537",
+    "@remotion/renderer": "4.0.537",
+    "@remotion/transitions": "4.0.537",
+    "@remotion/zod-types": "4.0.537",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.537",
+    "zod": "4.5.4"
+  },
+  "devDependencies": {
+    "@types/react": "19.2.0",
+    "typescript": "5.9.3"
+  }
+}

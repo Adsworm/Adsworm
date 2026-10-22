@@ -1,0 +1,321 @@
+{
+ "voices": {
+  "AMAN": {
+   "name": "Holden",
+   "voice_type": "preset",
+   "voice_id": "3c9d6053-6334-592c-8997-4e325286af3f"
+  },
+  "RIYA": {
+   "name": "Anika (Indian English)",
+   "voice_type": "preset",
+   "voice_id": "4b2dc8f3-5e8b-59a9-9a5c-85620e44c033"
+  }
+ },
+ "gapCap": 0.26,
+ "tempo": 1.0,
+ "leadInMs": 120,
+ "tailMs": 1200,
+ "vars": {
+  "countdown": {
+   "to": "2026-11-27",
+   "note": "Black Friday (Fri 27 Nov 2026). vars.days on the hook card is computed at voice time; REEL_DAYS=n overrides. Not spoken, so no new voice is needed."
+  }
+ },
+ "brand": {
+  "footer": "Aman Rai  |  Founder, ADSWORM",
+  "names": {
+   "AMAN": "AMAN",
+   "RIYA": "RIYA \u00b7 BRAND OWNER"
+  },
+  "side": {
+   "AMAN": "right",
+   "RIYA": "left"
+  }
+ },
+ "sections": [
+  {
+   "id": "hook",
+   "label": "",
+   "tag": "",
+   "source": "Black Friday: Fri 27 Nov 2026",
+   "lines": [
+    {
+     "who": "AMAN",
+     "say": "Meta just changed three things that decide what you pay for ads.",
+     "show": "Meta just changed [3 things] that decide what you [pay for ads].",
+     "beat": "hook-big",
+     "pose": "point"
+    },
+    {
+     "who": "RIYA",
+     "say": "Okay. Explain it simply.",
+     "show": "Okay. Explain it [simply].",
+     "pose": "ask"
+    },
+    {
+     "who": "AMAN",
+     "say": "Three changes. Let's go.",
+     "show": "[3 changes.] Let's go.",
+     "beat": "hook-chip",
+     "pose": "palms"
+    }
+   ],
+   "views": [
+    {
+     "at": "hook-big",
+     "items": [
+      {
+       "type": "big",
+       "value": "{days} DAYS",
+       "sub": "to Black Friday"
+      },
+      {
+       "type": "chip",
+       "text": "3 META CHANGES",
+       "kind": "ink"
+      },
+      {
+       "type": "checklist",
+       "rows": [
+        "Photo \u2192 video",
+        "New ad AI",
+        "WhatsApp pricing"
+       ],
+       "unlockAt": "hook-chip"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "one",
+   "label": "\u2460 PHOTO \u2192 VIDEO",
+   "tag": "official \u00b7 live now",
+   "source": "Source: Meta for Business \u00b7 Advertising Week New York, 6 Oct 2026",
+   "lines": [
+    {
+     "who": "AMAN",
+     "say": "One. Meta can now turn one product photo into a video ad.",
+     "show": "One: Meta can turn [1 product photo] into a [video ad].",
+     "beat": "one-receipt",
+     "pose": "point"
+    },
+    {
+     "who": "RIYA",
+     "say": "So I don't need a video shoot?",
+     "show": "So I [don't need] a video shoot?",
+     "pose": "ask"
+    },
+    {
+     "who": "AMAN",
+     "say": "Not to start testing. It's built into Ads Manager.",
+     "show": "Not to start testing. It's [built into Ads Manager].",
+     "beat": "one-morph",
+     "pose": "palms"
+    }
+   ],
+   "views": [
+    {
+     "at": "one-receipt",
+     "items": [
+      {
+       "type": "browser",
+       "url": "facebook.com/business",
+       "title": "New AI capabilities",
+       "date": "6 Oct 2026",
+       "note": "Photos become video."
+      }
+     ]
+    },
+    {
+     "at": "one-morph",
+     "items": [
+      {
+       "type": "receipt",
+       "text": "Meta \u00b7 6 Oct"
+      },
+      {
+       "type": "imageToVideo"
+      },
+      {
+       "type": "chips",
+       "items": [
+        "\u2713 No shoot",
+        "Ads Manager"
+       ],
+       "kind": "green"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "two",
+   "label": "\u2461 META'S NEW AD AI",
+   "tag": "official \u00b7 13 Oct 2026",
+   "source": "Source: engineering.fb.com (13 Oct) \u00b7 Meta for Business (19 Oct 2026)",
+   "lines": [
+    {
+     "who": "AMAN",
+     "say": "Two. Meta has a new AI that decides who sees your ads.",
+     "show": "Two: a [new Meta AI] decides who sees your ads.",
+     "beat": "two-receipt",
+     "pose": "point"
+    },
+    {
+     "who": "AMAN",
+     "say": "Meta says it gets about nineteen percent more conversions.",
+     "show": "Meta says: about [19% more conversions].",
+     "beat": "two-bars",
+     "pose": "palms"
+    },
+    {
+     "who": "RIYA",
+     "say": "So I just run my one best ad, right?",
+     "show": "So I just run my [one best ad], right?",
+     "pose": "ask"
+    },
+    {
+     "who": "AMAN",
+     "say": "No. It rewards variety. Run different ads: photo, video, carousel.",
+     "show": "No. It [rewards variety]. Photo, video, carousel.",
+     "beat": "two-mix",
+     "pose": "point"
+    }
+   ],
+   "views": [
+    {
+     "at": "two-receipt",
+     "items": [
+      {
+       "type": "compare",
+       "bad": {
+        "title": "Most brands",
+        "lines": [
+         "1 ad, 10 copies",
+         "Same hook"
+        ]
+       },
+       "good": {
+        "title": "What works",
+        "lines": [
+         "Different ads",
+         "Photo + video"
+        ]
+       },
+       "goodAt": "two-bars"
+      }
+     ]
+    },
+    {
+     "at": "two-mix",
+     "items": [
+      {
+       "type": "steps",
+       "items": [
+        "Make 5 different ads",
+        "Test for 7 days",
+        "Keep the winners"
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "three",
+   "label": "\u2462 WHATSAPP PRICING",
+   "tag": "official \u00b7 pricing page",
+   "source": "Source: developers.facebook.com/docs/whatsapp/pricing (accessed 22 Oct 2026)",
+   "lines": [
+    {
+     "who": "AMAN",
+     "say": "Three. WhatsApp replies now cost money after a thousand free a month.",
+     "show": "Three: WhatsApp replies [cost money] after [1,000 free] a month.",
+     "beat": "three-bill",
+     "pose": "point"
+    },
+    {
+     "who": "RIYA",
+     "say": "Even when the customer messages me first?",
+     "show": "Even when the customer [messages me first]?",
+     "pose": "ask"
+    },
+    {
+     "who": "AMAN",
+     "say": "If they came from your ad, it can stay free for up to seven days.",
+     "show": "If they came from [your ad], it's free for [up to 7 days].",
+     "beat": "three-chat",
+     "pose": "palms"
+    }
+   ],
+   "views": [
+    {
+     "at": "three-bill",
+     "items": [
+      {
+       "type": "bars",
+       "items": [
+        {
+         "label": "CPM",
+         "value": 26,
+         "color": "gold"
+        },
+        {
+         "label": "CPC",
+         "value": 45
+        }
+       ],
+       "max": 50
+      },
+      {
+       "type": "ring",
+       "value": "7",
+       "sub": "days free",
+       "at": "three-chat"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "cta",
+   "label": "COMMENT TO GET IT",
+   "tag": "free checklist",
+   "source": "",
+   "lines": [
+    {
+     "who": "AMAN",
+     "say": "Comment META and I'll send you the full checklist.",
+     "show": "Comment [\"META\"] and I'll send the [full checklist].",
+     "beat": "cta-comment",
+     "pose": "point"
+    },
+    {
+     "who": "RIYA",
+     "say": "Saving this before Black Friday!",
+     "show": "[Saving this] before Black Friday!",
+     "beat": "cta-save",
+     "pose": "wow"
+    }
+   ],
+   "views": [
+    {
+     "at": "cta-comment",
+     "items": [
+      {
+       "type": "comment",
+       "keyword": "AUDIT"
+      },
+      {
+       "type": "pdf",
+       "title": "Free audit",
+       "sub": "in your DM",
+       "at": "cta-save"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

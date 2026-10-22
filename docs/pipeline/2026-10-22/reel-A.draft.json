@@ -1,0 +1,85 @@
+{
+  "title": "Why your ads feel expensive this October",
+  "voices": {
+    "AMAN": {"name": "Holden", "voice_type": "preset", "voice_id": "3c9d6053-6334-592c-8997-4e325286af3f"},
+    "RIYA": {"name": "Anika (Indian English)", "voice_type": "preset", "voice_id": "4b2dc8f3-5e8b-59a9-9a5c-85620e44c033"}
+  },
+  "gapCap": 0.26,
+  "tempo": 1.0,
+  "leadInMs": 120,
+  "tailMs": 1200,
+  "vars": {"countdown": {"to": "2026-11-08", "note": "Diwali (Sun 8 Nov 2026). vars.days on the hook card is computed at voice time; REEL_DAYS=n overrides. Not spoken."}},
+  "brand": {"footer": "ADSWORM  |  Performance Marketing Agency", "names": {"AMAN": "AMAN · ADSWORM", "RIYA": "RIYA · BRAND OWNER"}, "side": {"AMAN": "right", "RIYA": "left"}},
+  "sections": [
+    {"id": "hook", "label": "", "tag": "", "source": "Source: Meta Q2 2026 results · investor.atmeta.com (Jul 2026)", "lines": [
+      {"who": "AMAN", "say": "Meta says its average price per ad is up twelve percent on last year.", "show": "Meta says its average [price per ad is up 12%] on last year.", "beat": "hook-big", "pose": "point"},
+      {"who": "RIYA", "say": "So that's why October feels slow? Same budget, fewer sales?", "show": "So that's why October feels [slow]? Same budget, [fewer sales]?", "pose": "ask"},
+      {"who": "AMAN", "say": "Partly. Here's what's going on before Diwali.", "show": "Partly. Here's what's going on before [Diwali].", "beat": "hook-chip", "pose": "palms"}
+    ], "views": [
+      {"at": "hook-big", "items": [
+        {"type": "big", "value": "+12%", "sub": "average price per ad · vs last year", "color": "blue"},
+        {"type": "receipt", "text": "Meta Q2 2026 results · Meta's own number"}
+      ]},
+      {"at": "hook-chip", "items": [
+        {"type": "big", "value": "{days}", "sub": "days to Diwali", "color": "gold", "size": 190},
+        {"type": "chips", "items": ["Dhanteras · 6 Nov", "Diwali · 8 Nov", "Black Friday · 27 Nov"], "kind": "gold", "delay": 8}
+      ]}
+    ]},
+    {"id": "one", "label": "① PRICES CLIMB NOW", "tag": "vendor data · 16 Oct 2026", "source": "Source: Lebesgue · $22.6M of Meta spend, Sep–Nov 2025, mostly US brands (lebesgue.io, 16 Oct 2026)", "lines": [
+      {"who": "AMAN", "say": "CPM, the price of a thousand views, climbs into Black Friday.", "show": "[CPM] = the price of [1,000 views]. It climbs into Black Friday.", "beat": "one-cpm", "pose": "point"},
+      {"who": "AMAN", "say": "Last year, Black Friday CPM was eighty-four percent above September.", "show": "Last year, Black Friday CPM was [84% above September].", "beat": "one-bars", "pose": "palms"},
+      {"who": "RIYA", "say": "So should I pause my ads till Diwali?", "show": "So should I [pause my ads] till Diwali?", "pose": "ask"}
+    ], "views": [
+      {"at": "one-cpm", "items": [
+        {"type": "big", "value": "CPM", "sub": "= the price of 1,000 views", "color": "ink", "size": 190},
+        {"type": "chip", "text": "In 2024 the climb began mid-October", "kind": "gold", "delay": 14}
+      ]},
+      {"at": "one-bars", "items": [
+        {"type": "bars", "items": [
+          {"label": "Black Friday week vs September", "value": 59, "color": "gold"},
+          {"label": "Black Friday day vs September", "value": 84, "color": "red"}
+        ], "max": 100},
+        {"type": "receipt", "text": "Lebesgue · median brand · 2025 · mostly US"}
+      ]}
+    ]},
+    {"id": "two", "label": "② BUYERS ARE READY", "tag": "same dataset", "source": "Source: Lebesgue · $22.6M of Meta spend, Sep–Nov 2025, mostly US brands (lebesgue.io, 16 Oct 2026)", "lines": [
+      {"who": "AMAN", "say": "No. In that same data, cost per sale fell twenty percent.", "show": "No. In that same data, [cost per sale fell 20%].", "beat": "two-cost", "pose": "point"},
+      {"who": "AMAN", "say": "Because conversion rate, the share who buy, rose forty-eight percent.", "show": "Because [conversion rate] (the share who buy) rose [48%].", "beat": "two-bars", "pose": "palms"}
+    ], "views": [
+      {"at": "two-cost", "items": [
+        {"type": "big", "value": "−20%", "sub": "cost per sale · Black Friday vs September", "color": "green"},
+        {"type": "receipt", "text": "Lebesgue · median brand · 2025"}
+      ]},
+      {"at": "two-bars", "items": [
+        {"type": "bars", "items": [
+          {"label": "Conversion rate (share who buy)", "value": 48, "color": "green"}
+        ], "max": 100},
+        {"type": "note", "text": "Ads cost more. But more people were ready to buy."}
+      ]}
+    ]},
+    {"id": "three", "label": "③ WHAT TO FIX", "tag": "Adsworm playbook", "source": "Adsworm advice · not a guarantee of results", "lines": [
+      {"who": "RIYA", "say": "So what do I actually fix?", "show": "So what do I [actually fix]?", "pose": "ask"},
+      {"who": "AMAN", "say": "Don't cut spend. Fix what happens after the click.", "show": "Don't cut spend. Fix what happens [after the click].", "beat": "three-compare", "pose": "point"},
+      {"who": "AMAN", "say": "Sharper offer, faster page, easier checkout. That's where money leaks.", "show": "[Sharper offer], [faster page], [easier checkout]. That's where money leaks.", "beat": "three-steps", "pose": "palms"}
+    ], "views": [
+      {"at": "three-compare", "items": [
+        {"type": "compare", "bad": {"title": "Cut spend", "lines": ["Vanish when", "buyers are ready"]}, "good": {"title": "Fix after the click", "lines": ["Keep showing up", "Turn more clicks", "into sales"]}}
+      ]},
+      {"at": "three-steps", "items": [
+        {"type": "steps", "items": ["Sharper offer", "Faster page", "Easier checkout"], "stagger": 10}
+      ]}
+    ]},
+    {"id": "cta", "label": "COMMENT TO GET IT", "tag": "free audit", "source": "", "lines": [
+      {"who": "AMAN", "say": "Comment OCTOBER and we'll check where your ad money is leaking.", "show": "Comment [\"OCTOBER\"] and we'll check where your [ad money is leaking].", "beat": "cta-comment", "pose": "point"},
+      {"who": "RIYA", "say": "Doing that before Diwali!", "show": "[Doing that] before Diwali!", "beat": "cta-save", "pose": "wow"}
+    ], "views": [
+      {"at": "cta-comment", "items": [
+        {"type": "comment", "keyword": "OCTOBER"}
+      ]},
+      {"at": "cta-save", "items": [
+        {"type": "checklist", "rows": ["Offer clear?", "Page fast?", "Checkout easy?", "Tracking right?"], "unlockAt": "cta-save"},
+        {"type": "chip", "text": "Free pre-Diwali leak check", "kind": "green", "delay": 10}
+      ]}
+    ]}
+  ]
+}
