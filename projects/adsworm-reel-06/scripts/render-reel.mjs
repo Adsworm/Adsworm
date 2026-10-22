@@ -4,7 +4,7 @@ import {execFileSync, spawnSync} from 'node:child_process';
 import fs from 'node:fs';
 import {browserExecutable, bundleProject, ID, licenseKey} from './_shared.mjs';
 
-const NAME = process.env.REEL_NAME ?? 'REEL-05_9x16';
+const NAME = process.env.REEL_NAME ?? 'REEL-06_9x16';
 if (!process.argv.includes('--no-voice')) execFileSync('python3', ['scripts/voice.py'], {stdio: 'inherit'});
 fs.mkdirSync('out', {recursive: true});
 const serveUrl = await bundleProject();
