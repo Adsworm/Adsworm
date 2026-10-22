@@ -184,7 +184,7 @@ def main():
         beats[lines[0]["beat"]] = -24  # the hook visual is the thumbnail: already landed on frame 0
     for sec in sections[1:]:
         place(fx, whoosh(), sec["start"] - 0.2, 0.8)
-    mix = track * 0.95 + bed(total) * 0.08 + fx
+    mix = track * 0.95 + bed(total) * s.get("bedGain", 0.08) + fx * s.get("fxGain", 1.0)
     mix = np.tanh(mix * 1.1) / np.tanh(1.1)
     mix /= max(1e-9, np.max(np.abs(mix))) / 0.9
     with wave.open(str(ROOT / "public/voice.wav"), "wb") as w:
