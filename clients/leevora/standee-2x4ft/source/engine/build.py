@@ -73,7 +73,7 @@ SANS_B, SANS_SB, SANS_M, SANS_R = (f'InstrumentSans-{w}' for w in ('Bold', 'Semi
 WA = 'https://wa.me/918076467352?text='
 CFG = {
     'A': dict(
-        photo='hero/v1_1.png', npz='hero/woman.npz', face_w=9.4, scan='below', crown=-0.30,
+        photo='hero/woman3.png', npz='hero/woman3.npz', face_w=9.6, scan='below', crown=-0.30,
         head=['Your mirror', 'only shows half.'], accent='half.',
         offer='Free Skin & Hair Analysis',
         proof='8-spectrum AI skin imaging  ·  17 concerns mapped  ·  Expert-led plan',
@@ -82,7 +82,7 @@ CFG = {
         qr=WA + 'Hi%21%20I%27d%20like%20my%20free%20skin%20analysis',
     ),
     'B': dict(
-        photo='hero/man2.png', npz='hero/man2.npz', face_w=10.0, scan='above', crown=1.0,
+        photo='hero/man3.png', npz='hero/man3.npz', face_w=9.8, scan='above', crown=1.0,
         head=['Hair fall', 'has a reason.'], accent='reason.',
         offer='Free Hair & Skin Analysis',
         proof='Hair & scalp imaging  ·  Density mapped  ·  Expert-led plan',
@@ -94,7 +94,7 @@ CFG = {
 
 # type system (shared by both sides)
 HS = 2.72                                  # headline size -> ~52 mm cap
-Y_NOW, Y_LOGO, Y_DESC = 2.62, 5.55, 6.38
+Y_NOW, LOGO_TOP, LOGO_W = 2.55, 3.30, 9.6
 HL1 = 7.38 + 0.75 * HS
 HL2 = HL1 + 0.93 * HS
 CROWN_Y = HL2 + CFG['crown']             # A: head overlaps line 2 (depth); B: wide head sits clear of it
@@ -187,29 +187,34 @@ bg = lerp(bg, hx(PAL['bg_edge']), np.clip(tb * 1.6 - 0.6, 0, 1))
 bg = bg * (1 - 0.15 * smooth(32, 50, ys))[..., None]
 del d, tb
 
-# --- portrait grade: true colour, shadows into brand green, highlights rolled off (no night hotspots)
+# --- portrait grade: soft and true. Gentle lift in the shadows, gentle shoulder on the top highlights only
 lum = photo @ np.float32([0.2126, 0.7152, 0.0722])
-shadow = (1 - smooth(0.0, 0.35, lum))[..., None]
-graded = lerp(photo, photo * 0.6 + hx(PAL['bg_mid']) * 0.4, shadow * 0.35)
-if SIDE == 'B':
-    graded = np.clip(graded * 1.06, 0, 1) ** 0.95                  # new portrait is lit a touch lower
+graded = photo + (1 - photo) * 0.06 * (1 - smooth(0.0, 0.5, lum))[..., None]     # open shadows, lower contrast
 gl = graded @ np.float32([0.2126, 0.7152, 0.0722])
-knee = 0.56 if SIDE == 'A' else 0.50
-roll = np.where(gl > knee, (knee + (gl - knee) * 0.42) / np.maximum(gl, 1e-4), 1.0)
+knee = 0.76
+roll = np.where(gl > knee, (knee + (gl - knee) * 0.55) / np.maximum(gl, 1e-4), 1.0)
 graded *= roll[..., None]
-del gl, roll, shadow
+del gl, roll
 
 # --- matte: core segmentation + luminance key at the edge so real flyaways survive
-core = fg
-ext = gblur(cv2.dilate((fg > 0.5).astype(np.float32), np.ones((int(0.22 * PPI),) * 2, np.uint8)), 0.06 * PPI)
-key = smooth(0.03, 0.14, lum)
-alpha_p = np.clip(np.maximum(core, ext * key), 0, 1)
+ring_m = (cv2.dilate((fg > 0.3).astype(np.uint8), np.ones((int(0.6 * PPI),) * 2, np.uint8)) > 0) & (fg < 0.02) & (valid > 0.99)
+bgc = np.median(photo[ring_m], axis=0)
+key = smooth(0.06, 0.17, np.linalg.norm(gblur(photo, 0.8) - bgc, axis=-1))
+del ring_m
+# inside the hair region, backdrop showing through thin hair becomes transparent (colour key), strands stay
+core = np.clip(fg * (1 - hair * (1 - key)), 0, 1) if SIDE == 'B' else fg      # B: thin hair over a mid-green backdrop
+a_e = np.clip(core, 0.04, 1)[..., None]
+dec = np.clip((photo - (1 - a_e) * bgc) / a_e, 0, 1)
+edge_w = ((a_e[..., 0] > 0.04) & (a_e[..., 0] < 0.97)).astype(np.float32)[..., None]
+graded = lerp(graded, dec + (1 - dec) * 0.0, edge_w)
+del a_e, dec, edge_w
+alpha_p = np.clip(gblur(core, 0.6), 0, 1)
 # body fades evenly (elliptical, no horizontal shelf), photo frame edges feathered
 r = np.sqrt(((xs - CX) / 10.5) ** 2 + ((ys - (chin_y - 2.5)) / 6.8) ** 2)
 fade = 1 - smooth(0.78, 1.18, r)
 fade = np.where(ys < chin_y - 2.5, 1 - smooth(9.6, 11.6, np.abs(xs - CX)), fade)
 alpha = (alpha_p * fade * valid).clip(0, 1)
-del ext, key, r, core
+del key, r, core
 
 # light wrap: background bleeds 3 mm into the subject edge so it sits in the scene
 wrap = (alpha * (1 - gblur(alpha, 0.045 * PPI))).clip(0, 1)[..., None] * 1.6
@@ -243,18 +248,8 @@ OVAL = (10, 338, 297, 332, 284, 251, 389, 356, 454, 323, 361, 288, 397, 365, 379
 markers, hairline, TEMPLES = [], [], []
 
 if SIDE == 'A':
-    # UV view as a real analyser shows it: smooth skin, pigment reads dark; spots only where they exist
+    # bright scanner view: the real skin in clean aqua light, pigment spots gently deepened
     uv = photo @ np.float32([0.10, 0.30, 0.60])
-    y0, y1, x0, x1 = int(px(beam_y - 1)), int(px(chin_y + 6)), int(px(2)), int(px(22))
-    crop = (np.clip(gblur(uv[y0:y1, x0:x1], 1.5), 0, 1) * 255).astype(np.uint8)
-    cl = cv2.createCLAHE(clipLimit=1.6, tileGridSize=(8, 8)).apply(crop).astype(np.float32) / 255
-    base = gblur(cl, 2.6)
-    band = base - gblur(cl, 14)
-    v = np.clip(base * 0.96 + band * 0.55 + 0.02, 0, 1)
-    uvv = np.zeros_like(uv)
-    uvv[y0:y1, x0:x1] = v
-    del crop, cl, base, band, v
-    # pigment: dark blobs on cheeks and nose bridge only, pushed a little darker like UV photography
     ov = np.zeros((H, W), np.uint8)
     cv2.fillPoly(ov, [np.array([T(i) for i in OVAL], np.int32)], 1)
     inner = cv2.erode(ov, np.ones((int(0.6 * PPI),) * 2, np.uint8)).astype(np.float32)
@@ -265,27 +260,26 @@ if SIDE == 'A':
     bridge = (np.abs(xs - Ti(6)[0]) < 0.45) * (ys > beam_y + 0.05) * (ys < Ti(4)[1] - 0.25)
     zone = gblur(np.clip(zone + bridge * inner, 0, 1).astype(np.float32), 0.08 * PPI)
     dog = gblur(uv, 0.03 * PPI) - gblur(uv, 0.12 * PPI)
-    uvv = np.clip(uvv + np.clip(dog, -0.2, 0) * 2.2 * zone, 0, 1)
-    lipm = gblur(poly_mask(LIPS, 0.06).astype(np.float32), 6)
-    uvv = lerp(uvv, gblur(uvv, 8) * 0.9, lipm)
-    tt = np.clip(uvv, 0, 1)[..., None] ** 1.6
-    duo = lerp(hx('#031416'), hx('#0D5558'), np.clip(tt * 1.9, 0, 1))
-    duo = lerp(duo, hx('#9DEBE3'), np.clip(tt * 1.9 - 0.9, 0, 1))
-    fall = 1 - 0.88 * smooth(chin_y - 0.4, chin_y + 3.2, ys)
-    duo *= (fall * np.ones_like(xs))[..., None]
-    comp = lerp(comp, duo, (reg_person * 0.94)[..., None])
+    gsk = gblur(graded @ np.float32([0.2126, 0.7152, 0.0722]), 0.8)
+    aquav = gsk[..., None] * np.float32([0.60, 1.0, 0.97]) * 1.18 + np.float32([0.0, 0.04, 0.05])
+    aquav -= (np.clip(-dog, 0, 0.12) * 2.4 * zone)[..., None] * np.float32([0.45, 0.75, 0.75])
+    scan = lerp(graded, np.clip(aquav, 0, 1), 0.78)
+    strength = 0.95 - 0.45 * smooth(chin_y - 0.4, chin_y + 3.0, ys)
+    comp = lerp(comp, scan, (reg_person * strength)[..., None])
+    del aquav, scan, gsk, strength
     # markers: strongest pigment spots inside the zone, at least one per cheek
-    score = np.where(zone > 0.5, -dog, 0)
+    zx = (xs > Ti(234)[0] + 1.8) & (xs < Ti(454)[0] - 1.8)
+    score = np.where((zone > 0.5) & zx, -dog, 0)
     mx = cv2.dilate(score, np.ones((int(0.6 * PPI),) * 2, np.uint8))
-    cand = sorted(np.argwhere((score == mx) & (score > 0.008)), key=lambda p: -score[p[0], p[1]])
-    for yv, xv in cand:
-        p = (xv / PPI - EXT, yv / PPI - EXT)
-        if all(math.dist(p, q) > 1.0 for q in markers):
-            markers.append(p)
-    left = [m for m in markers if m[0] < CX - 1]
-    right = [m for m in markers if m[0] > CX + 1]
-    markers = (left[:2] + right[:1]) if left and right else markers[:3]
-    del uv, uvv, duo, dog, score, mx, zone, ov, inner, lipz, nosez, lipm, tt
+    cand = sorted(np.argwhere((score == mx) & (score > 0.004)), key=lambda p: -score[p[0], p[1]])
+    pts_all = [(xv / PPI - EXT, yv / PPI - EXT) for yv, xv in cand]
+    right, left = [], []
+    for p in pts_all:                       # labels live on the open right side: two spots there, one on the left
+        bucket, need = (right, 2) if p[0] > Ti(1)[0] + 0.6 else (left, 1)
+        if len(bucket) < need and all(math.dist(p, q) > 0.8 for q in right + left):
+            bucket.append(p)
+    markers = right + left
+    del uv, dog, score, mx, zone, ov, inner, lipz, nosez
 else:
     # hair: the real photo in scanner light (teal tint) + two-tone density map (gold = thin, teal = dense)
     fx0, fx1 = Ti(234)[0] + 0.6, Ti(454)[0] - 0.6
@@ -295,9 +289,12 @@ else:
     n3 = len(hl) // 3
     lt, rt = max(hl[:n3], key=lambda q: q[1]), max(hl[-n3:], key=lambda q: q[1])
     TEMPLES = [(lt[0] + 0.2, lt[1] - 0.45), (rt[0] - 0.2, rt[1] - 0.45)]
-    gl = comp @ np.float32([0.2126, 0.7152, 0.0722])
-    teal = gl[..., None] * hx('#7FD3CC') * 1.25
-    tinted = lerp(comp, teal, 0.45) * 0.93
+    gl = gblur(comp @ np.float32([0.2126, 0.7152, 0.0722]), 0.8)
+    teal = gl[..., None] * np.float32([0.50, 1.0, 1.0]) * 1.22 + np.float32([0.0, 0.04, 0.05])
+    skin_w = np.clip(1 - gblur(hair, 0.25 * PPI) * 1.1, 0, 1)
+    tinted = lerp(comp, np.clip(teal, 0, 1), (0.22 + 0.36 * skin_w)[..., None])
+    tinted = lerp(tinted, tinted * np.float32([0.78, 0.96, 1.0]), (hair * 0.9)[..., None])
+    del skin_w
     dark = (1 - smooth(0.05, 0.45, lum)) * hair
     dens = gblur(dark, 0.4 * PPI)
     dmax = np.percentile(dens[(hair > 0.5) & (ys < beam_y)], 95)
@@ -308,7 +305,6 @@ else:
     warm = np.clip(warm, 0, 1)
     cool = gblur(hair * densn, 0.05 * PPI) * (1 - warm) * alpha
     screen = lambda a, b: 1 - (1 - a) * (1 - b)
-    tinted = screen(tinted, (hx(PAL['aqua']) * 0.45)[None, None, :] * cool[..., None])
     tinted = lerp(tinted, tinted * 0.5 + hx(PAL['gold']) * 0.6, (warm * 0.7)[..., None])
     comp = lerp(comp, tinted, reg_person[..., None])
     hl_mid = hl[len(hl) // 2]
@@ -325,8 +321,8 @@ dist = (ys - beam_y) if CFG['scan'] == 'below' else (beam_y - ys)
 lead = np.exp(-np.clip(dist, 0, None) / 0.55) * (dist >= 0)
 spill = np.exp(-np.clip(-dist, 0, None) / 0.30) * (dist < 0)
 aq = hx(PAL['aqua'])
-comp += (aq * (0.26 if SIDE == 'A' else 0.15))[None, None, :] * (lead * alpha)[..., None]
-comp += (aq * 0.14)[None, None, :] * (spill * alpha)[..., None]
+comp += (aq * 0.14)[None, None, :] * (lead * alpha)[..., None]
+comp += (aq * 0.08)[None, None, :] * (spill * alpha)[..., None]
 del lead, spill, dist
 
 
@@ -389,16 +385,46 @@ def hud_label(c, name, val, col, sd, ly, mxv, myv, ring_r=0.17):
     c.drawCircle(ex_, ly0, 0.055, paint(accent))
 
 
+LOGO = json.load(open(f'{ROOT}/engine/leevora_logo.json'))
+LOGO_COL = '#%02X%02X%02X' % tuple(round(v * 255) for v in LOGO['color'])
+
+
+def logo_path(parts, sc, ox, oy):
+    p = skia.Path()
+    for f in parts:
+        for sp in f['path']:
+            for seg in sp:
+                k, q = seg[0], [(ox + a * sc, oy + b * sc) for a, b in seg[1:]]
+                if k == 'M':
+                    p.moveTo(*q[0])
+                elif k == 'L':
+                    p.lineTo(*q[0])
+                elif k == 'C':
+                    p.cubicTo(*q[0], *q[1], *q[2])
+                elif k == 'Z':
+                    p.close()
+    return p
+
+
+def draw_logo(c, cx, top, width):
+    sc = width / LOGO['w']
+    ox = cx - width / 2
+    for part in ('word', 'desc'):
+        c.drawPath(logo_path(LOGO[part], sc, ox, top), paint(C4(LOGO_COL)))
+    return top + LOGO['h'] * sc
+
+
 LAY = {}
 
 
 def draw_vectors(c):
     gold = C4('gold')
     # lockup
-    text(c, 'NOW OPEN', SANS_SB, 0.985, CX, Y_NOW, gold, tracking=0.20)
-    logo = 8.0 / F[SERIF].width('leevorá', 1)
-    text(c, 'leevorá', SERIF, logo, CX, Y_LOGO, C4('cream'))
-    text(c, 'AESTHETIC CLINIC', SANS_M, 0.52, CX, Y_DESC, C4('cream', 0.88), tracking=0.42)
+    nw = text(c, 'NOW OPEN', SANS_B, 0.90, CX, Y_NOW, gold, tracking=0.24)
+    rl = paint(C4('gold', 0.9), stroke=0.032)
+    for sg in (-1, 1):
+        c.drawLine(CX + sg * (nw / 2 + 0.55), Y_NOW - 0.32, CX + sg * (nw / 2 + 3.4), Y_NOW - 0.32, rl)
+    draw_logo(c, CX, LOGO_TOP, LOGO_W)
 
     # headline, line 2 sits behind the head
     l1, l2 = CFG['head']
@@ -414,8 +440,8 @@ def draw_vectors(c):
 
     # beam core + tag (same place on both sides: left, just above the beam)
     c.drawRect(skia.Rect(-BLEED, beam_y - 0.024, TW + BLEED, beam_y + 0.024), paint(C4('aqua_hot')))
-    text(c, CFG['tag'], SANS_SB, 0.34, LBL + 0.32, beam_y - 0.30, C4('aqua'), align='left', tracking=0.18)
-    c.drawCircle(LBL + 0.09, beam_y - 0.30 - 0.12, 0.075, paint(C4('aqua')))
+    tgw = text(c, CFG['tag'], SANS_SB, 0.34, TW - LBL, beam_y - 0.30, C4('aqua'), align='right', tracking=0.18)
+    c.drawCircle(TW - LBL - tgw - 0.24, beam_y - 0.30 - 0.12, 0.075, paint(C4('aqua')))
 
     # rings + two labels
     for i, m in enumerate(markers):
@@ -425,19 +451,22 @@ def draw_vectors(c):
             c.drawCircle(m[0], m[1], 0.45, paint(C4('gold', 0.55), stroke=0.025))
     (n1, v1, c1), (n2, v2, c2) = CFG['labels']
     if SIDE == 'A':
-        lm = min([m for m in markers if m[0] < CX], key=lambda m: m[1])
-        rm = [m for m in markers if m[0] > CX][0]
-        hud_label(c, n1, v1, c1, 'L', max(lm[1] + 0.9, beam_y + 1.9), *lm)
-        hud_label(c, n2, v2, c2, 'R', max(rm[1] + 2.4, beam_y + 3.6), *rm)
+        rms = sorted([m for m in markers if m[0] > CX], key=lambda m: m[1])[:2]
+        y_a = max(rms[0][1] + 0.6, beam_y + 1.45)
+        hud_label(c, n1, v1, c1, 'R', y_a, *rms[0])
+        hud_label(c, n2, v2, c2, 'R', max(rms[-1][1] + 2.2, y_a + 2.3), *rms[-1])
     else:
         hud_label(c, n1, v1, c1, 'L', TEMPLES[0][1] + 0.2, *TEMPLES[0])
         hud_label(c, n2, v2, c2, 'R', markers[1][1] + 0.9, *markers[1])
 
     # offer + urgency
-    oy = 34.85
-    osz = 18.9 / F[SERIF].width(CFG['offer'], 1)
+    oy = 34.75
+    osz = 17.4 / F[SERIF].width(CFG['offer'], 1)
     text(c, CFG['offer'], SERIF, osz, CX, oy, gold)
-    text(c, 'LAUNCH MONTH ONLY', SANS_SB, 0.76, CX, oy + 1.38, gold, tracking=0.20)
+    text(c, 'LAUNCH MONTH ONLY', SANS_SB, 0.66, CX, oy + 1.30, gold, tracking=0.22)
+    fr = skia.Rect(CX - 10.0, oy - osz * 0.75 - 0.62, CX + 10.0, oy + 1.30 + 0.62)
+    LAY['offer_frame'] = (fr.left(), fr.top(), fr.right(), fr.bottom())
+    c.drawRRect(skia.RRect.MakeRectXY(fr, 1.0, 1.0), paint(C4('gold', 0.95), stroke=0.045))
 
     # proof line
     psz = min(0.575, 19.0 / F[SANS_M].width(CFG['proof'], 1))
@@ -498,6 +527,10 @@ json.dump({'beam_y_in': beam_y, 'markers': markers, 'lay': {k: list(map(float, n
 Image.fromarray(crop_in(final8, 0)).resize((720, 1440), Image.LANCZOS).save(f'{OUT}/side{SIDE}_small.png')
 print('compose done', SIDE, 'beam', round(beam_y, 2), 'markers', [tuple(round(v, 2) for v in m) for m in markers],
       'qr', LAY['qr'][3], 'modules', round(LAY['qr'][4] * 25.4, 2), 'mm')
+
+if os.environ.get('PREVIEW'):
+    Image.fromarray(crop_in(final8, 0)).save(f'{OUT}/side{SIDE}_trim_preview.png')
+    sys.exit(0)
 
 # ================================================================ EXPORTS
 TAG = f'LEEVORA_Standee_2x4ft_Side{SIDE}'

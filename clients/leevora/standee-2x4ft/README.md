@@ -18,7 +18,7 @@ redesign, day and lit-at-night simulations, and the decisions to confirm before 
 `previews/` has day and night mockups of both faces.
 
 ## Re-rendering
-`source/engine/build.py A|B` rebuilds every file for a side from `source/photos/` (the engine expects them at `hero/v1_1.png`, `hero/woman.npz`, `hero/man2.png`, `hero/man2.npz` under its `ROOT`; adjust `ROOT` and `CFG` paths). To change copy, a price
+`source/engine/build.py A|B` rebuilds every file for a side from `source/photos/` (the engine expects them at `hero/woman3.png|npz` and `hero/man3.png|npz` under its `ROOT`; adjust `ROOT` and `CFG` paths). The logo is the client's own vector artwork, lifted from their original PDF by `extract_logo.py` into `leevora_logo.json`; it is never retyped. To change copy, a price
 anchor or a phone number, edit `CFG` / `draw_vectors()` and re-run. Requirements: Python 3.13, numpy, opencv,
 skia-python, uharfbuzz, fonttools, mediapipe (landmarks are cached in the `.npz` files), qrcode, Pillow,
 Ghostscript, pikepdf. The FOGRA39 ICC profile was built with ArgyllCMS from the FOGRA39L characterisation data.
