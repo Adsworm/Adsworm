@@ -465,13 +465,14 @@ def draw_vectors(c):
     c.drawPath(qpath, paint(C4('ink'), aa=False))
     rx = qx0 + q + 0.8
     rw = TW - SAFE - rx
-    text(c, 'Scan or call to book', SANS_SB, 0.66, rx, qy0 + 1.35, C4('cream'), align='left')
+    text(c, 'Scan or call to book', SANS_SB, 0.66, rx, qy0 + 0.95, C4('cream'), align='left')
     num = '+91 80764 67352'
     nsz = min(1.45, rw / F[SANS_B].width(num, 1))
-    text(c, num, SANS_B, nsz, rx, qy0 + 1.35 + 0.55 + nsz * 0.80, C4('cream'), align='left')
+    text(c, num, SANS_B, nsz, rx, qy0 + 0.95 + 0.50 + nsz * 0.80, C4('cream'), align='left')
     LAY['num'] = (rx, nsz)
-    # wayfinding, aligned to the bottom of the QR tile
+    # walk-in line + wayfinding, last line aligned to the bottom of the QR tile
     fy = qy0 + q - 0.06
+    text(c, 'Or visit us directly at', SANS_SB, 0.50, rx, fy - 1.09, C4('cream', 0.9), align='left')
     aw = text(c, '↑', SANS_SB, 0.82, rx, fy + 0.02, gold, align='left')
     text(c, '2ND FLOOR, THIS BUILDING', SANS_SB, 0.60, rx + aw + 0.22, fy, gold, align='left', tracking=0.12)
 
