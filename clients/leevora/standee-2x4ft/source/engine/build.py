@@ -470,6 +470,10 @@ def draw_vectors(c):
     nsz = min(1.45, rw / F[SANS_B].width(num, 1))
     text(c, num, SANS_B, nsz, rx, qy0 + 1.35 + 0.55 + nsz * 0.80, C4('cream'), align='left')
     LAY['num'] = (rx, nsz)
+    # wayfinding, aligned to the bottom of the QR tile
+    fy = qy0 + q - 0.06
+    aw = text(c, '↑', SANS_SB, 0.82, rx, fy + 0.02, gold, align='left')
+    text(c, '2ND FLOOR, THIS BUILDING', SANS_SB, 0.60, rx + aw + 0.22, fy, gold, align='left', tracking=0.12)
 
     # fine print (>= 6 mm cap, lifted clear of the safe line)
     text(c, 'Posed by models. Scan imagery is illustrative. Free analysis during our launch month; T&C apply.',
