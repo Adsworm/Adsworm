@@ -8,7 +8,6 @@ OUT, DOCS, FONTS = f'{ROOT}/out', f'{ROOT}/docs', f'{ROOT}/fonts'
 os.makedirs(f'{DOCS}/img', exist_ok=True)
 Image.MAX_IMAGE_PIXELS = None
 L = {s: json.load(open(f'{OUT}/side{s}_layout.json')) for s in 'AB'}
-BEAM_MM = {s: round(L[s]['beam_y_in'] * 25.4) for s in 'AB'}
 
 # ---------------------------------------------------------------- images
 def thumb(path, w):
@@ -21,7 +20,7 @@ b = thumb(f'{OUT}/LEEVORA_Standee_2x4ft_SideB_softproof.png', 600)
 for nm, im in (('orig', orig), ('A', a), ('B', b)):
     im.save(f'{DOCS}/img/{nm}.jpg', quality=88)
 for s in 'AB':
-    for v in ('day', 'night', 'night-blockout'):
+    for v in ('day', 'night'):
         thumb(f'{OUT}/LEEVORA_Standee_2x4ft_Side{s}_{v}_preview.jpg', 420).save(f'{DOCS}/img/{s}_{v}.jpg', quality=86)
 # original's AI tells: crop of the embedded photo
 ph = Image.open(f'{ROOT}/src/img-000.png').convert('RGB')
@@ -75,7 +74,7 @@ def page(inner, foot, cls=''):
 MISTAKES = [
     ('Stopping power', [
         ('s1', 'No stopper. The hero is a woman in profile with her head inside a machine. There is no eye contact and no emotion, and from 8 m it reads as a white appliance. Faces looking at you stop people. Machines don\'t.'),
-        ('s1', 'Not designed for night. A dark panel with smallish type and one cream box means that when it\'s backlit, the brightest thing is the CTA box at knee height. It turns into a glaring slab and the headline glows weakly.'),
+        ('s1', 'Not planned for a backlit box. Lighter inks let more light through, and the biggest light area here is the cream CTA box at knee height. At night it turns into a glaring white slab, and the sage-grey headline glows weakly above it.'),
         ('s1', 'No hook. "Complimentary Skin & hair analysis." is a label, not a reason to stop. It has no curiosity, no problem and no payoff.'),
         ('s1', 'The offer is diluted. "Free" appears five times in five styles: Complimentary, the FREE pill, the Free 1 Month badge, "Book your free…" and the *Complimentary footnote. It reads as desperate rather than premium, and the eye can\'t tell which one is the offer.'),
         ('s2', '"For the first month" is vague. A passer-by doesn\'t know when you opened, so the deadline means nothing. Fixed: "Launch month only".'),
@@ -105,26 +104,27 @@ MISTAKES = [
         ('s1', 'The file is RGB (sRGB) with no CMYK build, so the deep green and the gold will shift unpredictably on Delhi RIPs, which often run unmanaged.'),
         ('s1', 'There is no bleed (the page is exactly 24 × 48 in) and no safe area. Frames hide 15–25 mm and anything near the edge is at risk.'),
         ('s2', 'The fonts are live, not outlined. CorelDRAW-based shops will substitute Gloock and Instrument Sans.'),
-        ('s2', 'There is no backlit prep: no density plan, no glow plan, no LED colour temperature and no way to control which parts light up.'),
+        ('s2', 'There is no backlit prep: no ink-density plan, no LED colour temperature, and nothing stopping the light areas from burning out.'),
     ]),
 ]
 
 FIXES = [
     ('Stop from 10 m', 'A face at 1.5× life size makes direct eye contact, and a glowing scan line cuts across it. Below the line the skin is shown the way the clinic\'s machine sees it. That curiosity gap is the stopper.'),
     ('One idea, one line', '"Your mirror only shows half." pays off the picture in one look. Side B uses the man\'s own words: "Hair fall has a reason."'),
-    ('Built for night first', 'Dark green surround, luminous face, cream headline, gold offer and an aqua scan line, so at night it glows like a hologram rather than a lit box. The optional blockout layer turns the surround jet-black and leaves only the elements lit.'),
-    ('3D without gimmicks', 'Depth comes from a 3D face mesh that follows the cheekbones, light spill from the beam onto the skin, and the head overlapping the headline. The beam runs edge to edge and can be fitted with a real neon-flex strip, which is a physical 3D upgrade.'),
-    ('Two faces, two audiences', 'Side A is a woman and skin. Side B is a man and hair, with the scan above the line on the hairline and the thin temples flagged in gold. The offer word order flips ("Hair & Skin") so the first noun matches the face.'),
-    ('"Free" once, premium tone', 'One gold offer line, "Free Skin & Hair Analysis / LAUNCH MONTH ONLY". The proof strip "See it · Measure it · Treat it" turns the jargon into a promise.'),
-    ('A measurable CTA', 'A 131 mm QR code opens WhatsApp with a pre-filled message. It was tested and decodes at full size and at phone-at-1.5 m scale. The number is chunked 80764 67352.'),
-    ('Nothing synthetic to spot', 'No machines, screens or invented UI text. The scan view and markers are computed from the photo\'s own skin, so the rings sit on real spots and the mesh sits on real facial landmarks.'),
-    ('Print-grade files', 'CMYK FOGRA39 with TAC ≤ 300%, 150 ppi at 100%, 10 mm bleed, 40 mm safe area, outlined type, crop marks with TrimBox and BleedBox, a flex-wrap version and a day/night blockout layer.'),
+    ('Built for a backlit box', 'The whole sheet is lit from behind, and lighter inks let more light through. So the picture is planned that way: the face, cream headline and gold offer are the lightest areas and read first, and the deep-green surround stays rich. Skin highlights are rolled off and the QR tile is warm grey, so nothing burns out into a white patch.'),
+    ('3D inside the picture', 'The depth is in the creative itself, with no add-ons. Side A\'s head sits in front of the headline, the beam throws light onto the skin above and below it, and the scanned half is lit differently from the natural half.'),
+    ('Two faces, two audiences', 'Side A is a woman and skin. Side B is a man and hair, with the scan above the line on the scalp and the thin temples flagged in gold. The offer word order flips ("Hair & Skin") so the first noun matches the face.'),
+    ('"Free" once, premium tone', 'One gold offer line: "Free Skin & Hair Analysis / LAUNCH MONTH ONLY". The proof line uses the clinic\'s own device wording: "8-spectrum AI skin imaging · 17 concerns mapped · Expert-led plan".'),
+    ('A measurable CTA', 'A 123 mm QR code (37 modules, 2.7 mm each) opens WhatsApp with a pre-filled message. The message says "skin" on Side A and "hair" on Side B, so staff can tell which face brought the lead. It was tested and decodes at full size and at phone-at-1.5 m scale. One label, "Scan or call to book", and one number, +91 80764 67352.'),
+    ('Nothing synthetic to spot', 'No machines, screens, invented UI text, face meshes or template brackets. The UV view and the rings are computed from the photo\'s own skin, so the rings sit on real spots. Labels use words, not fake numbers, and the fine print says "Posed by models. Scan imagery is illustrative."'),
+    ('Print-grade files', 'CMYK FOGRA39 with TAC ≤ 300%, 150 ppi at 100%, 10 mm bleed, 40 mm safe area, outlined type, crop marks with TrimBox and BleedBox, a flex-wrap version and an sRGB master for RIPs with a media profile.'),
 ]
 
 DECISIONS = [
     ('Value anchor', 'Add <b>"Worth ₹____"</b> under the offer. It is the strongest single upgrade to a "free" offer. I left it out because I won\'t print an invented price. Send me the real number and the change takes 2 minutes.'),
     ('WhatsApp', 'The QR opens <code>wa.me/918076467352</code>. Confirm that this number is on WhatsApp (ideally WhatsApp Business with a greeting message) <b>before printing</b>.'),
-    ('Hair claim', 'Side B says "Hair & scalp imaging" and "Density & thickness". Confirm that the hair analysis includes close-up scalp imaging. If it doesn\'t, I swap in the fallback strip.'),
+    ('Hair claim', 'Side B says "Hair & scalp imaging · Density mapped". Confirm that the hair analysis includes close-up scalp imaging. If it doesn\'t, I swap the line.'),
+    ('Exact dates', 'If the launch month has fixed dates, "TILL 30 NOV" beats "LAUNCH MONTH ONLY" for urgency. Send me the dates and I\'ll swap it.'),
     ('Launch month', 'If you want to reuse the panel after launch, ask the vendor to print "LAUNCH MONTH ONLY" as a separate vinyl strip, so it can be peeled off later.'),
     ('Which face faces the traffic', 'Side A (woman/skin) should face the direction most of the footfall comes from. If the unit stands side-on to the road, it doesn\'t matter.'),
     ('Photos', 'Both portraits are photoreal generated models with no model release needed, and the fine print says "Scan imagery is illustrative". The best long-term upgrade is a real 30-minute shoot of your own clients or staff at your own scanner, which the engine can re-render the same day.'),
@@ -135,7 +135,7 @@ def audit_html():
     p1 = f'''
 <div class="kicker">Design audit &amp; redesign · Adsworm</div>
 <h1>leevorá standee:<br>what was wrong, and the fix.</h1>
-<p class="lede">The original is clean but quiet. It works as a flyer, not as a street stopper. It has no hook, no night plan, a diluted offer and an AI photo with visible tells, and the print file isn't backlit-ready (85 ppi, RGB, no bleed). The redesign makes one idea readable from 10 m by day and turns into a glowing hologram by night.</p>
+<p class="lede">The original is clean but quiet. It works as a flyer, not as a street stopper. It has no hook, no night plan, a diluted offer and an AI photo with visible tells, and the print file isn't backlit-ready (85 ppi, RGB, no bleed). The redesign makes one idea readable from 10 m, and it reads just as strongly when the box is lit at night.</p>
 <div class="row" style="margin-top:6mm">
   <div class="col fig"><img src="img/orig.jpg">Before: original</div>
   <div class="col fig"><img src="img/A.jpg">After: Side A (skin)</div>
@@ -163,12 +163,10 @@ def audit_html():
 <div class="col fig" style="max-width:62mm"><img src="img/orig_tell.jpg">"B33°" gibberish and a different face on the screen</div></div>'''
     fx = ''.join(f'<tr><td style="width:42mm"><b>{t}</b></td><td>{d}</td></tr>' for t, d in FIXES)
     p4 = f'<div class="kicker">Part 2</div><h2>What changed, and why it works</h2><table>{fx}</table>'
-    dn = ''.join(f'''<div class="col fig"><img src="img/{s}_{v}.jpg">{s} · {lab}</div>''' for s in 'AB' for v, lab in (('day', 'day'), ('night', 'night')))
-    p5 = f'''<div class="kicker">Part 3</div><h2>Day vs night (simulated backlight)</h2>
+    dn = ''.join(f'''<div class="col fig"><img src="img/{s}_{v}.jpg">{s} · {lab}</div>''' for s in 'AB' for v, lab in (('day', 'day'), ('night', 'lit at night')))
+    p5 = f'''<div class="kicker">Part 3</div><h2>Day vs lit at night (backlit box, simulated)</h2>
 <div class="row">{dn}</div>
-<div class="row" style="margin-top:3mm"><div class="col fig" style="max-width:43mm"><img src="img/A_night-blockout.jpg">A · night with blockout</div><div class="col fig" style="max-width:43mm"><img src="img/B_night-blockout.jpg">B · night with blockout</div>
-<div class="col"><div class="box"><b>Night behaviour.</b> The face, headline, gold offer and aqua beam carry the light, and the green surround glows faintly. With the optional white-ink blockout (UV printer, +₹2.5–5k est.), the surround goes black and only the elements glow. That is the most premium look, and it costs the least of the upgrades.</div>
-<div class="box"><b>Night glare check.</b> The QR tile is warm grey (C3 M5 Y14 K12), not white, so it doesn't flare and stays scannable.</div></div></div>'''
+<div class="box"><b>How it behaves lit.</b> The whole sheet is lit from behind. Light inks let more light through, so the face, headline and gold offer read first and the deep green stays rich and dark around them. The QR tile is warm grey (C8 M8 Y20 K25), not white, so it doesn't flare, and skin highlights are rolled off so faces don't burn out.</div>'''
     dc = ''.join(f'<tr><td style="width:36mm"><b>{t}</b></td><td>{d}</td></tr>' for t, d in DECISIONS)
     p6 = f'<div class="kicker">Part 4</div><h2>Confirm before printing</h2><table>{dc}</table>'
     return f'<html><head><meta charset="utf-8"><style>{BASE_CSS}</style></head><body>' + \
@@ -181,7 +179,7 @@ def vendor_html():
         ('SideA_PRINT_CMYK.pdf / SideB_PRINT_CMYK.pdf', '<b>Master print file.</b> 1:1, CMYK FOGRA39 (output intent embedded), type outlined, 10 mm bleed, crop marks, TrimBox/BleedBox set.'),
         ('Side*_PRINT_CMYK_10mm-bleed.tif', 'Same artwork, flattened. 630 × 1239 mm, 150 ppi, CMYK, ICC embedded. Use it if your RIP prefers TIFF.'),
         ('Side*_FLEX-WRAP_CMYK_75mm-extension.tif', 'Only for flex that wraps around the frame: 760 × 1369 mm. The artwork is centred and the extra 75 mm per side is background only.'),
-        ('Side*_DAYNIGHT-BLOCKOUT_black-is-ink.tif', 'Optional white-ink blockout layer (CMYK-W-CMYK or reverse print). Black = 100% blockout, grey = partial. Supplied <b>unmirrored</b>; mirror it only if you print on the reverse.'),
+        ('Side*_RIP-MASTER_sRGB_10mm-bleed.tif', 'The same artwork in sRGB. Use it <b>only</b> if your RIP has an ICC profile for the actual backlit media. Otherwise print the CMYK files.'),
         ('Side*_softproof.png, *_day/_night previews', 'Colour reference only. Do not print these.'),
     ]
     ft = ''.join(f'<tr><td style="width:62mm"><code>{a}</code></td><td>{b}</td></tr>' for a, b in files)
@@ -190,22 +188,16 @@ def vendor_html():
         ('Build (recommended)', 'Aluminium profile box, 100–125 mm deep, hinged faces. Each face: 2 mm clear UV-stable polycarbonate → <b>backlit PET film 175–200 µm</b> printed 2× density → 3 mm opal acrylic. A 3 mm white ACP <b>centre divider</b> stops light and image bleeding between faces. Est. ₹14–25k.'),
         ('Build (budget)', '"LED glow sign" frame with 440–510 gsm <b>backlit flex</b> (not frontlit/star flex), Konica solvent in <b>backlit mode</b>, the same LEDs and the divider. Use the FLEX-WRAP file. Est. ₹6–11k.'),
         ('Print', '150 ppi at 100% (supplied). Backlit mode / 2-pass double-strike. Eco-solvent 720×1440, 8+ pass for film. Let solvent prints dry ≥24 h before sealing.'),
-        ('Colour', 'Files are already CMYK FOGRA39 (TAC ≤ 300%). <b>Don\'t re-convert or "boost" them.</b> Run a strip test (dark green, gold, cream, aqua, skin) on the real media in the real box, lit and unlit, and send me a photo before the full run.'),
+        ('Colour', 'Files are already CMYK FOGRA39 (TAC ≤ 300%). <b>Don\'t re-convert or "boost" them.</b> If you have a media ICC profile for backlit film or flex, print the sRGB master through it instead. Run a strip test (dark green, gold, cream, aqua, skin, QR) on the real media in the real box, lit and unlit, and send me a photo before the full run.'),
         ('Size & margins', 'Trim 610 × 1219 mm. Bleed 10 mm per side. All type, logo and the QR sit ≥40 mm inside the trim. Send me the frame drawing if the lip is wider than 25 mm.'),
         ('LEDs', 'Back-lit modules (not edge-lit): 12 V, 3 × SMD2835 lensed (160–175°), IP65+, on a 90–110 mm grid with the edge row ≤50 mm from the frame. <b>4000 K neutral white, CRI ≥80, one bin for both faces.</b> Avoid 6500 K: it greys the cream and turns the gold green. Fit a PWM dimmer, photocell, timer (off 23:00), 30 mA RCCB and earthing.'),
         ('Evenness test', 'Light the box with a blank face: no LED dots visible at 1 m and no dark corners.'),
     ]
     st = ''.join(f'<tr><td style="width:36mm"><b>{a}</b></td><td>{b}</td></tr>' for a, b in spec)
-    ups = [
-        ('Day/night blockout', 'Print the supplied blockout layer in white ink (UV printer). By day the panel reads rich green, and at night only the face, text, gold and beam glow. Registration ±2 mm. Est. +₹2.5–5k for both faces.'),
-        ('Real neon scan line', f'Mount a 12 V IP65 silicone LED neon-flex (6–8 mm, aqua/ice-blue) in a clear channel <b>exactly on the printed beam</b>: Side A at <b>{BEAM_MM["A"]} mm</b> and Side B at <b>{BEAM_MM["B"]} mm</b> from the top trim edge, running the full width. The printed beam is a 10–15 mm glow band, which hides ±3 mm mounting error. Est. ₹800–2,000 per face.'),
-        ('Raised logo', 'Optional 3 mm + 5 mm stacked acrylic "leevorá" with a cream face, sealed and through-bolted. Est. ₹2–6k per face.'),
-    ]
-    ut = ''.join(f'<tr><td style="width:36mm"><b>{a}</b></td><td>{b}</td></tr>' for a, b in ups)
     check = ['Frame drawing: outer size, visible area, lip, depth', 'Printer, media, mode and ICC named in writing',
              'Strip test photo (lit + unlit) approved', 'A 1:1 face crop proof approved', 'Side A / Side B confirmed, and which faces the street',
              'QR on the printed proof scans with two phones (Android + iPhone)', 'Blank-face LED test: no dots, matched 4000 K',
-             'Neon/blockout registration within ±2 mm (if ordered)', 'IP65, RCCB, earthing, timer set, 2-hour burn-in', 'Base ballasted or anchored against wind']
+             'IP65, RCCB, earthing, timer set, 2-hour burn-in', 'Base ballasted or anchored against wind']
     ct = ''.join(f'<li>☐ {c}</li>' for c in check)
     hindi = '''<div class="box hi"><b>वेंडर के लिए ज़रूरी बातें:</b> (1) फ़ाइल पहले से CMYK में है, दोबारा convert या colour "boost" मत करना। (2) Backlit flex/film ही लगाना, frontlit/star flex नहीं। (3) LED 4000K (neutral white) लगाना, 6500K नहीं। (4) पूरी printing से पहले strip test का lit और unlit फ़ोटो भेजना। (5) बीच में divider ज़रूर लगाना, ताकि एक side की light दूसरी side पर न दिखे। (6) Text, logo और QR को frame के lip के नीचे मत छुपाना, ये किनारे से 40 mm अंदर हैं।</div>'''
     p1 = f'''<div class="kicker">Production spec · for the print vendor</div>
@@ -213,8 +205,7 @@ def vendor_html():
 <p class="lede">Print-ready files are supplied. Please follow this sheet exactly and confirm the checklist on page 2 before the full run.</p>
 <h2>Files supplied</h2><table>{ft}</table>
 <h2>Specification</h2><table>{st}</table>'''
-    p2 = f'''<h2>Optional upgrades (recommended)</h2><table>{ut}</table>
-{hindi}
+    p2 = f'''{hindi}
 <div class="row"><div class="col"><h2>Pre-press checklist</h2><ul style="list-style:none;margin-left:0">{ct}</ul></div>
 <div class="col fig" style="max-width:38mm;margin-top:8mm"><img src="img/A.jpg">Side A</div><div class="col fig" style="max-width:38mm;margin-top:8mm"><img src="img/B.jpg">Side B</div></div>
 <p style="font-size:7.6pt;color:#6B7A76">Price figures are estimates from Delhi listings (ex-GST, ex-installation), not quotes.</p>'''
