@@ -109,25 +109,27 @@ MISTAKES = [
 ]
 
 FIXES = [
-    ('Stop from 10 m', 'A face at 1.5× life size makes direct eye contact, and a glowing scan line cuts across it. Below the line the skin is shown the way the clinic\'s machine sees it. That curiosity gap is the stopper.'),
-    ('One idea, one line', '"Your mirror only shows half." pays off the picture in one look. Side B uses the man\'s own words: "Hair fall has a reason."'),
-    ('Built for a backlit box', 'The whole sheet is lit from behind, and lighter inks let more light through. So the picture is planned that way: the face, cream headline and gold offer are the lightest areas and read first, and the deep-green surround stays rich. Skin highlights are rolled off and the QR tile is warm grey, so nothing burns out into a white patch.'),
-    ('3D inside the picture', 'The depth is in the creative itself, with no add-ons. Side A\'s head sits in front of the headline, the beam throws light onto the skin above and below it, and the scanned half is lit differently from the natural half.'),
-    ('Two faces, two audiences', 'Side A is a woman and skin. Side B is a man and hair, with the scan above the line on the scalp and the thin temples flagged in gold. The offer word order flips ("Hair & Skin") so the first noun matches the face.'),
-    ('"Free" once, premium tone', 'One gold offer line: "Free Skin & Hair Analysis / LAUNCH MONTH ONLY". The proof line uses the clinic\'s own device wording: "8-spectrum AI skin imaging · 17 concerns mapped · Expert-led plan".'),
-    ('A measurable CTA', 'A 123 mm QR code (37 modules, 2.7 mm each) opens WhatsApp with a pre-filled message. The message says "skin" on Side A and "hair" on Side B, so staff can tell which face brought the lead. It was tested and decodes at full size and at phone-at-1.5 m scale. Below it: "Scan or call to book", one number (+91 80764 67352), then "Or visit us directly at ↑ 2ND FLOOR, THIS BUILDING".'),
-    ('Nothing synthetic to spot', 'No machines, screens, invented UI text, face meshes or template brackets. The UV view and the rings are computed from the photo\'s own skin, so the rings sit on real spots. Labels use words, not fake numbers, and the fine print says "Posed by models. Scan imagery is illustrative."'),
-    ('Print-grade files', 'CMYK FOGRA39 with TAC ≤ 300%, 150 ppi at 100%, 10 mm bleed, 40 mm safe area, outlined type, crop marks with TrimBox and BleedBox, a flex-wrap version and an sRGB master for RIPs with a media profile.'),
+    ('Stop from 10 m', 'A believable, relatable face, smiling and making eye contact, in a real clinic setting. Next to it, a scan lens shows what the machine sees on that same face. The face earns the glance and the lens earns the second look.'),
+    ('One idea, one line', '"Your mirror only shows half." The lens is the other half. Side B uses the man\'s own words: "Hair fall has a reason."'),
+    ('Reading order = decision order', 'Brand and NOW OPEN at eye level, then the hook, then the person and the proof (the lens), then the offer, the reasons to trust it, and finally how to act. Each block answers the next question a passer-by has.'),
+    ('Trust at the decision point', 'Directly under the offer: "8-spectrum AI skin scan · Expert-led plan · Free, no obligation". Risk reversal sits exactly where people hesitate. Below that, the QR, the number and "2nd floor, this building".'),
+    ('Real, not AI-looking', 'Ordinary people with real skin (pores, moles, uneven tone), natural window light and a real clinic background. No cut-outs, no recoloured faces, no face meshes or sci-fi HUD. The photo sits whole inside a frame, the way a real campaign photo would.'),
+    ('3D without gimmicks', 'The scan lens breaks the photo frame and casts a soft shadow, so it sits in front of the picture. The caption badge overlaps the lens rim for a second layer of depth.'),
+    ('Two faces, two audiences', 'Side A is a woman and skin: the lens is a UV view of her cheek, computed from the photo, with real pigment spots ringed. Side B is a man with a receding hairline: the lens is a trichoscope view of a thinning temple.'),
+    ('Built for a backlit box', 'The whole sheet is lit from behind. The photo, cream headline and gold offer carry the light, and the deep green stays rich. The QR tile is warm grey, so it doesn\'t flare.'),
+    ('A measurable CTA', 'A 123 mm QR code (37 modules, 2.7 mm each) opens WhatsApp with a pre-filled message. The message says "skin" on Side A and "hair" on Side B, so staff can tell which face brought the lead. It was tested at full size and at phone-at-1.5 m scale.'),
+    ('Print-grade files', 'CMYK FOGRA39 with TAC ≤ 300%, 150 ppi at 100%, 10 mm bleed, 40 mm safe area, outlined type, crop marks with TrimBox and BleedBox, a flex-wrap version and an sRGB master.'),
 ]
 
 DECISIONS = [
     ('Value anchor', 'Add <b>"Worth ₹____"</b> under the offer. It is the strongest single upgrade to a "free" offer. I left it out because I won\'t print an invented price. Send me the real number and the change takes 2 minutes.'),
+    ('No obligation', 'The trust strip says <b>"Free, no obligation"</b>. Confirm that the clinic will not push a paid package as a condition of the free analysis. If it might, I swap the line.'),
     ('WhatsApp', 'The QR opens <code>wa.me/918076467352</code>. Confirm that this number is on WhatsApp (ideally WhatsApp Business with a greeting message) <b>before printing</b>.'),
     ('Hair claim', 'Side B says "Hair & scalp imaging · Density mapped". Confirm that the hair analysis includes close-up scalp imaging. If it doesn\'t, I swap the line.'),
     ('Exact dates', 'If the launch month has fixed dates, "TILL 30 NOV" beats "LAUNCH MONTH ONLY" for urgency. Send me the dates and I\'ll swap it.'),
     ('Launch month', 'If you want to reuse the panel after launch, ask the vendor to print "LAUNCH MONTH ONLY" as a separate vinyl strip, so it can be peeled off later.'),
     ('Which face faces the traffic', 'Side A (woman/skin) should face the direction most of the footfall comes from. If the unit stands side-on to the road, it doesn\'t matter.'),
-    ('Photos', 'Both portraits are photoreal generated models with no model release needed, and the fine print says "Scan imagery is illustrative". The best long-term upgrade is a real 30-minute shoot of your own clients or staff at your own scanner, which the engine can re-render the same day.'),
+    ('Photos', 'Both portraits are photoreal generated people, built from real-photo references for lighting and realism but with new faces, so no stranger\'s likeness is used and no model release is needed. The fine print says "Posed by models. Scan imagery is illustrative." For the next print run, a 30-minute shoot of real staff or clients at your own scanner is the strongest trust upgrade, and the engine can re-render the same day.'),
 ]
 
 

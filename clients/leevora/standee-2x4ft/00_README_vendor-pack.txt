@@ -17,4 +17,5 @@ Print से पहले confirm करें:
   1. 8076467352 WhatsApp पर चालू है (QR सीधे WhatsApp खोलता है)
   2. Clinic walk-in लेता है ("Or visit us directly at")
   3. Entrance standee के पास है (↑ 2ND FLOOR, THIS BUILDING)
+  3b. "Free, no obligation" सही है (free analysis के साथ कोई package ज़बरदस्ती नहीं)
   4. Vendor पहले strip test (lit + unlit) की photo भेजे
