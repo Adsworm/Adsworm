@@ -232,7 +232,7 @@ if SIDE == 'A':
     cl = cv2.createCLAHE(clipLimit=2.2, tileGridSize=(6, 6)).apply((np.clip(uv[y0:y1, x0:x1], 0, 1) * 255).astype(np.uint8))
     v = np.zeros_like(uv)
     v[y0:y1, x0:x1] = gblur(cl.astype(np.float32) / 255, 1.2)
-    view = v[..., None] * np.float32([0.62, 1.0, 0.98]) * 1.22 + np.float32([0.0, 0.04, 0.05])
+    view = v[..., None] * np.float32([1.0, 0.93, 0.80]) * 1.12 + np.float32([0.03, 0.02, 0.0])   # warm ivory UV channel
     dog = gblur(uv, 3.0) - gblur(uv, 14.0)
     del uv, cl, v
 else:
@@ -336,19 +336,19 @@ def draw_vectors(c):
     pre = l2[:-len(acc)]
     x0_ = CX - F[SERIF].width(l2, HS) / 2
     text(c, pre, SERIF, HS, x0_, HL2, C4('cream'), align='left')
-    text(c, acc, SERIF, HS, x0_ + F[SERIF].width(pre, HS), HL2, C4('aqua'), align='left')
+    text(c, acc, SERIF, HS, x0_ + F[SERIF].width(pre, HS), HL2, C4('gold'), align='left')
 
     # 3. photo frame line
     c.drawPath(frame_path(), paint(C4('gold', 0.9), stroke=0.035))
 
     # 4. loupe: rings, the spot it reads, leader, caption badge
-    aqua = C4('aqua')
-    c.drawCircle(*LC, LR, paint(C4('aqua_hot'), stroke=0.07))
-    c.drawCircle(*LC, LR + 0.16, paint(C4('aqua', 0.7), stroke=0.022))
-    c.drawCircle(*SPOT, 0.30, paint(C4('aqua_hot'), stroke=0.045))
+    aqua = C4('gold')
+    c.drawCircle(*LC, LR, paint(C4('cream'), stroke=0.07))
+    c.drawCircle(*LC, LR + 0.16, paint(C4('gold', 0.8), stroke=0.022))
+    c.drawCircle(*SPOT, 0.30, paint(C4('cream'), stroke=0.045))
     ang = math.atan2(LC[1] - SPOT[1], LC[0] - SPOT[0])
     c.drawLine(SPOT[0] + 0.30 * math.cos(ang), SPOT[1] + 0.30 * math.sin(ang),
-               LC[0] - (LR + 0.16) * math.cos(ang), LC[1] - (LR + 0.16) * math.sin(ang), paint(C4('aqua_hot', 0.95), stroke=0.03))
+               LC[0] - (LR + 0.16) * math.cos(ang), LC[1] - (LR + 0.16) * math.sin(ang), paint(C4('cream', 0.95), stroke=0.03))
     for q in LOUPE_SPOTS:
         c.drawCircle(*q, 0.26, paint(C4('cream', 0.95), stroke=0.04))
     # caption badge sitting on the bottom of the lens
@@ -359,7 +359,7 @@ def draw_vectors(c):
     by0 = LC[1] + LR - 0.55
     badge = skia.RRect.MakeRectXY(skia.Rect(LC[0] - bw / 2, by0, LC[0] + bw / 2, by0 + 1.42), 0.30, 0.30)
     c.drawRRect(badge, paint(C4('ink', 0.94)))
-    c.drawRRect(badge, paint(C4('aqua', 0.8), stroke=0.022))
+    c.drawRRect(badge, paint(C4('gold', 0.8), stroke=0.022))
     text(c, t1, SANS_SB, 0.34, LC[0], by0 + 0.52, aqua, tracking=0.16)
     text(c, t2, SERIF, 0.60, LC[0], by0 + 1.13, C4('cream'))
     LAY['loupe'] = (LC[0], LC[1], LR)
