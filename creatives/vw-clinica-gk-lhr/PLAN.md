@@ -1,5 +1,36 @@
 # VW Clinica — Greater Kailash — Full Body LHR creative rebuild
 
+## Version 2 (premium) — current files: VWClinica_GK_LHR_PREMIUM_V1/V2/V3_1080.png
+
+### Brand fonts, matched by measurement
+Each text sample was cut out of the original creative and compared with 100+ Google Fonts renders (pixel overlap, IoU, plus a width penalty).
+| Original text | Best match | Overlap |
+|---|---|---|
+| "Reduction" (headline) | Libre Caslon Text 700, tracking -0.06em | 0.715 |
+| "19,999" (price digits) | Libre Caslon Text 700 (Ibarra Real Nova 700 scored 0.76) | 0.734 |
+| "Greater Kailash Branch, New Delhi" | DM Sans 600 | 0.616 |
+| "+91 81309 24067" | Figtree 600 / Inter 500 / DM Sans family | 0.63 |
+The original looks image-model generated, so no exact font exists; the system uses one serif family (Libre Caslon Text) for headline and prices and one sans (DM Sans) for everything else.
+
+### Hierarchy (measured on V1, 1080×1080, versus the original)
+| Element | Original | Version 2 |
+|---|---|---|
+| Headline "Full Body Laser Hair Reduction" | 26.6% of height | 28.5% (112 px, 3 lines) |
+| Price digits | 9.9% | 13.1% (152 px, full-width price menu) |
+| Phone number | 2.9% | 3.1%, white on deep teal, own half of the contact bar |
+| Location | 2.2% | 2.8%, serif "Greater Kailash" under "VISIT US" |
+
+### Premium rules applied
+- Two type families only; gold used only as hairlines and small caps, no filled gold bars, pills or badges.
+- Price shown as a menu: label left (6 / 10 SESSIONS, small caps), price right, one hairline between rows.
+- ₹ set at half size in champagne, top-aligned.
+- Fewer elements: logo, eyebrow, headline, two price rows, location, phone.
+- Same layout system for all three; the photo changes (clinic scene, treatment close-up, lifestyle) so Meta has three distinct creatives to test.
+
+---
+
+## Version 1 (superseded)
+
 Offer kept as on the original creative: 6 sessions ₹19,999 · 10 sessions ₹29,999 · No-cost EMI.
 Brand colours kept: deep teal #00434D, logo teal #31A1B0, gold #E3C27E / #F0DCA7, cream #FCF9F1.
 Fonts changed (allowed): Playfair Display (headline, prices) + Montserrat (labels, location, phone).
