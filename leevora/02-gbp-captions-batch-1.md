@@ -5,15 +5,15 @@ _Core services: Laser Hair Removal · PRP Hair Treatment · GFC Hair Treatment_
 
 ---
 
-## Keyword lock (final)
+## Keyword lock (v2: validated against Google India autocomplete, see `03-keyword-research-validated.md`)
 
-| Role | Keyword | Use |
+| Role | Keyword | Evidence |
 |---|---|---|
-| **Master money keyword** | **Laser Hair Removal in Subhash Nagar** | Most frequent; highest intent + volume of the three services |
-| Hair master | PRP Hair Treatment in Subhash Nagar | Hair-fall posts |
-| Hair challenger | GFC Hair Treatment in West Delhi | GFC has lower competition, so it's easier to own |
-| Landmark anchor | near Pacific Mall | People search with landmarks, so put it in the first line often |
-| Catchment | Rajouri Garden · Tilak Nagar · West Delhi | Secondary mention only ("for clients from…") |
+| **Master money keyword** | **laser hair removal + Rajouri Garden / West Delhi** | Real autocomplete demand ("laser hair removal rajouri garden", "best laser hair removal clinic in west delhi"). The Subhash Nagar version returned **zero** suggestions |
+| Hair | PRP hair treatment in Delhi | People search PRP at the **Delhi** level, not by locality |
+| Hair | GFC treatment in Delhi | Same: "gfc treatment in delhi", "gfc therapy in delhi" |
+| Clinic-level | skin clinic / aesthetic clinic + Subhash Nagar / Rajouri Garden / West Delhi | All have real autocomplete demand |
+| Address / proximity | Subhash Nagar, near Pacific Mall | This is the address, so mention it once for trust and directions. It's not the ranking keyword |
 | Brand | Leevora Aesthetic Clinic | Once per post |
 
 **Rules applied to every post:** 1 primary keyword (max 2 mentions) + 1 secondary + the brand once. No "near me". **No phone numbers or URLs in the text**, because Google rejects those posts; use the CTA button instead. Never write "permanent", "guaranteed", "100%" or "pain-free".
@@ -25,7 +25,7 @@ _Core services: Laser Hair Removal · PRP Hair Treatment · GFC Hair Treatment_
 ## POST 1: Launch (Type: Update · CTA: Book)
 **Image:** Clinic exterior or reception with the Leevora signage visible. Daylight, wide shot.
 
-> Now open near Pacific Mall, Subhash Nagar. Leevora Aesthetic Clinic brings advanced laser hair removal and doctor-supervised hair restoration to West Delhi.
+> Now open: a new skin & aesthetic clinic in West Delhi. Leevora Aesthetic Clinic in Subhash Nagar, minutes from Rajouri Garden, brings advanced laser hair removal and doctor-supervised hair restoration to your neighbourhood.
 >
 > We built Leevora for people who want results without compromise: advanced technology, strict hygiene protocols, and treatment plans designed around your skin and hair, not a one-size-fits-all package.
 >
@@ -43,7 +43,7 @@ _Core services: Laser Hair Removal · PRP Hair Treatment · GFC Hair Treatment_
 ## POST 2: LHR core (Type: Update · CTA: Book)
 **Image:** Close-up of the laser handpiece in use on a forearm or leg (real clinic shot).
 
-> Laser Hair Removal in Subhash Nagar: smoother skin, and fewer razor and waxing days.
+> Laser hair removal near Rajouri Garden: smoother skin, and fewer razor and waxing days.
 >
 > Waxing every three weeks, threading cuts, ingrown hair after shaving: laser ends that cycle. At Leevora Aesthetic Clinic, our advanced laser technology targets hair at the root for long-lasting hair reduction, with cooling built in for a comfortable session.
 >
@@ -51,7 +51,7 @@ _Core services: Laser Hair Removal · PRP Hair Treatment · GFC Hair Treatment_
 > • Quick sessions, so you're back to your day immediately
 > • A personalised plan, typically 6–8 sessions spaced 4–6 weeks apart
 >
-> Located near Pacific Mall. Book your consultation and patch test.
+> Located in Subhash Nagar, near Pacific Mall. Book your consultation and patch test.
 
 ---
 
@@ -73,7 +73,7 @@ _Core services: Laser Hair Removal · PRP Hair Treatment · GFC Hair Treatment_
 ## POST 4: PRP core (Type: Update · CTA: Book)
 **Image:** Clean shot of the PRP prep station or centrifuge (no needles or blood in frame).
 
-> PRP Hair Treatment in Subhash Nagar for hair fall, thinning and a widening partition.
+> PRP hair treatment in Delhi for hair fall, thinning and a widening partition, now in Subhash Nagar, West Delhi.
 >
 > PRP (Platelet-Rich Plasma) uses growth factors from your own blood to nourish weak follicles and support healthier, thicker-looking hair. No synthetic chemicals, and minimal downtime.
 >
@@ -88,7 +88,7 @@ _Core services: Laser Hair Removal · PRP Hair Treatment · GFC Hair Treatment_
 ## POST 5: Facial LHR for women (Type: Update · CTA: Book)
 **Image:** Woman's face in soft light, a clean, glowing skin portrait.
 
-> Facial laser hair removal near Pacific Mall: say goodbye to monthly threading.
+> Face laser hair removal for women in West Delhi: say goodbye to monthly threading.
 >
 > Upper lip, chin, sidelocks, forehead: facial hair is one of the most common concerns we see. And frequent threading and waxing leave skin irritated, darker and prone to bumps.
 >
@@ -101,7 +101,7 @@ _Core services: Laser Hair Removal · PRP Hair Treatment · GFC Hair Treatment_
 ## POST 6: GFC core (Type: Update · CTA: Book)
 **Image:** Before-consultation scalp analysis screen or trichoscope in use.
 
-> GFC Hair Treatment in West Delhi: advanced growth factor therapy for serious hair fall.
+> GFC treatment in Delhi: advanced growth factor therapy for serious hair fall.
 >
 > GFC (Growth Factor Concentrate) is the advanced evolution of PRP. It isolates and concentrates the growth factors from your own blood, giving your follicles a more targeted dose of what they need to recover.
 >
@@ -117,7 +117,7 @@ _Core services: Laser Hair Removal · PRP Hair Treatment · GFC Hair Treatment_
 ## POST 7: Men's LHR (Type: Update · CTA: Book)
 **Image:** Man with a sharp beard line, grooming-editorial style.
 
-> Laser hair removal for men in Subhash Nagar: beard shaping, neck, chest and back.
+> Laser hair removal for men in West Delhi: beard shaping, neck, chest and back.
 >
 > A sharp beard line without the daily razor. No more razor bumps on the neck. A clean back and chest without painful waxing.
 >
@@ -130,7 +130,7 @@ _Core services: Laser Hair Removal · PRP Hair Treatment · GFC Hair Treatment_
 ## POST 8: PRP vs GFC (Type: Update · CTA: Learn more → service page, or Book)
 **Image:** A clean two-column graphic, "PRP vs GFC" (minimal text, brand colours).
 
-> PRP vs GFC hair treatment: which one is right for you?
+> GFC vs PRP hair treatment: which is better for you?
 >
 > Both use your own blood to stimulate hair follicles. The difference is concentration.
 >
@@ -159,7 +159,7 @@ _Core services: Laser Hair Removal · PRP Hair Treatment · GFC Hair Treatment_
 ## POST 10: Winter hair fall (Type: Update · CTA: Book)
 **Image:** Hair on a comb or brush, or a scalp close-up (tasteful).
 
-> Hair fall treatment near Pacific Mall: is winter making your hair fall worse?
+> Hair treatment near Rajouri Garden: is winter making your hair fall worse?
 >
 > Dry air, hot showers and low scalp circulation make hair fall spike for many people in Delhi winters. If you're seeing more strands on your pillow and comb than usual, don't wait for visible thinning.
 >
@@ -172,20 +172,20 @@ _Core services: Laser Hair Removal · PRP Hair Treatment · GFC Hair Treatment_
 ## POST 11: LHR for Indian skin FAQ (Type: Update · CTA: Book)
 **Image:** The laser machine itself, a premium product-style shot in the clinic.
 
-> Is laser hair removal safe for Indian skin? Here's the honest answer.
+> Is laser hair removal safe for the face and sensitive skin? Here's the honest answer.
 >
 > Yes, when it's done with the right technology and the right settings. Indian skin needs lasers calibrated for medium to deeper skin tones. Generic settings are where problems start.
 >
 > At Leevora Aesthetic Clinic, Subhash Nagar, we use advanced laser technology suited to Indian skin, and every client gets a skin assessment and patch test before treatment begins.
 >
-> Laser Hair Removal in Subhash Nagar, done properly. Book your consultation near Pacific Mall.
+> Laser hair removal in West Delhi, done properly. Book your consultation at our Subhash Nagar clinic.
 
 ---
 
 ## POST 12: Men's hair thinning (Type: Update · CTA: Book)
 **Image:** Man's hairline or crown, natural light, confident expression.
 
-> Receding hairline or thinning crown? GFC Hair Treatment in West Delhi can help you act early.
+> Receding hairline or thinning crown? GFC hair treatment in Delhi can help you act early.
 >
 > Hair thinning in men often starts in the late 20s, and the earlier you treat it, the more you have to work with. GFC therapy delivers concentrated growth factors directly to weakening follicles.
 >
@@ -199,6 +199,6 @@ _Core services: Laser Hair Removal · PRP Hair Treatment · GFC Hair Treatment_
 - **Name:** Leevora Aesthetic Clinic (nothing else).
 - **Primary category:** Skin care clinic. Switch to "Dermatologist" only if an MD dermatologist practises there.
 - **Secondary:** Laser hair removal service · Hair removal service · Medical spa. Pick any hair-loss category that appears in the dropdown.
-- **Services:** separate entries for "Laser Hair Removal", "Full Body Laser Hair Removal", "Facial Laser Hair Removal", "Laser Hair Removal for Men", "PRP Hair Treatment", "GFC Hair Treatment". Each gets a 250–300 character description that mentions Subhash Nagar once.
-- **Business description (750 chars):** lead with "Leevora Aesthetic Clinic in Subhash Nagar, near Pacific Mall, offers advanced laser hair removal, PRP and GFC hair treatments…"
+- **Services:** separate entries for "Laser Hair Removal", "Full Body Laser Hair Removal", "Facial Laser Hair Removal", "Laser Hair Removal for Men", "PRP Hair Treatment", "GFC Hair Treatment". Each gets a 250–300 character description that mentions West Delhi or Rajouri Garden once.
+- **Business description (750 chars):** lead with "Leevora Aesthetic Clinic is a skin & aesthetic clinic in West Delhi, located in Subhash Nagar near Pacific Mall and minutes from Rajouri Garden, offering advanced laser hair removal, PRP and GFC hair treatments…"
 - **Reviews:** ask every client to "mention the treatment you took". That puts keywords in the reviews, which is a real ranking signal.
