@@ -7,32 +7,28 @@
 - **Slides 02–04:** upload to GBP **Photos** (not the post).
 - **Slide 05 (injections and fillers):** post it on Instagram only. Google restricts prescription-drug promotion (botulinum toxin), so it is kept out of the GBP caption too.
 
-## Caption (copy-paste; no phone or URL in the text)
+## Caption v2 (copy-paste; no phone or URL in the text)
 
-Skin clinic in Subhash Nagar, West Delhi: skin, laser and hair care by a doctor, plus a unisex salon, at Leevora Aesthetics.
+A treatment plan should start with your skin, not a package. At Leevora Aesthetics, the new skin clinic at Subhash Nagar Metro, it does.
 
-Every visit starts with a consultation that has no fee, and a camera skin analysis, so the treatment matches the cause and not a guess.
+Every first visit begins with a camera skin analysis and a doctor's consultation, with no fee. If a simpler treatment will do, we tell you.
 
-SKIN
-Pigmentation and melasma treatment with a Q-switched laser, acne and acne marks, chemical peels, medical facials, HydraFacial and underarm darkening.
+What people come to us for:
 
-LASER
-Laser hair removal (laser hair reduction) for women and men, full body or one area. Beard line shaping. Laser tattoo removal over several sessions.
+→ Pigmentation or melasma that creams haven't shifted: Q-switched laser or a chemical peel, chosen after the scan.
+→ Dull, tired skin before a wedding or an event: HydraFacial or a medical facial, matched to your skin type.
+→ Unwanted hair: laser hair removal for women and men, full body or one area, and beard line shaping for men.
+→ A tattoo you've outgrown: laser tattoo removal, planned over several sessions.
+→ Hair fall: we find the cause first. PRP and GFC hair treatment are done by a doctor only.
+→ A mole, wart or skin tag: checked first, then removed by a doctor.
 
-HAIR
-Hair fall consultation, scalp care, and PRP and GFC hair treatment, performed by a doctor only.
+Once the clinical work is done, there's a unisex salon on the same floor.
 
-REMOVALS
-Mole check and removal, warts and skin tags.
+Gate 3, Subhash Nagar Metro, two stops from Rajouri Garden. Parking below the building. Open every day until 8 pm.
 
-SALON
-Unisex haircuts, facials, manicure and pedicure.
+Suitability is assessed at consultation. Individual results vary.
 
-At Subhash Nagar Metro, Gate 3: one stop from Tilak Nagar, two from Rajouri Garden. Open every day, 10:30 am to 8 pm.
-
-Suitability is assessed at a consultation. Individual results vary.
-
-Book your consultation below.
+_v1 (service-menu list) retired: it read like a directory listing._
 
 ## Keyword map (each verified via Google India autocomplete)
 | Keyword in caption | Search it matches |
