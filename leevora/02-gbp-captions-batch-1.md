@@ -1,6 +1,6 @@
-# Leevora Aesthetic Clinic: Google Business Profile Posts, Batch 1 (12 posts)
+# Leevora Aesthetics: Google Business Profile Posts, Batch 1 (12 posts)
 
-_Location: Subhash Nagar, near Pacific Mall (West Delhi). Catchment: Tilak Nagar, Rajouri Garden._
+_Location: 2nd Floor, WZ-112B, Meenakshi Garden, at Subhash Nagar Metro (Gate 3), West Delhi 110018. Catchment: Tilak Nagar, Rajouri Garden._
 _Core services: Laser Hair Removal · PRP Hair Treatment · GFC Hair Treatment_
 
 ---
@@ -13,8 +13,8 @@ _Core services: Laser Hair Removal · PRP Hair Treatment · GFC Hair Treatment_
 | Hair | PRP hair treatment in Delhi | People search PRP at the **Delhi** level, not by locality |
 | Hair | GFC treatment in Delhi | Same: "gfc treatment in delhi", "gfc therapy in delhi" |
 | Clinic-level | skin clinic / aesthetic clinic + Subhash Nagar / Rajouri Garden / West Delhi | All have real autocomplete demand |
-| Address / proximity | Subhash Nagar, near Pacific Mall | This is the address, so mention it once for trust and directions. It's not the ranking keyword |
-| Brand | Leevora Aesthetic Clinic | Once per post |
+| Address / proximity | Subhash Nagar Metro (Gate 3) | This is the address, so mention it once for trust and directions. It's not the ranking keyword |
+| Brand | Leevora Aesthetics | Once per post |
 
 **Rules applied to every post:** 1 primary keyword (max 2 mentions) + 1 secondary + the brand once. No "near me". **No phone numbers or URLs in the text**, because Google rejects those posts; use the CTA button instead. Never write "permanent", "guaranteed", "100%" or "pain-free".
 
@@ -25,7 +25,7 @@ _Core services: Laser Hair Removal · PRP Hair Treatment · GFC Hair Treatment_
 ## POST 1: Launch (Type: Update · CTA: Book)
 **Image:** Clinic exterior or reception with the Leevora signage visible. Daylight, wide shot.
 
-> Now open: a new skin & aesthetic clinic in West Delhi. Leevora Aesthetic Clinic in Subhash Nagar, minutes from Rajouri Garden, brings advanced laser hair removal and doctor-supervised hair restoration to your neighbourhood.
+> Now open: a new skin & aesthetic clinic in West Delhi. Leevora Aesthetics in Subhash Nagar, minutes from Rajouri Garden, brings advanced laser hair removal and doctor-supervised hair restoration to your neighbourhood.
 >
 > We built Leevora for people who want results without compromise: advanced technology, strict hygiene protocols, and treatment plans designed around your skin and hair, not a one-size-fits-all package.
 >
@@ -45,13 +45,13 @@ _Core services: Laser Hair Removal · PRP Hair Treatment · GFC Hair Treatment_
 
 > Laser hair removal near Rajouri Garden: smoother skin, and fewer razor and waxing days.
 >
-> Waxing every three weeks, threading cuts, ingrown hair after shaving: laser ends that cycle. At Leevora Aesthetic Clinic, our advanced laser technology targets hair at the root for long-lasting hair reduction, with cooling built in for a comfortable session.
+> Waxing every three weeks, threading cuts, ingrown hair after shaving: laser ends that cycle. At Leevora Aesthetics, our advanced laser technology targets hair at the root for long-lasting hair reduction, with cooling built in for a comfortable session.
 >
 > • Suitable for Indian skin tones
 > • Quick sessions, so you're back to your day immediately
 > • A personalised plan, typically 6–8 sessions spaced 4–6 weeks apart
 >
-> Located in Subhash Nagar, near Pacific Mall. Book your consultation and patch test.
+> At Subhash Nagar Metro, Gate 3. Book your consultation and patch test.
 
 ---
 
@@ -64,7 +64,7 @@ _Core services: Laser Hair Removal · PRP Hair Treatment · GFC Hair Treatment_
 >
 > Before your first session, our team performs a detailed skin assessment and patch test, so your settings are calibrated to you. No guesswork.
 >
-> At Leevora Aesthetic Clinic, Subhash Nagar, full body packages cover arms, legs, underarms, back and bikini line, with advanced laser technology designed for Indian skin.
+> At Leevora Aesthetics, Subhash Nagar, full body packages cover arms, legs, underarms, back and bikini line, with advanced laser technology designed for Indian skin.
 >
 > Claim your complimentary consultation and patch test this month.
 
@@ -77,11 +77,11 @@ _Core services: Laser Hair Removal · PRP Hair Treatment · GFC Hair Treatment_
 >
 > PRP (Platelet-Rich Plasma) uses growth factors from your own blood to nourish weak follicles and support healthier, thicker-looking hair. No synthetic chemicals, and minimal downtime.
 >
-> At Leevora Aesthetic Clinic, every PRP plan starts with a scalp analysis to understand why your hair is falling. We don't run a generic routine.
+> At Leevora Aesthetics, every PRP plan starts with a scalp analysis to understand why your hair is falling. We don't run a generic routine.
 >
 > Ideal for early-stage hair thinning in men and women.
 >
-> Near Pacific Mall, convenient from Rajouri Garden and Tilak Nagar. Book your scalp consultation.
+> At Subhash Nagar Metro: one stop from Tilak Nagar, two from Rajouri Garden. Book your scalp consultation.
 
 ---
 
@@ -92,7 +92,7 @@ _Core services: Laser Hair Removal · PRP Hair Treatment · GFC Hair Treatment_
 >
 > Upper lip, chin, sidelocks, forehead: facial hair is one of the most common concerns we see. And frequent threading and waxing leave skin irritated, darker and prone to bumps.
 >
-> Laser hair removal at Leevora Aesthetic Clinic, Subhash Nagar, gives you long-lasting hair reduction with sessions that take just minutes. Your skin looks smoother, cleaner and more even over time.
+> Laser hair removal at Leevora Aesthetics, Subhash Nagar, gives you long-lasting hair reduction with sessions that take just minutes. Your skin looks smoother, cleaner and more even over time.
 >
 > Book your facial laser consultation.
 
@@ -105,12 +105,12 @@ _Core services: Laser Hair Removal · PRP Hair Treatment · GFC Hair Treatment_
 >
 > GFC (Growth Factor Concentrate) is the advanced evolution of PRP. It isolates and concentrates the growth factors from your own blood, giving your follicles a more targeted dose of what they need to recover.
 >
-> Why clients choose GFC at Leevora Aesthetic Clinic:
+> Why clients choose GFC at Leevora Aesthetics:
 > • Concentrated growth factors in every session
 > • A minimally invasive, quick procedure
 > • Customised to your stage of hair thinning
 >
-> Located near Pacific Mall, Subhash Nagar. Book your scalp analysis.
+> At Subhash Nagar Metro, Gate 3. Book your scalp analysis.
 
 ---
 
@@ -121,7 +121,7 @@ _Core services: Laser Hair Removal · PRP Hair Treatment · GFC Hair Treatment_
 >
 > A sharp beard line without the daily razor. No more razor bumps on the neck. A clean back and chest without painful waxing.
 >
-> At Leevora Aesthetic Clinic, men's laser treatments use advanced technology calibrated for thicker, coarser hair, so each session counts.
+> At Leevora Aesthetics, men's laser treatments use advanced technology calibrated for thicker, coarser hair, so each session counts.
 >
 > Popular with clients from Rajouri Garden and Tilak Nagar. Book your consultation.
 
@@ -137,9 +137,9 @@ _Core services: Laser Hair Removal · PRP Hair Treatment · GFC Hair Treatment_
 > PRP Hair Treatment: platelet-rich plasma, a proven option for early hair thinning.
 > GFC Hair Treatment: purified, concentrated growth factors, a more targeted approach often recommended for persistent hair fall.
 >
-> The right choice depends on your scalp, your hair-loss pattern and your goals. That's why every plan at Leevora Aesthetic Clinic, Subhash Nagar, starts with a scalp analysis.
+> The right choice depends on your scalp, your hair-loss pattern and your goals. That's why every plan at Leevora Aesthetics, Subhash Nagar, starts with a scalp analysis.
 >
-> Book yours near Pacific Mall.
+> Book yours at Subhash Nagar Metro.
 
 ---
 
@@ -150,9 +150,9 @@ _Core services: Laser Hair Removal · PRP Hair Treatment · GFC Hair Treatment_
 >
 > Laser works best when planned. With sessions spaced 4–6 weeks apart, brides with weddings in February–April should begin this month.
 >
-> At Leevora Aesthetic Clinic, Subhash Nagar, our bridal plans cover arms, legs, underarms, face and back, so you never have to fit a last-minute wax into the wedding week.
+> At Leevora Aesthetics, Subhash Nagar, our bridal plans cover arms, legs, underarms, face and back, so you never have to fit a last-minute wax into the wedding week.
 >
-> Grooms welcome too. Book your bridal consultation near Pacific Mall.
+> Grooms welcome too. Book your bridal consultation at Subhash Nagar Metro.
 
 ---
 
@@ -163,7 +163,7 @@ _Core services: Laser Hair Removal · PRP Hair Treatment · GFC Hair Treatment_
 >
 > Dry air, hot showers and low scalp circulation make hair fall spike for many people in Delhi winters. If you're seeing more strands on your pillow and comb than usual, don't wait for visible thinning.
 >
-> At Leevora Aesthetic Clinic, Subhash Nagar, we start with a scalp analysis, then recommend the right path, including PRP Hair Treatment or GFC therapy where suitable.
+> At Leevora Aesthetics, Subhash Nagar, we start with a scalp analysis, then recommend the right path, including PRP Hair Treatment or GFC therapy where suitable.
 >
 > Book your scalp consultation today.
 
@@ -176,7 +176,7 @@ _Core services: Laser Hair Removal · PRP Hair Treatment · GFC Hair Treatment_
 >
 > Yes, when it's done with the right technology and the right settings. Indian skin needs lasers calibrated for medium to deeper skin tones. Generic settings are where problems start.
 >
-> At Leevora Aesthetic Clinic, Subhash Nagar, we use advanced laser technology suited to Indian skin, and every client gets a skin assessment and patch test before treatment begins.
+> At Leevora Aesthetics, Subhash Nagar, we use advanced laser technology suited to Indian skin, and every client gets a skin assessment and patch test before treatment begins.
 >
 > Laser hair removal in West Delhi, done properly. Book your consultation at our Subhash Nagar clinic.
 
@@ -189,16 +189,16 @@ _Core services: Laser Hair Removal · PRP Hair Treatment · GFC Hair Treatment_
 >
 > Hair thinning in men often starts in the late 20s, and the earlier you treat it, the more you have to work with. GFC therapy delivers concentrated growth factors directly to weakening follicles.
 >
-> At Leevora Aesthetic Clinic, Subhash Nagar, your plan is built after a detailed scalp analysis, so you're not paying for treatments you don't need.
+> At Leevora Aesthetics, Subhash Nagar, your plan is built after a detailed scalp analysis, so you're not paying for treatments you don't need.
 >
 > Serving clients from Rajouri Garden, Tilak Nagar and across West Delhi. Book your consultation.
 
 ---
 
 ## GBP profile setup (do this before Post 1)
-- **Name:** Leevora Aesthetic Clinic (nothing else).
+- **Name:** Leevora Aesthetics (nothing else).
 - **Primary category:** Skin care clinic. Switch to "Dermatologist" only if an MD dermatologist practises there.
 - **Secondary:** Laser hair removal service · Hair removal service · Medical spa. Pick any hair-loss category that appears in the dropdown.
 - **Services:** separate entries for "Laser Hair Removal", "Full Body Laser Hair Removal", "Facial Laser Hair Removal", "Laser Hair Removal for Men", "PRP Hair Treatment", "GFC Hair Treatment". Each gets a 250–300 character description that mentions West Delhi or Rajouri Garden once.
-- **Business description (750 chars):** lead with "Leevora Aesthetic Clinic is a skin & aesthetic clinic in West Delhi, located in Subhash Nagar near Pacific Mall and minutes from Rajouri Garden, offering advanced laser hair removal, PRP and GFC hair treatments…"
+- **Business description (750 chars):** lead with "Leevora Aesthetics is a skin & aesthetic clinic in West Delhi, at Subhash Nagar Metro (two stops from Rajouri Garden), offering advanced laser hair removal, PRP and GFC hair treatments…"
 - **Reviews:** ask every client to "mention the treatment you took". That puts keywords in the reviews, which is a real ranking signal.
