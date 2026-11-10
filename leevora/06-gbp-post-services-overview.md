@@ -7,6 +7,21 @@
 - **Slides 02–04:** upload to GBP **Photos** (not the post).
 - **Slide 05 (injections and fillers):** post it on Instagram only. Google restricts prescription-drug promotion (botulinum toxin), so it is kept out of the GBP caption too.
 
+## Caption v3: SHORT (recommended, copy-paste)
+
+Skin clinic at Subhash Nagar Metro, West Delhi, where your skin is scanned before any treatment is suggested. Every first visit at Leevora Aesthetics includes a camera skin analysis and a doctor's consultation, with no fee.
+
+→ Pigmentation and melasma: Q-switched laser, chemical peels
+→ Dull skin: HydraFacial, medical facials
+→ Unwanted hair: laser hair removal for women and men
+→ Tattoos: laser tattoo removal
+→ Hair fall: PRP and GFC hair treatment, by a doctor only
+→ Moles, warts, skin tags: removed by a doctor
+→ A unisex salon on the same floor
+
+Gate 3, Subhash Nagar Metro, two stops from Rajouri Garden. Open daily until 8 pm.
+Individual results vary.
+
 ## Caption v2 (copy-paste; no phone or URL in the text)
 
 A treatment plan should start with your skin, not a package. At Leevora Aesthetics, the new skin clinic at Subhash Nagar Metro, it does.
