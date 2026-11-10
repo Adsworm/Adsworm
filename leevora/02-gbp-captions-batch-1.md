@@ -1,5 +1,7 @@
 # Leevora Aesthetics: Google Business Profile Posts, Batch 1 (12 posts)
 
+> **Superseded.** Use `07-gbp-buildup-kit.md` instead.
+
 _Location: 2nd Floor, WZ-112B, Meenakshi Garden, at Subhash Nagar Metro (Gate 3), West Delhi 110018. Catchment: Tilak Nagar, Rajouri Garden._
 _Core services: Laser Hair Removal · PRP Hair Treatment · GFC Hair Treatment_
 

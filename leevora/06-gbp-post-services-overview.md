@@ -1,5 +1,7 @@
 # GBP Post: "Our Services" carousel (Skin, laser, hair. Plus a salon.)
 
+> **Superseded.** Use `07-gbp-buildup-kit.md` instead.
+
 ## Post setup
 - **Type:** Update
 - **Image:** Slide 01 only. A GBP post shows 1 image. Use a version **without the WhatsApp number**, because Google can reject posts that put contact details in the post creative.
