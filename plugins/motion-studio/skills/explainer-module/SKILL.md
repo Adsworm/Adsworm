@@ -1,41 +1,56 @@
 ---
 name: explainer-module
-description: The voice-led Instagram explainer format that holds retention — two cartoon avatars in a Hinglish dialogue under a "receipts" card, captions and card builds synced to neural-TTS word timings, numbered news breakdown, comment-keyword CTA. Use for educational/news reels for a business audience; use instead of kinetic-typography when the goal is watch time and comments.
+description: The voice-led Instagram explainer reel that holds retention — a teacher and a student as talking heads (lip-flap + facial reactions), karaoke bubble captions, a proof board that builds on the spoken word, sound played by the visuals, an open-loop chip held until a payoff. One script.json drives everything. Use for educational, news or "relatable mistake" reels for business owners; use instead of kinetic typography when the goal is watch time, sends and comments.
 ---
 
-# Explainer Module
+# Explainer Module (engine v4)
 
-Kinetic typography over a dark background gets skipped: no voice to follow, nothing concrete to believe, and Instagram deprioritises "majority text" reels. This module is what works for Indian business/marketing educators in 2026. Template project: `projects/adsworm-reel-03` (copy it; edit `script/script.json`; run `npm run render`).
+Template project: `projects/adsworm-reel-10` (copy the folder, replace `script/script.json`, generate the dialogue, render). Rules behind every choice: `docs/playbook/REEL-PLAYBOOK.md` (hooks, dialogue), `docs/playbook/EDITING-PSYCHOLOGY.md` (editing, sound, QA numbers), `docs/playbook/REFERENCE-Det2rTBzoEq.md` (the reference reel). Read `references/retention-rules.md` before writing a script and `references/script-schema.md` while writing it.
 
-## Retention architecture (non-negotiable)
+What failed before, so don't rebuild it: kinetic type on dark (reel 01), cinematic abstract (02), a floating orb and flying camera (04: "nobody understood it"), a polite stats lecture with full-body avatars (06–07: "no fun, feels manufactured").
 
-| When | Beat | Rule |
+## The format
+
+| Layer | What it does | Rule |
 |---|---|---|
-| 0–2 s | Hook line spoken from frame 0; card already shows the hook number (frame 0 is the thumbnail) | Identity call-out + specific number + novelty: "Founder ji, Diwali mein 17 din, aur Meta ne 3 cheezein badal di" |
-| 2–5 s | Second voice objects ("Abhi? Mera budget set hai") → promise ("teeno paisa bachaate hain") | Dialogue, not monologue; the objection is what the viewer is thinking |
-| 5–60 s | Countdown ①②③, each: mini-hook → receipt builds while the voice says it → founder reaction | A receipt (official page, UI mock, chart) lands every 3–5 s; biggest item last |
-| then | Bonus insight with a chart; CTA "Comment X" with a comment-UI mock + PDF tile; "Save, send to partner" | Comments and sends are ranking signals |
+| Two busts, bottom | AMAN teaches, RIYA is the viewer. Mouth frames follow voice loudness; the listener reacts (shock, laugh, doubt, worry) | The student says the wrong belief out loud, proposes the wrong move, the teacher cuts in. ≥ 4 reactions per reel |
+| Karaoke bubble | 2–4 words at a time, active word lit, pills on the stressed phrase | ≤ 4 words and ≤ 20 characters per chunk; captions ≥ 56 px |
+| Proof board, top | One section = one board. Views switch on a beat or a spoken word; items inside land on their own words | A change every 2–4 s, never > 2 per second. ≤ 7 readable words and one hero number per state. Show an object or a scene, not a word list |
+| Open-loop chip | The question the hook raised stays pinned to the board; turns green at the payoff | Uncertain hook, certain payoff; payoff at 55–70% of the runtime |
+| Sound | Each visual plays its own effect (`Sfx.tsx`); pad ducks under the voice; riser → 0.35 s breath → bass hit on the payoff | Effects ≥ 6 dB under the voice, each on a visual event, pitch varied |
+| Frame 0 | A finished composition: hook headline readable, both faces in frame | First word by frame 6, hook claim (≤ 7 words) readable by frame 15 |
 
-- **Line length ≤ 9 words and the caption ≤ 60 characters** (2 lines at 50 px in a 940 px bubble); one line per caption; 1–2 `[pills]` per line; ~2.5 s per line; keep it 45–75 s. Split a line that carries numbers so the chart/bars land on the words that say them.
-- **Facts only with receipts** on the card (URL bar + title + date, source line at the bottom). Write them to `script/sources.md` first. Quote the source's own words ("kam reward", "digital ad costs"), never a stronger paraphrase. Never a hand-drawn curve: real values as bars.
-- **Open loop from frame 0:** the hook card shows the countdown number and the three numbered items locked; the thumbnail already promises the structure.
-- **Light theme** (paper, white cards, one brand blue, gold for numbers). Dark cinematic reads as an ad. Card below y = 280 (top Reels UI), captions above the bottom 35 %, notes ≥ 34 px, chips 28 px.
-- **Audio:** the voice is the timing track. A beatless pad 20+ dB under the voice, UI pops that land with the elements. No beat-driven music, no SFX leading the visual.
-- **Numbers in `say`:** write them in English words ("eighteen point nine percent"), brand names as pronounced ("Gem", not "GEM"); check with whisper (`faster-whisper`, numpy input) that they come back as digits.
+## Script rules (the part that decides if it works)
+
+1. **Hook** = a contradiction or a "that's me" in ≤ 12 words, said by the teacher to the viewer. Not a topic, not a stat.
+2. **The student is wrong out loud** ("I called them the very next morning!"), then proposes the wrong fix; the teacher interrupts. Never polite Q&A.
+3. **One everyday analogy** staged on the board (a shop, a new salesman, a visiting card) instead of a definition.
+4. **Max 2 numbers spoken**; other figures live on the board with a receipt chip (source, date, "Meta's own number", "US, 2011"…).
+5. **95–115 spoken words, lines ≤ 12 words**, 40–50 s. One speaker never holds > 6 s without a swap or a reaction.
+6. **CTA once**: "Comment KEYWORD" + exactly what arrives by DM. Then a share line that names a person ("send this to whoever answers your enquiries"), and a last line that echoes the hook.
+7. **Facts only with receipts**: write them in `script/sources.md`; an independent approval pass verifies every spoken or shown claim before any voice credit is spent. Illustrative UI is labelled; no platform logos.
 
 ## Pipeline
 
-1. `script/script.json`: per line `who`, `say` (Devanagari for Hindi words so TTS pronounces them right), `show` (Latin-script Hinglish with `[pills]`; punctuation glued to a closing bracket is drawn outside the pill), optional `beat`, `pose` and a `paid` override (`say`/`show` for the boosted version). `vars.countdown.to` makes `{days}`/`{days_hi}` live (days from today; `REEL_DAYS` overrides). Rates: AMAN `+40%`, FOUNDER `+46%` (hi-IN neural voices speak ~2 w/s at default; the reference pace is ~3 w/s). Avoid `!`, `…`, `।` in `say` — each adds a 0.5–0.9 s pause.
-2. `npm run voice`: edge-tts per line (word boundaries), cached by text+voice+rate → `public/voice.wav` + `src/reel/timeline.json` (lines, sections, beats = frame each beat starts, `vars`, `variant`).
-3. `src/reel/beats.tsx`: card content per section built from `receipts.tsx` primitives, each revealing from its beat frame.
-4. `npm run qa`: a still 8 frames into every line. Read every sheet. Check: frame 0 complete, no empty card at any section start, chips not wrapping, captions ≤ 2 lines, nothing in the bottom 35%.
-5. `npm run render`: two-pass −14 LUFS master. Run `meta-delivery-qa` on the MP4.
+```bash
+cp -r projects/adsworm-reel-10 projects/<new> && cd projects/<new>      # node_modules is a symlink
+# 1. write script/script.json (references/script-schema.md)
+python3 scripts/draft_voice.py && DIALOGUE=script/dialogue.draft.mp3 python3 scripts/voice.py   # free edge-tts draft
+python3 scripts/qa_report.py        # pacing, holds, reactions, caption speed, payoff %, unspoken word cues
+node scripts/qa.mjs                 # a still per line → out/qa/sheet-*.png; read every sheet
+# 2. real voice: ONE ElevenLabs v4 dialogue call
+python3 scripts/dialogue.py         # prints the generate_audio params (tags + say, voices) → save result as script/dialogue.mp3
+python3 scripts/voice.py && python3 scripts/qa_report.py
+# 3. render (two-pass −14 LUFS) + spec gate
+REEL_NAME=<NAME> node scripts/render-reel.mjs --no-voice       # FRAMES=0-240 for a quick check
+bash plugins/motion-studio/skills/meta-delivery-qa/scripts/check_specs.sh out/<NAME>.mp4
+```
 
-## Avatars
+- **Voice**: Higgsfield `generate_audio`, model `elevenlabs_v4`, `dialogue=[{text, voice_type, voice_id}]` + a one-paragraph direction `prompt`. Inline audio tags work (`[excited] [laughs] [gasps] [whispers] [jumping in] [worried] [warmly] [confident]`): put them in the line's `tags`, never in `say`. ~3 credits per reel. Whole conversation in one call; per-line TTS sounds stitched. `voice.py` cuts only quiet pauses (laughs survive), aligns Whisper word times to `say`, opens the payoff breath, ducks the pad.
+- **Faces**: `scripts/faces.py who base.png closed=… open=… shock=… --mouth x0,y0,x1,y1 --face …` aligns AI-edited expression shots to the base bust and pastes only the mouth (talking) or the face (reactions), so frames never jitter. Edit prompts: "Keep everything identical… change ONLY the mouth / facial expression". ~2 credits per frame (Nano Banana via Higgsfield). Current set: aman `closed half open wink laugh surprised`, riya `closed half open shock laugh doubt worry`.
+- **Sound effects**: `scripts/sfx.py` synthesizes `public/sfx/*.wav` with numpy (pop, tick, whoosh, swish, thump, ding, buzz, riser, huh, gasp, cash). No samples, no licences.
+- **Countdowns**: `vars.countdown.to` makes `{days}` live on the board; rerun `voice.py` on the posting day (no new voice needed).
 
-Generate one character sheet per person (3 poses side by side, flat 2D vector style, solid green background) — Nano Banana Pro via Higgsfield costs ~2 credits — then `python3 scripts/avatars.py who=sheet.png:pose1,pose2,pose3`. The speaker gets point/thumbs/idle poses, the listener idle/think/wow. For a founder likeness, pass a reference photo to the image model.
+## QA gate (all must hold before delivery)
 
-## Upgrades
-- ElevenLabs voices (`elevenlabs/skills` text-to-speech) replace edge-tts for a more natural Hinglish delivery: same `say` text, same word timings.
-- For the paid version, `npm run render -- --paid`: the CTA card becomes a plain "DM <keyword>" card and the CTA line uses its `paid` text — comment CTAs are for organic. Use it as a new ad creative, not for boosting the organic post.
-- Always run a creative-director review of the storyboard before the first render (motion-taste rubric + copy): reel 03's review caught Hindi-number TTS, a paraphrased claim, a made-up curve and a 3-line caption.
+`qa_report.py` clean (or every WARN explained), every contact sheet read, spec check PASS, the approval file lists every claim as verified, and the post is labelled AI-generated in Instagram. Then write the posting kit (caption, pinned comment, auto-DM text, cover frame).

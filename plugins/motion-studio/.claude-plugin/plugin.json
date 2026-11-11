@@ -1,7 +1,7 @@
 {
   "name": "motion-studio",
-  "description": "Brief-to-delivery motion graphics for Meta ads: Remotion ad kit, HyperFrames routing, motion taste, delivery QA, variant matrix, editing pipeline and performance loop.",
-  "version": "1.0.0",
+  "description": "Brief-to-delivery motion graphics for Meta ads and organic reels: Remotion ad kit, explainer reel engine, reel content pipeline, HyperFrames routing, motion taste, delivery QA, variant matrix, editing pipeline and performance loop.",
+  "version": "1.1.0",
   "author": {"name": "Adsworm"},
   "license": "MIT",
   "keywords": ["remotion", "hyperframes", "motion-graphics", "video-editing", "meta-ads", "creative"]

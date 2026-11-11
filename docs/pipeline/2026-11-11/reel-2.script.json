@@ -1,0 +1,89 @@
+{
+  "title": "Your leads aren't bad. You're just late.",
+  "voices": {
+    "AMAN": {"name": "Holden", "voice_type": "preset", "voice_id": "3c9d6053-6334-592c-8997-4e325286af3f"},
+    "RIYA": {"name": "Anika (Indian English)", "voice_type": "preset", "voice_id": "4b2dc8f3-5e8b-59a9-9a5c-85620e44c033"}
+  },
+  "direction": "Fun, high-energy Instagram skit. Aman: friendly marketing expert, teasing but kind, warm, confident. Riya: Indian English, expressive salon owner, defensive then horrified then relieved, quick and dramatic. Fast natural back-and-forth with real reactions.",
+  "gapCap": 0.22,
+  "tempo": 1.05,
+  "leadInMs": 60,
+  "tailMs": 1500,
+  "bedGain": 0.07,
+  "brand": {"names": {"AMAN": "AMAN · ADSWORM", "RIYA": "RIYA · SALON OWNER"}, "side": {"AMAN": "left", "RIYA": "right"}},
+  "loop": {"text": "late? how?", "answer": "reply in 1 hour", "until": "l8"},
+  "payoff": {"beat": "l8", "pauseMs": 350},
+  "sections": [
+    {"id": "hook", "label": "THE LEAD MYTH", "source": "Chat is an illustration", "lines": [
+      {"who": "AMAN", "tags": "[excited]", "say": "Your leads aren't bad. You're just late.", "show": "Your leads aren't bad. [You're just late.]", "beat": "l1", "react": "doubt", "reactWord": "late"},
+      {"who": "RIYA", "tags": "[annoyed]", "say": "Late? I called them the very next morning!", "show": "Late?! I called them the very [next morning]!", "beat": "l2", "react": "laugh", "reactWord": "morning"},
+      {"who": "AMAN", "tags": "[laughs]", "say": "Next morning? By then, they've already messaged someone else.", "show": "Next morning? By then, they've already messaged [someone else].", "beat": "l3", "pre": "laugh", "react": "worry", "reactWord": "already"}
+    ], "views": [
+      {"at": "l1", "items": [
+        {"type": "headline", "lines": [{"text": "YOUR LEADS"}, {"text": "AREN'T BAD."}, {"text": "YOU'RE LATE.", "tone": "red", "word": "late"}], "emoji": "⏰", "emojiWord": "late"}
+      ]},
+      {"at": "l2", "items": [
+        {"type": "chatThread", "name": "New lead", "msgs": [
+          {"from": "them", "text": "Hi! Price for the bridal package?", "time": "9:02 PM"},
+          {"from": "me", "text": "Hello ma'am, still interested?", "time": "next day · 10:15 AM", "word": "morning"}
+        ], "status": "seen ✓✓ · no reply", "statusAt": "l3", "statusWord": "already", "statusTone": "red"}
+      ]},
+      {"at": "l3", "word": "someone", "items": [
+        {"type": "clock", "to": 13, "unit": "hrs", "label": "your reply came after"}
+      ]}
+    ]},
+    {"id": "shop", "label": "IMAGINE YOUR SHOP", "source": "Analogy", "lines": [
+      {"who": "AMAN", "tags": "[warmly]", "say": "Imagine a customer walks into your shop.", "show": "Imagine a customer [walks into your shop].", "beat": "l4"},
+      {"who": "AMAN", "tags": "", "say": "And you say hello three hours later.", "show": "And you say hello [three hours later].", "beat": "l5", "react": "shock", "reactWord": "three"},
+      {"who": "RIYA", "tags": "[gasps]", "say": "They'd walk out! Oh no. That's exactly what I do online.", "show": "They'd walk out! Oh no… that's exactly what I do [online].", "beat": "l6", "pre": "shock"}
+    ], "views": [
+      {"at": "l4", "items": [
+        {"type": "scene", "actors": [
+          {"emoji": "🏪", "label": "your shop", "x": 560, "y": 170, "size": 250},
+          {"emoji": "🚶‍♀️", "x": 150, "y": 270, "size": 170, "enter": "left", "word": "customer", "say": "Hello? Anyone?", "sayWord": "shop", "outAt": "l6", "outWord": "walk", "flip": true},
+          {"emoji": "🕒", "label": "3 hours later", "x": 360, "y": 40, "size": 130, "at": "l5", "word": "three"},
+          {"emoji": "🙋‍♂️", "x": 420, "y": 290, "size": 150, "at": "l5", "word": "later", "say": "Hi! 😃"}
+        ]},
+        {"type": "sticker", "text": "that's me online 😳", "color": "pink", "x": 40, "y": 30, "rotate": -6, "at": "l6", "word": "online"}
+      ]}
+    ]},
+    {"id": "proof", "label": "THE RESEARCH", "source": "Harvard Business Review, Mar 2011: US study of 2,241 companies · \"qualify\" = a real conversation with the buyer", "lines": [
+      {"who": "AMAN", "tags": "[confident]", "say": "A Harvard Business Review study found something wild.", "show": "A [Harvard Business Review] study found something wild.", "beat": "l7", "react": "doubt"},
+      {"who": "AMAN", "tags": "", "say": "Reply within an hour, and you're nearly seven times likelier to have a real conversation.", "show": "Reply within an hour: nearly [7× likelier] to have a real conversation.", "beat": "l8", "react": "shock", "reactWord": "seven"},
+      {"who": "RIYA", "tags": "[worried]", "say": "But I can't stare at my phone all day!", "show": "But I can't stare at my phone [all day]!", "beat": "l9", "pre": "worry"}
+    ], "views": [
+      {"at": "l7", "items": [
+        {"type": "browser", "url": "hbr.org", "title": "The Short Life of Online Sales Leads", "date": "Harvard Business Review · 2011", "note": "Most companies reply far too slowly."}
+      ]},
+      {"at": "l8", "word": "seven", "items": [
+        {"type": "stat", "value": 7, "suffix": "×", "label": "likelier to qualify the lead", "color": "green", "arrow": "up"},
+        {"type": "chip", "text": "reply within 1 hour vs. later · HBR, 2011, US", "kind": "ink", "delay": 22},
+        {"type": "sticker", "text": "all day?! 😩", "color": "pink", "x": 580, "y": 400, "rotate": -6, "at": "l9", "word": "all"}
+      ]}
+    ]},
+    {"id": "fix", "label": "THE FIX", "source": "Adsworm advice · chat is an illustration", "lines": [
+      {"who": "AMAN", "tags": "[warmly]", "say": "You don't have to. Turn on an instant auto-reply.", "show": "You don't have to. Turn on an [instant auto-reply].", "beat": "l10"},
+      {"who": "AMAN", "tags": "", "say": "Then call back within the hour.", "show": "Then [call back] within the hour.", "beat": "l11", "react": "laugh", "reactWord": "hour"}
+    ], "views": [
+      {"at": "l10", "items": [
+        {"type": "chatThread", "name": "New lead", "msgs": [
+          {"from": "them", "text": "Hi! Price for the bridal package?", "time": "9:02 PM"},
+          {"from": "me", "text": "Hi! 🙌 Here's our price list. Calling you shortly!", "time": "9:02 PM · auto-reply", "word": "auto"}
+        ], "status": "replied in 5 seconds ✓", "statusAt": "l11", "statusTone": "green"},
+        {"type": "sticker", "text": "then call 📞 within the hour", "color": "gold", "x": 430, "y": 20, "rotate": 5, "at": "l11", "word": "call"}
+      ]}
+    ]},
+    {"id": "cta", "label": "FREE REPLY SCRIPT", "source": "", "lines": [
+      {"who": "AMAN", "tags": "[excited]", "say": "Comment REPLY. I'll send a first-reply script you can copy.", "show": "Comment [\"REPLY\"]. I'll send a first-reply script you can [copy].", "beat": "l12"},
+      {"who": "RIYA", "tags": "[cheeky]", "say": "Okay bye! Replying to my leads right now!", "show": "Okay bye! Replying to my leads [right now]! 🏃‍♀️", "beat": "l13", "react": "laugh", "reactWord": "right"}
+    ], "views": [
+      {"at": "l12", "items": [
+        {"type": "comment", "keyword": "REPLY"},
+        {"type": "chip", "text": "Free first-reply script · by DM", "kind": "green", "delay": 40}
+      ]},
+      {"at": "l13", "items": [
+        {"type": "follow", "share": "Send this to whoever answers your enquiries 📲"}
+      ]}
+    ]}
+  ]
+}

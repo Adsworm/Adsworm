@@ -29,7 +29,7 @@ Every installed skill sits in Claude's context on every message. Install the pro
 
 | Profile | Installs | Always-on |
 |---|---|---|
-| `core` | motion-studio (9 skills) · Remotion official plugin (12) · LottieFiles motion-design · ElevenLabs TTS/SFX/music/STT/dubbing | ~645 + ~275 tok, plus skill descriptions |
+| `core` | motion-studio (10 skills) · Remotion official plugin (12) · LottieFiles motion-design · ElevenLabs TTS/SFX/music/STT/dubbing | ~645 + ~275 tok, plus skill descriptions |
 | `html` | HyperFrames plugin (21 skills) · GSAP core/timeline/plugins/performance | **~4.1k tok** for HyperFrames: disable it between jobs |
 | `taste` | design-taste-frontend · Emil Kowalski animate/review/vocabulary/apple-design | small |
 | `editing` | video-use (footage cutdowns) · Kinocut MCP (headless ffmpeg) | MCP tools load on demand |
@@ -50,7 +50,8 @@ Third-party repos are installed through a filter. For example, Emil Kowalski's r
 | `brand-motion-system` | One `brand.json` per client, compiled into Remotion, HyperFrames, GSAP and CSS settings |
 | `video-editing-pipeline` | Footage routing plus 14 tested ffmpeg recipes (reframe, captions in the safe zone, ducking, LUT, overlays) |
 | `creative-performance-loop` | Meta hook rate, hold rate and CPA per ad, mapped back to each axis, and written into the next matrix. Read-only by default |
-| `explainer-module` | The voice-led Instagram explainer that holds retention: two avatars in a Hinglish dialogue under a receipts card, captions synced to neural-TTS word timings, numbered news breakdown, comment-keyword CTA. Template: `projects/adsworm-reel-03` |
+| `explainer-module` | The voice-led Instagram explainer that holds retention (engine v4): a teacher and a student as talking heads with lip-flap and reactions, karaoke captions, a proof board that builds on the spoken word, sound played by the visuals, an open-loop chip held until the payoff. Includes the retention rules and the script schema. Template: `projects/adsworm-reel-10` |
+| `reel-pipeline` | The batch workflow for reels: topic research, a set of three with different jobs, scripts, independent fact approval, free draft build, paid voice only after approval, render, QA and a posting kit |
 
 Start a job with: `/motion-studio:motion-director <brief>`.
 

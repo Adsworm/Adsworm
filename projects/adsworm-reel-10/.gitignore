@@ -1,0 +1,5 @@
+node_modules
+out
+.remotion
+public/voice.wav
+script/dialogue.draft.mp3
