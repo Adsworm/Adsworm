@@ -3,3 +3,4 @@ out
 .remotion
 public/voice.wav
 script/dialogue.draft.mp3
+reels/*/dialogue.draft.mp3

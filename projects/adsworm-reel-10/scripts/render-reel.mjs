@@ -4,7 +4,8 @@ import {execFileSync, spawnSync} from 'node:child_process';
 import fs from 'node:fs';
 import {browserExecutable, bundleProject, ID, licenseKey} from './_shared.mjs';
 
-const NAME = process.env.REEL_NAME ?? 'REEL_9x16';
+// REEL=<slug> picks reels/<slug>/ (voice.py reads it); the output is named after it unless REEL_NAME is set
+const NAME = process.env.REEL_NAME ?? (process.env.REEL ? `ADSWORM_${process.env.REEL}_9x16` : 'REEL_9x16');
 // FRAMES=0-240 renders only that range (quick sound/motion checks)
 const frameRange = process.env.FRAMES ? process.env.FRAMES.split('-').map(Number) : null;
 if (!process.argv.includes('--no-voice')) execFileSync('python3', ['scripts/voice.py'], {stdio: 'inherit'});
@@ -37,5 +38,5 @@ const target = 'I=-14:TP=-1.5:LRA=11';
 const {stderr} = spawnSync('ffmpeg', ['-hide_banner', '-i', 'out/raw.mp4', '-af', `loudnorm=${target}:print_format=json`, '-f', 'null', '-'], {encoding: 'utf8'});
 const m = JSON.parse(stderr.slice(stderr.lastIndexOf('{')));
 execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', 'out/raw.mp4', '-c:v', 'copy', '-af', `loudnorm=${target}:measured_I=${m.input_i}:measured_TP=${m.input_tp}:measured_LRA=${m.input_lra}:measured_thresh=${m.input_thresh}:offset=${m.target_offset}:linear=true`, '-ar', '48000', '-c:a', 'aac', '-b:a', '192k', '-movflags', '+faststart', `out/${NAME}.mp4`]);
-await renderStill({serveUrl, composition, inputProps: {...inputProps, withAudio: false}, frame: Number(process.env.COVER_FRAME ?? 100), output: 'out/cover.png', browserExecutable});
-console.log(`→ out/${NAME}.mp4 · out/cover.png`);
+await renderStill({serveUrl, composition, inputProps: {...inputProps, withAudio: false}, frame: Number(process.env.COVER_FRAME ?? 100), output: `out/${NAME}_cover.png`, browserExecutable});
+console.log(`→ out/${NAME}.mp4 · out/${NAME}_cover.png`);

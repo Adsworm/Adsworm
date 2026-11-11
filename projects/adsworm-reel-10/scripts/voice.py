@@ -10,8 +10,8 @@ prints the request) + script/script.json  →  public/voice.wav (voice + ducked 
 3. `payoff` opens a held breath before the line that answers the hook; `loop` rides along to the engine.
 Sound effects are not mixed here: the visuals play their own (src/reel/Sfx.tsx).
 
-    python3 scripts/voice.py                      # REEL_DAYS=n forces the countdown
-    DIALOGUE=script/dialogue.draft.mp3 python3 scripts/voice.py   # free draft voice (scripts/draft_voice.py)
+    REEL=<slug> python3 scripts/voice.py                              # REEL_DAYS=n forces the countdown
+    REEL=<slug> DIALOGUE=dialogue.draft.mp3 python3 scripts/voice.py   # free draft voice (scripts/draft_voice.py)
 """
 import difflib
 import json
@@ -28,8 +28,10 @@ from faster_whisper import WhisperModel
 from scipy.signal import butter, sosfilt
 
 ROOT = Path(__file__).resolve().parent.parent
-SCRIPT = ROOT / "script/script.json"
-SRC = ROOT / os.environ.get("DIALOGUE", "script/dialogue.mp3")
+# One engine, many reels: REEL=<slug> works on reels/<slug>/ (script.json, dialogue.mp3, sources.md).
+DIR = ROOT / "reels" / os.environ["REEL"] if os.environ.get("REEL") else ROOT / "script"
+SCRIPT = DIR / "script.json"
+SRC = DIR / os.environ.get("DIALOGUE", "dialogue.mp3")
 SR, FPS = 48000, 30
 rng = np.random.default_rng(3)
 model = WhisperModel("small", device="cpu", compute_type="int8")

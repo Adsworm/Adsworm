@@ -1,15 +1,33 @@
-# Reel 05 — "Meta changed 3 things" (English, clear explainer)
+# Explainer reel engine v4 (one engine, many reels)
 
-Reel 03's format (receipts card on top, two characters talking below, speech-bubble captions), rebuilt in plain English: Aman (face-matched 3D) explains, **Riya**, a brand owner (Indian English voice), asks what a client would ask. 50.4 s · 1080×1920 · −14 LUFS · spec PASS.
+A teacher (Aman) and a student (Riya) as talking heads with lip-flap and facial reactions, karaoke bubble captions, a proof board that builds on the spoken word, sound played by the visuals, an open-loop chip held until the payoff. 1080×1920, 30 fps, −14 LUFS.
+
+Rules and schema: `plugins/motion-studio/skills/explainer-module/` (SKILL.md, `references/retention-rules.md`, `references/script-schema.md`). Research behind them: `docs/playbook/`.
 
 ```bash
 export REMOTION_BROWSER_EXECUTABLE=/opt/pw-browsers/chromium_headless_shell-1194/chrome-linux/headless_shell
-npm run voice                              # script/dialogue.mp3 → public/voice.wav + src/reel/timeline.json
-node scripts/qa.mjs                        # stills per line → out/qa/sheet-*.png
-node scripts/render-reel.mjs --no-voice    # → out/REEL-05_9x16.mp4 + out/cover.png
+export REEL=late-replies                       # a folder in reels/
+
+python3 scripts/draft_voice.py                 # free edge-tts draft → reels/$REEL/dialogue.draft.mp3
+DIALOGUE=dialogue.draft.mp3 python3 scripts/voice.py   # → public/voice.wav + src/reel/timeline.json
+python3 scripts/qa_report.py                   # pacing, holds, reactions, caption speed, payoff %, unspoken cues
+node scripts/qa.mjs                            # a still per line → out/qa/sheet-*.png
+
+python3 scripts/dialogue.py                    # prints the ONE ElevenLabs v4 dialogue request → save audio as reels/$REEL/dialogue.mp3
+python3 scripts/voice.py && python3 scripts/qa_report.py
+node scripts/render-reel.mjs --no-voice        # → out/ADSWORM_$REEL_9x16.mp4 + _cover.png   (FRAMES=0-240 for a quick check)
 ```
 
-- **Voice:** the whole conversation is ONE ElevenLabs v4 dialogue call (Higgsfield `generate_audio`, model `elevenlabs_v4`, `dialogue` = the `say` lines with the voice ids in `script/script.json`). Saved as `script/dialogue.mp3`. If you change a `say` line, regenerate the dialogue. `voice.py` cuts pauses to 0.26 s and aligns Whisper word timings to the script.
-- **Avatars:** `brands/adsworm/avatar-refs/aman-3d-sheet-v2.png`, `client-3d-sheet-v1.png` → `python3 scripts/avatars.py aman=…:idle,point,palms riya=…:idle,ask,wow`.
-- **Facts:** `script/sources.md`.
-- **Before posting:** wire comment keyword **META** → DM with the checklist PDF (links in sources.md). Turn on Instagram's AI label (AI characters + AI voices). The day count is calculated from today's date when `npm run voice` runs. If you post on a later day, run it again and re-render, because the voice track isn't regenerated.
+| Path | What |
+|---|---|
+| `reels/<slug>/script.json` | lines, captions, acting, board views, loop, payoff (one file drives everything) |
+| `reels/<slug>/dialogue.mp3` | the whole conversation, one ElevenLabs v4 dialogue call (tags like `[laughs]` come from `tags`) |
+| `reels/<slug>/sources.md` | every fact on screen with its source and date |
+| `scripts/voice.py` | cuts quiet pauses, Whisper word timings aligned to the script, payoff breath, ducked pad |
+| `scripts/sfx.py` | synthesizes `public/sfx/*.wav` (numpy only) |
+| `scripts/faces.py` | aligns AI-edited expression frames to the base bust → `public/faces/` |
+| `src/reel/Reel.tsx` | layout, acting, board motion, loop chip, payoff sound |
+| `src/reel/views.tsx` | script items → components (`board.tsx`, `board2.tsx`, `receipts.tsx`) |
+| `src/reel/Sfx.tsx` | a visual plays its own sound, pitch-varied |
+
+Before posting: wire the comment keyword to a DM (ManyChat or Meta Business Suite), turn on Instagram's AI label (AI characters and voices), upload the `_cover.png`. Reels with a `{days}` countdown: rerun `voice.py` and the render on the posting day (no new voice needed).
