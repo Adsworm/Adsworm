@@ -16,7 +16,7 @@
   "payoff": {"beat": "l8", "pauseMs": 350},
   "sections": [
     {"id": "hook", "label": "THE FRIDAY TRAP", "source": "Black Friday: Fri 27 Nov 2026", "lines": [
-      {"who": "AMAN", "tags": "[excited]", "say": "Launch your Black Friday ad on Black Friday, and you're already late.", "show": "Launch your Black Friday ad [on Black Friday], and you're [already late].", "beat": "l1", "react": "doubt", "reactWord": "already"},
+      {"who": "AMAN", "tags": "[excited]", "say": "Black Friday ad on Black Friday? You're already late.", "show": "Black Friday ad [on Black Friday]? You're [already late].", "beat": "l1", "react": "doubt", "reactWord": "already"},
       {"who": "RIYA", "tags": "[laughs]", "say": "Late? I always make my ads the night before!", "show": "Late? I always make my ads the [night before]!", "beat": "l2", "pre": "laugh", "react": "surprised", "reactWord": "night"}
     ], "views": [
       {"at": "l1", "items": [
@@ -26,7 +26,7 @@
       ]}
     ]},
     {"id": "why", "label": "2 THINGS NEED TIME", "source": "Meta ad standards: review is \"typically completed within 24 hours, although it may take longer\" · timeline is an illustration", "lines": [
-      {"who": "AMAN", "tags": "[chuckles]", "say": "First, Meta reviews every ad. Usually a day. Sometimes longer.", "show": "First, Meta [reviews every ad]. Usually a day. Sometimes [longer].", "beat": "l3", "react": "worry", "reactWord": "longer"},
+      {"who": "AMAN", "tags": "[chuckles]", "say": "First, Meta reviews every ad. Usually within a day. Sometimes longer.", "show": "First, Meta [reviews every ad]. Usually within a day. Sometimes [longer].", "beat": "l3", "react": "worry", "reactWord": "longer"},
       {"who": "AMAN", "tags": "", "say": "Then the system needs days to learn who actually buys.", "show": "Then the system needs [days to learn] who actually buys.", "beat": "l4", "react": "shock", "reactWord": "days"},
       {"who": "RIYA", "tags": "[worried]", "say": "So on Black Friday, my ad is still learning?", "show": "So on Black Friday, my ad is [still learning]?!", "beat": "l5", "pre": "worry"}
     ], "views": [
@@ -42,16 +42,16 @@
     ], "views": [
       {"at": "l6", "items": [
         {"type": "scene", "actors": [
-          {"emoji": "SHOP", "sign": "BIG SALE", "x": 520, "y": 190, "size": 260},
-          {"emoji": "🧑‍💼", "label": "new today", "x": 330, "y": 250, "size": 170, "word": "salesman", "say": "Where's the counter? 😰", "sayAt": "l7", "sayWord": "where"},
-          {"emoji": "🧍‍♀️", "x": 20, "y": 300, "size": 150, "enter": "left", "word": "biggest"},
-          {"emoji": "🧍", "x": 110, "y": 300, "size": 150, "enter": "left", "word": "sale#2"},
-          {"emoji": "🧍‍♂️", "x": 200, "y": 300, "size": 150, "enter": "left", "at": "l7"}
+          {"emoji": "🏬", "label": "BIG SALE today", "x": 580, "y": 150, "size": 250},
+          {"emoji": "🧑‍💼", "label": "new today", "x": 370, "y": 270, "size": 170, "word": "salesman", "say": "Umm… where's the counter? 😰", "sayAt": "l7", "sayWord": "where"},
+          {"emoji": "🧍‍♀️", "x": 40, "y": 290, "size": 150, "enter": "left", "word": "morning"},
+          {"emoji": "🧍", "x": 140, "y": 290, "size": 150, "enter": "left", "word": "biggest"},
+          {"emoji": "🧍‍♂️", "x": 240, "y": 290, "size": 150, "enter": "left", "at": "l7"}
         ]}
       ]}
     ]},
-    {"id": "fix", "label": "DO THIS INSTEAD", "source": "Meta's holiday guide: launch early so learning finishes before the peak · timeline is an illustration", "lines": [
-      {"who": "AMAN", "tags": "[confident]", "say": "So launch this week. Small budget. Let it learn early.", "show": "So [launch this week]. Small budget. Let it [learn early].", "beat": "l8", "react": "surprised", "reactWord": "week"},
+    {"id": "fix", "label": "DO THIS INSTEAD", "source": "Meta's 2026 holiday guides urge an early start (via Social Media Today, 13 Aug 2026) · timeline is an illustration", "lines": [
+      {"who": "AMAN", "tags": "[confident]", "say": "So launch this week. Steady budget. Let it learn early.", "show": "So [launch this week]. Steady budget. Let it [learn early].", "beat": "l8", "react": "shock", "reactWord": "week"},
       {"who": "RIYA", "tags": "[worried]", "say": "And if Meta rejects my ad?", "show": "And if Meta [rejects] my ad?", "beat": "l9", "pre": "worry"},
       {"who": "AMAN", "tags": "[warmly]", "say": "Then you still have time to fix it. That's the point!", "show": "Then you still have [time to fix it]. That's the point!", "beat": "l10", "react": "laugh", "reactWord": "point"}
     ], "views": [
@@ -64,7 +64,7 @@
       ]}
     ]},
     {"id": "cta", "label": "FREE CHECKLIST", "source": "", "lines": [
-      {"who": "AMAN", "tags": "[excited]", "say": "Comment FRIDAY. I'll send a day-by-day launch checklist.", "show": "Comment [\"FRIDAY\"]. I'll send a day-by-day [launch checklist].", "beat": "l11"},
+      {"who": "AMAN", "tags": "[excited]", "say": "Comment FRIDAY. I'll DM you a day-by-day launch checklist.", "show": "Comment [\"FRIDAY\"]. I'll DM you a day-by-day [launch checklist].", "beat": "l11"},
       {"who": "RIYA", "tags": "[cheeky]", "say": "Making my ad tonight. Not the night before!", "show": "Making my ad [tonight]. Not the night before! 😎", "beat": "l12", "react": "laugh", "reactWord": "night"}
     ], "views": [
       {"at": "l11", "items": [
