@@ -3,7 +3,7 @@ import {ease, progress} from '../lib/motion';
 import {Bars, Big, Browser, Chart, Chat, Chip, Col, CommentUI, ImageToVideo, Note, PdfCard, Phone, Ring, Row} from './receipts';
 import {C} from './theme';
 import {Checks, Deadline, Follow, HookPrice, InApp, PauseButton, Shop, Split, Stat, Sticker, Versus, type Tone} from './board';
-import {AiChat, ChatThread, Clock, Headline, Plan, Scene} from './board2';
+import {AiChat, ChatThread, Clock, Columns, Formula, Headline, Plan, Scene} from './board2';
 import {Sfx} from './Sfx';
 
 // Data-driven card content: script.json → sections[].views. A view takes over the card at its `at` beat
@@ -41,10 +41,12 @@ export type Item =
   | {type: 'split'; left: {emoji: string; label: string}; right: {emoji: string; label: string}; at?: string; word?: string}
   // v4 — cues inside an item: `word` (a spoken word after the view starts; "late#2" = its 2nd occurrence) or `at` (a beat id)
   | {type: 'headline'; lines: {text: string; tone?: Tone; word?: string; at?: string}[]; emoji?: string; emojiWord?: string; at?: string; word?: string}
-  | {type: 'scene'; height?: number; ground?: boolean; actors: {emoji: string; sign?: string; label?: string; x: number; y: number; size?: number; enter?: 'pop' | 'left' | 'right' | 'drop'; word?: string; at?: string; outWord?: string; outAt?: string; say?: string; sayWord?: string; sayAt?: string; sayTone?: Tone; flip?: boolean; badge?: string; badgeWord?: string; badgeAt?: string; badgeTone?: Tone}[]; at?: string; word?: string}
+  | {type: 'scene'; height?: number; ground?: boolean; actors: {emoji: string; disc?: Tone; sign?: string; label?: string; x: number; y: number; size?: number; enter?: 'pop' | 'left' | 'right' | 'drop'; word?: string; at?: string; outWord?: string; outAt?: string; say?: string; sayWord?: string; sayAt?: string; sayTone?: Tone; flip?: boolean; badge?: string; badgeWord?: string; badgeAt?: string; badgeTone?: Tone}[]; at?: string; word?: string}
   | {type: 'chatThread'; name: string; msgs: {from: 'them' | 'me'; text: string; time?: string; word?: string; at?: string; ghost?: boolean}[]; status?: string; statusWord?: string; statusAt?: string; statusTone?: Tone; at?: string; word?: string}
   | {type: 'aiChat'; question: string; adWord?: string; adAt?: string; brand: string; adLine: string; note?: string; at?: string; word?: string}
   | {type: 'clock'; to: number; unit: string; label: string; at?: string; word?: string}
+  | {type: 'formula'; title: string; top: string; bottom: string; equals: string; example?: string; exampleWord?: string; exampleAt?: string; at?: string; word?: string}
+  | {type: 'columns'; title?: string; note?: string; cols: {label: string; value: number; display: string; tone?: Tone; word?: string; at?: string; stamp?: string; stampWord?: string; stampAt?: string}[]; at?: string; word?: string}
   | {type: 'plan'; from: number; to: number; deadline: number; deadlineLabel: string; unit?: string; rows: {label: string; start: number; word?: string; at?: string; segs: {len: number; text: string; word?: string; at?: string}[]; verdict?: string; verdictWord?: string; verdictAt?: string}[]; at?: string; word?: string};
 export type View = {at: string; word?: string; items: Item[]; align?: 'center' | 'top'};
 
@@ -121,7 +123,7 @@ const ItemView: React.FC<{item: Item; t: number; beats: Record<string, number>; 
   const cue = (word?: string, at?: string, fallback = t) => (word ? wc(word) : at ? since(beats, frame, at) : fallback);
   switch (item.type) {
     case 'headline':
-      return <Headline lines={item.lines.map((l, i) => ({text: f(l.text), tone: l.tone, t: cue(l.word, l.at, t - i * 7)}))} emoji={item.emoji} emojiT={item.emoji ? cue(item.emojiWord, undefined, t - 14) : -1} />;
+      return <Headline lines={item.lines.map((l, i) => ({text: f(l.text), tone: l.tone, t: cue(l.word, l.at, t - i * 4)}))} emoji={item.emoji} emojiT={item.emoji ? cue(item.emojiWord, undefined, t - 14) : -1} />;
     case 'scene':
       return (
         <Scene
@@ -144,6 +146,10 @@ const ItemView: React.FC<{item: Item; t: number; beats: Record<string, number>; 
       return <AiChat t={t} question={f(item.question)} adT={cue(item.adWord, item.adAt, t - 60)} brand={f(item.brand)} adLine={f(item.adLine)} note={item.note} />;
     case 'clock':
       return <Clock t={t} to={item.to} unit={item.unit} label={f(item.label)} />;
+    case 'formula':
+      return <Formula t={t} title={f(item.title)} top={f(item.top)} bottom={f(item.bottom)} equals={f(item.equals)} example={item.example ? f(item.example) : undefined} exampleT={item.example ? cue(item.exampleWord, item.exampleAt, t - 24) : -1} />;
+    case 'columns':
+      return <Columns t={t} title={item.title ? f(item.title) : undefined} note={item.note ? f(item.note) : undefined} cols={item.cols.map((c, i) => ({label: f(c.label), value: c.value, display: f(c.display), tone: c.tone, t: cue(c.word, c.at, t - i * 8), stamp: c.stamp, stampT: c.stamp ? cue(c.stampWord, c.stampAt, cue(c.word, c.at, t - i * 8) - 16) : -1}))} />;
     case 'plan':
       return (
         <Plan

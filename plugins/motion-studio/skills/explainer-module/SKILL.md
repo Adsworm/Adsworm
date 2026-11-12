@@ -29,6 +29,8 @@ What failed before, so don't rebuild it: kinetic type on dark (reel 01), cinemat
 5. **95–115 spoken words, lines ≤ 12 words**, 40–50 s. One speaker never holds > 6 s without a swap or a reaction.
 6. **CTA once**: "Comment KEYWORD" + exactly what arrives by DM. Then a share line that names a person ("send this to whoever answers your enquiries"), and a last line that echoes the hook.
 7. **Facts only with receipts**: write them in `script/sources.md`; an independent approval pass verifies every spoken or shown claim before any voice credit is spent. Illustrative UI is labelled; no platform logos.
+8. **Hinglish reels** (`"lang": "hi"`): `say` in Devanagari + English words, `show` in Latin Hinglish with the same word count per line, 110–140 words, one analogy from everyday India (a roti split across ten plates). Rules and timing notes: `references/script-schema.md` → Hinglish.
+9. **Own data beats a borrowed stat**: when the claim is about "what happened in the market", pull anonymised aggregates from the agency's own accounts first (read-only), then write only what they support. A chart of our own numbers is the proof; a published figure gets its year and scope on the chip.
 
 ## Pipeline
 

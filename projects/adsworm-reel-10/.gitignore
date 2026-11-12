@@ -4,3 +4,5 @@ out
 public/voice.wav
 script/dialogue.draft.mp3
 reels/*/dialogue.draft.mp3
+reels/*/dialogue.draft.json
+__pycache__/

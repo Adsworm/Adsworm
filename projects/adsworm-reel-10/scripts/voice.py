@@ -34,7 +34,7 @@ SCRIPT = DIR / "script.json"
 SRC = DIR / os.environ.get("DIALOGUE", "dialogue.mp3")
 SR, FPS = 48000, 30
 rng = np.random.default_rng(3)
-model = WhisperModel("small", device="cpu", compute_type="int8")
+_models = {}
 
 
 def countdown(s):
@@ -69,9 +69,59 @@ def pcm(path, sr):
     return np.frombuffer(raw, dtype="<i2").astype(np.float64) / 32768
 
 
+LANG = "en"  # set from script.json `lang` ("hi" for Hinglish: Devanagari + English in `say`)
+
+
 def heard(x16):
-    segs, _ = model.transcribe(x16.astype(np.float32), language="en", word_timestamps=True)
+    # Hindi needs the bigger model: on a Hinglish draft `small` put some line starts a second off.
+    name = "small" if LANG == "en" else "medium"
+    if name not in _models:
+        _models[name] = WhisperModel(name, device="cpu", compute_type="int8")
+    segs, _ = _models[name].transcribe(x16.astype(np.float32), language=LANG, word_timestamps=True)
     return [w for s in segs for w in s.words]
+
+
+# ---- Hinglish alignment ------------------------------------------------------------------------
+# Whisper writes Hindi in Devanagari and may write an English word either way ("Meta" or "मेटा"), so
+# script words and heard words are compared by SOUND: both are reduced to a rough consonant skeleton
+# and aligned with a fuzzy sequence alignment instead of exact matching.
+_DEV = {
+    "क": "k", "ख": "k", "ग": "g", "घ": "g", "ङ": "n", "च": "ch", "छ": "ch", "ज": "j", "झ": "j", "ञ": "n",
+    "ट": "t", "ठ": "t", "ड": "d", "ढ": "d", "ण": "n", "त": "t", "थ": "t", "द": "d", "ध": "d", "न": "n",
+    "प": "p", "फ": "f", "ब": "b", "भ": "b", "म": "m", "य": "y", "र": "r", "ल": "l", "व": "v",
+    "श": "s", "ष": "s", "स": "s", "ह": "h", "ं": "n", "ँ": "n", "ृ": "r",
+}
+
+
+def skeleton(w):
+    w = w.lower()
+    if re.search(r"[ऀ-ॿ]", w):
+        return "".join(_DEV.get(c, "") for c in w)
+    w = re.sub(r"[^a-z0-9]", "", w)
+    for a, b in (("ph", "f"), ("ck", "k"), ("c", "k"), ("q", "k"), ("x", "ks"), ("w", "v"), ("z", "j"), ("sh", "s"), ("th", "t"), ("dh", "d"), ("bh", "b"), ("gh", "g"), ("kh", "k")):
+        w = w.replace(a, b)
+    return re.sub(r"[aeiou]", "", w) or w
+
+
+def fuzzy_align(script_words, heard_words):
+    """Index pairs (i, j): script word i ↔ heard word j, by global alignment on sound skeletons."""
+    a, b = [skeleton(w) for w in script_words], [skeleton(w) for w in heard_words]
+    sim = lambda x, y: 1.0 if x == y and x else difflib.SequenceMatcher(a=x, b=y).ratio()
+    n, m = len(a), len(b)
+    S = np.zeros((n + 1, m + 1))
+    for i in range(1, n + 1):
+        for j in range(1, m + 1):
+            S[i, j] = max(S[i - 1, j - 1] + sim(a[i - 1], b[j - 1]) - 0.45, S[i - 1, j], S[i, j - 1])
+    pairs, i, j = [], n, m
+    while i > 0 and j > 0:
+        if S[i, j] == S[i - 1, j]:
+            i -= 1
+        elif S[i, j] == S[i, j - 1]:
+            j -= 1
+        else:
+            pairs.append((i - 1, j - 1))
+            i, j = i - 1, j - 1
+    return pairs[::-1]
 
 
 def tighten(x, ws, cap):
@@ -93,7 +143,19 @@ def tighten(x, ws, cap):
         seg[:f] *= np.linspace(0, 1, f)
         seg[-f:] *= np.linspace(1, 0, f)
         out.append(seg)
-    return np.concatenate(out)
+    return np.concatenate(out), keep
+
+
+def remap(t, keep):
+    """Where a time in the raw audio lands after `tighten` (a time inside a removed pause snaps to its edge)."""
+    done = 0
+    for a, b in keep:
+        if t * SR < a:
+            return done / SR
+        if t * SR <= b:
+            return (done + t * SR - a) / SR
+        done += b - a
+    return done / SR
 
 
 def tokens_for(show, spans, said):
@@ -101,6 +163,8 @@ def tokens_for(show, spans, said):
     (\"59%\" for \"fifty-nine percent\") is placed proportionally between its neighbours."""
     toks = show.split(" ")
     pill = [any(a <= i < b for a, b in spans) for i in range(len(toks))]
+    if len(toks) == len(said):  # same word count (the rule for Hinglish captions): one caption word per spoken word
+        return [{"w": tok, "t": round(said[i][1], 3), "pill": pill[i]} for i, tok in enumerate(toks)]
     out, j = [], 0
     for i, tok in enumerate(toks):
         t = None
@@ -160,36 +224,60 @@ def place(track, clip, at_s, gain=1.0):
 
 
 def main():
+    global LANG
     s = json.loads(SCRIPT.read_text())
+    LANG = s.get("lang", "en")
     vars_ = countdown(s)
     flat = [(sec, ln) for sec in s["sections"] for ln in sec["lines"]]
     lead = s.get("leadInMs", 120) / 1000
 
     raw = pcm(SRC, SR)
-    voice = tighten(raw, heard(pcm(SRC, 16000)), s.get("gapCap", 0.26))
+    hw_raw = heard(pcm(SRC, 16000))
+    voice, keep = tighten(raw, hw_raw, s.get("gapCap", 0.26))
     tempo = s.get("tempo", 1.0)
     if tempo != 1.0:
         voice = np.frombuffer(subprocess.run(["ffmpeg", "-loglevel", "error", "-f", "f64le", "-ar", str(SR), "-ac", "1", "-i", "-", "-af", f"atempo={tempo}", "-f", "f64le", "-"], input=voice.tobytes(), capture_output=True, check=True).stdout)
     voice = np.concatenate([np.zeros(int(lead * SR)), voice])
 
     # word timings on the final voice, aligned to the script
-    x16 = np.interp(np.arange(0, len(voice), SR / 16000), np.arange(len(voice)), voice)
-    hw = heard(x16)
     sw = [(k, w) for k, (_, ln) in enumerate(flat) for w in ln["say"].split()]
     times = [None] * len(sw)
-    for tag, a0, a1, b0, b1 in difflib.SequenceMatcher(a=[norm(w) for _, w in sw], b=[norm(w.word) for w in hw], autojunk=False).get_opcodes():
-        if tag == "equal":
-            for i in range(a1 - a0):
-                times[a0 + i] = (hw[b0 + i].start, hw[b0 + i].end)
-        elif tag == "replace" and b1 > b0:
-            st, en = hw[b0].start, hw[b1 - 1].end
-            for i in range(a1 - a0):
-                times[a0 + i] = (st + (en - st) * i / (a1 - a0), st + (en - st) * (i + 1) / (a1 - a0))
-    for i, t in enumerate(times):
-        if t is None:
-            prev = next((times[j][1] for j in range(i - 1, -1, -1) if times[j]), 0.0)
-            nxt = next((times[j][0] for j in range(i + 1, len(times)) if times[j]), prev + 0.3)
-            times[i] = (prev, max(prev + 0.05, nxt))
+    if LANG != "en":
+        # Hinglish: one transcription of the RAW audio, then the same cuts and tempo applied to its word
+        # times. (Transcribing the tightened, sped-up voice a second time lost a fifth of the words.)
+        final = lambda t: lead + remap(t, keep) / tempo
+        for i, j in fuzzy_align([w for _, w in sw], [w.word for w in hw_raw]):
+            times[i] = (final(hw_raw[j].start), final(hw_raw[j].end))
+        print(f"aligned {sum(t is not None for t in times)}/{len(sw)} script words by sound ({LANG})")
+    else:
+        x16 = np.interp(np.arange(0, len(voice), SR / 16000), np.arange(len(voice)), voice)
+        hw = heard(x16)
+        for tag, a0, a1, b0, b1 in difflib.SequenceMatcher(a=[norm(w) for _, w in sw], b=[norm(w.word) for w in hw], autojunk=False).get_opcodes():
+            if tag == "equal":
+                for i in range(a1 - a0):
+                    times[a0 + i] = (hw[b0 + i].start, hw[b0 + i].end)
+            elif tag == "replace" and b1 > b0:
+                st, en = hw[b0].start, hw[b1 - 1].end
+                for i in range(a1 - a0):
+                    times[a0 + i] = (st + (en - st) * i / (a1 - a0), st + (en - st) * (i + 1) / (a1 - a0))
+    i = 0
+    while i < len(times):  # a run of unmatched words shares the gap between its matched neighbours, by length
+        if times[i] is not None:
+            i += 1
+            continue
+        k = i
+        while k < len(times) and times[k] is None:
+            k += 1
+        prev = times[i - 1][1] if i else 0.0
+        nxt = times[k][0] if k < len(times) else prev + 0.3 * (k - i)
+        nxt = max(nxt, prev + 0.05 * (k - i))
+        size = [max(1, len(sw[q][1])) for q in range(i, k)]
+        at = prev
+        for q, z in zip(range(i, k), size):
+            step = (nxt - prev) * z / sum(size)
+            times[q] = (at, at + step)
+            at += step
+        i = k
 
     # Payoff: a held breath before the line that answers the hook. The engine plays a riser into it and
     # a bass hit as it lands (Reel.tsx); here we open the gap and move every later timing by its length.
@@ -257,10 +345,10 @@ def main():
     hop = SR // FPS
     rms = np.array([np.sqrt(np.mean(track[i : i + hop] ** 2)) for i in range(0, len(track), hop)])
     env = np.clip(rms / (np.percentile(rms[rms > 1e-4], 90) + 1e-9), 0, 1)
-    tl = {"env": [round(float(v), 2) for v in env], "fps": FPS, "variant": "organic", "vars": vars_, "durationInFrames": frames, "voices": s["voices"], "brand": s.get("brand", {}), "loop": s.get("loop"), "payoff": payoff_tl, "lines": lines, "sections": sections, "beats": beats}
+    tl = {"env": [round(float(v), 2) for v in env], "fps": FPS, "lang": LANG, "variant": "organic", "vars": vars_, "durationInFrames": frames, "voices": s["voices"], "brand": s.get("brand", {}), "loop": s.get("loop"), "payoff": payoff_tl, "lines": lines, "sections": sections, "beats": beats}
     (ROOT / "src/reel/timeline.json").write_text(json.dumps(tl, ensure_ascii=False, indent=1))
-    gaps = [b.start - a.end for a, b in zip(hw, hw[1:])]
-    print(f"{len(lines)} lines · {total:.1f}s · {len(hw) / (hw[-1].end - hw[0].start):.2f} words/s · max gap {max(gaps):.2f}s → public/voice.wav, src/reel/timeline.json")
+    gaps = [b[0] - a[1] for a, b in zip(times, times[1:])]
+    print(f"{len(lines)} lines · {total:.1f}s · {len(times) / (times[-1][1] - times[0][0]):.2f} words/s · max gap {max(gaps):.2f}s → public/voice.wav, src/reel/timeline.json")
     for ln in lines:
         print(f"  {ln['start']:6.2f}-{ln['end']:6.2f}  {ln['who']:<5} {ln['show'][:70]}")
 

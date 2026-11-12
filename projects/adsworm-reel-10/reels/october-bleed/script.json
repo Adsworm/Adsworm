@@ -1,0 +1,665 @@
+{
+  "title": "October mein ads ne paisa jalaya? Diwali ke baad cost wapas neeche",
+  "lang": "hi",
+  "voices": {
+    "AMAN": {
+      "name": "Holden",
+      "voice_type": "preset",
+      "voice_id": "3c9d6053-6334-592c-8997-4e325286af3f"
+    },
+    "RIYA": {
+      "name": "Anika (Indian English)",
+      "voice_type": "preset",
+      "voice_id": "4b2dc8f3-5e8b-59a9-9a5c-85620e44c033"
+    }
+  },
+  "direction": "Natural Hinglish (Hindi mixed with English) Instagram skit between two Indians from Delhi, native Hindi pronunciation. Aman: friendly marketing expert, calm, warm, confident, a little teasing. Riya: expressive brand owner, panicking at first, then curious, then relieved. Fast, casual back-and-forth with real reactions.",
+  "gapCap": 0.22,
+  "tempo": 1.08,
+  "leadInMs": 60,
+  "tailMs": 1800,
+  "bedGain": 0.07,
+  "brand": {
+    "names": {
+      "AMAN": "AMAN · ADSWORM",
+      "RIYA": "RIYA · BRAND OWNER"
+    },
+    "side": {
+      "AMAN": "left",
+      "RIYA": "right"
+    }
+  },
+  "loop": {
+    "text": "kyun? fix kya?",
+    "answer": "50 / hafta",
+    "until": "l11"
+  },
+  "payoff": {
+    "beat": "l11",
+    "pauseMs": 350
+  },
+  "sections": [
+    {
+      "id": "hook",
+      "label": "OCTOBER KA SACH",
+      "source": "Adsworm ke 18 ad accounts · 1 Sep–11 Nov 2026 · enquiry = message conversation · 9–11 Nov sirf 3 din",
+      "lines": [
+        {
+          "who": "RIYA",
+          "tags": "[panicking]",
+          "say": "October में मेरे ads ने सिर्फ पैसा जलाया!",
+          "show": "October mein mere ads ne sirf [paisa jalaya]!",
+          "beat": "l1",
+          "pre": "worry",
+          "react": "surprised",
+          "reactWord": "jalaya"
+        },
+        {
+          "who": "AMAN",
+          "tags": "[warmly]",
+          "say": "सिर्फ तुम्हारे नहीं. हमारे सत्रह में से पंद्रह accounts में enquiry महँगी.",
+          "show": "Sirf tumhare nahin. Humare [17 mein se 15] accounts mein enquiry [mehngi].",
+          "beat": "l2",
+          "react": "doubt",
+          "reactWord": "15"
+        },
+        {
+          "who": "RIYA",
+          "tags": "[worried]",
+          "say": "और अब?",
+          "show": "Aur [ab]?",
+          "beat": "l3",
+          "pre": "worry"
+        },
+        {
+          "who": "AMAN",
+          "tags": "[excited]",
+          "say": "Diwali week peak था. अब cost वापस नीचे आ रही है.",
+          "show": "Diwali week [peak] tha. Ab cost [wapas neeche] aa rahi hai.",
+          "beat": "l4",
+          "react": "laugh",
+          "reactWord": "neeche"
+        },
+        {
+          "who": "RIYA",
+          "tags": "[confused]",
+          "say": "पर क्यों?",
+          "show": "Par [kyun]?",
+          "beat": "l5",
+          "pre": "doubt"
+        }
+      ],
+      "views": [
+        {
+          "at": "l1",
+          "items": [
+            {
+              "type": "headline",
+              "lines": [
+                {
+                  "text": "OCTOBER MEIN"
+                },
+                {
+                  "text": "PAISA JAL GAYA",
+                  "tone": "red"
+                }
+              ],
+              "emoji": "🔥",
+              "emojiWord": "paisa"
+            },
+            {
+              "type": "sticker",
+              "text": "sales kahan? 😭",
+              "color": "pink",
+              "x": 560,
+              "y": 440,
+              "rotate": -5,
+              "word": "jalaya"
+            }
+          ]
+        },
+        {
+          "at": "l2",
+          "items": [
+            {
+              "type": "columns",
+              "title": "1 enquiry ka kharcha",
+              "note": "Adsworm ke 18 ad accounts ka average · 2026",
+              "cols": [
+                {
+                  "label": "September",
+                  "value": 147,
+                  "display": "₹147",
+                  "tone": "blue"
+                },
+                {
+                  "label": "October",
+                  "value": 165,
+                  "display": "₹165",
+                  "tone": "red",
+                  "word": "15",
+                  "stamp": "15/17 mehnge",
+                  "stampWord": "mehngi"
+                },
+                {
+                  "label": "Diwali week",
+                  "value": 210,
+                  "display": "₹210",
+                  "tone": "red",
+                  "word": "peak",
+                  "stamp": "peak 🔺",
+                  "stampWord": "tha"
+                },
+                {
+                  "label": "9–11 Nov",
+                  "value": 164,
+                  "display": "₹164",
+                  "tone": "green",
+                  "word": "neeche",
+                  "stamp": "wapas ✓",
+                  "stampWord": "rahi"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "why",
+      "label": "KYUN HUA?",
+      "source": "Criteo India, festive 2025 (digital ads) · Adsworm accounts, Sep vs Oct 2026 · Meta, 21 Oct 2026",
+      "lines": [
+        {
+          "who": "AMAN",
+          "tags": "[warmly]",
+          "say": "Festive में हर brand एक साथ bid करता है.",
+          "show": "Festive mein har brand [ek saath bid] karta hai.",
+          "beat": "l6",
+          "react": "doubt",
+          "reactWord": "bid"
+        },
+        {
+          "who": "RIYA",
+          "tags": "[confused]",
+          "say": "पर मेरे clicks तो आए थे!",
+          "show": "Par mere [clicks toh aaye] the!",
+          "beat": "l7",
+          "pre": "doubt",
+          "react": "wink",
+          "reactWord": "clicks"
+        },
+        {
+          "who": "AMAN",
+          "tags": "[excited]",
+          "say": "वही असली वजह. Customer sale में busy था. Click आया, order नहीं.",
+          "show": "Wahi [asli wajah]. Customer sale mein busy tha. Click aaya, [order nahin].",
+          "beat": "l8",
+          "react": "worry",
+          "reactWord": "order"
+        },
+        {
+          "who": "RIYA",
+          "tags": "[worried]",
+          "say": "और मैंने घबरा के रोज़ budget बदला…",
+          "show": "Aur maine ghabra ke roz [budget badla]…",
+          "beat": "l9",
+          "pre": "worry",
+          "react": "laugh",
+          "reactWord": "budget"
+        },
+        {
+          "who": "AMAN",
+          "tags": "[chuckles]",
+          "say": "गलती! हर edit पे Meta फिर से सीखता है.",
+          "show": "[Galti]! Har edit pe Meta [phir se seekhta] hai.",
+          "beat": "l10",
+          "react": "shock",
+          "reactWord": "phir"
+        }
+      ],
+      "views": [
+        {
+          "at": "l6",
+          "items": [
+            {
+              "type": "scene",
+              "height": 420,
+              "actors": [
+                {
+                  "emoji": "📱",
+                  "label": "1 ad ki jagah",
+                  "x": 360,
+                  "y": 150,
+                  "size": 160
+                },
+                {
+                  "emoji": "🙋‍♂️",
+                  "x": 60,
+                  "y": 230,
+                  "size": 150,
+                  "enter": "left",
+                  "word": "har",
+                  "say": "₹50"
+                },
+                {
+                  "emoji": "🙋‍♀️",
+                  "x": 600,
+                  "y": 230,
+                  "size": 150,
+                  "enter": "right",
+                  "word": "brand",
+                  "say": "₹120"
+                },
+                {
+                  "emoji": "🙋",
+                  "x": 760,
+                  "y": 230,
+                  "size": 150,
+                  "enter": "right",
+                  "word": "bid",
+                  "say": "₹200!",
+                  "sayTone": "red"
+                }
+              ]
+            },
+            {
+              "type": "chip",
+              "text": "Festive 2025: clicks 45% mehnge · Criteo India",
+              "kind": "ink",
+              "word": "karta"
+            },
+            {
+              "type": "sticker",
+              "text": "par clicks toh aaye! 🤷‍♀️",
+              "color": "pink",
+              "x": 250,
+              "y": 14,
+              "rotate": -3,
+              "word": "clicks"
+            }
+          ]
+        },
+        {
+          "at": "l8",
+          "items": [
+            {
+              "type": "scene",
+              "height": 420,
+              "actors": [
+                {
+                  "emoji": "SHOP",
+                  "sign": "MEGA SALE",
+                  "x": 520,
+                  "y": 100,
+                  "size": 260
+                },
+                {
+                  "emoji": "🚶‍♀️",
+                  "label": "tumhara customer",
+                  "x": 90,
+                  "y": 160,
+                  "size": 170,
+                  "enter": "left",
+                  "word": "customer",
+                  "flip": true,
+                  "say": "70% off? 😍",
+                  "sayWord": "busy"
+                }
+              ]
+            },
+            {
+              "type": "chip",
+              "text": "Humare accounts: click ka daam wahi, enquiry +16%",
+              "kind": "ink",
+              "word": "order"
+            }
+          ]
+        },
+        {
+          "at": "l9",
+          "items": [
+            {
+              "type": "headline",
+              "lines": [
+                {
+                  "text": "ROZ BUDGET"
+                },
+                {
+                  "text": "CHANGE 😬",
+                  "tone": "pink",
+                  "word": "budget"
+                }
+              ]
+            },
+            {
+              "type": "sticker",
+              "text": "Mon ₹500",
+              "color": "blue",
+              "x": 40,
+              "y": 30,
+              "rotate": -6,
+              "word": "ghabra"
+            },
+            {
+              "type": "sticker",
+              "text": "Tue ₹2,000",
+              "color": "red",
+              "x": 620,
+              "y": 40,
+              "rotate": 5,
+              "word": "roz"
+            },
+            {
+              "type": "sticker",
+              "text": "Wed ₹300",
+              "color": "pink",
+              "x": 330,
+              "y": 430,
+              "rotate": -3,
+              "word": "badla"
+            }
+          ]
+        },
+        {
+          "at": "l10",
+          "items": [
+            {
+              "type": "headline",
+              "lines": [
+                {
+                  "text": "HAR EDIT ="
+                },
+                {
+                  "text": "PHIR SE LEARNING",
+                  "tone": "red",
+                  "word": "phir"
+                }
+              ],
+              "emoji": "🔁",
+              "emojiWord": "seekhta"
+            },
+            {
+              "type": "chip",
+              "text": "Meta: \"rebriefed by every edit you make\" · 21 Oct 2026",
+              "kind": "ink",
+              "word": "seekhta"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "new",
+      "label": "META NE KHUD KAHA",
+      "source": "Meta for Business: \"Roughly fifty conversions a week.\" · 21 Oct 2026",
+      "lines": [
+        {
+          "who": "AMAN",
+          "tags": "[confident]",
+          "say": "Meta ने खुद कहा: हर ad set को हफ्ते में पचास conversions.",
+          "show": "Meta ne khud kaha: har ad set ko hafte mein [50 conversions].",
+          "beat": "l11",
+          "react": "doubt",
+          "reactWord": "50"
+        },
+        {
+          "who": "RIYA",
+          "tags": "[worried]",
+          "say": "और मेरे दस ad sets?",
+          "show": "Aur mere [10 ad sets]?",
+          "beat": "l12",
+          "pre": "worry"
+        },
+        {
+          "who": "AMAN",
+          "tags": "[chuckles]",
+          "say": "एक रोटी, दस plate. किसी का पेट नहीं भरा.",
+          "show": "Ek roti, [10 plate]. Kisi ka [pet nahin bhara].",
+          "beat": "l13",
+          "react": "laugh",
+          "reactWord": "pet"
+        },
+        {
+          "who": "RIYA",
+          "tags": "[confused]",
+          "say": "तो करूँ क्या?",
+          "show": "Toh [karun kya]?",
+          "beat": "l14",
+          "pre": "doubt"
+        }
+      ],
+      "views": [
+        {
+          "at": "l11",
+          "items": [
+            {
+              "type": "stat",
+              "value": 50,
+              "label": "conversions har hafte · har ad set",
+              "color": "blue"
+            },
+            {
+              "type": "chip",
+              "text": "Isse kam? ~28% mehnga · Meta, 21 Oct 2026",
+              "kind": "ink",
+              "word": "50"
+            }
+          ]
+        },
+        {
+          "at": "l12",
+          "items": [
+            {
+              "type": "scene",
+              "height": 470,
+              "actors": [
+                {
+                  "emoji": "🍽️",
+                  "x": 57,
+                  "y": 186,
+                  "size": 78,
+                  "disc": "gold"
+                },
+                {
+                  "emoji": "🍽️",
+                  "x": 222,
+                  "y": 186,
+                  "size": 78,
+                  "disc": "gold"
+                },
+                {
+                  "emoji": "🍽️",
+                  "x": 387,
+                  "y": 186,
+                  "size": 78,
+                  "disc": "gold"
+                },
+                {
+                  "emoji": "🍽️",
+                  "x": 552,
+                  "y": 186,
+                  "size": 78,
+                  "disc": "gold"
+                },
+                {
+                  "emoji": "🍽️",
+                  "x": 717,
+                  "y": 186,
+                  "size": 78,
+                  "disc": "gold"
+                },
+                {
+                  "emoji": "🍽️",
+                  "x": 57,
+                  "y": 288,
+                  "size": 78,
+                  "word": "10",
+                  "disc": "gold"
+                },
+                {
+                  "emoji": "🍽️",
+                  "x": 222,
+                  "y": 288,
+                  "size": 78,
+                  "word": "10",
+                  "disc": "gold"
+                },
+                {
+                  "emoji": "🍽️",
+                  "x": 357,
+                  "y": 288,
+                  "size": 78,
+                  "word": "10",
+                  "label": "10 ad sets",
+                  "disc": "gold"
+                },
+                {
+                  "emoji": "🍽️",
+                  "x": 552,
+                  "y": 288,
+                  "size": 78,
+                  "word": "10",
+                  "disc": "gold"
+                },
+                {
+                  "emoji": "🍽️",
+                  "x": 717,
+                  "y": 288,
+                  "size": 78,
+                  "word": "10",
+                  "disc": "gold"
+                },
+                {
+                  "emoji": "🫓",
+                  "label": "1 budget",
+                  "x": 365,
+                  "y": -14,
+                  "size": 150,
+                  "enter": "drop",
+                  "word": "roti"
+                }
+              ]
+            },
+            {
+              "type": "sticker",
+              "text": "sab bhookhe 😵",
+              "color": "red",
+              "x": 600,
+              "y": 40,
+              "rotate": 6,
+              "word": "pet"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fix",
+      "label": "NAYA STRUCTURE",
+      "source": "Meta for Business, 19 & 21 Oct 2026 · \"1 campaign\" Adsworm ki salaah · results ki guarantee nahin",
+      "lines": [
+        {
+          "who": "AMAN",
+          "tags": "[confident]",
+          "say": "एक campaign. कम ad sets. अलग-अलग creatives. छेड़ना बंद.",
+          "show": "[Ek campaign]. Kam ad sets. [Alag-alag creatives]. [Chhedna band].",
+          "beat": "l15",
+          "react": "laugh",
+          "reactWord": "band"
+        }
+      ],
+      "views": [
+        {
+          "at": "l15",
+          "items": [
+            {
+              "type": "checks",
+              "items": [
+                {
+                  "text": "1 campaign",
+                  "word": "ek"
+                },
+                {
+                  "text": "Kam ad sets",
+                  "word": "kam"
+                },
+                {
+                  "text": "Alag-alag creatives",
+                  "word": "alag"
+                },
+                {
+                  "text": "Roz chhedna band",
+                  "word": "chhedna"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "label": "FREE STRUCTURE",
+      "source": "Formula: Meta for Business, 21 Oct 2026 · example Adsworm ka",
+      "lines": [
+        {
+          "who": "AMAN",
+          "tags": "[excited]",
+          "say": "Comment SETUP. Structure DM कर दूँगा.",
+          "show": "Comment [\"SETUP\"]. Structure [DM kar dunga].",
+          "beat": "l16",
+          "react": "laugh",
+          "reactWord": "dm"
+        },
+        {
+          "who": "RIYA",
+          "tags": "[cheeky]",
+          "say": "Save कर लिया. अगली Diwali पे नहीं रोऊँगी!",
+          "show": "[Save] kar liya. Agli Diwali pe [nahin roungi]!",
+          "beat": "l17",
+          "pre": "laugh",
+          "react": "laugh",
+          "reactWord": "roungi"
+        }
+      ],
+      "views": [
+        {
+          "at": "l16",
+          "items": [
+            {
+              "type": "comment",
+              "keyword": "SETUP"
+            },
+            {
+              "type": "chip",
+              "text": "Free campaign structure · DM mein",
+              "kind": "green",
+              "delay": 40
+            }
+          ]
+        },
+        {
+          "at": "l17",
+          "items": [
+            {
+              "type": "formula",
+              "title": "KITNE AD SETS? · META KA FORMULA",
+              "top": "Hafte ka budget",
+              "bottom": "1 result ka kharcha × 50",
+              "equals": "max ad sets",
+              "example": "₹50,000 ÷ (₹200 × 50) = 5 ad sets",
+              "exampleWord": "agli"
+            },
+            {
+              "type": "chip",
+              "text": "🔖 Save karo · us dost ko bhejo jiske ads October mein doobe",
+              "kind": "blue",
+              "word": "diwali"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

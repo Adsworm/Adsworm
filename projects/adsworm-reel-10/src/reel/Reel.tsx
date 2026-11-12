@@ -68,7 +68,13 @@ export const Reel: React.FC<ReelProps> = ({showSafeZones, withAudio}) => {
   const punch = sincePunch < 12 ? 0.045 * (1 - spring({frame: sincePunch, fps, config: {damping: 9, stiffness: 240}})) : 0;
   const boardScale = (si === 0 ? 1 + 0.12 * (1 - sp0) : 1) * (1 + Math.max(0, punch));
 
-  const words = TL.lines.filter((l) => l.section === section.id).flatMap((l) => l.words);
+  // cue words: what is spoken plus the caption tokens (for Hinglish the spoken words are Devanagari, so
+  // cues are written against the Latin caption: "bleed", "wapas")
+  const words = TL.lines
+    .filter((l) => l.section === section.id)
+    .flatMap((l) => [...l.words, ...l.tokens.map((k) => ({t: k.t, w: k.w}))])
+    .sort((a, b) => a.t - b.t)
+    .filter((x, i, all) => !all.slice(Math.max(0, i - 3), i).some((y) => norm(y.w) === norm(x.w) && Math.abs(y.t - x.t) < 0.02)); // a word and its identical caption token count once
 
   // acting: who shows which face, and since when (for the reaction kick)
   const faceOf = (who: Who): [string, number] => {
@@ -78,7 +84,7 @@ export const Reel: React.FC<ReelProps> = ({showSafeZones, withAudio}) => {
     if (idx === 0 && line.who === who && line.pre && t < line.start) return [line.pre, frame];
     // listening: react to what the other one is saying (from `reactWord`, if given)
     if (line.who !== who && line.react) {
-      const w = line.reactWord ? line.words.find((x) => norm(x.w).startsWith(norm(line.reactWord!))) : undefined;
+      const w = line.reactWord ? [...line.words, ...line.tokens].find((x) => norm(x.w).startsWith(norm(line.reactWord!))) : undefined;
       const from = w ? w.t : line.start;
       if (t >= from) return [line.react, frame - Math.round(from * fps)];
     }

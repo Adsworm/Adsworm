@@ -29,7 +29,13 @@ def check(ok, label, detail=""):
 # ---- every moment something changes on screen -------------------------------------------------
 changes, missing = [], []
 for sec in sections:
-    words = [w for l in lines if l["section"] == sec["id"] for w in l["words"]]
+    # cue words = spoken words + caption tokens (Hinglish cues are written against the Latin caption);
+    # a word and its identical caption token count once, as in Reel.tsx
+    merged = sorted([w for l in lines if l["section"] == sec["id"] for w in l["words"] + [{"t": k["t"], "w": k["w"]} for k in l["tokens"]]], key=lambda w: w["t"])
+    words = []
+    for w in merged:
+        if not any(norm(y["w"]) == norm(w["w"]) and abs(y["t"] - w["t"]) < 0.02 for y in words[-3:]):
+            words.append(w)
 
     def word_t(cue, after):
         w0, _, nth = cue.partition("#")
@@ -86,7 +92,7 @@ for i, l in enumerate(lines):
     if i == 0 or lines[i - 1]["who"] != l["who"]:
         changes.append(l["start"])  # speaker swap
     if l.get("react"):
-        w = next((x["t"] for x in l["words"] if l.get("reactWord") and norm(x["w"]).startswith(norm(l["reactWord"]))), l["start"])
+        w = next((x["t"] for x in l["words"] + l["tokens"] if l.get("reactWord") and norm(x["w"]).startswith(norm(l["reactWord"]))), l["start"])
         reactions.append(w)
         changes.append(w)
     if l.get("pre"):
@@ -159,10 +165,17 @@ else:
 cta = next((beats[v["at"]] / FPS for s in sections for v in s.get("views", []) if any(i["type"] == "comment" for i in v["items"])), None)
 nxt = next((beats[v["at"]] / FPS for s in sections for v in s.get("views", []) if any(i["type"] == "follow" for i in v["items"])), dur)
 check(cta is not None and nxt - cta >= 2, "CTA keyword on screen ≥ 2 s", f"{(nxt - cta) if cta else 0:.1f}s")
-check(95 <= words_total <= 120, "95–120 spoken words", str(words_total))
+# Hindi carries short particles (में, ने, के, है) that English does not, so the same runtime holds more words.
+lo, hi = (95, 120) if tl.get("lang", "en") == "en" else (110, 140)
+check(lo <= words_total <= hi, f"{lo}–{hi} spoken words", str(words_total))
 check(dur <= 55, "runtime ≤ 55 s", f"{dur:.1f}s")
 check(max(len(l["words"]) for l in lines) <= 14, "no line over 14 words", str(max(len(l["words"]) for l in lines)))
 check(not missing, "every word cue is actually spoken", "; ".join(missing))
+if tl.get("lang", "en") != "en":
+    # Hinglish: `say` is Devanagari + English, `show` is its Latin caption. Same word count per line
+    # means every caption word lights up on its own spoken word.
+    uneven = [f"l{l['n']} say {len(l['words'])} / show {len(l['tokens'])}" for l in lines if len(l["words"]) != len(l["tokens"])]
+    check(not uneven, "caption has one word per spoken word (Hinglish)", "; ".join(uneven))
 
 print(f"QA · {dur:.1f}s · {words_total} words · {len(changes)} on-screen changes (one every {spoken_end / max(1, len(changes)):.1f}s) · {len(reactions)} reactions")
 print("\n".join(out))

@@ -52,3 +52,10 @@ Voice: ElevenLabs v4 dialogue with inline audio tags (`tags` per line; Higgsfiel
 - **Process that worked:** research agent → I write the scripts → independent approval agent (facts + edit) → free draft QA → paid voice (one call per reel, ~3.5 credits) → render. Never generate voice before approval.
 - **Batch** (`docs/pipeline/2026-11-11/`, kit in `POSTING.md`): `black-friday-week` (FRIDAY, post by Sun 15 Nov), `chatgpt-ads` (CHATGPT), `late-replies` (REPLY). Next candidates from the research: "Stop touching your ads every day" (pressure-cooker analogy, Meta's 50-conversions receipt), "Boost is not a campaign", "Meta counts more sales from 12 Nov".
 - If the worker restarts mid-call, check Higgsfield `transactions` before re-sending a paid generation.
+
+## Hinglish reel + first-party data (12 Nov 2026)
+- **Reel:** `reels/october-bleed` (Hinglish, keyword SETUP), files in `docs/pipeline/2026-11-12/` (`01-research.md`, `02-account-data.md`, `POSTING.md`). Owner's brief: "October bled, after Diwali performance is coming back; explain why, what Meta changed, how to structure".
+- **What our accounts actually showed (18 accounts, anonymised, read-only pull):** cost per message enquiry rose Sep → Oct in 15 of 17 (median +16%), but CPM and cost per click did NOT rise (about −5%). Diwali week (1–8 Nov) was the peak (₹210 blended vs ₹147 Sep, ₹165 Oct); 9–11 Nov fell back to ₹164. So: say "enquiry mehngi" and "cost wapas neeche aa rahi hai"; never "CPM went up" or "better than October". Client names and account ids stay out of the repo.
+- **Hinglish engine rules:** `"lang": "hi"`; `say` in Devanagari + English, `show` in Latin with the same word count per line; cues written against the Latin caption; Whisper `medium`, one pass on the raw audio, sound-skeleton alignment (`voice.py`). New board items `columns`, `formula`, actor `disc`. Details in `plugins/motion-studio/skills/explainer-module/references/script-schema.md`.
+- **Gotcha:** `timeline.json` is built by `voice.py` from `script.json`; re-run it after any view change or the render shows the old board.
+

@@ -47,7 +47,7 @@ const ShopFront: React.FC<{size: number; sign?: string}> = ({size, sign}) => (
 );
 
 // A little stage for analogies: emoji actors that walk in, speak, and leave on spoken words.
-export type Actor = {emoji: string; sign?: string; label?: string; x: number; y: number; size?: number; enter?: 'pop' | 'left' | 'right' | 'drop'; t: number; outT?: number; say?: string; sayT?: number; sayTone?: Tone; flip?: boolean; badge?: string; badgeT?: number; badgeTone?: Tone};
+export type Actor = {disc?: Tone; emoji: string; sign?: string; label?: string; x: number; y: number; size?: number; enter?: 'pop' | 'left' | 'right' | 'drop'; t: number; outT?: number; say?: string; sayT?: number; sayTone?: Tone; flip?: boolean; badge?: string; badgeT?: number; badgeTone?: Tone};
 export const Scene: React.FC<{actors: Actor[]; height?: number; ground?: boolean}> = ({actors, height = 520, ground = true}) => (
   <div style={{position: 'relative', width: 880, height}}>
     {ground ? <div style={{position: 'absolute', left: 20, right: 20, bottom: 26, height: 5, borderRadius: 3, background: C.ink, opacity: 0.85}} /> : null}
@@ -68,7 +68,8 @@ export const Scene: React.FC<{actors: Actor[]; height?: number; ground?: boolean
         <div key={i} style={{position: 'absolute', left: a.x + dx + exitX, top: a.y + dy + walk, opacity: 1 - out, transform: `scale(${scale})`, transformOrigin: '50% 100%', textAlign: 'center'}}>
           <Sfx name={a.enter === 'left' || a.enter === 'right' ? 'swish' : 'pop'} t={a.t} />
           {a.outT !== undefined ? <Sfx name="swish" t={a.outT} /> : null}
-          {a.emoji === 'SHOP' ? <ShopFront size={size} sign={a.sign} /> : <div style={{fontSize: size, lineHeight: 1.05, transform: a.flip ? 'scaleX(-1)' : undefined}}>{a.emoji}</div>}
+          {a.disc ? <div style={{position: 'absolute', left: '50%', top: size * 0.56, width: size * 1.3, height: size * 1.3, marginLeft: -size * 0.65, marginTop: -size * 0.65, borderRadius: '50%', background: `${tone[a.disc]}30`, border: `3px solid ${tone[a.disc]}`}} /> : null}
+          {a.emoji === 'SHOP' ? <ShopFront size={size} sign={a.sign} /> : <div style={{position: 'relative', fontSize: size, lineHeight: 1.05, transform: a.flip ? 'scaleX(-1)' : undefined}}>{a.emoji}</div>}
           {a.label ? <div style={{marginTop: 2, display: 'inline-block', padding: '5px 14px', borderRadius: 999, background: '#fff', border: '2.5px solid #0D1320', fontFamily: body, fontWeight: 800, fontSize: 24, color: C.ink, whiteSpace: 'nowrap'}}>{a.label}</div> : null}
           {a.say && (a.sayT ?? a.t) >= 0 ? (
             <div style={{position: 'absolute', left: '50%', bottom: '100%', marginBottom: 6, transform: `translateX(-50%) scale(${s})`, transformOrigin: '50% 100%', padding: '8px 16px', borderRadius: 16, background: a.sayTone ? tone[a.sayTone] : '#fff', color: a.sayTone && a.sayTone !== 'gold' ? '#fff' : C.ink, border: V3.outline, boxShadow: '4px 4px 0 #0D1320', fontFamily: body, fontWeight: 800, fontSize: 28, whiteSpace: 'nowrap'}}>
@@ -265,6 +266,71 @@ export const Plan: React.FC<{from: number; to: number; deadline: number; deadlin
           </div>
         );
       })}
+    </div>
+  );
+};
+
+// Three or four tall bars that tell a before / during / after story (cost in Sep → Oct → after Diwali).
+// Each bar grows on its spoken word; its value label lands on top; an optional stamp follows.
+export type Col = {label: string; value: number; display: string; tone?: Tone; t: number; stamp?: string; stampT?: number};
+export const Columns: React.FC<{t: number; title?: string; cols: Col[]; note?: string}> = ({t, title, cols, note}) => {
+  const max = Math.max(...cols.map((c) => c.value));
+  const H = cols.some((c) => c.stamp) ? 262 : 300;
+  const p = pop(t);
+  const W = cols.length > 3 ? 172 : 190; // four columns still fit the board
+  const gap = cols.length > 3 ? 40 : 46;
+  return (
+    <div style={{width: 860, fontFamily: body, opacity: Math.min(1, p * 2)}}>
+      {title ? <div style={{fontWeight: 800, fontSize: 36, color: C.ink, textAlign: 'center', marginBottom: 8}}>{title}</div> : null}
+      <div style={{position: 'relative', height: H + 70, marginTop: cols.some((c) => c.stamp) ? 68 : 0, display: 'flex', justifyContent: 'center', alignItems: 'flex-end', gap, borderBottom: '5px solid #0D1320'}}>
+        {cols.map((c, i) => {
+          const g = c.t < 0 ? 0 : spring({frame: c.t, fps: 30, config: {damping: 13, stiffness: 120}});
+          const h = Math.max(6, (c.value / max) * H * g);
+          const col = tone[c.tone ?? 'blue'];
+          const s = pop(c.stampT ?? -1);
+          return (
+            <div key={i} style={{position: 'relative', width: W, display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+              <Sfx name={c.tone === 'red' ? 'buzz' : c.tone === 'green' ? 'ding' : 'pop'} t={c.t} delay={8} />
+              <div style={{fontFamily: display, fontSize: 64, lineHeight: 1, color: col, opacity: c.t < 0 ? 0 : progress(c.t, 8, 8), marginBottom: 6, WebkitTextStroke: '2px #0D1320'}}>{c.display}</div>
+              <div style={{width: '100%', height: h, background: col, border: V3.outline, borderBottom: 'none', borderRadius: '16px 16px 0 0', boxShadow: '5px 0 0 #0D1320'}} />
+              {c.stamp && (c.stampT ?? -1) >= 0 ? (
+                <div style={{position: 'absolute', top: -52, left: '50%', padding: '5px 13px', borderRadius: 12, background: '#fff', color: col, border: V3.outline, boxShadow: '4px 4px 0 #0D1320', fontWeight: 800, fontSize: 26, whiteSpace: 'nowrap', transform: `translateX(-50%) rotate(-4deg) scale(${s})`}}>
+                  <Sfx name="pop" t={c.stampT ?? -1} />
+                  {c.stamp}
+                </div>
+              ) : null}
+            </div>
+          );
+        })}
+      </div>
+      <div style={{display: 'flex', justifyContent: 'center', gap, marginTop: 10}}>
+        {cols.map((c, i) => (
+          <div key={i} style={{width: W, textAlign: 'center', fontWeight: 800, fontSize: 30, lineHeight: 1.1, color: C.ink}}>{c.label}</div>
+        ))}
+      </div>
+      {note ? <div style={{marginTop: 12, textAlign: 'center', fontWeight: 700, fontSize: 24, color: C.muted}}>{note}</div> : null}
+    </div>
+  );
+};
+
+// A formula card worth saving: a small title, the expression in big type, what it equals, a worked example.
+export const Formula: React.FC<{t: number; title: string; top: string; bottom: string; equals: string; example?: string; exampleT?: number}> = ({t, title, top, bottom, equals, example, exampleT = -1}) => {
+  const p = pop(t);
+  const e = pop(exampleT);
+  return (
+    <div style={{width: 840, padding: '22px 30px 26px', borderRadius: 28, background: C.goldSoft, border: V3.outline, boxShadow: V3.shadow, fontFamily: body, textAlign: 'center', transform: `scale(${0.7 + 0.3 * p})`, opacity: Math.min(1, p * 2)}}>
+      <Sfx name="pop" t={t} />
+      <div style={{fontWeight: 800, fontSize: 26, letterSpacing: '0.1em', color: C.muted}}>{title}</div>
+      <div style={{marginTop: 12, fontWeight: 800, fontSize: 46, lineHeight: 1.1, color: C.ink}}>{top}</div>
+      <div style={{margin: '10px auto', width: '86%', height: 6, borderRadius: 3, background: C.ink}} />
+      <div style={{fontWeight: 800, fontSize: 46, lineHeight: 1.1, color: C.ink}}>{bottom}</div>
+      <div style={{marginTop: 14, fontFamily: display, fontSize: 62, lineHeight: 1, color: C.blue}}>= {equals}</div>
+      {example && exampleT >= 0 ? (
+        <div style={{marginTop: 16, display: 'inline-block', padding: '10px 22px', borderRadius: 999, background: C.ink, color: '#fff', fontWeight: 800, fontSize: 30, transform: `scale(${e})`}}>
+          <Sfx name="ding" t={exampleT} />
+          {example}
+        </div>
+      ) : null}
     </div>
   );
 };

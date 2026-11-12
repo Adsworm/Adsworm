@@ -4,6 +4,7 @@ One file drives voice, captions, acting, board and sound. Source of truth for th
 
 ```jsonc
 {
+  "lang": "hi",                                           // optional: Hinglish reel (see "Hinglish" below); default "en"
   "voices": {"AMAN": {"voice_type": "preset", "voice_id": "…"}, "RIYA": {"voice_type": "preset", "voice_id": "…"}},
   "direction": "One paragraph: who they are, the energy, how they talk.",   // ElevenLabs prompt
   "gapCap": 0.22, "tempo": 1.05, "leadInMs": 60, "tailMs": 1500, "bedGain": 0.07,
@@ -39,11 +40,13 @@ One file drives voice, captions, acting, board and sound. Source of truth for th
 | type | use | key fields |
 |---|---|---|
 | `headline` | hook claim, 2–3 stacked lines | `lines[{text, tone?, word?}]`, `emoji`, `emojiWord` |
-| `scene` | stage an analogy with actors | `actors[{emoji \| "SHOP", sign?, label?, x, y, size?, enter: pop\|left\|right\|drop, word/at, outWord, say, sayWord, badge, badgeWord, badgeTone}]` (stage 880×500) |
+| `scene` | stage an analogy with actors | `actors[{emoji \| "SHOP", sign?, label?, disc? (tinted ring behind a pale emoji), x, y, size?, enter: pop\|left\|right\|drop, word/at, outWord, say, sayWord, badge, badgeWord, badgeTone}]` (stage 880×500) |
 | `chatThread` | a DM thread; timestamps tell the story | `name`, `msgs[{from: them\|me, text, time?, word/at}]`, `status`, `statusWord/At`, `statusTone` |
 | `aiChat` | an AI-assistant answer with a labelled sponsored card | `question`, `adWord`, `brand`, `adLine`, `note` |
 | `clock` | time passing | `to`, `unit`, `label` |
 | `plan` | plans against a deadline (bars turn red past it) | `from`, `to`, `deadline`, `deadlineLabel`, `rows[{label, start, word/at, segs[{len, text, word/at}], verdict, verdictWord}]` |
+| `columns` | 2–4 bars from zero with the value on top (a before/after trend) | `title`, `note`, `cols[{label, value, display, tone, word/at, stamp, stampWord}]` |
+| `formula` | a save-worthy formula card: fraction, result, worked example | `title`, `top`, `bottom`, `equals`, `example`, `exampleWord` |
 | `stat` | one hero number, counts up | `value`, `prefix`, `suffix`, `label`, `color`, `arrow` |
 | `versus` | two numbers that seem to clash | `left`, `right`, `qAt` |
 | `checks` | the fix as ticks on spoken words | `items[{text, word}]` |
@@ -53,3 +56,11 @@ One file drives voice, captions, acting, board and sound. Source of truth for th
 | `comment`, `follow` | CTA: comment keyword UI, then follow flip + share line | `keyword` / `share` |
 
 Tones: `red green blue gold pink ink`. Board content area ≈ 890 × 540 px; stickers use absolute `x, y` inside it.
+
+## Hinglish (`"lang": "hi"`)
+- `say` = Devanagari for Hindi words, Latin for English words ("October में मेरे ads ने सिर्फ पैसा जलाया!"). Numbers as Hindi words ("पचास").
+- `show` = the same line in Latin Hinglish with `[pills]` ("October mein mere ads ne sirf [paisa jalaya]!"). **Same number of words as `say`, line by line**: caption word n lights up on spoken word n. `qa_report.py` fails the line otherwise.
+- Word cues (`word`, `reactWord`, `stampWord`…) are written against the Latin caption ("paisa", "50"), not the Devanagari.
+- Timing: `voice.py` transcribes the raw audio once with Whisper `medium`, matches script words to heard words by sound (consonant skeleton), then applies the same pause cuts and tempo to the word times. Expect ~95% of words matched; the rest share the gap between their neighbours.
+- Length: 110–140 words (Hindi particles are short), still ≤ 55 s. Draft voices: `hi-IN-MadhurNeural` / `hi-IN-SwaraNeural`; `draft_voice.py` also writes true line starts to `dialogue.draft.json` for checking the aligner.
+- `timeline.json` is built from `script.json` by `voice.py`: after changing views, run `voice.py` again before `qa.mjs` or a render.
