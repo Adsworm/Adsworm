@@ -21,7 +21,7 @@
     ], "views": [
       {"at": "l1", "items": [
         {"type": "headline", "lines": [{"text": "BLACK FRIDAY AD"}, {"text": "ON BLACK FRIDAY?"}, {"text": "TOO LATE.", "tone": "red", "word": "already"}]},
-        {"type": "chip", "text": "{days} days to Black Friday · 27 Nov", "kind": "ink", "word": "friday#2"},
+        {"type": "chip", "text": "2 weeks to Black Friday · 27 Nov", "kind": "ink", "word": "friday#2"},
         {"type": "sticker", "text": "night before 🌙 always", "color": "pink", "x": 480, "y": 440, "rotate": -5, "at": "l2", "word": "night"}
       ]}
     ]},
@@ -60,7 +60,7 @@
           {"label": "Launch this week", "start": 14, "word": "launch", "segs": [{"len": 1, "text": "✓", "word": "week"}, {"len": 7, "text": "Learning", "word": "learn"}, {"len": 5, "text": "Ready", "word": "early"}], "verdict": "READY ✓", "verdictWord": "early"},
           {"label": "The night-before plan", "start": 26, "segs": [{"len": 1, "text": "", "at": "l8"}, {"len": 4, "text": "", "at": "l8"}], "verdict": "LATE ✕", "verdictAt": "l8"}
         ]},
-        {"type": "sticker", "text": "rejected? time to fix ✓", "color": "green", "x": 250, "y": 250, "rotate": -4, "at": "l10", "word": "time"}
+        {"type": "sticker", "text": "rejected? time to fix ✓", "color": "green", "x": 20, "y": 400, "rotate": -4, "at": "l10", "word": "time"}
       ]}
     ]},
     {"id": "cta", "label": "FREE CHECKLIST", "source": "", "lines": [
