@@ -1,5 +1,5 @@
 {
-  "title": "5 ads, phir bhi wahi thode se log? Har ad alag banao (Andromeda 2.0)",
+  "title": "Ads pe paise, phir bhi wahi thode log? Har ad alag banao (Andromeda 2.0)",
   "lang": "hi",
   "voices": {
     "AMAN": {
@@ -47,11 +47,11 @@
         {
           "who": "RIYA",
           "tags": "[frustrated]",
-          "say": "पाँच ads चला रही हूँ… फिर भी वही थोड़े से लोग देख रहे हैं!",
-          "tts": "पाँच ऐड्स चला रही हूँ… फिर भी वही थोड़े से लोग देख रहे हैं!",
-          "show": "5 ads chala rahi hoon… phir bhi wahi [thode se log] dekh rahe hain!",
+          "say": "Ads पे पैसे लगा रही हूँ… फिर भी वही थोड़े लोग देख रहे हैं!",
+          "tts": "ऐड्स पे पैसे लगा रही हूँ… फिर भी वही थोड़े लोग देख रहे हैं!",
+          "show": "Ads pe paise laga rahi hoon… phir bhi wahi [thode log] dekh rahe hain!",
           "beat": "l1",
-          "how": "Chidh ke, thaki hui. 'hoon…' ke baad aadha second ruko. Zor: 'wahi thode se log'.",
+          "how": "Chidh ke, thaki hui. 'hoon…' ke baad aadha second ruko. Zor: 'wahi thode log'.",
           "pre": "worry",
           "react": "surprised",
           "reactWord": "log"
@@ -86,7 +86,7 @@
           "tts": "इंस्टाग्राम की मशीन को ये एक ही ऐड लग सकता है.",
           "show": "Instagram ki machine ko ye [ek hi ad] lag sakta hai.",
           "beat": "l4",
-          "how": "Muskura ke, dheere. 'ek – hi – ad' teeno shabd alag-alag girein.",
+          "how": "Muskura ke, dheere. 'machine' pe halka zor, phir 'ek, hi, ad' teeno alag-alag girein.",
           "react": "shock",
           "reactWord": "ek"
         }
@@ -102,9 +102,9 @@
             },
             {
               "type": "sticker",
-              "text": "wahi thode se log 😩",
+              "text": "wahi thode log 😩",
               "color": "pink",
-              "x": 520,
+              "x": 540,
               "y": 20,
               "rotate": 4,
               "word": "thode"
@@ -149,33 +149,33 @@
         {
           "who": "AMAN",
           "tags": "[warmly]",
-          "say": "जो छाँटती है कि किसे कौन-सा ad दिखे. लोग इसे Andromeda टू-पॉइंट-ओ कहते हैं.",
-          "tts": "जो छाँटती है कि किसे कौन-सा ऐड दिखे. लोग इसे एंड्रोमेडा टू-पॉइंट-ओ कहते हैं.",
-          "show": "Jo [chhaant-ti hai] ki kise kaun-sa ad dikhe. Log ise [Andromeda 2.0] kehte hain.",
+          "say": "जो छाँटती है कि किसे कौन-सा ad दिखे.",
+          "tts": "जो छाँटती है कि किसे कौन-सा ऐड दिखे.",
+          "show": "Jo [chhaant-ti hai] ki kise kaun-sa ad dikhe.",
           "beat": "l6",
-          "how": "Samjhate hue, saaf, bina jaldi. Naam 'Andromeda 2.0' dheere aur saaf.",
+          "how": "Samjhate hue, saaf, bina jaldi. Vaakya ke baad ek saans ka pause.",
           "react": "doubt",
+          "reactWord": "kise"
+        },
+        {
+          "who": "AMAN",
+          "tags": "[clearly]",
+          "say": "लोग इसे Andromeda टू-पॉइंट-ओ कहते हैं.",
+          "tts": "लोग इसे एंड्रोमेडा टू-पॉइंट-ओ कहते हैं.",
+          "show": "Log ise [Andromeda 2.0] kehte hain.",
+          "beat": "l7",
+          "how": "Naam 'Andromeda 2.0' dheere aur saaf, jaise kisi ko naam yaad karwa rahe ho.",
+          "react": "shock",
           "reactWord": "andromeda"
         },
         {
           "who": "AMAN",
-          "tags": "",
-          "say": "Ads एक जैसे दिखे, तो ये उन्हें एक ही समझ सकती है.",
-          "tts": "ऐड्स एक जैसे दिखे, तो ये उन्हें एक ही समझ सकती है.",
-          "show": "Ads [ek jaise] dikhe, toh ye unhe [ek hi] samajh sakti hai.",
-          "beat": "l7",
-          "how": "Seedha, sthir.",
-          "react": "worry",
-          "reactWord": "samajh"
-        },
-        {
-          "who": "AMAN",
-          "tags": "",
-          "say": "फिर तुम… कम लोगों तक पहुँचते हो.",
-          "tts": "फिर तुम… कम लोगों तक पहुँचते हो.",
-          "show": "Phir tum… [kam logon tak] pahunchte ho.",
+          "tags": "[serious]",
+          "say": "Ads एक जैसे हों, तो तुम… कम लोगों तक पहुँचते हो.",
+          "tts": "ऐड्स एक जैसे हों, तो तुम… कम लोगों तक पहुँचते हो.",
+          "show": "Ads [ek jaise] hon, toh tum… [kam logon tak] pahunchte ho.",
           "beat": "l8",
-          "how": "Thoda gambhir. 'tum…' ke baad chhota pause. Zor: 'kam logon tak'.",
+          "how": "Thoda gambhir. Zor: 'ek jaise' aur 'kam logon tak'. 'tum…' ke baad chhota pause.",
           "react": "worry",
           "reactWord": "kam"
         },
@@ -198,19 +198,9 @@
               "type": "sorter",
               "name": "ANDROMEDA\n2.0",
               "sub": "एंड्रोमेडा 2.0",
-              "nameWord": "andromeda",
+              "nameAt": "l7",
               "pileLabel": "saare ads",
               "fewLabel": "kuch hi ads"
-            }
-          ]
-        },
-        {
-          "at": "l7",
-          "items": [
-            {
-              "type": "sameIsOne",
-              "eqWord": "samajh",
-              "tag": "machine ko ye ek hi ad lag sakta hai"
             }
           ]
         },
@@ -304,23 +294,23 @@
         {
           "who": "RIYA",
           "tags": "[curious]",
-          "say": "और boost भी ऐसे ही?",
-          "tts": "और बूस्ट भी ऐसे ही?",
-          "show": "Aur boost bhi [aise hi]?",
+          "say": "और जो post boost करती हूँ?",
+          "tts": "और जो पोस्ट बूस्ट करती हूँ?",
+          "show": "Aur jo post [boost] karti hoon?",
           "beat": "l12",
-          "how": "Jigyasa se, ab awaaz mein chamak.",
-          "pre": "laugh"
+          "how": "Jigyasa se. Zor: 'boost'.",
+          "pre": "doubt"
         },
         {
           "who": "AMAN",
-          "tags": "[warmly]",
-          "say": "हाँ. Boost भी ad ही है.",
-          "tts": "हाँ. बूस्ट भी ऐड ही है.",
-          "show": "Haan. Boost bhi [ad hi] hai.",
+          "tags": "",
+          "say": "वो भी ad ही है. वहाँ भी यही rule.",
+          "tts": "वो भी ऐड ही है. वहाँ भी यही रूल.",
+          "show": "Wo bhi [ad hi] hai. Wahan bhi [yahi rule].",
           "beat": "l13",
-          "how": "Garmjoshi se, pakke yakeen ke saath.",
+          "how": "Seedhi baat, bina bhaav badhaye. Zor: 'bhi' aur 'ad hi'.",
           "react": "laugh",
-          "reactWord": "ad"
+          "reactWord": "rule"
         }
       ],
       "views": [
@@ -329,7 +319,16 @@
           "items": [
             {
               "type": "boostPhone",
-              "goWord": "haan"
+              "goWord": "wo"
+            },
+            {
+              "type": "sticker",
+              "text": "boost = ad · wahi rule",
+              "color": "gold",
+              "x": 500,
+              "y": 400,
+              "rotate": -3,
+              "word": "rule"
             }
           ]
         }
@@ -354,11 +353,11 @@
         {
           "who": "RIYA",
           "tags": "[cheeky]",
-          "say": "Save कर लिया! अब मेरे पाँचों ads अलग होंगे.",
-          "tts": "सेव कर लिया! अब मेरे पाँचों ऐड्स अलग होंगे.",
-          "show": "[Save] kar liya! Ab mere [paancho ads alag] honge.",
+          "say": "चलो, अब पाँचों ads अलग बनाती हूँ!",
+          "tts": "चलो, अब पाँचों ऐड्स अलग बनाती हूँ!",
+          "show": "Chalo, ab [paancho ads alag] banati hoon!",
           "beat": "l15",
-          "how": "Shararti, khush.",
+          "how": "Shararti, khush, kaam pe lagne ke mood mein.",
           "pre": "laugh",
           "react": "laugh",
           "reactWord": "alag"
@@ -383,8 +382,8 @@
           "items": [
             {
               "type": "saveTap",
-              "tapWord": "save",
-              "label": "SAVE\nKAR LIYA ✓"
+              "tapWord": "ab",
+              "label": "SAVE\nKAR LO 🔖"
             }
           ]
         }
