@@ -382,7 +382,7 @@ def main():
     hop = SR // FPS
     rms = np.array([np.sqrt(np.mean(track[i : i + hop] ** 2)) for i in range(0, len(track), hop)])
     env = np.clip(rms / (np.percentile(rms[rms > 1e-4], 90) + 1e-9), 0, 1)
-    tl = {"env": [round(float(v), 2) for v in env], "fps": FPS, "lang": LANG, "matched": [matched, len(sw)], "variant": "organic", "vars": vars_, "durationInFrames": frames, "voices": s["voices"], "brand": s.get("brand", {}), "loop": s.get("loop"), "payoff": payoff_tl, "lines": lines, "sections": sections, "beats": beats}
+    tl = {"env": [round(float(v), 2) for v in env], "fps": FPS, "lang": LANG, "plain": bool(s.get("plain")), "matched": [matched, len(sw)], "variant": "organic", "vars": vars_, "durationInFrames": frames, "voices": s["voices"], "brand": s.get("brand", {}), "loop": s.get("loop"), "payoff": payoff_tl, "lines": lines, "sections": sections, "beats": beats}
     (ROOT / "src/reel/timeline.json").write_text(json.dumps(tl, ensure_ascii=False, indent=1))
     gaps = [b[0] - a[1] for a, b in zip(times, times[1:])]
     print(f"{len(lines)} lines · {total:.1f}s · {len(times) / (times[-1][1] - times[0][0]):.2f} words/s · max gap {max(gaps):.2f}s → public/voice.wav, src/reel/timeline.json")

@@ -1,5 +1,5 @@
 {
-  "title": "Andromeda 2.0 ka matlab: har ad alag banaiye",
+  "title": "Instagram par ad? Har ad alag banaiye (Andromeda 2.0)",
   "lang": "hi",
   "plain": true,
   "voices": {
@@ -33,25 +33,25 @@
   "sections": [
     {
       "id": "hook",
-      "label": "ANDROMEDA 2.0",
-      "source": "'2.0' logon ka diya naam hai · Meta Engineering, 28 Oct 2026",
+      "label": "EK BAAT",
+      "source": "",
       "lines": [
         {
           "who": "AMAN",
           "tags": "",
-          "say": "Instagram के ads system का नया version आया है. लोग इसे Andromeda टू-पॉइंट-ओ कह रहे हैं.",
-          "show": "Instagram ke ads system ka [naya version] aaya hai. Log ise [Andromeda 2.0] keh rahe hain.",
+          "say": "आपका business Instagram पर है?",
+          "show": "Aapka business [Instagram par] hai?",
           "beat": "l1",
-          "react": "doubt",
-          "reactWord": "andromeda"
+          "react": "laugh",
+          "reactWord": "instagram"
         },
         {
           "who": "AMAN",
           "tags": "",
-          "say": "आपके लिए इसका एक ही मतलब है: हर ad अलग बनाइए.",
-          "show": "Aapke liye iska ek hi matlab hai: [har ad alag] banaiye.",
+          "say": "तो एक बात याद रखिए: हर ad अलग बनाइए.",
+          "show": "Toh ek baat yaad rakhiye: [har ad alag] banaiye.",
           "beat": "l2",
-          "react": "laugh",
+          "react": "doubt",
           "reactWord": "alag"
         }
       ],
@@ -61,27 +61,8 @@
           "items": [
             {
               "type": "instaPhone",
-              "mode": "ad",
+              "mode": "page",
               "name": "aapki_dukaan"
-            }
-          ]
-        },
-        {
-          "at": "l1",
-          "word": "log",
-          "items": [
-            {
-              "type": "headline",
-              "lines": [
-                {
-                  "text": "ANDROMEDA 2.0"
-                },
-                {
-                  "text": "एंड्रोमेडा 2.0",
-                  "tone": "blue",
-                  "word": "andromeda"
-                }
-              ]
             }
           ]
         },
@@ -121,18 +102,54 @@
       ]
     },
     {
-      "id": "boost",
-      "label": "BOOST BHI AD HAI",
-      "source": "Illustration",
+      "id": "why",
+      "label": "KYUN ALAG?",
+      "source": "Meta for Business, 28 Oct 2026 · Meta creative guide (dekha: 13 Nov 2026) · \"2.0\" logon ka diya naam",
       "lines": [
         {
           "who": "AMAN",
           "tags": "",
-          "say": "Boost, यानी पैसे देकर post आगे बढ़ाना, भी ad है.",
-          "show": "[Boost], yaani paise dekar post aage badhana, bhi [ad hai].",
+          "say": "Instagram पर किसे कौन-से ads दिखें, ये एक machine छाँटती है.",
+          "show": "Instagram par kise kaun-se ads dikhein, ye ek [machine chhaant-ti] hai.",
           "beat": "l3",
+          "react": "doubt",
+          "reactWord": "machine"
+        },
+        {
+          "who": "AMAN",
+          "tags": "",
+          "say": "आजकल लोग इसे Andromeda टू-पॉइंट-ओ कह रहे हैं.",
+          "show": "Aajkal log ise [Andromeda 2.0] keh rahe hain.",
+          "beat": "l4",
           "react": "shock",
-          "reactWord": "ad"
+          "reactWord": "andromeda"
+        },
+        {
+          "who": "AMAN",
+          "tags": "",
+          "say": "आपके ads एक जैसे हुए, वही photo, वही बात,",
+          "show": "Aapke ads [ek jaise] hue, wahi photo, wahi baat,",
+          "beat": "l5",
+          "react": "doubt",
+          "reactWord": "photo"
+        },
+        {
+          "who": "AMAN",
+          "tags": "",
+          "say": "तो ये machine उन्हें एक ही ad समझ सकती है.",
+          "show": "toh ye machine unhe [ek hi ad] samajh sakti hai.",
+          "beat": "l6",
+          "react": "worry",
+          "reactWord": "samajh"
+        },
+        {
+          "who": "AMAN",
+          "tags": "",
+          "say": "फिर आपका ad कम लोगों तक पहुँचता है.",
+          "show": "Phir aapka ad [kam logon tak] pahunchta hai.",
+          "beat": "l7",
+          "react": "worry",
+          "reactWord": "kam"
         }
       ],
       "views": [
@@ -140,55 +157,10 @@
           "at": "l3",
           "items": [
             {
-              "type": "boostPhone",
-              "payWord": "paise",
-              "goWord": "aage"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "why",
-      "label": "YE KARTA KYA HAI?",
-      "source": "Meta for Business, 28 Oct 2026 · Meta small-business creative guide (dekha: 13 Nov 2026)",
-      "lines": [
-        {
-          "who": "AMAN",
-          "tags": "",
-          "say": "ये system छाँटता है कि Instagram पर किसे कौन-से ads दिखें.",
-          "show": "Ye system [chhaant-ta hai] ki Instagram par kise kaun-se ads dikhein.",
-          "beat": "l4",
-          "react": "doubt",
-          "reactWord": "kise"
-        },
-        {
-          "who": "AMAN",
-          "tags": "",
-          "say": "आपके ads एक जैसे दिखे, तो ये उन्हें एक ही ad समझ सकता है.",
-          "show": "Aapke ads [ek jaise] dikhe, toh ye unhe [ek hi ad] samajh sakta hai.",
-          "beat": "l5",
-          "react": "worry",
-          "reactWord": "samajh"
-        },
-        {
-          "who": "AMAN",
-          "tags": "",
-          "say": "फिर आप कम लोगों तक पहुँचते हैं.",
-          "show": "Phir aap [kam logon tak] pahunchte hain.",
-          "beat": "l6",
-          "react": "worry",
-          "reactWord": "kam"
-        }
-      ],
-      "views": [
-        {
-          "at": "l4",
-          "items": [
-            {
               "type": "sorter",
               "name": "ANDROMEDA\n2.0",
               "sub": "एंड्रोमेडा 2.0",
+              "nameAt": "l4",
               "pileLabel": "saare ads",
               "fewLabel": "kuch hi ads"
             }
@@ -200,12 +172,12 @@
             {
               "type": "sameIsOne",
               "eqWord": "samajh",
-              "tag": "system ko ye ek hi ad lag sakta hai"
+              "tag": "machine ko ye ek hi ad lag sakta hai"
             }
           ]
         },
         {
-          "at": "l6",
+          "at": "l7",
           "items": [
             {
               "type": "reach",
@@ -218,7 +190,7 @@
     },
     {
       "id": "how",
-      "label": "TOH KARNA KYA HAI?",
+      "label": "KAISE ALAG?",
       "source": "Teen tarah ke ads: Adsworm ki salaah · Meta: \"supply more creative variety\" (28 Oct 2026)",
       "lines": [
         {
@@ -226,7 +198,7 @@
           "tags": "",
           "say": "इसलिए एक ad में अपना सामान या काम दिखाइए.",
           "show": "Isliye ek ad mein apna [saamaan ya kaam] dikhaiye.",
-          "beat": "l7",
+          "beat": "l8",
           "react": "laugh",
           "reactWord": "kaam"
         },
@@ -235,23 +207,14 @@
           "tags": "",
           "say": "दूसरे में customer की तारीफ़, तीसरे में offer.",
           "show": "Doosre mein customer ki [tareef], teesre mein [offer].",
-          "beat": "l8",
+          "beat": "l9",
           "react": "shock",
           "reactWord": "offer"
-        },
-        {
-          "who": "AMAN",
-          "tags": "",
-          "say": "अभी ad नहीं चलाते? इसे पहले ad के लिए save कर लीजिए.",
-          "show": "Abhi ad nahin chalate? Ise pehle ad ke liye [save kar lijiye].",
-          "beat": "l9",
-          "react": "laugh",
-          "reactWord": "save"
         }
       ],
       "views": [
         {
-          "at": "l7",
+          "at": "l8",
           "items": [
             {
               "type": "threeAds",
@@ -273,9 +236,46 @@
               ]
             }
           ]
+        }
+      ]
+    },
+    {
+      "id": "also",
+      "label": "BOOST BHI AD HAI",
+      "source": "Illustration",
+      "lines": [
+        {
+          "who": "AMAN",
+          "tags": "",
+          "say": "Post को पैसे देकर आगे बढ़ाते हैं, यानी boost? वो भी ad ही है.",
+          "show": "Post ko paise dekar aage badhate hain, yaani [boost]? Wo bhi [ad hi hai].",
+          "beat": "l10",
+          "react": "shock",
+          "reactWord": "boost"
         },
         {
-          "at": "l9",
+          "who": "AMAN",
+          "tags": "",
+          "say": "अभी ad नहीं चलाते? ये video save कर लीजिए.",
+          "show": "Abhi ad nahin chalate? Ye video [save kar lijiye].",
+          "beat": "l11",
+          "react": "laugh",
+          "reactWord": "save"
+        }
+      ],
+      "views": [
+        {
+          "at": "l10",
+          "items": [
+            {
+              "type": "boostPhone",
+              "payWord": "paise",
+              "goWord": "aage"
+            }
+          ]
+        },
+        {
+          "at": "l11",
           "items": [
             {
               "type": "saveTap",
@@ -289,14 +289,14 @@
     {
       "id": "cta",
       "label": "YAAD RAKHIYE",
-      "source": "Message mein: Meta ki apni baat, Hindi mein (free)",
+      "source": "Message mein: teeno ads ke ready namoone, Hindi mein (free)",
       "lines": [
         {
           "who": "AMAN",
           "tags": "",
-          "say": "याद रखिए: Andromeda टू-पॉइंट-ओ का मतलब है, हर ad अलग.",
-          "show": "Yaad rakhiye: Andromeda 2.0 ka matlab hai, [har ad alag].",
-          "beat": "l10",
+          "say": "याद रखिए: हर ad अलग बनाइए.",
+          "show": "Yaad rakhiye: [har ad alag] banaiye.",
+          "beat": "l12",
           "react": "laugh",
           "reactWord": "alag"
         },
@@ -305,23 +305,23 @@
           "tags": "",
           "say": "Comment में ANDROMEDA लिखिए.",
           "show": "Comment mein [\"ANDROMEDA\"] likhiye.",
-          "beat": "l11",
+          "beat": "l13",
           "react": "wink",
           "reactWord": "likhiye"
         },
         {
           "who": "AMAN",
           "tags": "",
-          "say": "एक जैसे ads पर Instagram वाली company की अपनी बात, Hindi में message करूँगा.",
-          "show": "Ek jaise ads par Instagram wali company ki apni baat, [Hindi mein message] karunga.",
-          "beat": "l12",
+          "say": "तीनों ads के ready नमूने, Hindi में, भेज दूँगा.",
+          "show": "Teeno ads ke [ready namoone], Hindi mein, bhej dunga.",
+          "beat": "l14",
           "react": "laugh",
-          "reactWord": "message"
+          "reactWord": "hindi"
         }
       ],
       "views": [
         {
-          "at": "l10",
+          "at": "l12",
           "items": [
             {
               "type": "threeAds",
@@ -353,14 +353,14 @@
           ]
         },
         {
-          "at": "l11",
+          "at": "l13",
           "items": [
             {
               "type": "typeWord",
               "keyword": "ANDROMEDA",
               "hint": "Comment mein likhiye:",
-              "dm": "नमस्ते! Meta ने एक जैसे ads पर ये कहा है…",
-              "dmAt": "l12"
+              "dm": "तीनों ads के ready नमूने 👇  क्या दिखाएँ, क्या लिखें",
+              "dmAt": "l14"
             }
           ]
         }

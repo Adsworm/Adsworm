@@ -69,29 +69,41 @@ async def say(text, voice, out):
 
 def main():
     s = json.loads((DIR / "script.json").read_text())
-    lines = [ln for sec in s["sections"] for ln in sec["lines"]]
     voices = VOICES.get(s.get("lang", "en"), VOICES["en"])
+    # One request per run of lines by the same speaker inside a section: a sentence that spans two caption
+    # lines keeps its melody, and the engine still reports where every word starts.
+    groups = []
+    for sec in s["sections"]:
+        for ln in sec["lines"]:
+            if groups and groups[-1]["sec"] == sec["id"] and groups[-1]["who"] == ln["who"]:
+                groups[-1]["lines"].append(ln)
+            else:
+                groups.append({"sec": sec["id"], "who": ln["who"], "lines": [ln]})
     with tempfile.TemporaryDirectory() as d:
-        parts, bounds = [], []
-        for i, ln in enumerate(lines):
+        parts, words, starts, at = [], [], [], 0.0
+        for i, g in enumerate(groups):
+            text = " ".join(ln["say"] for ln in g["lines"])
             p = Path(d) / f"{i:02d}.mp3"
-            bounds.append(asyncio.run(say(ln["say"], voices[ln["who"]], p)))
+            bounds = asyncio.run(say(text, voices[g["who"]], p))
             w = p.with_suffix(".wav")  # decode first: lengths of decoded parts add up exactly, mp3 frames do not
             subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(p), "-ar", "48000", "-ac", "1", str(w)], check=True)
+            times = per_word(text, bounds)
+            k = 0
+            for ln in g["lines"]:
+                n = len(ln["say"].split())
+                starts.append(round(at + times[k][0], 3))
+                words += [{"w": x, "start": round(at + a, 3), "end": round(at + b, 3)} for x, (a, b) in zip(ln["say"].split(), times[k : k + n])]
+                k += n
+            at += float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(w)], capture_output=True, text=True).stdout)
             parts.append(w)
-        # per-line start times: ground truth for checking the word aligner (scripts/align_check.py)
-        durs = [float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(q)], capture_output=True, text=True).stdout) for q in parts]
-        starts = [round(sum(durs[:i]), 3) for i in range(len(durs))]
         (DIR / "dialogue.draft.json").write_text(json.dumps({"starts": starts}))
         # exact word times (the engine reports them): voice.py reads <audio>.words.json and skips speech recognition
-        words = [{"w": w, "start": round(starts[i] + a, 3), "end": round(starts[i] + b, 3)}
-                 for i, ln in enumerate(lines) for w, (a, b) in zip(ln["say"].split(), per_word(ln["say"], bounds[i]))]
         (DIR / "dialogue.draft.words.json").write_text(json.dumps(words, ensure_ascii=False))
         lst = Path(d) / "list.txt"
         lst.write_text("".join(f"file '{p}'\n" for p in parts))
         out = DIR / "dialogue.draft.mp3"
         subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0", "-i", str(lst), "-ar", "48000", "-ac", "1", str(out)], check=True)
-    print(f"{len(lines)} lines → {out.relative_to(ROOT)}")
+    print(f"{len(starts)} lines in {len(groups)} takes → {out.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":

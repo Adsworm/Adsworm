@@ -155,7 +155,7 @@ check(len(short) <= 2, "caption chunks stay ≥ 0.4 s", "; ".join(short[:4]))
 if tl.get("payoff"):
     p = tl["payoff"]["frame"] / FPS / spoken_end
     check(0.5 <= p <= 0.75, "payoff lands at 55–70% of the runtime", f"{p * 100:.0f}%")
-else:
+elif not tl.get("plain"):  # plain-language reels state the message up front: no open loop, no payoff breath
     check(False, "payoff defined (riser → breath → hit)")
 cta = next((beats[v["at"]] / FPS for s in sections for v in s.get("views", []) if any(i["type"] in ("comment", "typeWord") for i in v["items"])), None)
 nxt = next((beats[v["at"]] / FPS for s in sections for v in s.get("views", []) if any(i["type"] == "follow" for i in v["items"])), dur)

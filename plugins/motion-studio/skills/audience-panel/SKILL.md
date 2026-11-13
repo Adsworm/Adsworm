@@ -17,8 +17,8 @@ The fact check asks "is it true?". This asks "did they get it?". A script can pa
 
 ## Pass mark
 - Weighted understanding ≥ 85 (YES = full weight, PARTLY = half).
-- Viewers 1, 2, 5 and 7 (the non-experts) each reach at least PARTLY and name the right action.
-- No single line confuses viewers worth 25 or more of the weight.
+- Viewers 1, 2, 5 and 7 (the non-experts) each reach at least PARTLY and name the right action. For a viewer who has never run an ad, saving the video for the day they do counts.
+- No single line confuses viewers worth 25 or more of the weight. A line confuses a viewer only if they cannot say what it meant; a name they do not need is not confusion when the sentence around it is understood.
 - Viewers worth ≥ 70 are still watching after 5 seconds.
 
 ## Judge brief (send as written; fill only the file path)
@@ -38,7 +38,7 @@ The fact check asks "is it true?". This asks "did they get it?". A script can pa
 >
 > For each viewer give: (a) the second they scroll away, or "till the end"; (b) what they think the video said, in one sentence in their own words and at their own level; (c) what they would do after watching; (d) the exact words or lines they did not get; (e) UNDERSTOOD: YES / PARTLY / NO.
 >
-> Then give: the weighted score (YES = full weight, PARTLY = half, NO = 0; show the sum); the lines that lost people, worst first, with the viewers and the weight lost; every term that was used without being explained; whether it is too fast or carries too many ideas; and whether the picture on screen helped or fought the words, line by line where it matters. Finish with VERDICT: PASS or FAIL against this bar: score ≥ 85; viewers 1, 2, 5 and 7 each at least PARTLY with the right action; no line confusing viewers worth ≥ 25; viewers worth ≥ 70 still watching after 5 seconds. Do not rewrite the script. Do not be kind. Under 700 words.
+> Then give: the weighted score (YES = full weight, PARTLY = half, NO = 0; show the sum); the lines that lost people, worst first, with the viewers and the weight lost; every term that was used without being explained; whether it is too fast or carries too many ideas; and whether the picture on screen helped or fought the words, line by line where it matters. Finish with VERDICT: PASS or FAIL against this bar: score ≥ 85; viewers 1, 2, 5 and 7 each at least PARTLY with the right action (for a viewer who has never run an ad, saving the video for the day they do counts); no line confusing viewers worth ≥ 25 (a line confuses a viewer only if they cannot say what it meant); viewers worth ≥ 70 still watching after 5 seconds. Do not rewrite the script. Do not be kind. Under 700 words.
 
 ## Rewriter brief (send as written; fill the paths)
 > You rewrite a short Hinglish video script so that ordinary Indian business owners understand it on one hearing. Read: the current script `<view path>`, the audience test report `<judge path>`, the facts you may use `<facts path>`, and the writing rules in `plugins/motion-studio/skills/audience-panel/SKILL.md` (section "Writing rules"). Do not search the web. Do not add any fact, number or claim that is not in the facts file; you may drop facts.
@@ -55,6 +55,15 @@ The fact check asks "is it true?". This asks "did they get it?". A script can pa
 7. **Numbers:** at most two spoken, rounded, with what they count.
 8. 100–125 spoken words, 45–58 s. Never speed the voice up to fit: cut words.
 9. Hinglish the way Delhi speaks: Hindi grammar, English only for words people already use in English (ad, account, comment, offer, customer, review).
+
+## What the first run taught (Andromeda reel, 13 Nov 2026: 60 → 82.5 → 90 → pass)
+- **Open in the viewer's world, not on the trend word.** "Aapka business Instagram par hai?" kept 95 of 100 past 5 s; opening on "Andromeda 2.0" lost a fifth. Put the trend word on screen, in the caption and as the comment keyword instead.
+- **The action goes in the first 8 seconds** and again at the end. "Nothing to do" early lets people leave.
+- **Cut every line that is only interesting.** "The machine got faster" and the expert rumour were the two failing lines.
+- **Say what "the same" means** ("wahi photo, wahi baat") and say the cost out loud ("kam logon tak pahunchta hai"); a picture alone did not carry either.
+- **The closing promise must be a thing**: "teeno ads ke ready namoone", not "the company's own words".
+- **Screen text:** the key message in Devanagari (three words), no ticks beside "no" sentences, no long notes while someone is talking. Mark ad cards "Ad" or they read as ordinary posts.
+- A reel that passes for owners will bore experts. That is the trade; pick the audience before writing.
 
 ## Limits
 The panel is a simulation by a language model. It catches missing explanations, jargon and overloaded lines; it cannot hear the voice. Accent, pronunciation and caption sync are checked separately (voice samples for the owner's ear, forced alignment for timing).

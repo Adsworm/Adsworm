@@ -68,4 +68,7 @@ Tones: `red green blue gold pink ink`. Board content area ≈ 890 × 540 px; sti
 - Length: 110–140 words (Hindi particles are short), still ≤ 55 s. Draft voices: `hi-IN-MadhurNeural` / `hi-IN-SwaraNeural`; `draft_voice.py` also writes true line starts to `dialogue.draft.json` for checking the aligner.
 - A `headline` sizes itself to its longest line: keep lines ≤ 14 characters (three short lines beat one long one), or the hook turns small.
 - `qa_report.py` must show "≥ 90% of script words found in the audio". Lower means the transcription skipped speech; re-run `voice.py` before trusting any timing.
+- **Exact captions:** if `<dialogue file>.words.json` exists (a list of `{w, start, end}`, one per `say` word, in order), `voice.py` uses those times and skips speech recognition. `draft_voice.py` writes it from the engine's word boundaries; do the same for any voice engine that returns word or character times.
+- `"plain": true` marks a comprehension-first reel (one narrator, message up front): no open loop or payoff breath is expected. Literal pictures for these live in `src/reel/board4.tsx`: `instaPhone`, `boostPhone`, `sorter`, `sameIsOne`, `reach`, `threeAds`, `saveTap`, `typeWord`.
+- Run the `audience-panel` skill on the script before any voice is generated.
 - `timeline.json` is built from `script.json` by `voice.py`: after changing views, run `voice.py` again before `qa.mjs` or a render.

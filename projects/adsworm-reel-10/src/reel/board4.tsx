@@ -13,7 +13,11 @@ const PEOPLE = ['🧑', '👩', '👨', '👵', '🧔', '👩‍🦱'];
 // One ad card: a coloured tile with a big glyph. `same` cards share one look.
 const AdCard: React.FC<{glyph: string; bg: string; size?: number; label?: string; dim?: boolean}> = ({glyph, bg, size = 120, label, dim}) => (
   <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 6, opacity: dim ? 0.35 : 1}}>
-    <div style={{width: size, height: size * 1.12, borderRadius: size * 0.14, background: bg, border: V3.outline, boxShadow: `5px 5px 0 ${INK}`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: size * 0.5, lineHeight: 1}}>{glyph}</div>
+    <div style={{position: 'relative', width: size, height: size * 1.12, borderRadius: size * 0.14, background: bg, border: V3.outline, boxShadow: `5px 5px 0 ${INK}`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: size * 0.5, lineHeight: 1}}>
+      {glyph}
+      {/* every card carries the small "Ad" mark a paid post carries, so it is not read as an ordinary post */}
+      <div style={{position: 'absolute', left: size * 0.06, top: size * 0.06, padding: `${size * 0.015}px ${size * 0.06}px`, borderRadius: size * 0.06, background: INK, color: '#fff', fontFamily: body, fontWeight: 800, fontSize: Math.max(13, size * 0.13), lineHeight: 1.25}}>Ad</div>
+    </div>
     {label ? <div style={{fontFamily: body, fontWeight: 800, fontSize: 26, color: C.ink, whiteSpace: 'nowrap'}}>{label}</div> : null}
   </div>
 );
@@ -46,7 +50,7 @@ export const InstaPhone: React.FC<{t: number; mode: 'page' | 'ad'; name: string;
         {mode === 'page' ? (
           <div style={{display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 4, padding: 6}}>
             {['👗', '💇‍♀️', '🧁', '👜', '💍', '🪴', '👟', '☕', '🎁'].map((g, i) => (
-              <div key={i} style={{height: 84, borderRadius: 8, background: i % 2 ? C.blueSoft : V3.pinkSoft, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 44, transform: `scale(${pop(t - 4 - i * 2)})`}}>{g}</div>
+              <div key={i} style={{height: 84, borderRadius: 8, background: i % 2 ? C.blueSoft : V3.pinkSoft, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 44, transform: `scale(${pop(t - i * 0.6)})`}}>{g}</div>
             ))}
           </div>
         ) : (
