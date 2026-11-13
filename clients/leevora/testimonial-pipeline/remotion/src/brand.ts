@@ -5,16 +5,20 @@ import { staticFile } from "remotion";
 // Confirm against the current brand book before treating as final.
 export const BRAND = {
   petrol: "#173B39",
+  petrolDeep: "#0C2220",
   sage: "#A9B1A2",
   ivory: "#F2EDE3",
   champagne: "#C7B183",
 } as const;
 
-export const CAPTION_FONT = "Instrument Sans";
+// Pairing used across leevorá work: a high-contrast serif for the words that matter, a clean sans for everything else.
+export const SANS = "Instrument Sans";
+export const SERIF = "Gloock";
 
-// SIL Open Font Licence. Variable font: one file covers weights 400-700.
-export const fontsReady = loadFont({
-  family: CAPTION_FONT,
-  url: staticFile("fonts/InstrumentSans-Variable.ttf"),
-  weight: "400 700",
-});
+// SIL Open Font Licence for both.
+export const fontsReady = Promise.all([
+  loadFont({ family: SANS, url: staticFile("fonts/InstrumentSans-Variable.ttf"), weight: "400 700" }),
+  loadFont({ family: SERIF, url: staticFile("fonts/Gloock-Regular.ttf"), weight: "400" }),
+]);
+
+export const EASE_OUT = [0.16, 1, 0.3, 1] as const; // soft landing, no bounce

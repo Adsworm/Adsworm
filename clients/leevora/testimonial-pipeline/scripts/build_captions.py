@@ -1,5 +1,5 @@
 """Map caption phrases (source time) onto the edit timeline. Writes Remotion props, word-level Caption[] JSON and an SRT.
-Usage: build_captions.py <edl.json> <phrases.json> <whisper_words.json> <outdir> <name> [--only id,id] [--endcard seconds]"""
+Usage: build_captions.py <edl.json> <phrases.json> <whisper_words.json> <outdir> <name> [--only id,id] [--endcard seconds] [--label TEXT --label-from frame --label-to frame]"""
 import sys, json, os, re
 edl, ph, ww, outdir, name = json.load(open(sys.argv[1])), json.load(open(sys.argv[2]))['phrases'], json.load(open(sys.argv[3])), sys.argv[4], sys.argv[5]
 arg = lambda f, d=None: sys.argv[sys.argv.index(f) + 1] if f in sys.argv else d
@@ -24,7 +24,7 @@ for p in ph:
         for w in ln.split(' '):
             core = re.sub(r'[.,!?]+$', '', w); toks.append({'t': w, 'hl': core in p.get('hl', [])})
         lines.append(toks)
-    pages.append({'startMs': round(a * 1000), 'endMs': round(b * 1000), 'lines': lines, 'text': p['text'].replace('|', ' ')})
+    pages.append({'startMs': round(a * 1000), 'endMs': round(b * 1000), 'lines': lines, 'text': p['text'].replace('|', ' '), 'hero': bool(p.get('hero', False))})
 pages.sort(key=lambda x: x['startMs'])
 words = []                                   # word-level, Remotion Caption type, for reference / future word-synced styles
 for s in ww['segments']:
@@ -33,7 +33,9 @@ for s in ww['segments']:
         if a is not None: words.append({'text': w['w'], 'startMs': round(a * 1000), 'endMs': round(b * 1000), 'timestampMs': round((a + b) * 500), 'confidence': round(w['p'], 3)})
 words.sort(key=lambda x: x['startMs'])
 os.makedirs(outdir, exist_ok=True)
-props = {'pages': pages, 'contentFrames': total, 'endCardFrames': round(endcard * fps), 'fps': fps}
+lab = arg('--label')
+props = {'pages': pages, 'contentFrames': total, 'endCardFrames': round(endcard * fps), 'fps': fps,
+         'label': {'text': lab, 'fromFrame': int(arg('--label-from')), 'toFrame': int(arg('--label-to'))} if lab else None}
 json.dump(props, open(os.path.join(outdir, f'{name}.props.json'), 'w'), ensure_ascii=False, indent=1)
 json.dump(words, open(os.path.join(outdir, f'{name}.words.json'), 'w'), ensure_ascii=False, indent=1)
 def ts(ms): return f'{ms//3600000:02d}:{ms//60000%60:02d}:{ms//1000%60:02d},{ms%1000:03d}'

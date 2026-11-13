@@ -6,6 +6,14 @@ Colour: decodes Rec.709 limited -> full-range RGB, works in float, writes 16-bit
 import sys, json, subprocess, os, numpy as np
 from PIL import Image
 SW, SH = 2160, 3840
+def gblur(a, sigma):
+    """Separable Gaussian blur on a float32 2-D array (Pillow cannot blur float images)."""
+    r = max(1, int(np.ceil(3 * sigma))); k = np.exp(-0.5 * (np.arange(-r, r + 1) / sigma) ** 2).astype(np.float32); k /= k.sum()
+    p = np.pad(a, ((r, r), (0, 0)), mode='reflect'); out = np.zeros_like(a)
+    for i, w in enumerate(k): out += w * p[i:i + a.shape[0], :]
+    p = np.pad(out, ((0, 0), (r, r)), mode='reflect'); out2 = np.zeros_like(a)
+    for i, w in enumerate(k): out2 += w * p[:, i:i + a.shape[1]]
+    return out2
 def arg(flag, default=None):
     return sys.argv[sys.argv.index(flag) + 1] if flag in sys.argv else default
 def smooth(v, k):
@@ -46,8 +54,16 @@ class Plan:
         return (2 * t**3 - 3 * t**2 + 1) * y[idx] + (t**3 - 2 * t**2 + t) * h[idx] * m[idx] + (-2 * t**3 + 3 * t**2) * y[idx + 1] + (t**3 - t**2) * h[idx] * m[idx + 1]
     def seg(self, sid): return next(s for s in self.edl['segments'] if s['id'] == sid)
     def box(self, s, f):
-        a, b = s['in'], s['out']; u = (f - a) / max(1, b - a - 1); e = u * u * (3 - 2 * u)            # smoothstep ease
-        sc = s['scale'][0] + (s['scale'][1] - s['scale'][0]) * e; w, h = SW / sc, SH / sc
+        a, b = s['in'], s['out']
+        if 'zoom' in s:                                   # keyframes [[source_frame, scale], ...], eased between each pair
+            kf = s['zoom']; sc = kf[-1][1] if f >= kf[-1][0] else kf[0][1]
+            for (f0, s0), (f1, s1) in zip(kf, kf[1:]):
+                if f0 <= f < f1:
+                    u = (f - f0) / (f1 - f0); e = u * u * u * (u * (u * 6 - 15) + 10)      # smootherstep: no visible start/stop
+                    sc = s0 * (s1 / s0) ** e; break                                   # geometric, so the push feels even
+        else:
+            u = (f - a) / max(1, b - a - 1); e = u * u * (3 - 2 * u); sc = s['scale'][0] + (s['scale'][1] - s['scale'][0]) * e
+        w, h = SW / sc, SH / sc
         r = slice(a, b); ax = np.median(self.fx[r] - self.dx[r]); ay = np.median(self.fy[r] - self.dy[r])   # face anchor in background-locked coords
         x0 = ax - s['face_at'][0] * w + self.dx[f]; y0 = ay - s['face_at'][1] * h + self.dy[f]
         cx0, cy0 = min(max(x0, 0), SW - w), min(max(y0, 0), SH - h)
@@ -67,9 +83,25 @@ class Plan:
             yy, xx = self._grid
             mf = np.exp(-0.5 * (((xx - px) / (0.95 * fw)) ** 2 + ((yy - (py + 0.05 * fh)) / (0.95 * fh)) ** 2))
             ms = np.exp(-0.5 * (((xx - px) / (3.2 * fw)) ** 2 + ((yy - (py + 1.9 * fh)) / (4.6 * fh)) ** 2))
-            gain = (1 + g['face_lift'] * mf) * (1 - g['background_dim'] * (1 - ms))
+            vg = 1 - g.get('vignette', 0) * np.clip((((xx - OW / 2) / (OW * 0.62)) ** 2 + ((yy - OH * 0.46) / (OH * 0.62)) ** 2), 0, 1.6)
+            gain = (1 + g['face_lift'] * mf) * (1 - g['background_dim'] * (1 - ms)) * vg
             gain = np.asarray(Image.fromarray(gain.astype(np.float32), mode='F').resize((OW, OH), Image.BICUBIC), dtype=np.float32)
             x *= gain[..., None]
+            if 'shadow_tint' in g:                                                                   # split tone: cool-green shadows, warm highlights
+                lum = np.clip(x @ np.array([0.2126, 0.7152, 0.0722], dtype=np.float32), 0, 1)[..., None]
+                x += ((1 - lum) ** 2) * np.array(g['shadow_tint'], dtype=np.float32) + (lum ** 2) * np.array(g['highlight_tint'], dtype=np.float32)
+            k1 = OW / 1080.0; lum = np.clip(x @ np.array([0.2126, 0.7152, 0.0722], dtype=np.float32), 0, 1); L = Image.fromarray(lum, mode='F')
+            if g.get('sharpen', 0) > 0:                                                              # detail on luma only: no colour fringing
+                fine = lum - gblur(lum, g.get('sharpen_radius', 1.1) * k1)
+                x += (g['sharpen'] * np.clip(fine, -0.06, 0.06))[..., None]
+            if g.get('clarity', 0) > 0:
+                small = Image.fromarray(gblur(np.asarray(L.resize((OW // 4, OH // 4), Image.BILINEAR), dtype=np.float32), 6 * k1), mode='F').resize((OW, OH), Image.BICUBIC)
+                x += (g['clarity'] * np.clip(lum - np.asarray(small, dtype=np.float32), -0.12, 0.12))[..., None]
+            if g.get('glow', 0) > 0:                                                                 # soft bloom around the cove lighting
+                hi = Image.fromarray(gblur(np.asarray(Image.fromarray(np.clip((lum - 0.82) / 0.18, 0, 1).astype(np.float32), mode='F').resize((OW // 8, OH // 8), Image.BILINEAR), dtype=np.float32), 5 * k1), mode='F').resize((OW, OH), Image.BICUBIC)
+                x = 1 - (1 - np.clip(x, 0, 1)) * (1 - g['glow'] * np.asarray(hi, dtype=np.float32)[..., None])
+            if g.get('grain', 0) > 0:
+                x += (np.random.default_rng(f).standard_normal((OH, OW), dtype=np.float32) * g['grain'])[..., None]
         return np.clip(x, 0, 1), clamped
 def decode(src, a, b):
     vf = f"select='between(n\\,{a}\\,{b-1})',scale=in_color_matrix=bt709:in_range=tv:out_range=pc,format=rgb24"

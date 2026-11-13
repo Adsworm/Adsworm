@@ -66,6 +66,19 @@ uv venv --python 3.13 venvs/asr && uv pip install --python venvs/asr/bin/python 
 14. **Music.** `add_music.sh <video> <voice stem> <music file> <out>` sets the bed about 14 dB under the voice, ducks it further under speech with a slow release, lifts it under the end card and fades it out. The picture is stream-copied. Use only a track whose licence covers the intended use (organic and paid).
 15. **QC before delivery.** One frame from every caption page; caption start against speech onset; loudness and true peak; skin tone sampled in every segment; frame-to-frame background movement; end-card colours against the brand values; container metadata empty; re-transcribe the final mix as a whole and in isolated windows.
 
+## v2 look and sound (what changed after the first cut was rejected as too flat)
+
+The first cut followed "restrained" too literally: a grade nobody could see, a light denoise, timid zooms, boxed captions, no music. v2 keeps the same honesty rules and raises the impact.
+
+- **Voice.** `enh_clearvoice.py` (ClearVoice `MossFormer2_SE_48K`, Apache-2.0) after the hum pre-filter, then expander, body/presence/air EQ and 3:1 compression. Measured against the first cut: noise floor about 22 dB lower, pauses about 6 dB drier, word accuracy unchanged.
+  - **Do not use a generative enhancer without checking the words.** `enh_resemble.py` (Resemble Enhance) produced a studio-dry sound and rewrote her speech into different words. `asr_batch.py` compares every candidate against the reference transcript; run it on anything that re-synthesises speech.
+  - DeepFilterNet at 30 dB dries the room further but smears quiet consonants. Two-microphone WPE and `dereverb.py` added nothing measurable on this recording.
+  - Room colouration during speech (distance from the phone) is not removable without re-synthesis. A lavalier or a phone within arm's reach is the real fix at the shoot.
+- **Music.** `music_screen.py` shortlists instrumental tracks by measurable properties; `add_music.sh` sets the bed about 20 dB under the voice. Measure the result with the stems aligned by cross-correlation: the limiters add about 10 ms, and a naive subtraction gives nonsense.
+- **Picture.** `render_base.py` now takes eased zoom keyframes per segment (`"zoom": [[source_frame, scale], ...]`) and a richer look in the edit list: warmer balance, stronger curve, split tone, vignette, luma-only sharpening and clarity, a soft bloom on the lights, fine grain. See `examples/edl_v2.IMG_5776.json`.
+  - Avoid a same-size cut where material was lifted: change shot size by 15% or more across the join.
+- **Type.** Gloock for the accent words, Instrument Sans for the rest, words arriving in sequence, a soft scrim and glow instead of a box. Check accent colours over the brightest object in frame, not just the average.
+
 ## Per-shot parameters to revisit
 
 - `audio_chain.py`: `PRE` notch frequencies and high-pass corner, `FINISH` EQ.
