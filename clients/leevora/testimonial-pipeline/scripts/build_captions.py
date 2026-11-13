@@ -8,14 +8,16 @@ segs = [next(s for s in edl['segments'] if s['id'] == i) for i in only.split(','
 tl = []; pos = 0
 for s in segs: tl.append((s['in'] / fps, s['out'] / fps, pos / fps, s['id'])); pos += s['out'] - s['in']
 total = pos
-def to_edit(t):
-    for a, b, e, _ in tl:
-        if a - 1e-6 <= t <= b + 1e-6: return e + (t - a)
-    return None
+def span(s, e):
+    """Map a source-time span to the edit timeline using the segment it overlaps most; clamp to that segment."""
+    best = max(tl, key=lambda q: min(e, q[1]) - max(s, q[0]))
+    a, b, off, _ = best
+    if min(e, b) - max(s, a) <= 0: return None, None
+    return off + (max(s, a) - a), off + (min(e, b) - a)
 pages = []
 for p in ph:
-    a, b = to_edit(p['s']), to_edit(p['e'])
-    if a is None or b is None: continue
+    a, b = span(p['s'], p['e'])
+    if a is None: continue
     lines = []
     for ln in p['text'].split('|'):
         toks = []
@@ -27,8 +29,8 @@ pages.sort(key=lambda x: x['startMs'])
 words = []                                   # word-level, Remotion Caption type, for reference / future word-synced styles
 for s in ww['segments']:
     for w in s['words']:
-        a, b = to_edit(w['s']), to_edit(w['e'])
-        if a is not None and b is not None: words.append({'text': w['w'], 'startMs': round(a * 1000), 'endMs': round(b * 1000), 'timestampMs': round((a + b) * 500), 'confidence': round(w['p'], 3)})
+        a, b = span(w['s'], w['e'])
+        if a is not None: words.append({'text': w['w'], 'startMs': round(a * 1000), 'endMs': round(b * 1000), 'timestampMs': round((a + b) * 500), 'confidence': round(w['p'], 3)})
 words.sort(key=lambda x: x['startMs'])
 os.makedirs(outdir, exist_ok=True)
 props = {'pages': pages, 'contentFrames': total, 'endCardFrames': round(endcard * fps), 'fps': fps}

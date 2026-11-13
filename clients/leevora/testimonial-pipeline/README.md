@@ -51,7 +51,9 @@ uv venv --python 3.13 venvs/asr && uv pip install --python venvs/asr/bin/python 
 3. **Audio analysis.** Extract the stereo AAC track to WAV, then `audio_analyse.py` reports hum and drone lines, band-by-band speech-to-noise, pause map and a rough reverb estimate. Use the *measured* lines in the notch filters; do not reuse another shoot's numbers.
 4. **Transcript.** `transcribe.py <16k mono wav> <out.json> auto`. Run it on the original and on a cleaned version and compare: words that differ or score under 0.60 are the ones a person must confirm by ear (names and treatment names especially).
 5. **Cleanup A/B.** `audio_chain.py <src> <out.wav> <attenuation limit dB> <target LUFS>`. `0` = original, level-matched. Limits of about 10–12 dB (gentle) and 18–20 dB (stronger) are the useful range; an unlimited setting gates to silence between words and sounds processed. `ab_metrics.py` scores candidates, but **a person chooses by ear** on headphones and a phone speaker.
-6. **Edit decision list.** `examples/edl.IMG_5776.json` shows the format: source frame in/out per segment, zoom start/end, and where the face sits in frame. Place cuts in the gaps shown by the 10–20 ms loudness envelope, never from transcript timestamps alone.
+6. **Edit decision list.** `examples/edl.IMG_5776.json` shows the format: source frame in/out per segment, zoom start/end, and where the face sits in frame.
+   **Verify every cut point three ways before rendering:** the 5–10 ms loudness envelope, `probe_words.py` (isolated-window transcription either side of the cut), and a person listening.
+   Two traps found on the first job: (a) a loud syllable is not necessarily the word you think it is, so an out-point placed "after the last word" from loudness alone can drop that word entirely; (b) a long-context transcription fills in plausible words that were cut off, and Whisper word times run up to 0.3–0.5 s early after a pause. Only short, isolated windows expose a clipped word.
 7. **Track and motion.** `face_track.py` (set the head template position for the shot) then `render_base.py prep`. The renderer locks the crop to the background, so handheld sway is removed while her own movement stays natural.
 8. **Grade stills first.** `render_base.py still ... --nograde` and without it, for each framing. Review before rendering video.
 9. **Picture.** `render_base.py video ... --size 1080x1920` (or `2160x3840`) writes 10-bit Rec.709 ProRes 422 HQ.
@@ -60,7 +62,9 @@ uv venv --python 3.13 venvs/asr && uv pip install --python venvs/asr/bin/python 
 12. **Overlay.** In `remotion/`: `npm install`, `npx remotion browser ensure`, then
     `npx remotion render src/index.ts Overlay out/overlay.mov --props=<props.json> --color-space=bt709`.
     The logo is generated from the client's own vector artwork with `logo_to_svg.py` into `remotion/public/leevora-logo-ivory.svg`; it is never redrawn.
-13. **Composite and encode.** FFmpeg overlays the ProRes 4444 file on the graded picture, muxes the voice (and music), tags Rec.709 and strips metadata.
+13. **Composite and encode.** `finish.sh <base.mov> <overlay.mov> <mix.wav> <out> social|master <end-card seconds>` overlays the ProRes 4444 file on the graded picture, muxes the audio, tags Rec.709 and strips metadata. `social` writes 1080×1920 H.264 + AAC. `master` writes ProRes 422 HQ, then a compact 10-bit HEVC from it (one-pass x265 with the overlay filter is several times slower on four cores).
+14. **Music.** `add_music.sh <video> <voice stem> <music file> <out>` sets the bed about 14 dB under the voice, ducks it further under speech with a slow release, lifts it under the end card and fades it out. The picture is stream-copied. Use only a track whose licence covers the intended use (organic and paid).
+15. **QC before delivery.** One frame from every caption page; caption start against speech onset; loudness and true peak; skin tone sampled in every segment; frame-to-frame background movement; end-card colours against the brand values; container metadata empty; re-transcribe the final mix as a whole and in isolated windows.
 
 ## Per-shot parameters to revisit
 
@@ -68,6 +72,7 @@ uv venv --python 3.13 venvs/asr && uv pip install --python venvs/asr/bin/python 
 - `face_track.py`: template centre and size for the reference frame.
 - `render_base.py`: face size constants used for the feathered masks; grade values live in the EDL.
 - `remotion/src/brand.ts`: colours. Confirm against the current brand book.
+- Proper nouns (staff names, treatment names): speech recognition is not reliable on these in a noisy room. Leave an unconfirmed name out of burned-in captions until a person confirms it.
 
 ## Rules this pipeline follows
 
