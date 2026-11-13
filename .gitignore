@@ -1,0 +1,13 @@
+# Client footage, audio, stills, transcripts and exports never go into this repository (it is public).
+*.mov
+*.MOV
+*.mp4
+*.m4a
+*.wav
+*.srt
+client_data/
+node_modules/
+out/
+venvs/
+models/
+.remotion/

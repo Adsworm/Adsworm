@@ -1,0 +1,120 @@
+{
+  "_note": "Source frame numbers at 25 fps (frame = seconds x 25). 'in' inclusive, 'out' exclusive. scale = zoom relative to the full source frame. face_at = where her face sits in the output frame (fraction of width, height).",
+  "fps": 25,
+  "segments": [
+    {
+      "id": "hook",
+      "in": 389,
+      "out": 493,
+      "scale": [
+        1.5,
+        1.54
+      ],
+      "face_at": [
+        0.355,
+        0.385
+      ]
+    },
+    {
+      "id": "wide",
+      "in": 47,
+      "out": 211,
+      "scale": [
+        1.04,
+        1.1
+      ],
+      "face_at": [
+        0.407,
+        0.401
+      ]
+    },
+    {
+      "id": "med1",
+      "in": 211,
+      "out": 384,
+      "scale": [
+        1.3,
+        1.34
+      ],
+      "face_at": [
+        0.405,
+        0.4
+      ]
+    },
+    {
+      "id": "tight",
+      "in": 493,
+      "out": 691,
+      "scale": [
+        1.5,
+        1.55
+      ],
+      "face_at": [
+        0.355,
+        0.385
+      ]
+    },
+    {
+      "id": "med2",
+      "in": 691,
+      "out": 841,
+      "scale": [
+        1.3,
+        1.38
+      ],
+      "face_at": [
+        0.405,
+        0.4
+      ]
+    }
+  ],
+  "preview_segments": [
+    "hook",
+    "wide",
+    "med1"
+  ],
+  "grade": {
+    "wb_gain": [
+      1.02,
+      0.992,
+      0.975
+    ],
+    "curve": [
+      [
+        0,
+        0
+      ],
+      [
+        0.025,
+        0.0
+      ],
+      [
+        0.1,
+        0.082
+      ],
+      [
+        0.3,
+        0.288
+      ],
+      [
+        0.5,
+        0.503
+      ],
+      [
+        0.75,
+        0.757
+      ],
+      [
+        0.9,
+        0.893
+      ],
+      [
+        1.0,
+        0.972
+      ]
+    ],
+    "saturation": 1.05,
+    "face_lift": 0.1,
+    "background_dim": 0.08
+  }
+}
