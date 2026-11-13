@@ -1,0 +1,7 @@
+{
+  "_note": "Caption phrases in SOURCE seconds. Text must be verbatim from the recording. 'hl' marks the occasional accent word(s). '|' is a line break. The real phrase file holds a client's words, so it is kept out of this repository.",
+  "phrases": [
+    {"s": 1.90, "e": 4.46, "text": "First caption line|second caption line", "hl": []},
+    {"s": 7.02, "e": 8.38, "text": "A line with the clinic name.", "hl": ["name"]}
+  ]
+}
