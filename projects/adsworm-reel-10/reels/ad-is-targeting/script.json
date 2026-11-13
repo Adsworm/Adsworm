@@ -42,7 +42,7 @@
     {
       "id": "hook",
       "label": "PURANA vs NAYA",
-      "source": "Diagram = illustration · structure Adsworm ki salaah hai, Meta ka rule nahin",
+      "source": "Diagram = Adsworm ka tareeka, Meta ka rule nahin",
       "lines": [
         {
           "who": "AMAN",
@@ -56,8 +56,8 @@
         {
           "who": "RIYA",
           "tags": "[cheeky]",
-          "say": "पाँच ad sets, पाँच audiences. Targeting ही तो मेरा काम है!",
-          "show": "5 ad sets, [5 audiences]. Targeting hi toh [mera kaam] hai!",
+          "say": "मैंने पाँच audiences बनाई हैं. Targeting ही तो मेरा काम है!",
+          "show": "Maine [5 audiences] banayi hain. Targeting hi toh [mera kaam] hai!",
           "beat": "l2",
           "pre": "laugh",
           "react": "wink",
@@ -81,8 +81,8 @@
                 ]
               },
               "next": {
-                "title": "NAYA TAREEKA",
-                "label": "Wide audience · city + age"
+                "title": "HUMARA NAYA TAREEKA",
+                "label": "Kam ad sets · wide audience"
               },
               "switchWord": "ab"
             }
@@ -164,8 +164,8 @@
         {
           "who": "RIYA",
           "tags": "[worried]",
-          "say": "और तीनों पे same kurta?",
-          "show": "Aur teeno pe [same kurta]?",
+          "say": "और तीन mannequin, same kurta?",
+          "show": "Aur teen mannequin, [same kurta]?",
           "beat": "l7",
           "pre": "worry"
         },
@@ -365,8 +365,8 @@
         {
           "who": "RIYA",
           "tags": "[confused]",
-          "say": "तो city, age सब हटा दूँ?",
-          "show": "Toh city, age [sab hata doon]?",
+          "say": "तो city भी हटा दूँ?",
+          "show": "Toh city bhi [hata doon]?",
           "beat": "l10",
           "pre": "doubt",
           "react": "laugh",
@@ -375,8 +375,8 @@
         {
           "who": "AMAN",
           "tags": "[excited]",
-          "say": "नहीं! City, age तुम्हारी. उसके अंदर Meta ढूँढता है.",
-          "show": "Nahin! City, age [tumhari]. Uske andar [Meta dhoondhta] hai.",
+          "say": "नहीं! City तुम्हारी. उसके अंदर Meta ढूँढता है.",
+          "show": "Nahin! City [tumhari]. Uske andar [Meta dhoondhta] hai.",
           "beat": "l11",
           "react": "shock",
           "reactWord": "tumhari"
@@ -401,7 +401,7 @@
                   "text": "EK JAISE ADS"
                 },
                 {
-                  "text": "= WAHI LOG",
+                  "text": "→ WAHI LOG?",
                   "tone": "red",
                   "word": "unhi"
                 }
@@ -424,7 +424,7 @@
               "type": "headline",
               "lines": [
                 {
-                  "text": "CITY, AGE"
+                  "text": "CITY BHI"
                 },
                 {
                   "text": "HATA DOON? 🤔",
@@ -442,7 +442,7 @@
               "type": "split",
               "left": {
                 "emoji": "📍",
-                "label": "City + age: aapke"
+                "label": "City: aapki"
               },
               "right": {
                 "emoji": "🤖",
@@ -462,13 +462,13 @@
     {
       "id": "fix",
       "label": "AB AAPKA KAAM",
-      "source": "\"5\" Adsworm ki salaah hai, Meta ne koi number nahin diya · Meta: \"rewards a diverse mix\" (19 Oct 2026)",
+      "source": "\"5\" Adsworm ki salaah · Meta ka koi number humein nahin mila (13 Nov 2026) · Meta: \"rewards a diverse mix\" (19 Oct 2026)",
       "lines": [
         {
           "who": "AMAN",
           "tags": "[confident]",
-          "say": "पाँच सच में अलग ads. अलग वजह, अलग चेहरा, अलग format.",
-          "show": "[5 sach mein alag ads]. Alag wajah, alag chehra, [alag format].",
+          "say": "हमारी सलाह: पाँच सच में अलग ads. अलग वजह, चेहरा, format.",
+          "show": "Humari salaah: [5 sach mein alag ads]. Alag wajah, chehra, [format].",
           "beat": "l13",
           "react": "shock",
           "reactWord": "wajah"
@@ -550,12 +550,12 @@
         {
           "who": "RIYA",
           "tags": "[cheeky]",
-          "say": "उस दोस्त को भेजो जो अब भी interests ढूँढ रहा है!",
-          "show": "Us dost ko bhejo jo ab bhi [interests dhoondh raha] hai!",
+          "say": "उस दोस्त को भेजो जिसके सारे ads एक जैसे दिखते हैं!",
+          "show": "Us dost ko bhejo jiske saare ads [ek jaise dikhte] hain!",
           "beat": "l16",
           "pre": "laugh",
           "react": "laugh",
-          "reactWord": "interests"
+          "reactWord": "jaise"
         }
       ],
       "views": [

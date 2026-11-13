@@ -46,6 +46,9 @@ One file drives voice, captions, acting, board and sound. Source of truth for th
 | `clock` | time passing | `to`, `unit`, `label` |
 | `plan` | plans against a deadline (bars turn red past it) | `from`, `to`, `deadline`, `deadlineLabel`, `rows[{label, start, word/at, segs[{len, text, word/at}], verdict, verdictWord}]` |
 | `columns` | 2–4 bars from zero with the value on top (a before/after trend) | `title`, `note`, `cols[{label, value, display, tone, word/at, stamp, stampWord}]` |
+| `oldNew` | campaign structure, old way → new way (ad sets with the same grey ads → one wide audience with different ads) | `old{title, sets[], setWords?}`, `next{title, label}`, `switchWord/At` |
+| `find` | a receipt you can watch: a source page, then find-in-page types a query and shows the count | `url`, `source`, `title`, `query`, `typeWord`, `result`, `resultWord`, `stamp`, `stampWord/At` |
+| `truths` | closing save card: what is true (✓) beside what is only a rumour (✕) | `left{title, lines[]}`, `right{title, lines[]}`, `rightWord/At` |
 | `formula` | a save-worthy formula card: fraction, result, worked example | `title`, `top`, `bottom`, `equals`, `example`, `exampleWord` |
 | `stat` | one hero number, counts up | `value`, `prefix`, `suffix`, `label`, `color`, `arrow` |
 | `versus` | two numbers that seem to clash | `left`, `right`, `qAt` |
@@ -63,4 +66,6 @@ Tones: `red green blue gold pink ink`. Board content area ≈ 890 × 540 px; sti
 - Word cues (`word`, `reactWord`, `stampWord`…) are written against the Latin caption ("paisa", "50"), not the Devanagari.
 - Timing: `voice.py` transcribes the raw audio once with Whisper `medium`, matches script words to heard words by sound (consonant skeleton), then applies the same pause cuts and tempo to the word times. Expect ~95% of words matched; the rest share the gap between their neighbours.
 - Length: 110–140 words (Hindi particles are short), still ≤ 55 s. Draft voices: `hi-IN-MadhurNeural` / `hi-IN-SwaraNeural`; `draft_voice.py` also writes true line starts to `dialogue.draft.json` for checking the aligner.
+- A `headline` sizes itself to its longest line: keep lines ≤ 14 characters (three short lines beat one long one), or the hook turns small.
+- `qa_report.py` must show "≥ 90% of script words found in the audio". Lower means the transcription skipped speech; re-run `voice.py` before trusting any timing.
 - `timeline.json` is built from `script.json` by `voice.py`: after changing views, run `voice.py` again before `qa.mjs` or a render.

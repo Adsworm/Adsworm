@@ -60,3 +60,10 @@ Voice: ElevenLabs v4 dialogue with inline audio tags (`tags` per line; Higgsfiel
 - **Voice:** same presets as the English reels (Holden, Anika) read Devanagari clearly: 128 of 130 words matched by Whisper. ElevenLabs Hindi came out slow (2.07 words/s), so `tempo` is 1.15; 130 words ran 56 s. Aim for ~120 words next time. Accent by ear is still unverified.
 - **Gotcha:** `timeline.json` is built by `voice.py` from `script.json`; re-run it after any view change or the render shows the old board.
 
+## Andromeda batch (13 Nov 2026)
+- **Reels:** `reels/andromeda-2` (keyword ANDROMEDA, 50 s) and `reels/ad-is-targeting` (keyword TARGET, 53 s), both Hinglish. Files in `docs/pipeline/2026-11-13/` (`01-research.md`, `03-approval.md`, `POSTING.md` with the order for all six reels).
+- **Findings to keep:** "Andromeda 2.0" is not a Meta name (Meta's 28 Oct 2026 post says "the next generation of Meta Andromeda"; "2.0" appears zero times). Meta: "no setting to switch on, no new campaign type to adopt, no migration to plan". No Meta page gives a number of ads; "one ad set", "30 ads" and "3 ads = 3 kinds of people" (from the owner's reference reel, @gabritataranni) have no Meta source. Any number of ads we say is "humari salaah".
+- **Engine:** `src/reel/board3.tsx` adds `oldNew` (campaign structure old → new), `find` (find-in-page proof card), `truths` (true vs rumour save card). Headlines shrink with their longest line: keep each line ≤ 14 characters and use three lines instead.
+- **Timing robustness (found on a draft):** in one pass Whisper skipped four whole lines, and `tighten` then cut the last line off. Now `voice.py` transcribes in ~18 s pieces, keeps audio up to the last loud sample, and writes the match rate; `qa_report.py` fails under 90% and walks every `…Word` / `…At` cue of any item.
+- **Hook pattern that the research supports:** keep the scare word in line 1 ("Andromeda 2.0 aa gaya!") and pay it off with relief and a receipt. Calm myth-busting titles got hundreds of views; alarm titles got tens of thousands.
+

@@ -80,6 +80,9 @@
               "type": "headline",
               "lines": [
                 {
+                  "text": "META ADS:"
+                },
+                {
                   "text": "ANDROMEDA 2.0"
                 },
                 {
@@ -92,8 +95,8 @@
               "type": "sticker",
               "text": "account dobara banao?!",
               "color": "pink",
-              "x": 470,
-              "y": 440,
+              "x": 500,
+              "y": 455,
               "rotate": -5,
               "word": "dobara"
             }
@@ -143,11 +146,11 @@
         {
           "who": "AMAN",
           "tags": "[excited]",
-          "say": "अब वो पूरी दुकान घूमता है. एक second में सौ करोड़ ads.",
-          "show": "Ab wo [poori dukaan] ghoomta hai. Ek second mein [100 crore ads].",
+          "say": "अब वो पूरी दुकान घूमता है. तुम्हारे ज़्यादा ads देखे जाते हैं.",
+          "show": "Ab wo [poori dukaan] ghoomta hai. Tumhare [zyada ads] dekhe jaate hain.",
           "beat": "l6",
           "react": "shock",
-          "reactWord": "100"
+          "reactWord": "zyada"
         }
       ],
       "views": [
@@ -208,20 +211,20 @@
         },
         {
           "at": "l6",
-          "word": "ek",
+          "word": "tumhare",
           "items": [
             {
               "type": "stat",
               "value": 100,
               "suffix": " crore",
-              "label": "ads har second",
+              "label": "ads har second scan · Meta Engineering",
               "color": "blue"
             },
             {
               "type": "chip",
-              "text": "Machine ki speed hai, results ka vaada nahin · Meta Engineering",
+              "text": "Machine ki speed hai, results ka vaada nahin",
               "kind": "ink",
-              "word": "ads"
+              "word": "dekhe"
             }
           ]
         }
@@ -230,7 +233,7 @@
     {
       "id": "do",
       "label": "KYA BADLOON?",
-      "source": "Meta: \"no setting to switch on, no new campaign type to adopt, no migration to plan\" · 28 Oct 2026",
+      "source": "Meta for Business, 28 Oct 2026 · Meta small-business creative guide (dekha: 13 Nov 2026) · shelf = illustration",
       "lines": [
         {
           "who": "RIYA",
@@ -243,8 +246,8 @@
         {
           "who": "AMAN",
           "tags": "[confident]",
-          "say": "Setting? कुछ नहीं. Meta बोला: कोई switch नहीं, कोई नया campaign नहीं.",
-          "show": "Setting? [Kuch nahin]. Meta bola: koi switch nahin, koi [naya campaign] nahin.",
+          "say": "Setting? कुछ नहीं. Meta बोला: कोई switch नहीं, नया campaign type नहीं.",
+          "show": "Setting? [Kuch nahin]. Meta bola: koi switch nahin, naya [campaign type] nahin.",
           "beat": "l8",
           "react": "laugh",
           "reactWord": "campaign"
@@ -260,8 +263,8 @@
         {
           "who": "AMAN",
           "tags": "[chuckles]",
-          "say": "पूरी नहीं. तुम्हारी shelf पे सब माल एक जैसा हो तो?",
-          "show": "Poori nahin. Tumhari shelf pe sab maal [ek jaisa] ho toh?",
+          "say": "अभी नहीं. तुम्हारी shelf पे सारा माल एक जैसा हो तो?",
+          "show": "Abhi nahin. Tumhari shelf pe saara maal [ek jaisa] ho toh?",
           "beat": "l10",
           "react": "worry",
           "reactWord": "jaisa"
@@ -326,7 +329,7 @@
                   "word": "switch"
                 },
                 {
-                  "text": "Koi naya campaign nahin",
+                  "text": "Naya campaign type nahin",
                   "word": "campaign"
                 },
                 {
@@ -415,8 +418,8 @@
         {
           "who": "RIYA",
           "tags": "[confused]",
-          "say": "और तीस ads वाली बात?",
-          "show": "Aur [30 ads] wali baat?",
+          "say": "सुना है तीस ads चाहिए?",
+          "show": "Suna hai [30 ads] chahiye?",
           "beat": "l13",
           "pre": "doubt"
         },
@@ -439,8 +442,8 @@
               "bad": {
                 "title": "Account todna",
                 "lines": [
-                  "sab naya",
-                  "learning reset"
+                  "sab naya banana",
+                  "Meta: zaroorat nahin"
                 ]
               },
               "good": {
@@ -464,13 +467,18 @@
                   "text": "30 ADS?"
                 },
                 {
-                  "text": "META KA NUMBER NAHIN",
+                  "text": "META KA NUMBER",
+                  "tone": "red",
+                  "at": "l14"
+                },
+                {
+                  "text": "NAHIN MILA",
                   "tone": "red",
                   "at": "l14"
                 }
               ],
               "emoji": "🤨",
-              "emojiWord": "baat"
+              "emojiWord": "chahiye"
             }
           ]
         }
@@ -534,8 +542,8 @@
                 "title": "AFWAH",
                 "lines": [
                   "Account dobara banao",
-                  "30 ads zaroori hain",
-                  "Targeting khatam"
+                  "Targeting khatam",
+                  "30 ads zaroori? Meta ka number nahin mila"
                 ]
               },
               "rightWord": "account"
