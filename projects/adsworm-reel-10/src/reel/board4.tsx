@@ -157,18 +157,18 @@ export const SameIsOne: React.FC<{t: number; eqT: number; glyph?: string; tag?: 
   const e = pop(eqT);
   return (
     <div style={{width: 880, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 18, fontFamily: body}}>
-      <div style={{display: 'flex', alignItems: 'center', gap: 12}}>
+      <div style={{display: 'flex', alignItems: 'center', gap: 10}}>
         {Array.from({length: 5}).map((_, i) => (
           <div key={i} style={{transform: `scale(${pop(t - i)})`}}>
             <Sfx name="pop" t={t} delay={i} volume={0.5} />
-            <AdCard glyph={glyph} bg={V3.pinkSoft} size={96} />
+            <AdCard glyph={glyph} bg={V3.pinkSoft} size={112} />
           </div>
         ))}
-        <div style={{fontFamily: display, fontSize: 120, lineHeight: 0.8, color: C.red, margin: '0 6px', transform: `scale(${e})`}}>
+        <div style={{fontFamily: display, fontSize: 120, lineHeight: 0.8, color: C.red, margin: '0 2px', transform: `scale(${e})`}}>
           <Sfx name="buzz" t={eqT} />=
         </div>
         <div style={{transform: `scale(${pop(eqT - 6)})`}}>
-          <AdCard glyph={glyph} bg={V3.pinkSoft} size={130} />
+          <AdCard glyph={glyph} bg={V3.pinkSoft} size={150} />
         </div>
       </div>
       {tag && eqT >= 0 ? <div style={{padding: '8px 20px', borderRadius: 999, background: C.ink, color: '#fff', fontWeight: 800, fontSize: 30, transform: `scale(${pop(eqT - 10)})`}}>{tag}</div> : null}

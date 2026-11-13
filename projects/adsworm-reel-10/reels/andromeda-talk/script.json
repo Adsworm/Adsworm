@@ -46,7 +46,7 @@
       "lines": [
         {
           "who": "RIYA",
-          "tags": "[frustrated]",
+          "tags": "[annoyed]",
           "say": "Ads पे पैसे लगा रही हूँ… फिर भी वही थोड़े लोग देख रहे हैं!",
           "tts": "ऐड्स पे पैसे लगा रही हूँ… फिर भी वही थोड़े लोग देख रहे हैं!",
           "show": "Ads pe paise laga rahi hoon… phir bhi wahi [thode log] dekh rahe hain!",
@@ -58,7 +58,7 @@
         },
         {
           "who": "AMAN",
-          "tags": "[amused]",
+          "tags": "[chuckles]",
           "say": "दिखाओ ज़रा. अरे… ये पाँचों तो एक जैसे हैं!",
           "tts": "दिखाओ ज़रा. अरे… ये पाँचों तो एक जैसे हैं!",
           "show": "Dikhao zara. Arre… ye paancho toh [ek jaise] hain!",
@@ -69,10 +69,10 @@
         },
         {
           "who": "RIYA",
-          "tags": "[defensive]",
-          "say": "Background का colour तो अलग है!",
-          "tts": "बैकग्राउंड का कलर तो अलग है!",
-          "show": "Background ka colour toh [alag hai]!",
+          "tags": "[jumping in]",
+          "say": "पर रंग तो अलग है!",
+          "tts": "पर रंग तो अलग है!",
+          "show": "Par rang toh [alag hai]!",
           "beat": "l3",
           "how": "Tez, safai dete hue.",
           "pre": "doubt",
@@ -81,7 +81,7 @@
         },
         {
           "who": "AMAN",
-          "tags": "[chuckles]",
+          "tags": "[warmly]",
           "say": "Instagram की machine को ये एक ही ad लग सकता है.",
           "tts": "इंस्टाग्राम की मशीन को ये एक ही ऐड लग सकता है.",
           "show": "Instagram ki machine ko ye [ek hi ad] lag sakta hai.",
@@ -120,12 +120,12 @@
             },
             {
               "type": "sticker",
-              "text": "bas colour alag 🎨",
+              "text": "bas rang alag 🎨",
               "color": "blue",
               "x": 560,
               "y": 420,
               "rotate": -4,
-              "word": "colour"
+              "word": "rang"
             }
           ]
         }
@@ -149,9 +149,9 @@
         {
           "who": "AMAN",
           "tags": "[warmly]",
-          "say": "जो छाँटती है कि किसे कौन-सा ad दिखे.",
-          "tts": "जो छाँटती है कि किसे कौन-सा ऐड दिखे.",
-          "show": "Jo [chhaant-ti hai] ki kise kaun-sa ad dikhe.",
+          "say": "जो चुनती है कि किसे कौन-सा ad दिखे.",
+          "tts": "जो चुनती है कि किसे कौन-सा ऐड दिखे.",
+          "show": "Jo [chunti hai] ki kise kaun-sa ad dikhe.",
           "beat": "l6",
           "how": "Samjhate hue, saaf, bina jaldi. Vaakya ke baad ek saans ka pause.",
           "react": "doubt",
@@ -159,7 +159,7 @@
         },
         {
           "who": "AMAN",
-          "tags": "[clearly]",
+          "tags": "[confident]",
           "say": "लोग इसे Andromeda टू-पॉइंट-ओ कहते हैं.",
           "tts": "लोग इसे एंड्रोमेडा टू-पॉइंट-ओ कहते हैं.",
           "show": "Log ise [Andromeda 2.0] kehte hain.",
@@ -170,7 +170,7 @@
         },
         {
           "who": "AMAN",
-          "tags": "[serious]",
+          "tags": "",
           "say": "Ads एक जैसे हों, तो तुम… कम लोगों तक पहुँचते हो.",
           "tts": "ऐड्स एक जैसे हों, तो तुम… कम लोगों तक पहुँचते हो.",
           "show": "Ads [ek jaise] hon, toh tum… [kam logon tak] pahunchte ho.",
@@ -293,7 +293,7 @@
       "lines": [
         {
           "who": "RIYA",
-          "tags": "[curious]",
+          "tags": "[confused]",
           "say": "और जो post boost करती हूँ?",
           "tts": "और जो पोस्ट बूस्ट करती हूँ?",
           "show": "Aur jo post [boost] karti hoon?",
@@ -303,7 +303,7 @@
         },
         {
           "who": "AMAN",
-          "tags": "",
+          "tags": "[warmly]",
           "say": "वो भी ad ही है. वहाँ भी यही rule.",
           "tts": "वो भी ऐड ही है. वहाँ भी यही रूल.",
           "show": "Wo bhi [ad hi] hai. Wahan bhi [yahi rule].",

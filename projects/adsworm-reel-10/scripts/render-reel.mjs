@@ -37,6 +37,6 @@ console.log(`rendered in ${((Date.now() - started) / 1000).toFixed(1)}s`);
 const target = 'I=-14:TP=-1.5:LRA=11';
 const {stderr} = spawnSync('ffmpeg', ['-hide_banner', '-i', 'out/raw.mp4', '-af', `loudnorm=${target}:print_format=json`, '-f', 'null', '-'], {encoding: 'utf8'});
 const m = JSON.parse(stderr.slice(stderr.lastIndexOf('{')));
-execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', 'out/raw.mp4', '-c:v', 'copy', '-af', `loudnorm=${target}:measured_I=${m.input_i}:measured_TP=${m.input_tp}:measured_LRA=${m.input_lra}:measured_thresh=${m.input_thresh}:offset=${m.target_offset}:linear=true`, '-ar', '48000', '-c:a', 'aac', '-b:a', '192k', '-movflags', '+faststart', `out/${NAME}.mp4`]);
+execFileSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', 'out/raw.mp4', '-c:v', 'copy', '-af', `loudnorm=${target}:measured_I=${m.input_i}:measured_TP=${m.input_tp}:measured_LRA=${m.input_lra}:measured_thresh=${m.input_thresh}:offset=${m.target_offset}:linear=true,alimiter=limit=0.78:level=false:attack=3:release=60`, '-ar', '48000', '-c:a', 'aac', '-b:a', '192k', '-movflags', '+faststart', `out/${NAME}.mp4`]);
 await renderStill({serveUrl, composition, inputProps: {...inputProps, withAudio: false}, frame: Number(process.env.COVER_FRAME ?? 100), output: `out/${NAME}_cover.png`, browserExecutable});
 console.log(`→ out/${NAME}.mp4 · out/${NAME}_cover.png`);
