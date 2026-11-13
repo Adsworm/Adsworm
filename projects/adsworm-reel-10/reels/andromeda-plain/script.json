@@ -4,9 +4,9 @@
   "plain": true,
   "voices": {
     "AMAN": {
-      "name": "draft: hi-IN-MadhurNeural",
+      "name": "Holden (to be confirmed by the voice test)",
       "voice_type": "preset",
-      "voice_id": ""
+      "voice_id": "3c9d6053-6334-592c-8997-4e325286af3f"
     },
     "RIYA": {
       "name": "silent",
@@ -43,7 +43,8 @@
           "show": "Aapka business [Instagram par] hai?",
           "beat": "l1",
           "react": "laugh",
-          "reactWord": "instagram"
+          "reactWord": "instagram",
+          "tts": "आपका बिज़नेस इंस्टाग्राम पर है?"
         },
         {
           "who": "AMAN",
@@ -52,7 +53,8 @@
           "show": "Toh ek baat yaad rakhiye: [har ad alag] banaiye.",
           "beat": "l2",
           "react": "doubt",
-          "reactWord": "alag"
+          "reactWord": "alag",
+          "tts": "तो एक बात याद रखिए: हर ऐड अलग बनाइए."
         }
       ],
       "views": [
@@ -113,7 +115,8 @@
           "show": "Instagram par kise kaun-se ads dikhein, ye ek [machine chhaant-ti] hai.",
           "beat": "l3",
           "react": "doubt",
-          "reactWord": "machine"
+          "reactWord": "machine",
+          "tts": "इंस्टाग्राम पर किसे कौन-से ऐड्स दिखें, ये एक मशीन छाँटती है."
         },
         {
           "who": "AMAN",
@@ -122,7 +125,8 @@
           "show": "Aajkal log ise [Andromeda 2.0] keh rahe hain.",
           "beat": "l4",
           "react": "shock",
-          "reactWord": "andromeda"
+          "reactWord": "andromeda",
+          "tts": "आजकल लोग इसे एंड्रोमेडा टू-पॉइंट-ओ कह रहे हैं."
         },
         {
           "who": "AMAN",
@@ -131,7 +135,8 @@
           "show": "Aapke ads [ek jaise] hue, wahi photo, wahi baat,",
           "beat": "l5",
           "react": "doubt",
-          "reactWord": "photo"
+          "reactWord": "photo",
+          "tts": "आपके ऐड्स एक जैसे हुए, वही फोटो, वही बात,"
         },
         {
           "who": "AMAN",
@@ -140,7 +145,8 @@
           "show": "toh ye machine unhe [ek hi ad] samajh sakti hai.",
           "beat": "l6",
           "react": "worry",
-          "reactWord": "samajh"
+          "reactWord": "samajh",
+          "tts": "तो ये मशीन उन्हें एक ही ऐड समझ सकती है."
         },
         {
           "who": "AMAN",
@@ -149,7 +155,8 @@
           "show": "Phir aapka ad [kam logon tak] pahunchta hai.",
           "beat": "l7",
           "react": "worry",
-          "reactWord": "kam"
+          "reactWord": "kam",
+          "tts": "फिर आपका ऐड कम लोगों तक पहुँचता है."
         }
       ],
       "views": [
@@ -200,7 +207,8 @@
           "show": "Isliye ek ad mein apna [saamaan ya kaam] dikhaiye.",
           "beat": "l8",
           "react": "laugh",
-          "reactWord": "kaam"
+          "reactWord": "kaam",
+          "tts": "इसलिए एक ऐड में अपना सामान या काम दिखाइए."
         },
         {
           "who": "AMAN",
@@ -209,7 +217,8 @@
           "show": "Doosre mein customer ki [tareef], teesre mein [offer].",
           "beat": "l9",
           "react": "shock",
-          "reactWord": "offer"
+          "reactWord": "offer",
+          "tts": "दूसरे में कस्टमर की तारीफ़, तीसरे में ऑफ़र."
         }
       ],
       "views": [
@@ -251,7 +260,8 @@
           "show": "Post ko paise dekar aage badhate hain, yaani [boost]? Wo bhi [ad hi hai].",
           "beat": "l10",
           "react": "shock",
-          "reactWord": "boost"
+          "reactWord": "boost",
+          "tts": "पोस्ट को पैसे देकर आगे बढ़ाते हैं, यानी बूस्ट? वो भी ऐड ही है."
         },
         {
           "who": "AMAN",
@@ -260,7 +270,8 @@
           "show": "Abhi ad nahin chalate? Ye video [save kar lijiye].",
           "beat": "l11",
           "react": "laugh",
-          "reactWord": "save"
+          "reactWord": "save",
+          "tts": "अभी ऐड नहीं चलाते? ये वीडियो सेव कर लीजिए."
         }
       ],
       "views": [
@@ -298,7 +309,8 @@
           "show": "Yaad rakhiye: [har ad alag] banaiye.",
           "beat": "l12",
           "react": "laugh",
-          "reactWord": "alag"
+          "reactWord": "alag",
+          "tts": "याद रखिए: हर ऐड अलग बनाइए."
         },
         {
           "who": "AMAN",
@@ -307,7 +319,8 @@
           "show": "Comment mein [\"ANDROMEDA\"] likhiye.",
           "beat": "l13",
           "react": "wink",
-          "reactWord": "likhiye"
+          "reactWord": "likhiye",
+          "tts": "कमेंट में एंड्रोमेडा लिखिए."
         },
         {
           "who": "AMAN",
@@ -316,7 +329,8 @@
           "show": "Teeno ads ke [ready namoone], Hindi mein, bhej dunga.",
           "beat": "l14",
           "react": "laugh",
-          "reactWord": "hindi"
+          "reactWord": "hindi",
+          "tts": "तीनों ऐड्स के रेडी नमूने, हिंदी में, भेज दूँगा."
         }
       ],
       "views": [
