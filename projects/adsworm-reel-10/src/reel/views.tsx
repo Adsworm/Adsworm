@@ -5,6 +5,7 @@ import {C} from './theme';
 import {Checks, Deadline, Follow, HookPrice, InApp, PauseButton, Shop, Split, Stat, Sticker, Versus, type Tone} from './board';
 import {AiChat, ChatThread, Clock, Columns, Formula, Headline, Plan, Scene} from './board2';
 import {Find, OldNew, Truths} from './board3';
+import {BoostPhone, InstaPhone, Reach, SameIsOne, SaveTap, Sorter, ThreeAds, TypeWord} from './board4';
 import {Sfx} from './Sfx';
 
 // Data-driven card content: script.json → sections[].views. A view takes over the card at its `at` beat
@@ -49,6 +50,15 @@ export type Item =
   | {type: 'oldNew'; old: {title: string; sets: string[]; ads?: number; setWords?: string[]}; next: {title: string; label: string}; switchWord?: string; switchAt?: string; at?: string; word?: string}
   | {type: 'find'; url: string; source: string; title: string; query: string; typeWord?: string; typeAt?: string; result: string; resultWord?: string; resultAt?: string; stamp?: string; stampWord?: string; stampAt?: string; at?: string; word?: string}
   | {type: 'truths'; left: {title: string; lines: string[]}; right: {title: string; lines: string[]}; rightWord?: string; rightAt?: string; at?: string; word?: string}
+  // literal pictures for the plain-language reels (board4)
+  | {type: 'instaPhone'; mode: 'page' | 'ad'; name: string; markWord?: string; markAt?: string; at?: string; word?: string}
+  | {type: 'boostPhone'; pressWord?: string; payWord?: string; goWord?: string; at?: string; word?: string}
+  | {type: 'sorter'; name: string; sub?: string; nameWord?: string; nameAt?: string; pileLabel?: string; fewLabel?: string; at?: string; word?: string}
+  | {type: 'sameIsOne'; eqWord?: string; eqAt?: string; glyph?: string; tag?: string; at?: string; word?: string}
+  | {type: 'reach'; lit?: number; tag?: string; at?: string; word?: string}
+  | {type: 'threeAds'; compact?: boolean; items: {glyph: string; label: string; person?: string; word?: string; at?: string}[]; at?: string; word?: string}
+  | {type: 'saveTap'; tapWord?: string; tapAt?: string; label?: string; at?: string; word?: string}
+  | {type: 'typeWord'; keyword: string; typeWord?: string; typeAt?: string; dm?: string; dmWord?: string; dmAt?: string; hint?: string; at?: string; word?: string}
   | {type: 'formula'; title: string; top: string; bottom: string; equals: string; example?: string; exampleWord?: string; exampleAt?: string; at?: string; word?: string}
   | {type: 'columns'; title?: string; note?: string; cols: {label: string; value: number; display: string; tone?: Tone; word?: string; at?: string; stamp?: string; stampWord?: string; stampAt?: string}[]; at?: string; word?: string}
   | {type: 'plan'; from: number; to: number; deadline: number; deadlineLabel: string; unit?: string; rows: {label: string; start: number; word?: string; at?: string; segs: {len: number; text: string; word?: string; at?: string}[]; verdict?: string; verdictWord?: string; verdictAt?: string}[]; at?: string; word?: string};
@@ -156,6 +166,22 @@ const ItemView: React.FC<{item: Item; t: number; beats: Record<string, number>; 
       return <Find t={t} url={item.url} source={f(item.source)} title={f(item.title)} query={item.query} typeT={cue(item.typeWord, item.typeAt, t - 14)} result={item.result} resultT={cue(item.resultWord, item.resultAt, t - 30)} stamp={item.stamp} stampT={item.stamp ? cue(item.stampWord, item.stampAt, t - 44) : -1} />;
     case 'truths':
       return <Truths t={t} left={item.left} right={item.right} rightT={cue(item.rightWord, item.rightAt, t - 20)} />;
+    case 'instaPhone':
+      return <InstaPhone t={t} mode={item.mode} name={item.name} markT={cue(item.markWord, item.markAt, t - 10)} />;
+    case 'boostPhone':
+      return <BoostPhone t={t} pressT={cue(item.pressWord, undefined, t - 8)} payT={cue(item.payWord, undefined, t - 20)} goT={cue(item.goWord, undefined, t - 34)} />;
+    case 'sorter':
+      return <Sorter t={t} name={f(item.name)} sub={item.sub} nameT={item.nameWord || item.nameAt ? cue(item.nameWord, item.nameAt) : t} pileLabel={item.pileLabel ? f(item.pileLabel) : undefined} fewLabel={item.fewLabel ? f(item.fewLabel) : undefined} />;
+    case 'sameIsOne':
+      return <SameIsOne t={t} eqT={cue(item.eqWord, item.eqAt, t - 18)} glyph={item.glyph} tag={item.tag ? f(item.tag) : undefined} />;
+    case 'reach':
+      return <Reach t={t} lit={item.lit} tag={item.tag ? f(item.tag) : undefined} />;
+    case 'threeAds':
+      return <ThreeAds compact={item.compact} items={item.items.map((k, i) => ({glyph: k.glyph, label: f(k.label), person: k.person, t: cue(k.word, k.at, t - i * (item.compact ? 4 : 12))}))} />;
+    case 'saveTap':
+      return <SaveTap t={t} tapT={cue(item.tapWord, item.tapAt, t - 10)} label={item.label ? f(item.label) : undefined} />;
+    case 'typeWord':
+      return <TypeWord t={t} word={item.keyword} typeT={cue(item.typeWord, item.typeAt, t - 6)} dmT={item.dm ? cue(item.dmWord, item.dmAt, t - 60) : -1} dm={item.dm} hint={item.hint} />;
     case 'formula':
       return <Formula t={t} title={f(item.title)} top={f(item.top)} bottom={f(item.bottom)} equals={f(item.equals)} example={item.example ? f(item.example) : undefined} exampleT={item.example ? cue(item.exampleWord, item.exampleAt, t - 24) : -1} />;
     case 'columns':

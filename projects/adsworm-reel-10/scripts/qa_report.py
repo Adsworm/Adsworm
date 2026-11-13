@@ -157,7 +157,7 @@ if tl.get("payoff"):
     check(0.5 <= p <= 0.75, "payoff lands at 55–70% of the runtime", f"{p * 100:.0f}%")
 else:
     check(False, "payoff defined (riser → breath → hit)")
-cta = next((beats[v["at"]] / FPS for s in sections for v in s.get("views", []) if any(i["type"] == "comment" for i in v["items"])), None)
+cta = next((beats[v["at"]] / FPS for s in sections for v in s.get("views", []) if any(i["type"] in ("comment", "typeWord") for i in v["items"])), None)
 nxt = next((beats[v["at"]] / FPS for s in sections for v in s.get("views", []) if any(i["type"] == "follow" for i in v["items"])), dur)
 check(cta is not None and nxt - cta >= 2, "CTA keyword on screen ≥ 2 s", f"{(nxt - cta) if cta else 0:.1f}s")
 # Hindi carries short particles (में, ने, के, है) that English does not, so the same runtime holds more words.
