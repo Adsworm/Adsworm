@@ -4,6 +4,7 @@ import {Bars, Big, Browser, Chart, Chat, Chip, Col, CommentUI, ImageToVideo, Not
 import {C} from './theme';
 import {Checks, Deadline, Follow, HookPrice, InApp, PauseButton, Shop, Split, Stat, Sticker, Versus, type Tone} from './board';
 import {AiChat, ChatThread, Clock, Columns, Formula, Headline, Plan, Scene} from './board2';
+import {Find, OldNew, Truths} from './board3';
 import {Sfx} from './Sfx';
 
 // Data-driven card content: script.json → sections[].views. A view takes over the card at its `at` beat
@@ -45,6 +46,9 @@ export type Item =
   | {type: 'chatThread'; name: string; msgs: {from: 'them' | 'me'; text: string; time?: string; word?: string; at?: string; ghost?: boolean}[]; status?: string; statusWord?: string; statusAt?: string; statusTone?: Tone; at?: string; word?: string}
   | {type: 'aiChat'; question: string; adWord?: string; adAt?: string; brand: string; adLine: string; note?: string; at?: string; word?: string}
   | {type: 'clock'; to: number; unit: string; label: string; at?: string; word?: string}
+  | {type: 'oldNew'; old: {title: string; sets: string[]; ads?: number; setWords?: string[]}; next: {title: string; label: string}; switchWord?: string; switchAt?: string; at?: string; word?: string}
+  | {type: 'find'; url: string; source: string; title: string; query: string; typeWord?: string; typeAt?: string; result: string; resultWord?: string; resultAt?: string; stamp?: string; stampWord?: string; stampAt?: string; at?: string; word?: string}
+  | {type: 'truths'; left: {title: string; lines: string[]}; right: {title: string; lines: string[]}; rightWord?: string; rightAt?: string; at?: string; word?: string}
   | {type: 'formula'; title: string; top: string; bottom: string; equals: string; example?: string; exampleWord?: string; exampleAt?: string; at?: string; word?: string}
   | {type: 'columns'; title?: string; note?: string; cols: {label: string; value: number; display: string; tone?: Tone; word?: string; at?: string; stamp?: string; stampWord?: string; stampAt?: string}[]; at?: string; word?: string}
   | {type: 'plan'; from: number; to: number; deadline: number; deadlineLabel: string; unit?: string; rows: {label: string; start: number; word?: string; at?: string; segs: {len: number; text: string; word?: string; at?: string}[]; verdict?: string; verdictWord?: string; verdictAt?: string}[]; at?: string; word?: string};
@@ -146,6 +150,12 @@ const ItemView: React.FC<{item: Item; t: number; beats: Record<string, number>; 
       return <AiChat t={t} question={f(item.question)} adT={cue(item.adWord, item.adAt, t - 60)} brand={f(item.brand)} adLine={f(item.adLine)} note={item.note} />;
     case 'clock':
       return <Clock t={t} to={item.to} unit={item.unit} label={f(item.label)} />;
+    case 'oldNew':
+      return <OldNew t={t} switchT={item.switchWord || item.switchAt ? cue(item.switchWord, item.switchAt) : -1} old={{title: f(item.old.title), sets: item.old.sets, ads: item.old.ads}} next={{title: f(item.next.title), label: f(item.next.label)}} setT={item.old.setWords?.map((w) => wc(w))} />;
+    case 'find':
+      return <Find t={t} url={item.url} source={f(item.source)} title={f(item.title)} query={item.query} typeT={cue(item.typeWord, item.typeAt, t - 14)} result={item.result} resultT={cue(item.resultWord, item.resultAt, t - 30)} stamp={item.stamp} stampT={item.stamp ? cue(item.stampWord, item.stampAt, t - 44) : -1} />;
+    case 'truths':
+      return <Truths t={t} left={item.left} right={item.right} rightT={cue(item.rightWord, item.rightAt, t - 20)} />;
     case 'formula':
       return <Formula t={t} title={f(item.title)} top={f(item.top)} bottom={f(item.bottom)} equals={f(item.equals)} example={item.example ? f(item.example) : undefined} exampleT={item.example ? cue(item.exampleWord, item.exampleAt, t - 24) : -1} />;
     case 'columns':

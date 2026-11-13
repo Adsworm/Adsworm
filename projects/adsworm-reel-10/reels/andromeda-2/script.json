@@ -1,0 +1,554 @@
+{
+  "title": "Andromeda 2.0 aa gaya? Meta ke post mein \"2.0\" hai hi nahin",
+  "lang": "hi",
+  "voices": {
+    "AMAN": {
+      "name": "Holden",
+      "voice_type": "preset",
+      "voice_id": "3c9d6053-6334-592c-8997-4e325286af3f"
+    },
+    "RIYA": {
+      "name": "Anika (Indian English)",
+      "voice_type": "preset",
+      "voice_id": "4b2dc8f3-5e8b-59a9-9a5c-85620e44c033"
+    }
+  },
+  "gapCap": 0.22,
+  "tempo": 1.15,
+  "leadInMs": 60,
+  "tailMs": 1500,
+  "bedGain": 0.07,
+  "brand": {
+    "names": {
+      "AMAN": "AMAN · ADSWORM",
+      "RIYA": "RIYA · BRAND OWNER"
+    },
+    "side": {
+      "AMAN": "left",
+      "RIYA": "right"
+    }
+  },
+  "direction": "Natural Hinglish (Hindi mixed with English) Instagram skit between two Indians from Delhi, native Hindi pronunciation. Aman: friendly marketing expert, calm, warm, confident, a little teasing. Riya: expressive brand owner, panicking at first, then curious, then relieved. Fast, casual back-and-forth with real reactions.",
+  "loop": {
+    "text": "account dobara?",
+    "answer": "mat todo ✓",
+    "until": "l12"
+  },
+  "payoff": {
+    "beat": "l12",
+    "pauseMs": 350
+  },
+  "sections": [
+    {
+      "id": "hook",
+      "label": "ANDROMEDA 2.0?!",
+      "source": "Meta Engineering, 28 Oct 2026 · post ke text mein \"2.0\" search kiya: 0",
+      "lines": [
+        {
+          "who": "RIYA",
+          "tags": "[panicking]",
+          "say": "Andromeda टू-पॉइंट-ओ आ गया! पूरा account दोबारा बनाना पड़ेगा?",
+          "show": "Andromeda 2.0 [aa gaya]! Poora account [dobara banana] padega?",
+          "beat": "l1",
+          "pre": "worry",
+          "react": "surprised",
+          "reactWord": "dobara"
+        },
+        {
+          "who": "AMAN",
+          "tags": "[warmly]",
+          "say": "रुको. Meta के post में टू-पॉइंट-ओ है ही नहीं.",
+          "show": "Ruko. Meta ke post mein 2.0 [hai hi nahin].",
+          "beat": "l2",
+          "react": "shock",
+          "reactWord": "nahin"
+        },
+        {
+          "who": "RIYA",
+          "tags": "[confused]",
+          "say": "तो ये है क्या?",
+          "show": "Toh ye hai [kya]?",
+          "beat": "l3",
+          "pre": "doubt"
+        }
+      ],
+      "views": [
+        {
+          "at": "l1",
+          "items": [
+            {
+              "type": "headline",
+              "lines": [
+                {
+                  "text": "ANDROMEDA 2.0"
+                },
+                {
+                  "text": "AA GAYA?! 😱",
+                  "tone": "red"
+                }
+              ]
+            },
+            {
+              "type": "sticker",
+              "text": "account dobara banao?!",
+              "color": "pink",
+              "x": 470,
+              "y": 440,
+              "rotate": -5,
+              "word": "dobara"
+            }
+          ]
+        },
+        {
+          "at": "l2",
+          "items": [
+            {
+              "type": "find",
+              "url": "engineering.fb.com",
+              "source": "META ENGINEERING · 28 OCT 2026",
+              "title": "\"…the next generation of Meta Andromeda\"",
+              "query": "2.0",
+              "typeWord": "post",
+              "result": "0 results",
+              "resultWord": "nahin",
+              "stamp": "nickname hai",
+              "stampAt": "l3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "what",
+      "label": "YE HAI KYA?",
+      "source": "Meta for Business + Meta Engineering, 28 Oct 2026",
+      "lines": [
+        {
+          "who": "AMAN",
+          "tags": "",
+          "say": "Meta का personal shopper. करोड़ों ads में से कुछ हज़ार चुनता है.",
+          "show": "Meta ka [personal shopper]. Karodon ads mein se [kuch hazaar] chunta hai.",
+          "beat": "l4",
+          "react": "doubt",
+          "reactWord": "hazaar"
+        },
+        {
+          "who": "RIYA",
+          "tags": "[confused]",
+          "say": "और नया क्या?",
+          "show": "Aur [naya kya]?",
+          "beat": "l5",
+          "pre": "doubt"
+        },
+        {
+          "who": "AMAN",
+          "tags": "[excited]",
+          "say": "अब वो पूरी दुकान घूमता है. एक second में सौ करोड़ ads.",
+          "show": "Ab wo [poori dukaan] ghoomta hai. Ek second mein [100 crore ads].",
+          "beat": "l6",
+          "react": "shock",
+          "reactWord": "100"
+        }
+      ],
+      "views": [
+        {
+          "at": "l4",
+          "items": [
+            {
+              "type": "scene",
+              "height": 420,
+              "actors": [
+                {
+                  "emoji": "SHOP",
+                  "sign": "ADS KI DUKAAN",
+                  "x": 520,
+                  "y": 100,
+                  "size": 250
+                },
+                {
+                  "emoji": "🧑‍💼",
+                  "label": "Meta ka shopper",
+                  "x": 110,
+                  "y": 160,
+                  "size": 170,
+                  "enter": "left",
+                  "word": "shopper",
+                  "say": "aapke customer ke liye",
+                  "sayWord": "karodon"
+                }
+              ]
+            },
+            {
+              "type": "chip",
+              "text": "Karodon ads → kuch hazaar · Meta, 28 Oct 2026",
+              "kind": "ink",
+              "word": "hazaar"
+            }
+          ]
+        },
+        {
+          "at": "l6",
+          "items": [
+            {
+              "type": "headline",
+              "lines": [
+                {
+                  "text": "AB POORI DUKAAN"
+                },
+                {
+                  "text": "GHOOMTA HAI",
+                  "tone": "blue",
+                  "word": "ghoomta"
+                }
+              ],
+              "emoji": "🛒",
+              "emojiWord": "dukaan"
+            }
+          ]
+        },
+        {
+          "at": "l6",
+          "word": "ek",
+          "items": [
+            {
+              "type": "stat",
+              "value": 100,
+              "suffix": " crore",
+              "label": "ads har second",
+              "color": "blue"
+            },
+            {
+              "type": "chip",
+              "text": "Machine ki speed hai, results ka vaada nahin · Meta Engineering",
+              "kind": "ink",
+              "word": "ads"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "do",
+      "label": "KYA BADLOON?",
+      "source": "Meta: \"no setting to switch on, no new campaign type to adopt, no migration to plan\" · 28 Oct 2026",
+      "lines": [
+        {
+          "who": "RIYA",
+          "tags": "[worried]",
+          "say": "तो मुझे क्या बदलना है?",
+          "show": "Toh mujhe [kya badalna] hai?",
+          "beat": "l7",
+          "pre": "worry"
+        },
+        {
+          "who": "AMAN",
+          "tags": "[confident]",
+          "say": "Setting? कुछ नहीं. Meta बोला: कोई switch नहीं, कोई नया campaign नहीं.",
+          "show": "Setting? [Kuch nahin]. Meta bola: koi switch nahin, koi [naya campaign] nahin.",
+          "beat": "l8",
+          "react": "laugh",
+          "reactWord": "campaign"
+        },
+        {
+          "who": "RIYA",
+          "tags": "[laughs]",
+          "say": "बच गई!",
+          "show": "[Bach gayi]!",
+          "beat": "l9",
+          "pre": "laugh"
+        },
+        {
+          "who": "AMAN",
+          "tags": "[chuckles]",
+          "say": "पूरी नहीं. तुम्हारी shelf पे सब माल एक जैसा हो तो?",
+          "show": "Poori nahin. Tumhari shelf pe sab maal [ek jaisa] ho toh?",
+          "beat": "l10",
+          "react": "worry",
+          "reactWord": "jaisa"
+        },
+        {
+          "who": "RIYA",
+          "tags": "[worried]",
+          "say": "तो एक ही उठाएगा…",
+          "show": "Toh [ek hi] uthayega…",
+          "beat": "l11",
+          "pre": "worry"
+        }
+      ],
+      "views": [
+        {
+          "at": "l7",
+          "items": [
+            {
+              "type": "headline",
+              "lines": [
+                {
+                  "text": "MUJHE KYA"
+                },
+                {
+                  "text": "BADALNA HAI?",
+                  "tone": "pink",
+                  "word": "badalna"
+                }
+              ],
+              "emoji": "😰",
+              "emojiWord": "kya"
+            }
+          ]
+        },
+        {
+          "at": "l8",
+          "items": [
+            {
+              "type": "headline",
+              "lines": [
+                {
+                  "text": "SETTING?"
+                },
+                {
+                  "text": "KUCH NAHIN ✓",
+                  "tone": "green",
+                  "word": "kuch"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "at": "l8",
+          "word": "meta",
+          "items": [
+            {
+              "type": "checks",
+              "items": [
+                {
+                  "text": "Koi switch nahin",
+                  "word": "switch"
+                },
+                {
+                  "text": "Koi naya campaign nahin",
+                  "word": "campaign"
+                },
+                {
+                  "text": "Koi migration nahin",
+                  "word": "bach"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "at": "l10",
+          "items": [
+            {
+              "type": "scene",
+              "height": 400,
+              "actors": [
+                {
+                  "emoji": "👕",
+                  "x": 40,
+                  "y": 60,
+                  "size": 130
+                },
+                {
+                  "emoji": "👕",
+                  "x": 200,
+                  "y": 60,
+                  "size": 130
+                },
+                {
+                  "emoji": "👕",
+                  "x": 360,
+                  "y": 60,
+                  "size": 130,
+                  "label": "sab ek jaisa"
+                },
+                {
+                  "emoji": "👕",
+                  "x": 520,
+                  "y": 60,
+                  "size": 130
+                },
+                {
+                  "emoji": "👕",
+                  "x": 680,
+                  "y": 60,
+                  "size": 130,
+                  "badge": "✓",
+                  "badgeWord": "uthayega",
+                  "badgeTone": "green"
+                },
+                {
+                  "emoji": "🧑‍💼",
+                  "x": 700,
+                  "y": 230,
+                  "size": 120,
+                  "enter": "right",
+                  "word": "ek"
+                }
+              ]
+            },
+            {
+              "type": "chip",
+              "text": "Meta: ek jaise ads \"the same sets of audiences\" ko ja sakte hain",
+              "kind": "ink",
+              "word": "jaisa"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fix",
+      "label": "TOH KARNA KYA HAI",
+      "source": "Meta: \"supply more creative variety\" (28 Oct 2026) · ads ki ginti ka koi Meta number nahin mila (13 Nov 2026)",
+      "lines": [
+        {
+          "who": "AMAN",
+          "tags": "[confident]",
+          "say": "इसलिए account मत तोड़ो. अलग-अलग ads बनाओ.",
+          "show": "Isliye account [mat todo]. [Alag-alag ads] banao.",
+          "beat": "l12",
+          "react": "laugh",
+          "reactWord": "alag"
+        },
+        {
+          "who": "RIYA",
+          "tags": "[confused]",
+          "say": "और तीस ads वाली बात?",
+          "show": "Aur [30 ads] wali baat?",
+          "beat": "l13",
+          "pre": "doubt"
+        },
+        {
+          "who": "AMAN",
+          "tags": "",
+          "say": "Meta का ऐसा कोई number हमें नहीं मिला.",
+          "show": "Meta ka aisa koi number humein [nahin mila].",
+          "beat": "l14",
+          "react": "shock",
+          "reactWord": "nahin"
+        }
+      ],
+      "views": [
+        {
+          "at": "l12",
+          "items": [
+            {
+              "type": "compare",
+              "bad": {
+                "title": "Account todna",
+                "lines": [
+                  "sab naya",
+                  "learning reset"
+                ]
+              },
+              "good": {
+                "title": "Alag-alag ads",
+                "lines": [
+                  "alag wajah",
+                  "alag format"
+                ]
+              },
+              "goodWord": "alag"
+            }
+          ]
+        },
+        {
+          "at": "l13",
+          "items": [
+            {
+              "type": "headline",
+              "lines": [
+                {
+                  "text": "30 ADS?"
+                },
+                {
+                  "text": "META KA NUMBER NAHIN",
+                  "tone": "red",
+                  "at": "l14"
+                }
+              ],
+              "emoji": "🤨",
+              "emojiWord": "baat"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "label": "META NE KYA KAHA",
+      "source": "Sach/afwah: Meta ke 28 Oct 2026 ke posts se · afwah = Meta ke posts mein nahin mila",
+      "lines": [
+        {
+          "who": "AMAN",
+          "tags": "[excited]",
+          "say": "Comment ANDROMEDA. Meta ने असल में क्या कहा, DM कर दूँगा.",
+          "show": "Comment [\"ANDROMEDA\"]. Meta ne asal mein kya kaha, [DM kar dunga].",
+          "beat": "l15",
+          "react": "laugh",
+          "reactWord": "dm"
+        },
+        {
+          "who": "RIYA",
+          "tags": "[cheeky]",
+          "say": "उस दोस्त को भेजो जो account तोड़ने बैठा है!",
+          "show": "Us dost ko bhejo jo [account todne] baitha hai!",
+          "beat": "l16",
+          "pre": "laugh",
+          "react": "laugh",
+          "reactWord": "todne"
+        }
+      ],
+      "views": [
+        {
+          "at": "l15",
+          "items": [
+            {
+              "type": "comment",
+              "keyword": "ANDROMEDA"
+            },
+            {
+              "type": "chip",
+              "text": "Meta ke 5 quotes + links · DM mein",
+              "kind": "green",
+              "delay": 40
+            }
+          ]
+        },
+        {
+          "at": "l16",
+          "items": [
+            {
+              "type": "truths",
+              "left": {
+                "title": "SACH",
+                "lines": [
+                  "\"2.0\" ek nickname hai",
+                  "Koi setting on nahin karni",
+                  "Alag-alag ads kaam aate hain"
+                ]
+              },
+              "right": {
+                "title": "AFWAH",
+                "lines": [
+                  "Account dobara banao",
+                  "30 ads zaroori hain",
+                  "Targeting khatam"
+                ]
+              },
+              "rightWord": "account"
+            },
+            {
+              "type": "chip",
+              "text": "🔖 Save karo · us dost ko bhejo",
+              "kind": "blue",
+              "word": "baitha"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

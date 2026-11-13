@@ -1,0 +1,601 @@
+{
+  "title": "Meta ads pehle aise chalte thay, ab aise: targeting ad ke andar",
+  "lang": "hi",
+  "voices": {
+    "AMAN": {
+      "name": "Holden",
+      "voice_type": "preset",
+      "voice_id": "3c9d6053-6334-592c-8997-4e325286af3f"
+    },
+    "RIYA": {
+      "name": "Anika (Indian English)",
+      "voice_type": "preset",
+      "voice_id": "4b2dc8f3-5e8b-59a9-9a5c-85620e44c033"
+    }
+  },
+  "gapCap": 0.22,
+  "tempo": 1.15,
+  "leadInMs": 60,
+  "tailMs": 1500,
+  "bedGain": 0.07,
+  "brand": {
+    "names": {
+      "AMAN": "AMAN · ADSWORM",
+      "RIYA": "RIYA · BRAND OWNER"
+    },
+    "side": {
+      "AMAN": "left",
+      "RIYA": "right"
+    }
+  },
+  "direction": "Natural Hinglish (Hindi mixed with English) Instagram skit between two Indians from Delhi, native Hindi pronunciation. Aman: friendly marketing expert, calm, warm, confident, a little teasing. Riya: expressive brand owner, sure of herself at first, then surprised, then relieved. Fast, casual back-and-forth with real reactions.",
+  "loop": {
+    "text": "naya tareeka?",
+    "answer": "5 alag ads",
+    "until": "l13"
+  },
+  "payoff": {
+    "beat": "l13",
+    "pauseMs": 350
+  },
+  "sections": [
+    {
+      "id": "hook",
+      "label": "PURANA vs NAYA",
+      "source": "Diagram = illustration · structure Adsworm ki salaah hai, Meta ka rule nahin",
+      "lines": [
+        {
+          "who": "AMAN",
+          "tags": "[excited]",
+          "say": "Meta ads पहले ऐसे चलते थे. अब ऐसे चलते हैं.",
+          "show": "Meta ads pehle [aise] chalte thay. Ab [aise] chalte hain.",
+          "beat": "l1",
+          "react": "doubt",
+          "reactWord": "ab"
+        },
+        {
+          "who": "RIYA",
+          "tags": "[cheeky]",
+          "say": "पाँच ad sets, पाँच audiences. Targeting ही तो मेरा काम है!",
+          "show": "5 ad sets, [5 audiences]. Targeting hi toh [mera kaam] hai!",
+          "beat": "l2",
+          "pre": "laugh",
+          "react": "wink",
+          "reactWord": "kaam"
+        }
+      ],
+      "views": [
+        {
+          "at": "l1",
+          "items": [
+            {
+              "type": "oldNew",
+              "old": {
+                "title": "PURANA TAREEKA",
+                "sets": [
+                  "Audience 1",
+                  "Audience 2",
+                  "Audience 3",
+                  "Audience 4",
+                  "Audience 5"
+                ]
+              },
+              "next": {
+                "title": "NAYA TAREEKA",
+                "label": "Wide audience · city + age"
+              },
+              "switchWord": "ab"
+            }
+          ]
+        },
+        {
+          "at": "l2",
+          "items": [
+            {
+              "type": "oldNew",
+              "old": {
+                "title": "MERA SETUP",
+                "sets": [
+                  "Audience 1",
+                  "Audience 2",
+                  "Audience 3",
+                  "Audience 4",
+                  "Audience 5"
+                ]
+              },
+              "next": {
+                "title": "",
+                "label": ""
+              }
+            },
+            {
+              "type": "sticker",
+              "text": "targeting = mera kaam 💪",
+              "color": "pink",
+              "x": 430,
+              "y": 410,
+              "rotate": 5,
+              "word": "kaam"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "why",
+      "label": "AD KE ANDAR?",
+      "source": "Meta for Business, 22 Apr 2025 · mannequin = illustration",
+      "lines": [
+        {
+          "who": "AMAN",
+          "tags": "[warmly]",
+          "say": "था. अब targeting तुम्हारे ad के अंदर है.",
+          "show": "Tha. Ab targeting tumhare [ad ke andar] hai.",
+          "beat": "l3",
+          "react": "shock",
+          "reactWord": "andar"
+        },
+        {
+          "who": "RIYA",
+          "tags": "[confused]",
+          "say": "Ad के अंदर? कैसे?",
+          "show": "Ad ke andar? [Kaise]?",
+          "beat": "l4",
+          "pre": "doubt"
+        },
+        {
+          "who": "AMAN",
+          "tags": "",
+          "say": "दुकान का mannequin देखो. Sherwani पहनाओ, दूल्हे आएँगे.",
+          "show": "Dukaan ka [mannequin] dekho. Sherwani pehnao, [dulhe aayenge].",
+          "beat": "l5",
+          "react": "laugh",
+          "reactWord": "dulhe"
+        },
+        {
+          "who": "AMAN",
+          "tags": "",
+          "say": "School uniform पहनाओ, parents आएँगे.",
+          "show": "School uniform pehnao, [parents aayenge].",
+          "beat": "l6",
+          "react": "doubt",
+          "reactWord": "parents"
+        },
+        {
+          "who": "RIYA",
+          "tags": "[worried]",
+          "say": "और तीनों पे same kurta?",
+          "show": "Aur teeno pe [same kurta]?",
+          "beat": "l7",
+          "pre": "worry"
+        },
+        {
+          "who": "AMAN",
+          "tags": "[chuckles]",
+          "say": "तो वही भीड़, तीन बार.",
+          "show": "Toh [wahi bheed], teen baar.",
+          "beat": "l8",
+          "react": "shock",
+          "reactWord": "bheed"
+        }
+      ],
+      "views": [
+        {
+          "at": "l3",
+          "items": [
+            {
+              "type": "headline",
+              "lines": [
+                {
+                  "text": "TARGETING AB"
+                },
+                {
+                  "text": "AD KE ANDAR",
+                  "tone": "blue",
+                  "word": "ad"
+                }
+              ],
+              "emoji": "🎯",
+              "emojiWord": "andar"
+            },
+            {
+              "type": "chip",
+              "text": "Meta: \"from niche targeting to creative diversification\"",
+              "kind": "ink",
+              "word": "andar"
+            }
+          ]
+        },
+        {
+          "at": "l5",
+          "items": [
+            {
+              "type": "scene",
+              "height": 430,
+              "actors": [
+                {
+                  "emoji": "SHOP",
+                  "sign": "AAPKI DUKAAN",
+                  "x": 540,
+                  "y": 110,
+                  "size": 250
+                },
+                {
+                  "emoji": "🧍‍♂️",
+                  "label": "mannequin: sherwani",
+                  "x": 330,
+                  "y": 150,
+                  "size": 180,
+                  "word": "sherwani"
+                },
+                {
+                  "emoji": "🤵",
+                  "label": "dulha",
+                  "x": 40,
+                  "y": 190,
+                  "size": 150,
+                  "enter": "left",
+                  "word": "dulhe",
+                  "say": "ye chahiye!",
+                  "sayWord": "aayenge"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "at": "l6",
+          "items": [
+            {
+              "type": "scene",
+              "height": 430,
+              "actors": [
+                {
+                  "emoji": "SHOP",
+                  "sign": "AAPKI DUKAAN",
+                  "x": 540,
+                  "y": 110,
+                  "size": 250
+                },
+                {
+                  "emoji": "🧍",
+                  "label": "mannequin: uniform",
+                  "x": 300,
+                  "y": 150,
+                  "size": 180
+                },
+                {
+                  "emoji": "👨‍👩‍👧",
+                  "label": "parents",
+                  "x": 30,
+                  "y": 190,
+                  "size": 150,
+                  "enter": "left",
+                  "word": "parents",
+                  "say": "ye chahiye!",
+                  "sayWord": "aayenge"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "at": "l7",
+          "items": [
+            {
+              "type": "scene",
+              "height": 430,
+              "actors": [
+                {
+                  "emoji": "🧍‍♂️",
+                  "label": "same kurta",
+                  "x": 60,
+                  "y": 30,
+                  "size": 150
+                },
+                {
+                  "emoji": "🧍‍♂️",
+                  "label": "same kurta",
+                  "x": 350,
+                  "y": 30,
+                  "size": 150,
+                  "word": "same"
+                },
+                {
+                  "emoji": "🧍‍♂️",
+                  "label": "same kurta",
+                  "x": 640,
+                  "y": 30,
+                  "size": 150,
+                  "word": "kurta"
+                },
+                {
+                  "emoji": "🧔",
+                  "x": 90,
+                  "y": 235,
+                  "size": 96,
+                  "enter": "left",
+                  "word": "wahi"
+                },
+                {
+                  "emoji": "🧔",
+                  "x": 380,
+                  "y": 235,
+                  "size": 96,
+                  "enter": "left",
+                  "word": "bheed"
+                },
+                {
+                  "emoji": "🧔",
+                  "x": 670,
+                  "y": 235,
+                  "size": 96,
+                  "enter": "right",
+                  "word": "teen#2"
+                }
+              ]
+            },
+            {
+              "type": "sticker",
+              "text": "wahi bheed ×3 😴",
+              "color": "red",
+              "x": 290,
+              "y": 372,
+              "rotate": -3,
+              "word": "baar"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "meta",
+      "label": "META KYA KEHTA HAI",
+      "source": "Meta small-business creative guide (dekha: 13 Nov 2026) · Meta Engineering, 28 Oct 2026",
+      "lines": [
+        {
+          "who": "AMAN",
+          "tags": "[confident]",
+          "say": "Meta ने कहा: एक जैसे ads उन्हीं लोगों को दिख सकते हैं.",
+          "show": "Meta ne kaha: ek jaise ads [unhi logon ko] dikh sakte hain.",
+          "beat": "l9",
+          "react": "worry",
+          "reactWord": "unhi"
+        },
+        {
+          "who": "RIYA",
+          "tags": "[confused]",
+          "say": "तो city, age सब हटा दूँ?",
+          "show": "Toh city, age [sab hata doon]?",
+          "beat": "l10",
+          "pre": "doubt",
+          "react": "laugh",
+          "reactWord": "hata"
+        },
+        {
+          "who": "AMAN",
+          "tags": "[excited]",
+          "say": "नहीं! City, age तुम्हारी. उसके अंदर Meta ढूँढता है.",
+          "show": "Nahin! City, age [tumhari]. Uske andar [Meta dhoondhta] hai.",
+          "beat": "l11",
+          "react": "shock",
+          "reactWord": "tumhari"
+        },
+        {
+          "who": "RIYA",
+          "tags": "[confused]",
+          "say": "तो मेरा काम?",
+          "show": "Toh [mera kaam]?",
+          "beat": "l12",
+          "pre": "doubt"
+        }
+      ],
+      "views": [
+        {
+          "at": "l9",
+          "items": [
+            {
+              "type": "headline",
+              "lines": [
+                {
+                  "text": "EK JAISE ADS"
+                },
+                {
+                  "text": "= WAHI LOG",
+                  "tone": "red",
+                  "word": "unhi"
+                }
+              ],
+              "emoji": "👥",
+              "emojiWord": "logon"
+            },
+            {
+              "type": "chip",
+              "text": "Meta: \"…could deliver it to the same sets of audiences\"",
+              "kind": "ink",
+              "word": "dikh"
+            }
+          ]
+        },
+        {
+          "at": "l10",
+          "items": [
+            {
+              "type": "headline",
+              "lines": [
+                {
+                  "text": "CITY, AGE"
+                },
+                {
+                  "text": "HATA DOON? 🤔",
+                  "tone": "pink",
+                  "word": "hata"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "at": "l11",
+          "items": [
+            {
+              "type": "split",
+              "left": {
+                "emoji": "📍",
+                "label": "City + age: aapke"
+              },
+              "right": {
+                "emoji": "🤖",
+                "label": "Uske andar: Meta"
+              }
+            },
+            {
+              "type": "chip",
+              "text": "Meta ka system aapke targeting rules maanta hai · 28 Oct 2026",
+              "kind": "ink",
+              "word": "dhoondhta"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fix",
+      "label": "AB AAPKA KAAM",
+      "source": "\"5\" Adsworm ki salaah hai, Meta ne koi number nahin diya · Meta: \"rewards a diverse mix\" (19 Oct 2026)",
+      "lines": [
+        {
+          "who": "AMAN",
+          "tags": "[confident]",
+          "say": "पाँच सच में अलग ads. अलग वजह, अलग चेहरा, अलग format.",
+          "show": "[5 sach mein alag ads]. Alag wajah, alag chehra, [alag format].",
+          "beat": "l13",
+          "react": "shock",
+          "reactWord": "wajah"
+        },
+        {
+          "who": "RIYA",
+          "tags": "[gasps]",
+          "say": "काम गया नहीं. Targeting से ads में आ गया!",
+          "show": "Kaam gaya nahin. Targeting se [ads mein aa gaya]!",
+          "beat": "l14",
+          "pre": "shock",
+          "react": "laugh",
+          "reactWord": "ads"
+        }
+      ],
+      "views": [
+        {
+          "at": "l13",
+          "items": [
+            {
+              "type": "checks",
+              "items": [
+                {
+                  "text": "5 sach mein alag ads",
+                  "word": "5"
+                },
+                {
+                  "text": "Alag wajah",
+                  "word": "wajah"
+                },
+                {
+                  "text": "Alag chehra ya jagah",
+                  "word": "chehra"
+                },
+                {
+                  "text": "Alag format",
+                  "word": "format"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "at": "l14",
+          "items": [
+            {
+              "type": "headline",
+              "lines": [
+                {
+                  "text": "KAAM GAYA NAHIN"
+                },
+                {
+                  "text": "ADS MEIN AA GAYA",
+                  "tone": "green",
+                  "word": "ads"
+                }
+              ],
+              "emoji": "🛠️",
+              "emojiWord": "targeting"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "label": "FREE ANGLE SHEET",
+      "source": "\"Alag ad ka test\" Adsworm ki list hai, Meta ki nahin",
+      "lines": [
+        {
+          "who": "AMAN",
+          "tags": "[excited]",
+          "say": "Comment TARGET. Ad angle sheet DM कर दूँगा.",
+          "show": "Comment [\"TARGET\"]. Ad angle sheet [DM kar dunga].",
+          "beat": "l15",
+          "react": "laugh",
+          "reactWord": "dm"
+        },
+        {
+          "who": "RIYA",
+          "tags": "[cheeky]",
+          "say": "उस दोस्त को भेजो जो अब भी interests ढूँढ रहा है!",
+          "show": "Us dost ko bhejo jo ab bhi [interests dhoondh raha] hai!",
+          "beat": "l16",
+          "pre": "laugh",
+          "react": "laugh",
+          "reactWord": "interests"
+        }
+      ],
+      "views": [
+        {
+          "at": "l15",
+          "items": [
+            {
+              "type": "comment",
+              "keyword": "TARGET"
+            },
+            {
+              "type": "chip",
+              "text": "Ad angle sheet · 5 wajah × 3 format · DM mein",
+              "kind": "green",
+              "delay": 40
+            }
+          ]
+        },
+        {
+          "at": "l16",
+          "items": [
+            {
+              "type": "chip",
+              "text": "🔖 ALAG AD KA TEST · save karo",
+              "kind": "blue"
+            },
+            {
+              "type": "checklist",
+              "rows": [
+                "Pehle 3 second alag?",
+                "Chehra ya jagah alag?",
+                "Format alag?",
+                "Khareedne ki wajah alag?",
+                "Kiske liye hai, wo alag?"
+              ],
+              "unlockAt": "l16"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

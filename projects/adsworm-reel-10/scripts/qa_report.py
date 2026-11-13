@@ -53,6 +53,27 @@ for sec in sections:
             return beats.get(at, 0) / FPS if at in beats else None
         return fallback
 
+    def walk(node, vs):
+        """Any item, present or future: `word`/`…Word` is a spoken-word cue, `…Words` a list of them, `at`/`…At` a beat."""
+        if isinstance(node, list):
+            for x in node:
+                walk(x, vs)
+        elif isinstance(node, dict):
+            for k, val in node.items():
+                if isinstance(val, str) and (k == "word" or k.endswith("Word")):
+                    t = word_t(val, vs)
+                    if t is not None:
+                        changes.append(t)
+                elif isinstance(val, str) and (k == "at" or k.endswith("At")) and val in beats:
+                    changes.append(beats[val] / FPS)
+                elif isinstance(val, list) and k.endswith("Words"):
+                    for w in val:
+                        t = word_t(w, vs)
+                        if t is not None:
+                            changes.append(t)
+                else:
+                    walk(val, vs)
+
     changes.append(sec["start"] - 0.2)  # whip
     for v in sec.get("views", []):
         vs = beats.get(v["at"], 0) / FPS
@@ -60,33 +81,7 @@ for sec in sections:
             vs = word_t(v["word"], vs) or vs
         changes.append(vs)
         for it in v["items"]:
-            t0 = cue_t(it.get("word"), it.get("at"), vs, vs)
-            if t0 is None:
-                continue
-            changes.append(t0)
-            for key, wk, ak in (("actors", "word", "at"), ("msgs", "word", "at"), ("lines", "word", "at"), ("rows", "word", "at")):
-                for sub in it.get(key, []) if isinstance(it.get(key), list) else []:
-                    if not isinstance(sub, dict):
-                        continue
-                    for w_key, a_key in ((wk, ak), ("outWord", "outAt"), ("sayWord", "sayAt"), ("badgeWord", "badgeAt"), ("verdictWord", "verdictAt")):
-                        if sub.get(w_key) or sub.get(a_key):
-                            t1 = cue_t(sub.get(w_key), sub.get(a_key), vs, None)
-                            if t1 is not None:
-                                changes.append(t1)
-                    for seg in sub.get("segs", []):
-                        if seg.get("word") or seg.get("at"):
-                            t2 = cue_t(seg.get("word"), seg.get("at"), vs, None)
-                            if t2 is not None:
-                                changes.append(t2)
-            for c in it.get("items", []) if it["type"] == "checks" else []:
-                t3 = word_t(c["word"], vs)
-                if t3 is not None:
-                    changes.append(t3)
-            for k in ("adWord", "emojiWord", "statusWord", "smileWord", "tapWord", "webWord", "goodWord"):
-                if it.get(k):
-                    t4 = word_t(it[k], vs)
-                    if t4 is not None:
-                        changes.append(t4)
+            walk(it, vs)
 reactions = []
 for i, l in enumerate(lines):
     if i == 0 or lines[i - 1]["who"] != l["who"]:
@@ -171,6 +166,10 @@ check(lo <= words_total <= hi, f"{lo}–{hi} spoken words", str(words_total))
 check(dur <= 55, "runtime ≤ 55 s", f"{dur:.1f}s")
 check(max(len(l["words"]) for l in lines) <= 14, "no line over 14 words", str(max(len(l["words"]) for l in lines)))
 check(not missing, "every word cue is actually spoken", "; ".join(missing))
+if tl.get("matched"):
+    m, n = tl["matched"]
+    # below ~90% the transcription skipped speech: timings (and anything cut around them) can't be trusted
+    check(m / n >= 0.9, "≥ 90% of script words found in the audio", f"{m}/{n}")
 if tl.get("lang", "en") != "en":
     # Hinglish: `say` is Devanagari + English, `show` is its Latin caption. Same word count per line
     # means every caption word lights up on its own spoken word.

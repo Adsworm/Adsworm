@@ -13,6 +13,7 @@ Sound effects are not mixed here: the visuals play their own (src/reel/Sfx.tsx).
     REEL=<slug> python3 scripts/voice.py                              # REEL_DAYS=n forces the countdown
     REEL=<slug> DIALOGUE=dialogue.draft.mp3 python3 scripts/voice.py   # free draft voice (scripts/draft_voice.py)
 """
+import collections
 import difflib
 import json
 import os
@@ -35,6 +36,7 @@ SRC = DIR / os.environ.get("DIALOGUE", "dialogue.mp3")
 SR, FPS = 48000, 30
 rng = np.random.default_rng(3)
 _models = {}
+Heard = collections.namedtuple("Heard", "word start end")
 
 
 def countdown(s):
@@ -77,8 +79,22 @@ def heard(x16):
     name = "small" if LANG == "en" else "medium"
     if name not in _models:
         _models[name] = WhisperModel(name, device="cpu", compute_type="int8")
-    segs, _ = _models[name].transcribe(x16.astype(np.float32), language=LANG, word_timestamps=True)
-    return [w for s in segs for w in s.words]
+    # Long files are transcribed in ~18 s pieces cut at the quietest nearby pause, each on its own
+    # (no carry-over text). In one pass Whisper once skipped four whole lines of a 60 s Hinglish take.
+    x16 = x16.astype(np.float32)
+    win = 320  # 20 ms
+    env = np.sqrt(np.convolve(x16 ** 2, np.ones(win) / win, mode="same"))
+    cuts, at = [0], 0
+    while len(x16) - at > 26 * 16000:
+        lo, hi = at + 14 * 16000, at + 22 * 16000
+        at = lo + int(np.argmin(np.convolve(env[lo:hi], np.ones(3200) / 3200, mode="same")))
+        cuts.append(at)
+    cuts.append(len(x16))
+    out = []
+    for a, b in zip(cuts, cuts[1:]):
+        segs, _ = _models[name].transcribe(x16[a:b], language=LANG, word_timestamps=True, condition_on_previous_text=False)
+        out += [Heard(w.word, w.start + a / 16000, w.end + a / 16000) for sg in segs for w in sg.words]
+    return out
 
 
 # ---- Hinglish alignment ------------------------------------------------------------------------
@@ -127,15 +143,18 @@ def fuzzy_align(script_words, heard_words):
 def tighten(x, ws, cap):
     """Keep speech, shorten every QUIET pause to `cap` seconds (12 ms crossfades). Gaps that hold sound
     Whisper doesn't transcribe (a laugh, a gasp from an audio tag) are kept."""
-    keep, cursor = [], int(max(0, ws[0].start - 0.05) * SR)
     floor = np.sqrt(np.mean(x ** 2)) * 0.25
+    hop = int(0.02 * SR)
+    loud = np.nonzero(np.sqrt(np.mean(x[: len(x) // hop * hop].reshape(-1, hop) ** 2, axis=1)) > floor)[0]
+    first_loud, last_loud = (loud[0] * hop, (loud[-1] + 1) * hop) if len(loud) else (0, len(x))
+    keep, cursor = [], int(max(0, min(ws[0].start * SR, first_loud) - 0.05 * SR))
     for a, b in zip(ws, ws[1:]):
         seg = x[int(a.end * SR) : int(b.start * SR)]
         quiet = len(seg) == 0 or np.sqrt(np.mean(seg ** 2)) < floor
         if b.start - a.end > cap and quiet:
             keep.append((cursor, int((a.end + cap / 2) * SR)))
             cursor = int((b.start - cap / 2) * SR)
-    keep.append((cursor, min(len(x), int((ws[-1].end + 0.2) * SR))))
+    keep.append((cursor, min(len(x), max(int((ws[-1].end + 0.2) * SR), last_loud + int(0.15 * SR)))))
     f = int(0.012 * SR)
     out = []
     for s, e in keep:
@@ -263,6 +282,7 @@ def main():
                 st, en = hw[b0].start, hw[b1 - 1].end
                 for i in range(a1 - a0):
                     times[a0 + i] = (st + (en - st) * i / (a1 - a0), st + (en - st) * (i + 1) / (a1 - a0))
+    matched = sum(t is not None for t in times)  # before the gaps are filled in: the QA gate reads this
     i = 0
     while i < len(times):  # a run of unmatched words shares the gap between its matched neighbours, by length
         if times[i] is not None:
@@ -348,7 +368,7 @@ def main():
     hop = SR // FPS
     rms = np.array([np.sqrt(np.mean(track[i : i + hop] ** 2)) for i in range(0, len(track), hop)])
     env = np.clip(rms / (np.percentile(rms[rms > 1e-4], 90) + 1e-9), 0, 1)
-    tl = {"env": [round(float(v), 2) for v in env], "fps": FPS, "lang": LANG, "variant": "organic", "vars": vars_, "durationInFrames": frames, "voices": s["voices"], "brand": s.get("brand", {}), "loop": s.get("loop"), "payoff": payoff_tl, "lines": lines, "sections": sections, "beats": beats}
+    tl = {"env": [round(float(v), 2) for v in env], "fps": FPS, "lang": LANG, "matched": [matched, len(sw)], "variant": "organic", "vars": vars_, "durationInFrames": frames, "voices": s["voices"], "brand": s.get("brand", {}), "loop": s.get("loop"), "payoff": payoff_tl, "lines": lines, "sections": sections, "beats": beats}
     (ROOT / "src/reel/timeline.json").write_text(json.dumps(tl, ensure_ascii=False, indent=1))
     gaps = [b[0] - a[1] for a, b in zip(times, times[1:])]
     print(f"{len(lines)} lines · {total:.1f}s · {len(times) / (times[-1][1] - times[0][0]):.2f} words/s · max gap {max(gaps):.2f}s → public/voice.wav, src/reel/timeline.json")
