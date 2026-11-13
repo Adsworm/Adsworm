@@ -1,7 +1,7 @@
 import { loadFont } from "@remotion/fonts";
 import { staticFile } from "remotion";
 
-// Caption system matched to the agency team's edit (measured from "LEEVORA NEW 1RC.mp4"):
+// Caption system matched to an agency team edit (measured from their delivered video):
 // Inter Tight (SIL OFL) for captions; a high-contrast serif for the opening title (Gloock, the closest open match to the team's title and the logo).
 export const TEAM_SANS = "Inter Tight";
 export const TEAM_SERIF = "Gloock";

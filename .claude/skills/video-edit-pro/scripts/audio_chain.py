@@ -3,7 +3,7 @@ Usage: audio_chain.py <in.wav|mov> <out.wav> <atten_lim_db|0=no denoise> <target
 import sys, subprocess, json, os, tempfile
 HERE = os.path.dirname(os.path.abspath(__file__)); ROOT = os.environ.get('VEP_WORK', os.path.dirname(HERE))   # workdir made by setup/bootstrap.sh
 DFN_PY = os.path.join(ROOT, 'venvs/dfn/bin/python'); DFN_MODEL = os.path.join(ROOT, 'models/dfn/DeepFilterNet3')
-# Measured on IMG_5776.MOV: hum lines at 101.1 / 200.7 Hz, AC drone lines at 392.6 / 418.9 Hz; her fundamental sits near 200 Hz,
+# Measured on the first job (phone testimonial): hum lines at 101.1 / 200.7 Hz, AC drone lines at 392.6 / 418.9 Hz; her fundamental sits near 200 Hz,
 # so the 200 Hz notch is narrow and shallow. High-pass at 115 Hz (24 dB/oct) is below her voice.
 PRE = ('pan=mono|c0=0.5*c0+0.5*c1,highpass=f=115:p=2,highpass=f=115:p=2,'
        'equalizer=f=101.1:t=q:w=14:g=-30,equalizer=f=200.7:t=q:w=35:g=-9,equalizer=f=392.6:t=q:w=40:g=-8,equalizer=f=418.9:t=q:w=40:g=-8,volume=18dB')
