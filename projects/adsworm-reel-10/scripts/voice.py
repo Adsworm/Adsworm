@@ -19,6 +19,7 @@ import json
 import os
 import re
 import subprocess
+import tempfile
 import sys
 import wave
 from datetime import date
@@ -256,6 +257,27 @@ def main():
     # one entry per script word, in order. When this file exists nothing is guessed from speech recognition:
     # measured on a Hinglish clip, Whisper-based times were off by 126 ms on average and by >150 ms for 1 word in 5.
     known_file = SRC.with_suffix(".words.json")
+    # No engine times (Higgsfield returns none)? Then force-align the known words to the audio with a Hindi CTC
+    # model (scripts/align_ctc.py: 23 ms average error against 126 ms for Whisper word stamps). The result is
+    # kept beside the audio as <audio>.ctc.json and reused until the audio or the script changes.
+    ctc_file = SRC.with_suffix(".ctc.json")
+    align_py = Path.home() / ".venvs" / "align" / "bin" / "python"
+    if not known_file.exists() and LANG != "en" and os.environ.get("ALIGN", "ctc") == "ctc":
+        fresh = ctc_file.exists() and ctc_file.stat().st_mtime >= max(SRC.stat().st_mtime, SCRIPT.stat().st_mtime)
+        if not fresh and align_py.exists():
+            spoken = [w for _, ln in flat for w in (ln.get("tts") or ln["say"]).split()]
+            with tempfile.TemporaryDirectory() as td:
+                wj = Path(td) / "words.json"
+                wj.write_text(json.dumps(spoken, ensure_ascii=False))
+                r = subprocess.run([str(align_py), str(ROOT / "scripts" / "align_ctc.py"), str(SRC), str(wj), str(ctc_file)], capture_output=True, text=True)
+            if r.returncode != 0:
+                print("forced alignment failed, falling back to speech recognition:", (r.stderr or r.stdout).strip().splitlines()[-1:] or "")
+                ctc_file.unlink(missing_ok=True)
+            fresh = ctc_file.exists()
+        elif not fresh:
+            print("forced aligner not installed (bash scripts/setup_align.sh): captions fall back to speech-recognition timing")
+        if fresh:
+            known_file = ctc_file
     known = None
     if known_file.exists():
         known = [Heard(w["w"], w["start"], w["end"]) for w in json.loads(known_file.read_text())]
@@ -277,7 +299,7 @@ def main():
     if known:
         final = lambda t: lead + remap(t, keep) / tempo
         times = [(final(w.start), final(w.end)) for w in known]
-        print(f"exact word times from the voice engine: {len(known)}/{len(sw)}")
+        print(f"{'forced-aligned' if known_file.suffixes[-2:] == ['.ctc', '.json'] else 'exact engine'} word times: {len(known)}/{len(sw)}")
     elif LANG != "en":
         # Hinglish: one transcription of the RAW audio, then the same cuts and tempo applied to its word
         # times. (Transcribing the tightened, sped-up voice a second time lost a fifth of the words.)
