@@ -1,5 +1,5 @@
 {
-  "title": "October mein ads ne paisa jalaya? Diwali ke baad cost wapas neeche",
+  "title": "October mein ads ne paisa jalaya? Diwali week ke peak se cost neeche",
   "lang": "hi",
   "voices": {
     "AMAN": {
@@ -15,9 +15,9 @@
   },
   "direction": "Natural Hinglish (Hindi mixed with English) Instagram skit between two Indians from Delhi, native Hindi pronunciation. Aman: friendly marketing expert, calm, warm, confident, a little teasing. Riya: expressive brand owner, panicking at first, then curious, then relieved. Fast, casual back-and-forth with real reactions.",
   "gapCap": 0.22,
-  "tempo": 1.08,
+  "tempo": 1.15,
   "leadInMs": 60,
-  "tailMs": 1800,
+  "tailMs": 1500,
   "bedGain": 0.07,
   "brand": {
     "names": {
@@ -57,8 +57,8 @@
         {
           "who": "AMAN",
           "tags": "[warmly]",
-          "say": "सिर्फ तुम्हारे नहीं. हमारे सत्रह में से पंद्रह accounts में enquiry महँगी.",
-          "show": "Sirf tumhare nahin. Humare [17 mein se 15] accounts mein enquiry [mehngi].",
+          "say": "अकेली नहीं. हमारे सत्रह में से पंद्रह accounts में enquiry महँगी हुई.",
+          "show": "Akeli nahin. Humare [17 mein se 15] accounts mein enquiry [mehngi hui].",
           "beat": "l2",
           "react": "doubt",
           "reactWord": "15"
@@ -74,8 +74,8 @@
         {
           "who": "AMAN",
           "tags": "[excited]",
-          "say": "Diwali week peak था. अब cost वापस नीचे आ रही है.",
-          "show": "Diwali week [peak] tha. Ab cost [wapas neeche] aa rahi hai.",
+          "say": "Diwali week peak था. अब cost वहाँ से नीचे आई है.",
+          "show": "Diwali week [peak] tha. Ab cost [wahan se neeche] aayi hai.",
           "beat": "l4",
           "react": "laugh",
           "reactWord": "neeche"
@@ -154,10 +154,10 @@
                   "label": "9–11 Nov",
                   "value": 164,
                   "display": "₹164",
-                  "tone": "green",
+                  "tone": "gold",
                   "word": "neeche",
-                  "stamp": "wapas ✓",
-                  "stampWord": "rahi"
+                  "stamp": "13/16 mein neeche",
+                  "stampWord": "aayi"
                 }
               ]
             }
@@ -168,7 +168,7 @@
     {
       "id": "why",
       "label": "KYUN HUA?",
-      "source": "Criteo India, festive 2025 (digital ads) · Adsworm accounts, Sep vs Oct 2026 · Meta, 21 Oct 2026",
+      "source": "Criteo India, festive 2025 (digital ads) · Adsworm accounts, Sep vs Oct 2026 · Redseer via Inc42, Oct 2026 · Meta, 21 Oct 2026",
       "lines": [
         {
           "who": "AMAN",
@@ -183,7 +183,7 @@
           "who": "RIYA",
           "tags": "[confused]",
           "say": "पर मेरे clicks तो आए थे!",
-          "show": "Par mere [clicks toh aaye] the!",
+          "show": "Par mere [clicks toh aaye] thay!",
           "beat": "l7",
           "pre": "doubt",
           "react": "wink",
@@ -192,11 +192,11 @@
         {
           "who": "AMAN",
           "tags": "[excited]",
-          "say": "वही असली वजह. Customer sale में busy था. Click आया, order नहीं.",
-          "show": "Wahi [asli wajah]. Customer sale mein busy tha. Click aaya, [order nahin].",
+          "say": "वही तो! Customer बड़ी sale में busy था. Click आया, enquiry नहीं.",
+          "show": "[Wahi toh]! Customer badi sale mein busy tha. Click aaya, [enquiry nahin].",
           "beat": "l8",
           "react": "worry",
-          "reactWord": "order"
+          "reactWord": "enquiry"
         },
         {
           "who": "RIYA",
@@ -265,7 +265,7 @@
             },
             {
               "type": "chip",
-              "text": "Festive 2025: clicks 45% mehnge · Criteo India",
+              "text": "Pichhle saal, digital ads: clicks 45% mehnge · Criteo India",
               "kind": "ink",
               "word": "karta"
             },
@@ -310,9 +310,9 @@
             },
             {
               "type": "chip",
-              "text": "Humare accounts: click ka daam wahi, enquiry +16%",
+              "text": "Humare accounts: click ka daam wahi, enquiry 12% mehngi",
               "kind": "ink",
-              "word": "order"
+              "word": "enquiry"
             }
           ]
         },
@@ -397,8 +397,8 @@
         {
           "who": "AMAN",
           "tags": "[confident]",
-          "say": "Meta ने खुद कहा: हर ad set को हफ्ते में पचास conversions.",
-          "show": "Meta ne khud kaha: har ad set ko hafte mein [50 conversions].",
+          "say": "Meta ने कहा: ad set को हफ्ते में करीब पचास conversions चाहिए.",
+          "show": "Meta ne kaha: ad set ko hafte mein [kareeb 50 conversions] chahiye.",
           "beat": "l11",
           "react": "doubt",
           "reactWord": "50"
@@ -436,12 +436,12 @@
             {
               "type": "stat",
               "value": 50,
-              "label": "conversions har hafte · har ad set",
+              "label": "conversions (order ya enquiry) · har hafte, har ad set",
               "color": "blue"
             },
             {
               "type": "chip",
-              "text": "Isse kam? ~28% mehnga · Meta, 21 Oct 2026",
+              "text": "Isse kam? Purchase ~28% mehngi · Meta ka analysis, 21 Oct 2026",
               "kind": "ink",
               "word": "50"
             }
@@ -562,8 +562,8 @@
         {
           "who": "AMAN",
           "tags": "[confident]",
-          "say": "एक campaign. कम ad sets. अलग-अलग creatives. छेड़ना बंद.",
-          "show": "[Ek campaign]. Kam ad sets. [Alag-alag creatives]. [Chhedna band].",
+          "say": "एक campaign. कम ad sets. अलग-अलग creatives. Edits बंद.",
+          "show": "[Ek campaign]. Kam ad sets. [Alag-alag creatives]. [Edits band].",
           "beat": "l15",
           "react": "laugh",
           "reactWord": "band"
@@ -589,8 +589,8 @@
                   "word": "alag"
                 },
                 {
-                  "text": "Roz chhedna band",
-                  "word": "chhedna"
+                  "text": "Roz ke edits band",
+                  "word": "edits"
                 }
               ]
             }

@@ -294,7 +294,7 @@ export const Columns: React.FC<{t: number; title?: string; cols: Col[]; note?: s
               <div style={{fontFamily: display, fontSize: 64, lineHeight: 1, color: col, opacity: c.t < 0 ? 0 : progress(c.t, 8, 8), marginBottom: 6, WebkitTextStroke: '2px #0D1320'}}>{c.display}</div>
               <div style={{width: '100%', height: h, background: col, border: V3.outline, borderBottom: 'none', borderRadius: '16px 16px 0 0', boxShadow: '5px 0 0 #0D1320'}} />
               {c.stamp && (c.stampT ?? -1) >= 0 ? (
-                <div style={{position: 'absolute', top: -52, left: '50%', padding: '5px 13px', borderRadius: 12, background: '#fff', color: col, border: V3.outline, boxShadow: '4px 4px 0 #0D1320', fontWeight: 800, fontSize: 26, whiteSpace: 'nowrap', transform: `translateX(-50%) rotate(-4deg) scale(${s})`}}>
+                <div style={{position: 'absolute', top: -52, left: '50%', padding: '5px 13px', borderRadius: 12, background: '#fff', color: c.tone === 'gold' ? C.ink : col, border: V3.outline, boxShadow: '4px 4px 0 #0D1320', fontWeight: 800, fontSize: 26, whiteSpace: 'nowrap', transform: `translateX(-50%) rotate(-4deg) scale(${s})`}}>
                   <Sfx name="pop" t={c.stampT ?? -1} />
                   {c.stamp}
                 </div>

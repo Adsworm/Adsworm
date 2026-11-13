@@ -233,6 +233,9 @@ def main():
 
     raw = pcm(SRC, SR)
     hw_raw = heard(pcm(SRC, 16000))
+    # what the model heard, for the transcript check (I can't listen; this is the evidence the lines are intelligible)
+    (ROOT / "out").mkdir(exist_ok=True)
+    (ROOT / "out" / f"heard-{DIR.name}.txt").write_text(" ".join(w.word.strip() for w in hw_raw) + "\n")
     voice, keep = tighten(raw, hw_raw, s.get("gapCap", 0.26))
     tempo = s.get("tempo", 1.0)
     if tempo != 1.0:
