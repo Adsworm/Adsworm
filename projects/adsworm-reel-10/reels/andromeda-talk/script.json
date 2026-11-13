@@ -1,0 +1,394 @@
+{
+  "title": "5 ads, phir bhi wahi thode se log? Har ad alag banao (Andromeda 2.0)",
+  "lang": "hi",
+  "voices": {
+    "AMAN": {
+      "name": "Holden",
+      "voice_type": "preset",
+      "voice_id": "3c9d6053-6334-592c-8997-4e325286af3f"
+    },
+    "RIYA": {
+      "name": "Anika",
+      "voice_type": "preset",
+      "voice_id": "4b2dc8f3-5e8b-59a9-9a5c-85620e44c033"
+    }
+  },
+  "direction": "A real, lively chat in everyday Delhi Hinglish between two friends. Aman: ads expert, warm, amused, a little teasing, then clear and confident when he explains. Riya: a business owner, fed up at first, defensive, then curious, then relieved and cheeky. Native Hindi rhythm and pronunciation; English loan words the way Indians say them. Natural pauses at the dots, real reactions, never robotic, never rushed.",
+  "gapCap": 0.3,
+  "tempo": 1.06,
+  "leadInMs": 60,
+  "tailMs": 1500,
+  "bedGain": 0.07,
+  "brand": {
+    "names": {
+      "AMAN": "AMAN · ADSWORM",
+      "RIYA": "RIYA · BRAND OWNER"
+    },
+    "side": {
+      "AMAN": "left",
+      "RIYA": "right"
+    }
+  },
+  "loop": {
+    "text": "kyun? fix kya?",
+    "answer": "har ad alag",
+    "until": "l10"
+  },
+  "payoff": {
+    "beat": "l10",
+    "pauseMs": 350
+  },
+  "sections": [
+    {
+      "id": "hook",
+      "label": "EK JAISE ADS",
+      "source": "Illustration",
+      "lines": [
+        {
+          "who": "RIYA",
+          "tags": "[frustrated]",
+          "say": "पाँच ads चला रही हूँ… फिर भी वही थोड़े से लोग देख रहे हैं!",
+          "tts": "पाँच ऐड्स चला रही हूँ… फिर भी वही थोड़े से लोग देख रहे हैं!",
+          "show": "5 ads chala rahi hoon… phir bhi wahi [thode se log] dekh rahe hain!",
+          "beat": "l1",
+          "how": "Chidh ke, thaki hui. 'hoon…' ke baad aadha second ruko. Zor: 'wahi thode se log'.",
+          "pre": "worry",
+          "react": "surprised",
+          "reactWord": "log"
+        },
+        {
+          "who": "AMAN",
+          "tags": "[amused]",
+          "say": "दिखाओ ज़रा. अरे… ये पाँचों तो एक जैसे हैं!",
+          "tts": "दिखाओ ज़रा. अरे… ये पाँचों तो एक जैसे हैं!",
+          "show": "Dikhao zara. Arre… ye paancho toh [ek jaise] hain!",
+          "beat": "l2",
+          "how": "Halki hansi, jaise abhi pakda ho. 'Arre…' ke baad ruko. Zor: 'ek jaise'.",
+          "react": "doubt",
+          "reactWord": "jaise"
+        },
+        {
+          "who": "RIYA",
+          "tags": "[defensive]",
+          "say": "Background का colour तो अलग है!",
+          "tts": "बैकग्राउंड का कलर तो अलग है!",
+          "show": "Background ka colour toh [alag hai]!",
+          "beat": "l3",
+          "how": "Tez, safai dete hue.",
+          "pre": "doubt",
+          "react": "wink",
+          "reactWord": "alag"
+        },
+        {
+          "who": "AMAN",
+          "tags": "[chuckles]",
+          "say": "Instagram की machine को ये एक ही ad लग सकता है.",
+          "tts": "इंस्टाग्राम की मशीन को ये एक ही ऐड लग सकता है.",
+          "show": "Instagram ki machine ko ye [ek hi ad] lag sakta hai.",
+          "beat": "l4",
+          "how": "Muskura ke, dheere. 'ek – hi – ad' teeno shabd alag-alag girein.",
+          "react": "shock",
+          "reactWord": "ek"
+        }
+      ],
+      "views": [
+        {
+          "at": "l1",
+          "items": [
+            {
+              "type": "sameIsOne",
+              "eqAt": "l4",
+              "tag": "machine ko ye ek hi ad lag sakta hai"
+            },
+            {
+              "type": "sticker",
+              "text": "wahi thode se log 😩",
+              "color": "pink",
+              "x": 520,
+              "y": 20,
+              "rotate": 4,
+              "word": "thode"
+            },
+            {
+              "type": "sticker",
+              "text": "paancho ek jaise!",
+              "color": "red",
+              "x": 40,
+              "y": 30,
+              "rotate": -5,
+              "word": "paancho"
+            },
+            {
+              "type": "sticker",
+              "text": "bas colour alag 🎨",
+              "color": "blue",
+              "x": 560,
+              "y": 420,
+              "rotate": -4,
+              "word": "colour"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "why",
+      "label": "KAUN-SI MACHINE?",
+      "source": "Meta for Business, 28 Oct 2026 · Meta creative guide (dekha: 13 Nov 2026) · \"2.0\" logon ka diya naam",
+      "lines": [
+        {
+          "who": "RIYA",
+          "tags": "[confused]",
+          "say": "Machine? कौन-सी machine?",
+          "tts": "मशीन? कौन-सी मशीन?",
+          "show": "Machine? [Kaun-si] machine?",
+          "beat": "l5",
+          "how": "Hairaan, awaaz upar jaaye.",
+          "pre": "doubt"
+        },
+        {
+          "who": "AMAN",
+          "tags": "[warmly]",
+          "say": "जो छाँटती है कि किसे कौन-सा ad दिखे. लोग इसे Andromeda टू-पॉइंट-ओ कहते हैं.",
+          "tts": "जो छाँटती है कि किसे कौन-सा ऐड दिखे. लोग इसे एंड्रोमेडा टू-पॉइंट-ओ कहते हैं.",
+          "show": "Jo [chhaant-ti hai] ki kise kaun-sa ad dikhe. Log ise [Andromeda 2.0] kehte hain.",
+          "beat": "l6",
+          "how": "Samjhate hue, saaf, bina jaldi. Naam 'Andromeda 2.0' dheere aur saaf.",
+          "react": "doubt",
+          "reactWord": "andromeda"
+        },
+        {
+          "who": "AMAN",
+          "tags": "",
+          "say": "Ads एक जैसे दिखे, तो ये उन्हें एक ही समझ सकती है.",
+          "tts": "ऐड्स एक जैसे दिखे, तो ये उन्हें एक ही समझ सकती है.",
+          "show": "Ads [ek jaise] dikhe, toh ye unhe [ek hi] samajh sakti hai.",
+          "beat": "l7",
+          "how": "Seedha, sthir.",
+          "react": "worry",
+          "reactWord": "samajh"
+        },
+        {
+          "who": "AMAN",
+          "tags": "",
+          "say": "फिर तुम… कम लोगों तक पहुँचते हो.",
+          "tts": "फिर तुम… कम लोगों तक पहुँचते हो.",
+          "show": "Phir tum… [kam logon tak] pahunchte ho.",
+          "beat": "l8",
+          "how": "Thoda gambhir. 'tum…' ke baad chhota pause. Zor: 'kam logon tak'.",
+          "react": "worry",
+          "reactWord": "kam"
+        },
+        {
+          "who": "RIYA",
+          "tags": "[worried]",
+          "say": "ओह… तो करूँ क्या?",
+          "tts": "ओह… तो करूँ क्या?",
+          "show": "Oh… toh [karun kya]?",
+          "beat": "l9",
+          "how": "Fikar mein, dheemi awaaz.",
+          "pre": "worry"
+        }
+      ],
+      "views": [
+        {
+          "at": "l5",
+          "items": [
+            {
+              "type": "sorter",
+              "name": "ANDROMEDA\n2.0",
+              "sub": "एंड्रोमेडा 2.0",
+              "nameWord": "andromeda",
+              "pileLabel": "saare ads",
+              "fewLabel": "kuch hi ads"
+            }
+          ]
+        },
+        {
+          "at": "l7",
+          "items": [
+            {
+              "type": "sameIsOne",
+              "eqWord": "samajh",
+              "tag": "machine ko ye ek hi ad lag sakta hai"
+            }
+          ]
+        },
+        {
+          "at": "l8",
+          "items": [
+            {
+              "type": "reach",
+              "lit": 2,
+              "tag": "kam log 😕"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "how",
+      "label": "TOH KARUN KYA?",
+      "source": "Teen tarah ke ads: Adsworm ki salaah · Meta: \"supply more creative variety\" (28 Oct 2026)",
+      "lines": [
+        {
+          "who": "AMAN",
+          "tags": "[confident]",
+          "say": "हर ad अलग बनाओ! एक में अपना काम दिखाओ,",
+          "tts": "हर ऐड अलग बनाओ! एक में अपना काम दिखाओ,",
+          "show": "[Har ad alag] banao! Ek mein apna kaam dikhao,",
+          "beat": "l10",
+          "how": "Bharose se, energy upar. 'Har ad alag' poori reel ka sabse zordaar hissa.",
+          "react": "shock",
+          "reactWord": "alag"
+        },
+        {
+          "who": "AMAN",
+          "tags": "",
+          "say": "दूसरे में customer की तारीफ़, तीसरे में offer.",
+          "tts": "दूसरे में कस्टमर की तारीफ़, तीसरे में ऑफ़र.",
+          "show": "doosre mein customer ki [tareef], teesre mein [offer].",
+          "beat": "l11",
+          "how": "Ginti ki tarah: ek… do… teen. Har cheez ke baad zara sa rukna.",
+          "react": "laugh",
+          "reactWord": "offer"
+        }
+      ],
+      "views": [
+        {
+          "at": "l10",
+          "items": [
+            {
+              "type": "headline",
+              "lines": [
+                {
+                  "text": "हर ऐड अलग",
+                  "tone": "red"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "at": "l10",
+          "word": "ek",
+          "items": [
+            {
+              "type": "threeAds",
+              "items": [
+                {
+                  "glyph": "🛍️",
+                  "label": "apna kaam"
+                },
+                {
+                  "glyph": "⭐",
+                  "label": "customer ki tareef",
+                  "word": "tareef"
+                },
+                {
+                  "glyph": "🏷️",
+                  "label": "offer",
+                  "word": "offer"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "also",
+      "label": "BOOST BHI AD HAI",
+      "source": "Illustration",
+      "lines": [
+        {
+          "who": "RIYA",
+          "tags": "[curious]",
+          "say": "और boost भी ऐसे ही?",
+          "tts": "और बूस्ट भी ऐसे ही?",
+          "show": "Aur boost bhi [aise hi]?",
+          "beat": "l12",
+          "how": "Jigyasa se, ab awaaz mein chamak.",
+          "pre": "laugh"
+        },
+        {
+          "who": "AMAN",
+          "tags": "[warmly]",
+          "say": "हाँ. Boost भी ad ही है.",
+          "tts": "हाँ. बूस्ट भी ऐड ही है.",
+          "show": "Haan. Boost bhi [ad hi] hai.",
+          "beat": "l13",
+          "how": "Garmjoshi se, pakke yakeen ke saath.",
+          "react": "laugh",
+          "reactWord": "ad"
+        }
+      ],
+      "views": [
+        {
+          "at": "l12",
+          "items": [
+            {
+              "type": "boostPhone",
+              "goWord": "haan"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "label": "FREE NAMOONE",
+      "source": "Message mein: teeno ads ke ready namoone, Hindi mein (free)",
+      "lines": [
+        {
+          "who": "AMAN",
+          "tags": "[excited]",
+          "say": "Comment में ANDROMEDA लिखो. तीनों ads के ready नमूने भेज दूँगा.",
+          "tts": "कमेंट में एंड्रोमेडा लिखो. तीनों ऐड्स के रेडी नमूने भेज दूँगा.",
+          "show": "Comment mein [\"ANDROMEDA\"] likho. Teeno ads ke [ready namoone] bhej dunga.",
+          "beat": "l14",
+          "how": "Bulate hue. 'ANDROMEDA' shabd dheere.",
+          "react": "laugh",
+          "reactWord": "namoone"
+        },
+        {
+          "who": "RIYA",
+          "tags": "[cheeky]",
+          "say": "Save कर लिया! अब मेरे पाँचों ads अलग होंगे.",
+          "tts": "सेव कर लिया! अब मेरे पाँचों ऐड्स अलग होंगे.",
+          "show": "[Save] kar liya! Ab mere [paancho ads alag] honge.",
+          "beat": "l15",
+          "how": "Shararti, khush.",
+          "pre": "laugh",
+          "react": "laugh",
+          "reactWord": "alag"
+        }
+      ],
+      "views": [
+        {
+          "at": "l14",
+          "items": [
+            {
+              "type": "typeWord",
+              "keyword": "ANDROMEDA",
+              "typeWord": "andromeda",
+              "hint": "Comment mein likho:",
+              "dm": "तीनों ads के ready नमूने 👇",
+              "dmWord": "namoone"
+            }
+          ]
+        },
+        {
+          "at": "l15",
+          "items": [
+            {
+              "type": "saveTap",
+              "tapWord": "save",
+              "label": "SAVE\nKAR LIYA ✓"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

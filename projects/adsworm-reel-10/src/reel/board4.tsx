@@ -159,8 +159,8 @@ export const SameIsOne: React.FC<{t: number; eqT: number; glyph?: string; tag?: 
     <div style={{width: 880, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 18, fontFamily: body}}>
       <div style={{display: 'flex', alignItems: 'center', gap: 12}}>
         {Array.from({length: 5}).map((_, i) => (
-          <div key={i} style={{transform: `scale(${pop(t - i * 3)})`}}>
-            <Sfx name="pop" t={t} delay={i * 3} volume={0.5} />
+          <div key={i} style={{transform: `scale(${pop(t - i)})`}}>
+            <Sfx name="pop" t={t} delay={i} volume={0.5} />
             <AdCard glyph={glyph} bg={V3.pinkSoft} size={96} />
           </div>
         ))}
