@@ -1,0 +1,22 @@
+{
+  "name": "leevora-testimonial-overlay",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Captions + end card overlay for Leevorá testimonials (transparent ProRes 4444, composited over the graded picture with FFmpeg).",
+  "scripts": {
+    "studio": "remotion studio src/index.ts",
+    "render": "remotion render src/index.ts Overlay"
+  },
+  "dependencies": {
+    "@remotion/captions": "4.0.543",
+    "@remotion/cli": "4.0.543",
+    "@remotion/fonts": "4.0.543",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "remotion": "4.0.543"
+  },
+  "devDependencies": {
+    "@types/react": "19.1.0",
+    "typescript": "5.8.3"
+  }
+}
