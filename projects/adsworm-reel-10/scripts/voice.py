@@ -251,10 +251,21 @@ def main():
     lead = s.get("leadInMs", 120) / 1000
 
     raw = pcm(SRC, SR)
-    hw_raw = heard(pcm(SRC, 16000))
+    sw = [(k, w) for k, (_, ln) in enumerate(flat) for w in ln["say"].split()]
+    # Exact word times from the voice engine itself (edge/Azure word boundaries, ElevenLabs with-timestamps…),
+    # one entry per script word, in order. When this file exists nothing is guessed from speech recognition:
+    # measured on a Hinglish clip, Whisper-based times were off by 126 ms on average and by >150 ms for 1 word in 5.
+    known_file = SRC.with_suffix(".words.json")
+    known = None
+    if known_file.exists():
+        known = [Heard(w["w"], w["start"], w["end"]) for w in json.loads(known_file.read_text())]
+        if len(known) != len(sw):
+            raise SystemExit(f"{known_file.name}: {len(known)} timed words for {len(sw)} script words")
+    hw_raw = known or heard(pcm(SRC, 16000))
     # what the model heard, for the transcript check (I can't listen; this is the evidence the lines are intelligible)
     (ROOT / "out").mkdir(exist_ok=True)
-    (ROOT / "out" / f"heard-{DIR.name}.txt").write_text(" ".join(w.word.strip() for w in hw_raw) + "\n")
+    if not known:
+        (ROOT / "out" / f"heard-{DIR.name}.txt").write_text(" ".join(w.word.strip() for w in hw_raw) + "\n")
     voice, keep = tighten(raw, hw_raw, s.get("gapCap", 0.26))
     tempo = s.get("tempo", 1.0)
     if tempo != 1.0:
@@ -262,9 +273,12 @@ def main():
     voice = np.concatenate([np.zeros(int(lead * SR)), voice])
 
     # word timings on the final voice, aligned to the script
-    sw = [(k, w) for k, (_, ln) in enumerate(flat) for w in ln["say"].split()]
     times = [None] * len(sw)
-    if LANG != "en":
+    if known:
+        final = lambda t: lead + remap(t, keep) / tempo
+        times = [(final(w.start), final(w.end)) for w in known]
+        print(f"exact word times from the voice engine: {len(known)}/{len(sw)}")
+    elif LANG != "en":
         # Hinglish: one transcription of the RAW audio, then the same cuts and tempo applied to its word
         # times. (Transcribing the tightened, sped-up voice a second time lost a fifth of the words.)
         final = lambda t: lead + remap(t, keep) / tempo

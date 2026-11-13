@@ -6,3 +6,4 @@ script/dialogue.draft.mp3
 reels/*/dialogue.draft.mp3
 reels/*/dialogue.draft.json
 __pycache__/
+reels/*/dialogue.draft.words.json

@@ -1,7 +1,7 @@
 # 04 Tools: Hinglish voice, exact word timing, skills, script rules (Fri 13 Nov 2026)
 
 **Status:** VERIFIED = page opened today, fact read there · PARTLY = page opened but a key detail is missing, or it is the vendor's own claim · UNVERIFIED = search snippet or secondhand. Every URL below was seen on 13 Nov 2026.
-**Limits of this research:** No audio was generated or listened to (no paid tools), so "sounds native" is docs and vendor claims, not a listening test. Nothing was installed; the alignment commands are **untested here** (I only checked that the download hosts answer and that Python 3.13 CPU wheels exist). **Could not open:** ElevenLabs help article on publishing rights (403), the Deepgram article on ElevenLabs code-switching (URL now shows a product page), the Vapi community thread on Hindi accent problems (Discord login), Cartesia's Hindi page (404), Google and Murf pricing pages (blank), AI4Bharat "Indic-Speak" (401), two English broadcast-writing guides (403 / redirect loop). Reddit and X cannot be read with these tools. No Hinglish creator interview with concrete rules was found.
+**Limits of this research:** No audio was generated or listened to (no paid tools), so "sounds native" is docs and vendor claims, not a listening test. Nothing was installed; the alignment commands are **untested here** (I only checked that PyPI, the PyTorch CPU index, Hugging Face and git to GitHub answer from this machine, and that Python 3.13 CPU wheels exist). Stars were read from repo pages (the GitHub API is blocked in this session). **Could not open:** ElevenLabs help article on publishing rights (403), the Deepgram article on ElevenLabs code-switching (URL now shows a product page), the Vapi community thread on Hindi accent problems (Discord login), Cartesia's Hindi page (404), Google and Murf pricing pages (blank), AI4Bharat "Indic-Speak" (401), two English broadcast-writing guides (403 / redirect loop). Reddit and X cannot be read with these tools. No Hinglish creator interview with concrete rules was found.
 
 ## A. Hinglish voice
 
@@ -24,7 +24,7 @@
 | **Lightning v3.1 / v3.1 Pro** (Smallest.ai, India) | Own blog: behaves differently on code-switching when language is `hi` vs omitted | Not verified | Not mentioned | Not verified | Not verified | See A4 | PARTLY · https://docs.smallest.ai/models/documentation/getting-started/models |
 | **Open models on CPU** | None documents Hinglish | Indic Parler-TTS: Rohit, Divya (recommended), Aman, Rani · Kokoro: hf_alpha, hf_beta (F), hm_omega, hm_psi (M), all graded C · Piper: pratham, priyamvada, rohan · IndicF5: clones a reference clip | None | Free | Indic Parler-TTS Apache-2.0 (3.75 GB, gated, needs PyTorch) · IndicF5 MIT (1.4 GB, gated, PyTorch; "only clone voices for which you have explicit permission") · Kokoro Apache-2.0 (327 MB; `kokoro-onnx` runs without PyTorch) · `piper-tts` GPL-3.0 | Devanagari. Kokoro: "Support for non-English languages may be absent or thin" | VERIFIED (cards) · no CPU speed figures found · https://huggingface.co/ai4bharat/indic-parler-tts · https://huggingface.co/ai4bharat/IndicF5 · https://huggingface.co/hexgrad/Kokoro-82M/blob/main/VOICES.md |
 
-Cost of one 50-second reel (about 750 characters): Sarvam about ₹2, ElevenLabs about $0.06, Azure inside the free tier.
+Cost of one 50-second reel, assuming about 750 characters (my arithmetic from the list prices): Sarvam about ₹2, ElevenLabs about $0.06, Azure inside the free tier.
 
 ### A3. Can edge-tts audio go into published commercial videos? No licence found; the terms point the other way.
 | Quote | Status | Source |
@@ -96,6 +96,7 @@ Keep three forms per word at the same index: voice text (Devanagari/Latin), capt
 **Plain verdict:** most "viral hook / reel script" skills are thin English prompt packs, often one commit, often a funnel for a paid tool. I found **nothing** for Hindi or Hinglish copy, and nothing that tests whether a listener understood a script. The in-house `motion-studio` skills already cover more of this pipeline than any of them.
 
 ## D. Keeping a Hinglish explainer understandable (checkable rules)
+The "Rule" column is what the source says; the "Check" column is my way of testing it and is not from the source.
 | # | Rule | Check | Status · source |
 |---|---|---|---|
 | 1 | Short, direct sentences; one point each: "वाक्य छोटे सीधे और स्पष्ट लिखे जाएँ।" · "एक ही वाक्य में कई बात कहने के लोभ से बचना चाहिए।" | One claim per sentence; no "और" joining two claims | VERIFIED · NCERT-based Class 12 "विभिन्न माध्यमों के लिए लेखन": https://www.learninsta.com/cbse-class-12-hindi-elective-rachana-vibhinn-maadhyamon-ke-lie-lekhan/ |
