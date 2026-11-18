@@ -52,6 +52,7 @@ Third-party repos are installed through a filter. For example, Emil Kowalski's r
 | `creative-performance-loop` | Meta hook rate, hold rate and CPA per ad, mapped back to each axis, and written into the next matrix. Read-only by default |
 | `explainer-module` | The voice-led Instagram explainer that holds retention (engine v4): a teacher and a student as talking heads with lip-flap and reactions, karaoke captions, a proof board that builds on the spoken word, sound played by the visuals, an open-loop chip held until the payoff. Includes the retention rules and the script schema. Template: `projects/adsworm-reel-10` |
 | `reel-pipeline` | The batch workflow for reels: topic research, a set of three with different jobs, scripts, independent fact approval, free draft build, paid voice only after approval, render, QA and a posting kit |
+| `cinematic-film` | Third-party (exploraX, MIT; pinned copy, see its `VENDORED.md`). Narrated documentary-style films drawn in code with Skia: one camera over a board of photos, documents, cards, maps and numbers, timed to the narrator's word. For case-study films and brand stories; landscape first |
 
 Start a job with: `/motion-studio:motion-director <brief>`.
 

@@ -32,6 +32,7 @@ Fill `brief.md` from `references/brief-template.md`. Ask once, in one message, o
 | Kinetic type, product/offer ads, stats, end cards, statics, variant batches | **`remotion-ad-kit`** (this plugin) | Proven template, all placements from one prop set, QA + variants built in |
 | Launch film from a URL, HTML/GSAP-heavy, or the team is 4+ people without a Remotion license | **HyperFrames** (`/hyperframes`, `/product-launch-video`, `/motion-graphics`) | Apache-2.0, no per-render fee |
 | Bespoke Remotion scene beyond the kit (maps, 3D, audio-reactive, charts) | Remotion skills (`/remotion-create`, `remotion-best-practices`) | Deepest component ecosystem |
+| Documentary-style film: case study, founder or brand story, "how it happened" told with photos, documents, maps and numbers (YouTube, website, pitch; landscape first) | **`cinematic-film`** (this plugin; third-party, MIT) | One camera over one board, every hit on the narrator's word. Python + Skia, not Node. 9:16 needs a scene written for vertical |
 | Talking head, UGC, podcast cutdowns, footage edits | **`video-editing-pipeline`** | Real footage is an edit job, not a motion job |
 | Photoreal people, lifestyle, B-roll, product-in-world | Gen-AI footage (Higgsfield / fal / Runway / Veo) → kit `backgroundVideo` | Code can't fake organic footage; composite coded type over it |
 | Character animation, heavy VFX, masks | Human in After Effects | Don't fake it. Say so |
