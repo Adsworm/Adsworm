@@ -22,7 +22,7 @@ VAL = [147, 165, 210, 164]              # rupees per enquiry, pooled across the 
 HB = [v * 18 for v in VAL]              # bar heights in world px
 BW = 1700
 MID = (XB[0] + XB[-1]) / 2
-ROW = 1500                              # the detail row and the end slate sit this much lower than the chart needs
+ROW = 2000                              # the detail row and the end slate sit this much lower than the chart needs
 
 
 def mix(a, b, u):
@@ -273,7 +273,7 @@ def build_film(doc):
     text("SHOWN 1,000 TIMES", bx - 1050, ROW + 3620, 240, W(10, "thousand") - 0.1, CREAM, track=0.12)
     film.add(Num(bx - 1050, ROW + 4420, 800, 5, W(10, "five") - 0.25, dur=0.8, prefix="−", suffix="%", rgb=BLUE))
     text("ONE CLICK", bx + 1050, ROW + 3620, 240, W(10, "So did") - 0.1, CREAM, track=0.12)
-    film.add(Num(bx + 1050, ROW + 4420, 800, 5, W(10, "click") - 0.3, dur=0.8, prefix="−", suffix="%", rgb=BLUE))
+    film.add(Num(bx + 1050, ROW + 4420, 800, 5, W(10, "So did") + 0.05, dur=0.6, prefix="−", suffix="%", rgb=BLUE))
     text("OCT VS SEP · MEDIAN OF 18 ACCOUNTS", bx, ROW + 4800, 180, W(10, "five") + 0.7, MUTED, track=0.1)
 
     # ------------------------------------------------------------------ C  saw, clicked, messaged (under Diwali week)
@@ -295,8 +295,8 @@ def build_film(doc):
     film.add(Num(dx - 1100, ROW + 3250, 900, 5, W(16, "price") - 0.1, dur=0.7, prefix="−", suffix="%", rgb=BLUE))
     text("COST PER ENQUIRY", dx + 1100, ROW + 2250, 260, W(16, "cost of") - 0.2, CREAM, max_w=1950, track=0.1)
     film.add(Num(dx + 1100, ROW + 3250, 900, 12, W(16, "cost of") - 0.1, dur=0.7, prefix="+", suffix="%", rgb=GOLD))
-    film.add(PenMark("ellipse", dx + 1100, ROW + 2930, 2250, 1250, t_in=W(17, "enquiries") - 0.25, dur=0.6, width=30, rgb=CREAM, z=80))
-    text("SEP TO OCT · −5% IS THE MEDIAN ACCOUNT · +12% IS ALL 18 BLENDED", dx, ROW + 4080, 175, W(16, "cost of") + 0.4, MUTED, max_w=4300, track=0.08)
+    film.add(PenMark("ellipse", dx + 1100, ROW + 2930, 2250, 1150, t_in=W(17, "enquiries") - 0.25, dur=0.6, width=30, rgb=CREAM, z=80))
+    text("SEP TO OCT · −5% IS THE MEDIAN ACCOUNT · +12% IS ALL 18 BLENDED", dx, ROW + 3760, 175, W(16, "cost of") + 0.4, MUTED, max_w=4300, track=0.08)
 
     # ------------------------------------------------------------------ end slate (below the detail row)
     t_end, sy = E(17) + 0.3, ROW + 6900
@@ -340,13 +340,13 @@ def build_film(doc):
     cam(E(13) + 0.1, XB[2] + 900, name3 - 500, 0.44)
     cam(L(14) + 0.45, 13000, name3 - 520, 0.36, rot=-0.2, fx=XB[3], fy=-2600, radius=4200)   # peak and after, side by side
     cam(E(14), 13200, name3 - 480, 0.37, fx=XB[3], fy=-2600, radius=4200)
-    cam(L(15) + 0.6, MID, -7900, 0.2, fy=-2600, radius=12000, strength=0.2)                   # the title and the whole chart
-    cam(E(15) + 0.4, MID, -7860, 0.204, fy=-2600, radius=12000, strength=0.2)
+    cam(L(15) + 0.6, MID, -7400, 0.2, fy=-2600, radius=12000, strength=0.2)                   # the title and the whole chart
+    cam(E(15) + 0.4, MID, -7370, 0.204, fy=-2600, radius=12000, strength=0.2)
 
-    cam(L(16) + 0.5, dx, ROW + 1640, 0.74, rot=0.3)                    # two numbers
-    cam(E(16) + 0.1, dx + 100, ROW + 1670, 0.76)
-    cam(W(17, "enquiries") + 0.3, dx + 220, ROW + 1690, 0.78, fx=dx + 1100)
-    cam(E(17) + 0.2, dx + 240, ROW + 1700, 0.79, fx=dx + 1100)
+    cam(L(16) + 0.5, dx, ROW + 1850, 0.74, rot=0.3)                    # two numbers
+    cam(E(16) + 0.1, dx + 100, ROW + 1870, 0.76)
+    cam(W(17, "enquiries") + 0.3, dx + 220, ROW + 1880, 0.78, fx=dx + 1100)
+    cam(E(17) + 0.2, dx + 240, ROW + 1890, 0.79, fx=dx + 1100)
     cam(E(17) + 1.4, MID, -7800, 0.139, fy=0, radius=22000, strength=0.1)                     # the whole board
     cam(E(17) + 2.9, MID, -7780, 0.141, fy=0, radius=22000, strength=0.1)
     cam(E(17) + 4.3, MID, sy - 1050, 0.5, fy=sy + 500, radius=4400, strength=0.45)            # the end slate
