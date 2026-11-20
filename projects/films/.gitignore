@@ -1,0 +1,9 @@
+# rebuilt by the cinematic-film scripts; only the script, the scene and the built narration are kept
+*/out/
+*/assets/prep/
+*/audio/takes/
+*/audio/lines/
+*/audio/trimmed/
+*/audio/sfx.wav
+*/audio/mix.m4a
+*/fonts/*.ttf

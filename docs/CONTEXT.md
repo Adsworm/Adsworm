@@ -85,3 +85,9 @@ Voice: ElevenLabs v4 dialogue with inline audio tags (`tags` per line; Higgsfiel
 - **Where:** a pinned, reviewed copy lives at `plugins/motion-studio/skills/cinematic-film/` (commit `bf435561`, see `VENDORED.md` there). It loads as `motion-studio:cinematic-film`. The plugin is now v1.2.0.
 - **Verdict:** a second format for case-study films, founder and brand stories and long-form; not a replacement for the reel engine and not a fix for the Hindi voice. Landscape first: 9:16 renders but the scene must be written for vertical, and its burned captions sit where Instagram's interface is.
 - **Setup:** system libraries plus a Python environment at `~/.venvs/cinematic`; the commands are in the skill's "Adsworm notes". Lost when the container is reclaimed.
+
+## First film: "The Diwali Spike" (20 Nov 2026)
+- **Owner said "banao" without naming a client**, so the film uses the anonymised 18-account Diwali data (`docs/pipeline/2026-11-12/02-account-data.md`). Project: `projects/films/diwali-spike/` (its `README.md` lists sources, limits and checks). English narration, 1:31, 1920x1080, landscape.
+- **Independent fact and clarity check: approve with fixes, all applied.** Largest: the close must say "this October", not "this Diwali" (no Diwali-week click cost was measured; after Diwali cost per click was 17.5% above October).
+- **Voice: Higgsfield had 0.45 credits; the narration needs about 5.5.** The film uses Kokoro `am_michael` (open-source, Apache-2.0, free, runs locally). All script words were heard correctly in a transcript check. The owner has not yet judged this voice. Swapping to the Higgsfield voice after a top-up is one re-voice; the scene re-times itself.
+- **Tools kept:** `projects/films/tools/kokoro_takes.py`, `projects/films/tools/heard_en.py`. Kokoro also ships Hindi voices (`hf_alpha`, `hf_beta`, `hm_omega`, `hm_psi`); untested here.

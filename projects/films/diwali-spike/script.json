@@ -1,0 +1,86 @@
+{
+ "title": "The Diwali Spike",
+ "takes": [
+  {"take": "T01_cold_open", "lines": [
+   {"id": 1, "text": "Did your enquiries cost more this Diwali?",
+    "spoken": "Did your enquiries cost more this Diwali?",
+    "hero": "the dates of Diwali week, set big on a dark board", "typed": "1–8 NOV 2026"},
+   {"id": 2, "text": "In our accounts, they did.",
+    "spoken": "In our accounts, they did.",
+    "hero": "a label: cost of one enquiry", "typed": "COST OF ONE ENQUIRY · 18 ACCOUNTS, BLENDED"},
+   {"id": 3, "text": "In Diwali week, one enquiry, a new chat from an Instagram or Facebook ad, cost 210 rupees.",
+    "spoken": "In Diwali week, one enquiry, a new chat from an Instagram or Facebook ad, cost two hundred and ten rupees.",
+    "hero": "the number rolls up to ₹210; then the title", "typed": "₹210 + ENQUIRY = A CHAT STARTED FROM THE AD. NOT A BOOKING. + THE DIWALI SPIKE",
+    "gap_after": 2.6}
+  ]},
+  {"take": "T02_rise", "lines": [
+   {"id": 4, "text": "Two months earlier, in September, the same enquiry cost 147.",
+    "spoken": "Two months earlier, in September, the same enquiry cost one forty-seven.",
+    "hero": "the September bar grows", "typed": "SEPTEMBER · ₹147"},
+   {"id": 5, "text": "By October, it had climbed to 165.",
+    "spoken": "By October, it had climbed to one sixty-five.",
+    "hero": "the October bar grows, taller", "typed": "OCTOBER · ₹165"},
+   {"id": 6, "text": "We checked 18 of our ad accounts.",
+    "spoken": "We checked eighteen of our ad accounts.",
+    "hero": "eighteen dots, one per account", "typed": "18 AD ACCOUNTS + 8 CLINICS, 3 SALONS, 2 ONLINE STORES, 5 OTHERS"},
+   {"id": 7, "text": "From September to October, the cost rose in 15 out of 17.",
+    "spoken": "From September to October, the cost rose in fifteen out of seventeen.",
+    "hero": "fifteen dots turn gold; one goes hollow", "typed": "15 OF 17 · SEP TO OCT + 1 HAD TOO FEW ENQUIRIES TO COMPARE",
+    "gap_after": 0.9}
+  ]},
+  {"take": "T03_turn", "lines": [
+   {"id": 8, "text": "The easy answer: it was festive season, so ads got expensive.",
+    "spoken": "The easy answer: it was festive season, so ads got expensive.",
+    "hero": "a card with the first guess", "typed": "THE FIRST GUESS + FESTIVE SEASON = COSTLIER ADS"},
+   {"id": 9, "text": "But in October, showing the ad did not cost more.",
+    "spoken": "But in October, showing the ad did not cost more.",
+    "hero": "the first guess is struck through", "typed": ""},
+   {"id": 10, "text": "Showing it a thousand times cost about 5 percent less. So did a click.",
+    "spoken": "Showing it a thousand times cost about five percent less. So did a click.",
+    "hero": "two numbers roll down: a thousand showings, then a click", "typed": "SHOWN 1,000 TIMES −5% + ONE CLICK −5% + OCT VS SEP, MEDIAN OF 18 ACCOUNTS"},
+   {"id": 11, "text": "People saw the ads. People clicked. A smaller share sent a message.",
+    "spoken": "People saw the ads. People clicked. A smaller share sent a message.",
+    "hero": "three bars: views, clicks, messages per click; the last one shrinks", "typed": "VIEWS + CLICKS + MESSAGES PER CLICK"},
+   {"id": 12, "text": "Our reading: the customer was busy with the big online sales.",
+    "spoken": "Our reading: the customer was busy with the big online sales.",
+    "hero": "a card marked as our reading", "typed": "OUR READING + NOT A MEASURED CAUSE", "gap_after": 0.9}
+  ]},
+  {"take": "T04_peak", "lines": [
+   {"id": 13, "text": "Then Diwali week arrived, and the cost hit its peak: 210.",
+    "spoken": "Then Diwali week arrived, and the cost hit its peak: two hundred and ten.",
+    "hero": "the Diwali bar rises to meet the number from the opening", "typed": "DIWALI WEEK + HIGHER IN 13 OF 17 ACCOUNTS VS OCTOBER"},
+   {"id": 14, "text": "In the three days after Diwali, it fell in 13 of 16 accounts. Overall: 164.",
+    "spoken": "In the three days after Diwali, it fell in thirteen of sixteen accounts. Overall: one sixty-four.",
+    "hero": "a fourth, shorter bar", "typed": "9–11 NOV · ₹164 + LOWER IN 13 OF 16 ACCOUNTS VS PEAK"},
+   {"id": 15, "text": "That is about October's level. Still above September. And three days can reverse.",
+    "spoken": "That is about October's level. Still above September. And three days can reverse.",
+    "hero": "two level lines across the chart, then a stamp", "typed": "OCTOBER LEVEL + SEPTEMBER LEVEL + 3 DAYS OF DATA",
+    "gap_after": 0.9}
+  ]},
+  {"take": "T05_close", "lines": [
+   {"id": 16, "text": "So before you blame your ads, check two numbers: the price of showing the ad, and the cost of an enquiry.",
+    "spoken": "So before you blame your ads, check two numbers: the price of showing the ad, and the cost of an enquiry.",
+    "hero": "two numbers side by side", "typed": "PRICE TO SHOW THE AD −5% + COST PER ENQUIRY +12% + SEP TO OCT"},
+   {"id": 17, "text": "In our accounts this October, the ads did not cost more. The enquiries did.",
+    "spoken": "In our accounts this October, the ads did not cost more. The enquiries did.",
+    "hero": "a circle around the number that rose; pull back to the whole board; then the end slate", "typed": "ADSWORM + source line",
+    "gap_after": 6.5}
+  ]}
+ ],
+ "fact_notes": [
+  "Source for every number: docs/pipeline/2026-11-12/02-account-data.md. Meta Ads account-level numbers, pulled read-only on 12 Nov 2026. 55 accounts listed, 43 readable, 18 kept (spend of at least Rs 5,000 in both September and October, and spend above zero on 9-11 Nov).",
+  "Enquiry = a messaging conversation started from the ad (Instagram, Facebook or WhatsApp chat), the largest action in September for all 18 accounts. It is not a booking or an order. The film says so on screen twice.",
+  "Rs 147 (1-30 Sep), Rs 165 (1-31 Oct), Rs 210 (1-8 Nov, Diwali week; Diwali was 8 Nov 2026), Rs 164 (9-11 Nov): cost per conversation blended across all 18 accounts (total spend divided by total conversations). Lines 2-3 say 'in our accounts'; the screen says '18 accounts, blended'.",
+  "15 of 17 (line 7): cost per conversation, October vs September, rose in 15 of the 17 accounts where both months had at least 10 conversations (median +15.8%). The 18th had too few to compare.",
+  "About 5 percent less (line 10), October vs September, median across 18 accounts: CPM -4.7%, cost per link click -5.1%. Pooled CPM also fell (Rs 53 to Rs 48). The screen labels it 'Oct vs Sep, median of 18 accounts'.",
+  "A smaller share sent a message (line 11): a rate, not a count. A click cost about 5% less while a conversation cost about 12% more, so fewer conversations came per click. The third bar is labelled 'messages per click'; the bars are an illustration and carry no numbers.",
+  "Our reading (line 12) is not a measured cause. It fits the published picture: Redseer via Inc42 (23 Oct 2026), about 100 million shoppers on the big online sales, 8-18 Oct. The card says 'not a measured cause'.",
+  "Diwali week vs October (line 13): cost per conversation higher in 13 of 17 accounts, median +26.5%.",
+  "13 of 16 (line 14): from Diwali week to 9-11 Nov the cost fell in 13 of 16 accounts (median -17.7%). Rs 164 is the blended figure for all 18, so the line says 'Overall'. Three days of data, 11 to 119 conversations per account.",
+  "About October's level, still above September (line 15): Rs 164 vs Rs 165 (October) and Rs 147 (September, about 12% lower).",
+  "Close (lines 16-17): -5% is the median account's ad price, +12% is the blended cost per conversation (Rs 147 to Rs 165), both September to October. The claim is limited to October: no Diwali-week click cost was measured, and in the three days after Diwali cost per click was 17.5% above October.",
+  "Vertical mix of the 18 accounts: 8 clinics, 3 salons, 2 e-commerce, 5 others. No client or account names appear anywhere in the film or in this folder.",
+  "The film does not say ad prices rose, that costs are back to normal, or that performance is better than October.",
+  "Independent fact and clarity check, 20 Nov 2026: approve with fixes; all eight fixes applied (period and scope on lines 3, 7, 9-10, 14, 15, 16, 17; 'a smaller share'; the opening question)."
+ ]
+}

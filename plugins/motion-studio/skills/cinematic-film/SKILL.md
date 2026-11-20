@@ -117,4 +117,7 @@ Tested here on 18 Nov 2026: the starter project (25 s, 1280x720) rendered in 54 
 - **Voice.** The scratch voice here is espeak-ng: robotic, English, for timing only. Final voice is Higgsfield, as in `explainer-module`: one take per section saved as `audio/takes/<take>.wav`, then `split_takes.py` and `build_narration.py`. Hindi or Hinglish narration has not been tested with the splitter.
 - **Network.** Scripts reach the internet only when asked: `get_fonts.py` (Google Fonts repository), `make_map.py` (jsdelivr map data) and `fetch_commons.py` (Wikimedia Commons).
 - **Loudness.** `mix_soundtrack.py` masters to -15 LUFS. Adsworm delivers at -14 LUFS, -1.5 dBTP: run `meta-delivery-qa`'s `check_specs.sh` on anything going to Meta.
+- **End hold.** `gap_after` on the last line is ignored. The hold after the last word is `build_narration.py --tail <seconds>` (default 3). An end slate needs about 7.
+- **Framing for captions.** Set camera keys by the frame's top edge and keep each hero in the top 74%. `projects/films/diwali-spike/scene.py` has the helper (`cam`) and clean items for data films (`Bar`, `Num`, `Dots`, `Line`, `Panel`) in the Adsworm colours.
+- **No voice credits.** `projects/films/tools/kokoro_takes.py` makes the takes with Kokoro (open-source, Apache-2.0, runs locally, English only for now). `projects/films/tools/heard_en.py` checks any take against the script.
 - **Gates.** The four approval gates above stand. Adsworm's own rules also apply: facts approved before any paid voice, and `audience-panel` when the film teaches something.

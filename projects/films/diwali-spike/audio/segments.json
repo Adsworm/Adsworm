@@ -1,0 +1,123 @@
+{
+ "segments": [
+  {
+   "id": 1,
+   "scene": "T01_cold_open",
+   "caption": "Did your enquiries cost more this Diwali?",
+   "vo": "Did your enquiries cost more this Diwali?",
+   "gap_after": 0.45
+  },
+  {
+   "id": 2,
+   "scene": "T01_cold_open",
+   "caption": "In our accounts, they did.",
+   "vo": "In our accounts, they did.",
+   "gap_after": 0.45
+  },
+  {
+   "id": 3,
+   "scene": "T01_cold_open",
+   "caption": "In Diwali week, one enquiry, a new chat from an Instagram or Facebook ad, cost 210 rupees.",
+   "vo": "In Diwali week, one enquiry, a new chat from an Instagram or Facebook ad, cost two hundred and ten rupees.",
+   "gap_after": 2.6
+  },
+  {
+   "id": 4,
+   "scene": "T02_rise",
+   "caption": "Two months earlier, in September, the same enquiry cost 147.",
+   "vo": "Two months earlier, in September, the same enquiry cost one forty-seven.",
+   "gap_after": 0.45
+  },
+  {
+   "id": 5,
+   "scene": "T02_rise",
+   "caption": "By October, it had climbed to 165.",
+   "vo": "By October, it had climbed to one sixty-five.",
+   "gap_after": 0.45
+  },
+  {
+   "id": 6,
+   "scene": "T02_rise",
+   "caption": "We checked 18 of our ad accounts.",
+   "vo": "We checked eighteen of our ad accounts.",
+   "gap_after": 0.45
+  },
+  {
+   "id": 7,
+   "scene": "T02_rise",
+   "caption": "From September to October, the cost rose in 15 out of 17.",
+   "vo": "From September to October, the cost rose in fifteen out of seventeen.",
+   "gap_after": 0.9
+  },
+  {
+   "id": 8,
+   "scene": "T03_turn",
+   "caption": "The easy answer: it was festive season, so ads got expensive.",
+   "vo": "The easy answer: it was festive season, so ads got expensive.",
+   "gap_after": 0.45
+  },
+  {
+   "id": 9,
+   "scene": "T03_turn",
+   "caption": "But in October, showing the ad did not cost more.",
+   "vo": "But in October, showing the ad did not cost more.",
+   "gap_after": 0.45
+  },
+  {
+   "id": 10,
+   "scene": "T03_turn",
+   "caption": "Showing it a thousand times cost about 5 percent less. So did a click.",
+   "vo": "Showing it a thousand times cost about five percent less. So did a click.",
+   "gap_after": 0.45
+  },
+  {
+   "id": 11,
+   "scene": "T03_turn",
+   "caption": "People saw the ads. People clicked. A smaller share sent a message.",
+   "vo": "People saw the ads. People clicked. A smaller share sent a message.",
+   "gap_after": 0.45
+  },
+  {
+   "id": 12,
+   "scene": "T03_turn",
+   "caption": "Our reading: the customer was busy with the big online sales.",
+   "vo": "Our reading: the customer was busy with the big online sales.",
+   "gap_after": 0.9
+  },
+  {
+   "id": 13,
+   "scene": "T04_peak",
+   "caption": "Then Diwali week arrived, and the cost hit its peak: 210.",
+   "vo": "Then Diwali week arrived, and the cost hit its peak: two hundred and ten.",
+   "gap_after": 0.45
+  },
+  {
+   "id": 14,
+   "scene": "T04_peak",
+   "caption": "In the three days after Diwali, it fell in 13 of 16 accounts. Overall: 164.",
+   "vo": "In the three days after Diwali, it fell in thirteen of sixteen accounts. Overall: one sixty-four.",
+   "gap_after": 0.45
+  },
+  {
+   "id": 15,
+   "scene": "T04_peak",
+   "caption": "That is about October's level. Still above September. And three days can reverse.",
+   "vo": "That is about October's level. Still above September. And three days can reverse.",
+   "gap_after": 0.9
+  },
+  {
+   "id": 16,
+   "scene": "T05_close",
+   "caption": "So before you blame your ads, check two numbers: the price of showing the ad, and the cost of an enquiry.",
+   "vo": "So before you blame your ads, check two numbers: the price of showing the ad, and the cost of an enquiry.",
+   "gap_after": 0.45
+  },
+  {
+   "id": 17,
+   "scene": "T05_close",
+   "caption": "In our accounts this October, the ads did not cost more. The enquiries did.",
+   "vo": "In our accounts this October, the ads did not cost more. The enquiries did.",
+   "gap_after": 6.5
+  }
+ ]
+}
